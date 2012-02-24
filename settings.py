@@ -4,7 +4,7 @@ AUTHOR = 'Jiachen Yang'
 DISQUS_SITENAME = 'farseerfcgithub'
 GITHUB_URL = 'https://github.com/farseerfc'
 SITEURL = 'http://farseerfc.github.com'
-SITENAME = 'Farseerfc Blog by pelican'
+SITENAME = 'Farseerfc Blog'
 SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
           ('github', 'https://github.com/farseerfc'),
           ('facebook', 'http://www.facebook.com/farseerfc'),)
