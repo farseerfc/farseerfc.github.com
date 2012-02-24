@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 AUTHOR = 'Jiachen Yang'
-DISQUS_SITENAME = 'farseerfc'
+DISQUS_SITENAME = 'farseerfcgithub'
 GITHUB_URL = 'https://github.com/farseerfc'
 SITEURL = 'http://farseerfc.github.com'
 SITENAME = 'Farseerfc Blog by pelican'
