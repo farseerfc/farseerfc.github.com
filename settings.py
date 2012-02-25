@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 TIMEZONE = 'Asia/Tokyo'
@@ -31,8 +30,11 @@ SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
 TWITTER_USERNAME = 'farseerfc'
 
 THEME='notmyidea'
+CSS_FILE = "wide.css"
+
 DEFAULT_CATEGORY ='Others'
 OUTPUT_PATH = '.'
 PATH = 'pages'
+
 
 
