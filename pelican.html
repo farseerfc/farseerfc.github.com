@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Try Pelican</title>
+        <title>尝试一下Pelican</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
         <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
@@ -35,7 +35,7 @@
                 
                 
                 
-                    <li class="active"><a href="./category/python.html">python</a></li>
+                    <li class="active"><a href="./category/Others.html">Others</a></li>
                 
                 </ul></nav>
         </header><!-- /#banner -->
@@ -43,12 +43,12 @@
 <section id="content" class="body">    
 <article>
         <header> <h1 class="entry-title"><a href=""
-        rel="bookmark" title="Permalink to Try Pelican">Try Pelican</a></h1> 
+        rel="bookmark" title="Permalink to 尝试一下Pelican">尝试一下Pelican</a></h1> 
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="farseerfc">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
  </header>
         <div class="entry-content">
         <footer class="post-info">
-        <abbr class="published" title="2012-02-25T09:56:40.555000">
+        <abbr class="published" title="2012-02-25T09:38:08.282000">
                 25/02/2012
         </abbr>
 
@@ -57,39 +57,45 @@
                 By <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
         </address>
         
-<p>In <a href="./category/python.html">python</a>. </p>
+<p>In <a href="./category/Others.html">Others</a>. </p>
 
 
-
-Translations: 
-    
-        <a href="./try-pelican-zh.html">zh</a>
-    
 
 </footer><!-- /.post-info -->
-        <p>This is my first blog with Pelican!</p>
-<div class="section" id="my-settings-py">
-<h2>My settings.py</h2>
-<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="n">ARTICLE_PERMALINK_STRUCTURE</span> <span class="o">=</span> <span class="s">&#39;/%Y/%m/&#39;</span>
-<span class="n">DATE_FORMATS</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;en&#39;</span><span class="p">:</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">/%m/%Y&#39;</span><span class="p">,</span><span class="s">&#39;zh&#39;</span><span class="p">:</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">,</span><span class="s">&#39;jp&#39;</span><span class="p">:</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">}</span>
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Jiachen Yang&#39;</span>
-<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&#39;farseerfcgithub&#39;</span>
-<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://farseerfc.github.com&#39;</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;Farseerfc Blog&#39;</span>
-<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;twitter&#39;</span><span class="p">,</span> <span class="s">&#39;http://twitter.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;github&#39;</span><span class="p">,</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;facebook&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.facebook.com/farseerfc&#39;</span><span class="p">),)</span>
-<span class="n">TAG_FEED</span> <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
-<span class="n">THEME</span><span class="o">=</span><span class="s">&#39;notmyidea&#39;</span>
-<span class="n">TWITTER_USERNAME</span> <span class="o">=</span> <span class="s">&#39;farseerfc&#39;</span>
-<span class="n">LOCALE</span> <span class="o">=</span> <span class="s">&#39;en&#39;</span>
-<span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span><span class="s">&#39;Others&#39;</span>
-<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span>
-<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;pages&#39;</span>
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
-</pre></div>
+        <p>这是我用Pelican写的第一篇日志，尝试一下多语言功能。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">slug:</th><td class="field-body">try-pelican</td>
+</tr>
+<tr class="field"><th class="field-name">lang:</th><td class="field-body">zh</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="settings-py">
+<h2>我的设置 settings.py</h2>
+<pre class="literal-block">
+# -*- coding: utf-8 -*-
+ARTICLE_PERMALINK_STRUCTURE = '/%Y/%m/'
+DATE_FORMATS={'en':'%d/%m/%Y','zh':'%Y-%m-%d','jp':'%Y-%m-%d'}
+AUTHOR = 'Jiachen Yang'
+DISQUS_SITENAME = 'farseerfcgithub'
+GITHUB_URL = 'https://github.com/farseerfc'
+SITEURL = 'http://farseerfc.github.com'
+SITENAME = 'Farseerfc Blog'
+SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
+          ('github', 'https://github.com/farseerfc'),
+          ('facebook', 'http://www.facebook.com/farseerfc'),)
+TAG_FEED = 'feeds/%s.atom.xml'
+THEME='notmyidea'
+TWITTER_USERNAME = 'farseerfc'
+LOCALE = 'en'
+DEFAULT_CATEGORY ='Others'
+OUTPUT_PATH = '.'
+PATH = 'pages'
+TIMEZONE = 'Asia/Tokyo'
+</pre>
 </div>
 
         </div><!-- /.entry-content -->
@@ -98,7 +104,7 @@ Translations:
         <h2>Comments !</h2>
             <div id="disqus_thread"></div>
             <script type="text/javascript">
-               var disqus_identifier = "try-pelican.html";
+               var disqus_identifier = "pelican.html";
                (function() {
                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                dsq.src = 'http://farseerfcgithub.disqus.com/embed.js';
