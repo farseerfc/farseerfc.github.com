@@ -10,9 +10,19 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="farseerfc.20120225061142.1112" a="E"><vh>@auto settings.py</vh></v>
-<v t="farseerfc.20120225061142.1115" a="E"><vh>@auto-rst try_pelican.rst</vh></v>
+<v t="farseerfc.20120225061142.1112"><vh>@auto settings.py</vh></v>
+<v t="farseerfc.20120225091118.1122"><vh>@nosent .gitignore</vh></v>
+<v t="farseerfc.20120225090734.1120" a="E"><vh>@path pages</vh>
+<v t="farseerfc.20120225061142.1115"><vh>@auto-rst try_pelican.rst</vh></v>
+</v>
 </vnodes>
 <tnodes>
+<t tx="farseerfc.20120225090734.1120"></t>
+<t tx="farseerfc.20120225091118.1122">author/*
+category/*
+feeds/*
+theme/*
+*.html
+</t>
 </tnodes>
 </leo_file>
