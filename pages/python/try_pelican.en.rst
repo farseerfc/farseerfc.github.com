@@ -1,14 +1,14 @@
-Pelicanを試してみた
-=========================
+Try Pelican
+===========
 
 :slug: try-pelican
-:lang: jp
+:lang: en
 :date: 2012-02-24
 
-Pelicanで書いたの初めてのblog，多言語の機能を試しています。
+This is my first blog with Pelican!
 
-わたしのsettings.py
-+++++++++++++++++++++++
+My settings.py
+++++++++++++++
 
 .. code-block:: python
     

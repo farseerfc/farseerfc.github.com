@@ -13,8 +13,8 @@
 <v t="farseerfc.20120225061142.1112" a="E"><vh>@auto settings.py</vh></v>
 <v t="farseerfc.20120225090734.1120" a="E"><vh>@path pages</vh>
 <v t="farseerfc.20120225091118.1129" a="E"><vh>@path python</vh>
-<v t="farseerfc.20120225061142.1115" a="E"><vh>@auto-rst try_pelican.rst</vh></v>
-<v t="farseerfc.20120225091118.1126" a="E"><vh>@auto-rst try_pelican.zh.rst</vh></v>
+<v t="farseerfc.20120225061142.1115" a="E"><vh>@auto-rst try_pelican.en.rst</vh></v>
+<v t="farseerfc.20120225091118.1126" a="E"><vh>@auto-rst try_pelican.rst</vh></v>
 <v t="farseerfc.20120225165955.1151" a="E"><vh>@auto-rst try_pelican.jp.rst</vh></v>
 </v>
 </v>

@@ -1,33 +1,45 @@
-Try Pelican
-===========
+尝试一下Pelican
+===================
 
 :slug: try-pelican
-:lang: en
+:lang: zh
+:date: 2012-02-24
 
-This is my first blog with Pelican!
+这是我用Pelican写的第一篇日志，尝试一下多语言功能。
 
-My settings.py
-++++++++++++++
+我的设置 settings.py
+++++++++++++++++++++++++
 
 .. code-block:: python
     
-    # -*- coding: utf-8 -*-
-    ARTICLE_PERMALINK_STRUCTURE = '/%Y/%m/'
-    DATE_FORMATS={'en':'%d/%m/%Y','zh':'%Y-%m-%d','jp':'%Y-%m-%d'}
-    AUTHOR = 'Jiachen Yang'
+    TIMEZONE = 'Asia/Tokyo'
+    DATE_FORMATS = {
+        'en':'%a, %d %b %Y',
+        'zh':'%Y年%m月%d日, 周%a',
+        'jp':'%Y年%ｍ月%d日(%a)',
+    }
+    # windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx
+    LOCALE = ['chn', 'jpn','usa',       # windows
+            'en_US', 'zh_CN', 'ja_JP']  # Unix/Linux
+    DEFAULT_LANG = 'zh'
+    
+    SITENAME = 'Farseerfc Blog'
+    AUTHOR = 'Jiachen Yang (farseerfc@gmail.com)'
+    
     DISQUS_SITENAME = 'farseerfcgithub'
     GITHUB_URL = 'https://github.com/farseerfc'
     SITEURL = 'http://farseerfc.github.com'
-    SITENAME = 'Farseerfc Blog'
+    TAG_FEED  = 'feeds/%s.atom.xml'
+    
     SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
               ('github', 'https://github.com/farseerfc'),
-              ('facebook', 'http://www.facebook.com/farseerfc'),)
-    TAG_FEED = 'feeds/%s.atom.xml'
-    THEME='notmyidea'
+              ('facebook', 'http://www.facebook.com/farseerfc'),
+              ('weibo', 'http://weibo.com/farseerfc'),
+              )
     TWITTER_USERNAME = 'farseerfc'
-    LOCALE = 'en'
+    
+    THEME='notmyidea'
     DEFAULT_CATEGORY ='Others'
     OUTPUT_PATH = '.'
     PATH = 'pages'
-    TIMEZONE = 'Asia/Tokyo'
 
