@@ -36,7 +36,7 @@
 &lt;blockquote&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;纯 Python 实现。 这意味着我可以换用任何 Python 解释器而不必担心兼容性问题。比如我就换成了 PyPy_。&lt;/li&gt;
-&lt;li&gt;多语言支持。这个似乎大部分人不需要…… 我是想尽量把一篇博客写成三种语言作为锻炼吧。&lt;/li&gt;
+&lt;li&gt;多语言支持。因为 &lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; 的作者似乎是个法国人。不过这个似乎大部分人不需要…… 我是想尽量把一篇博客写成三种语言作为锻炼吧。&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; 。这样我就可以用 &lt;a class="reference external" href="http://webpages.charter.net/edreamleo/front.html"&gt;Leo&lt;/a&gt; 的 &amp;#64;auto-rst 直接写 ReST了。简单方便快捷有效。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
