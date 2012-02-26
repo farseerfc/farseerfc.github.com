@@ -78,63 +78,73 @@ have
 <a class="reference external" href="http://pages.github.com/#user__organization_pages">Github User Page</a>
 and <a class="reference external" href="http://octopress.org/">Octopress</a> Blog.
 Like everyone posted in their blogs, Static Blog is indeed more convenient than traditional
-Blog systems such as WordPress. I have been wanting my own <a class="reference external" href="http://octopress.org/">Octopress</a> since than.</p>
+Blog systems such as WordPress. I have been wanting my own <a class="reference external" href="http://octopress.org/">Octopress</a> since then.</p>
 <div class="section" id="but-it-seems-that-octopress-isn-t-for-me">
 <h2>But it seems that <a class="reference external" href="http://octopress.org/">Octopress</a> isn't for me</h2>
-<p>At first I was confused  by <a class="reference external" href="http://octopress.org/docs/setup/">Setup Steps of Octopress</a> .  What is this <a class="reference external" href="http://beginrescueend.com/">RVM</a> thing? And what is that <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> thing?
-It seems  the high pace of Ruby community has beyond my imagination to a degree that they need a version manager to ensure the compatibility of different versions of Ruby. Althrough the same compatibility issue also troubles Python community <a class="footnote-reference" href="#id3" id="id1">[1]</a> , but at least Python don't need a version manager (yet) to control this mass <a class="footnote-reference" href="#id4" id="id2">[2]</a> .</p>
-<p>Real problem for me is that I haven't yet a Linux box that I can play around freely. (I really want one ... ) Both <a class="reference external" href="http://beginrescueend.com/">RVM</a> and <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> needs to run on Unix/Linux/MacOSX. One can not be a geek if he use Windows ? (Maybe it's true...)</p>
+<dl class="docutils">
+<dt>At first I was confused  by <a class="reference external" href="http://octopress.org/docs/setup/">Setup Steps of Octopress</a> .  What is this <a class="reference external" href="http://beginrescueend.com/">RVM</a> thing?</dt>
+<dd><dl class="first last docutils">
+<dt>And what is that <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> thing? It seems  the high pace of Ruby community has beyond my imagination to a degree that</dt>
+<dd>they need a version manager to ensure the compatibility of different versions of Ruby. Althrough the same compatibility
+issue also troubles Python community <a class="footnote-reference" href="#id3" id="id1">[1]</a> , but at least Python don't need a version manager (yet) to control this mass <a class="footnote-reference" href="#id4" id="id2">[2]</a> .</dd>
+</dl>
+</dd>
+</dl>
+<p>Real problem for me is that I haven't yet a Linux box that I can play around freely. (I really want one ... ) Both <a class="reference external" href="http://beginrescueend.com/">RVM</a> and
+<a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> needs to run on Unix/Linux/MacOSX. One can not be a geek if he use Windows ? (Maybe it's true...)</p>
 <p>Remaining problem is the battle between Ruby and Python campaign.  I haven't tried <a class="reference external" href="http://daringfireball.net/projects/markdown/">Markdown</a> , and I rather like <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> .
-It seems that both sides depend on Pygments as code block highlighter so  Rubyists need Python environment anyway.
-I simply don't want to depend on any Ruby component. It is better when it is in pure Python, no C extensions.</p>
-<p>So I started searching for Static Blog Engine in Python on Github. The author of the great framework <a class="reference external" href="http://flask.pocoo.org/">Flask</a> , <a class="reference external" href="https://github.com/mitsuhiko">mitsuhiko</a> , wrote a <a class="reference external" href="https://github.com/mitsuhiko/rstblog">rstblog</a> , but it's not well developed. <a class="reference external" href="http://ringce.com/hyde">Hyde</a> seems to be complete enough, but it use <a class="reference external" href="http://daringfireball.net/projects/markdown/">MarkDown</a> as its default markup language, and the design of its homepage is too fashion to be used as blog. Finally I found <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> .</p>
+It seems that both sides depend on <a class="reference external" href="http://pygments.org/">Pygments</a> as code block highlighter so  Rubyists need Python environment anyway.
+I simply don't want to depend on any Ruby component. It is better when it is in pure Python, no C extensions so that I can
+debug into it and make minor modifications.</p>
+<p>So I started searching for Static Blog Engine in Python on Github. The author of the great framework <a class="reference external" href="http://flask.pocoo.org/">Flask</a> , <a class="reference external" href="https://github.com/mitsuhiko">mitsuhiko</a> ,
+wrote a <a class="reference external" href="https://github.com/mitsuhiko/rstblog">rstblog</a> , but it's not well developed. <a class="reference external" href="http://ringce.com/hyde">Hyde</a> seems to be complete enough, but it use <a class="reference external" href="http://daringfireball.net/projects/markdown/">MarkDown</a> as its default markup language, and the design of its homepage is too fashion to be used as blog. Finally I found <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> .</p>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>比如 Python 2.x 与 3.x 之间看似难以跨越的鸿沟，以及 <a class="reference external" href="http://pypy.org/">PyPy</a> 、 <a class="reference external" href="http://python.org/">CPython</a> 、 <a class="reference external" href="http://www.stackless.com/">Stackless</a> 、 <a class="reference external" href="http://cython.org/">Cython</a> 等各个实现之间的微妙差别。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Such as the difference between Python 2.x and 3.x , and also difference in C-API of implementations of <a class="reference external" href="http://pypy.org/">PyPy</a> , <a class="reference external" href="http://python.org/">CPython</a> , <a class="reference external" href="http://www.stackless.com/">Stackless</a> , <a class="reference external" href="http://cython.org/">Cython</a> .</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>是的，我们有 <a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a> ，我们有 <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip</a> ， 不过这些都是包管理器，都是装好特定的Python实现之后的事情。 Python实现本身还不需要包管理器来管理。 Python 的版本问题基本上也只需要 <a class="reference external" href="http://docs.python.org/release/3.0.1/library/2to3.html">2to3.py</a> 和 <a class="reference external" href="http://www.startcodon.com/wordpress/?cat=8">3to2.py</a> 这样的轻量级转换器就可以了，你不需要为了安装多个软件而在硬盘里留下多个不同版本的 Python 。 如果为了引用的稳定性，你可以用 <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> ，不过这又是另一回事情了。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Yes, we have <a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a> and <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip</a> , but all these are package manager, running in a perticular Python implementation. Python implementation itself don't need a manager. Version issue of Python largely have been solved by lightweight converters such as <a class="reference external" href="http://docs.python.org/release/3.0.1/library/2to3.html">2to3.py</a> and <a class="reference external" href="http://www.startcodon.com/wordpress/?cat=8">3to2.py</a> , you don't need to store multiple implementations of Python in your disk for different packages. Yes you can use  <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> if you need to preserve stablility but this is another story.</td></tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="id5">
-<h2>那么就 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 吧</h2>
-<p>对我而言， <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 相比于 <a class="reference external" href="http://octopress.org/">Octopress</a> 有几个好处：</p>
+<div class="section" id="let-it-be-pelican">
+<h2>Let it be <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a></h2>
+<p>For my own use, <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> offers me some advantages over <a class="reference external" href="http://octopress.org/">Octopress</a>:</p>
 <blockquote>
 <ol class="arabic simple">
-<li>纯 Python 实现。 这意味着我可以换用任何 Python 解释器而不必担心兼容性问题。比如我就换成了 PyPy_。</li>
-<li>多语言支持。这个似乎大部分人不需要…… 我是想尽量把一篇博客写成三种语言作为锻炼吧。</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> 。这样我就可以用 <a class="reference external" href="http://webpages.charter.net/edreamleo/front.html">Leo</a> 的 &#64;auto-rst 直接写 ReST了。简单方便快捷有效。</li>
+<li>Implemented in <strong>pure Python</strong>. This means that I can use different implementation of Python other than CPython easily. I use <a class="reference external" href="http://pypy.org/">PyPy</a> myself.</li>
+<li>Translation of multi-languages. The original author of <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> is a France. This is unnecessory for most people, but I will post my blog mainly in three languages: English, Japanese and Chinese.</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> . So that I can use the &#64;auto-rst feature of <a class="reference external" href="http://webpages.charter.net/edreamleo/front.html">Leo</a> . And also I don't need to switch between my blog and documentation of my projects.</li>
 </ol>
 </blockquote>
-<p>不过似乎 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 的关注度不如 <a class="reference external" href="http://octopress.org/">Octopress</a> 那么高，现在一些部分还有细微的问题：</p>
+<p>But it seems that <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> was less contributed than <a class="reference external" href="http://octopress.org/">Octopress</a> . Some minor issues remains in latest version:</p>
 <blockquote>
 <ol class="arabic simple">
-<li>pelican-import 从 WordPress 导入的时候对中文、日文的支持似乎很成问题。</li>
-<li>日期格式、时区、和多语言功能的结合度还不够。</li>
-<li>模板还不够丰富。</li>
-<li>插件也不够多……</li>
+<li>Support of pelican-import from WordPress for Chinese and Japanese articles are buggy.</li>
+<li>Datetime format, timezone, and locale support for multi-language blogs are not so natural. <strong>I will work on this in these days</strong></li>
+<li>There are not so many templates compared to <a class="reference external" href="http://octopress.org/">Octopress</a> .</li>
+<li>And less plugins .</li>
 </ol>
 </blockquote>
-<p>希望这么优秀的工具能够受到更多关注，以上这些问题都是增加关注度之后很快就能解决的问题。</p>
+<p>I hope more people from Python community can contribute to this excellent project, then all these issues will be fixed soon.</p>
 </div>
-<div class="section" id="settings-py">
-<h2>我的设置 settings.py</h2>
-<p>安装 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 很容易，一句话就够了：</p>
+<div class="section" id="my-settings">
+<h2>My settings</h2>
+<p>To install <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> is simple:</p>
 <div class="highlight"><pre><span class="gp">$</span> pip install pelican
 </pre></div>
-<p>然后把文章写成ReST的格式，放在`pages`文件夹里面。(重新)生成只要：</p>
+<p>Write posts in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> , with <tt class="docutils literal">rst</tt> extensions, and put them in <tt class="docutils literal">pages</tt> folder. (Re)Build all pages is simply:</p>
 <div class="highlight"><pre><span class="gp">$</span> pelican -s settings.py
 </pre></div>
-<p>上传到 Github:</p>
+<p>Push to Github:</p>
 <div class="highlight"><pre><span class="gp">$</span> git commit -am <span class="s2">&quot;Commit message&quot;</span>
 <span class="gp">$</span> git push
 </pre></div>
-<p>就这么简单。附上我的配置文件：</p>
+<p>And following is my <tt class="docutils literal">settings.py</tt>:</p>
 <div class="highlight"><pre><span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
 <span class="n">DATE_FORMATS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">&#39;en&#39;</span><span class="p">:</span><span class="s">&#39;%a, </span><span class="si">%d</span><span class="s"> %b %Y&#39;</span><span class="p">,</span>
