@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/all-en.atom.xml" rel="self"></link><id>http://farseerfc.github.com</id><updated>2012-02-24T00:00:00+09:00</updated><entry><title>Give a try to Pelican</title><link href="http://farseerfc.github.com/try-pelican-en.html" rel="alternate"></link><updated>2012-02-24T00:00:00+09:00</updated><author><name>Jiachen Yang</name></author><id>http://farseerfc.github.com/try-pelican-en.html</id><summary type="html">&lt;p&gt;It seems that in one night
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/all-en.atom.xml" rel="self"></link><id>http://farseerfc.github.com</id><updated>2012-02-24T17:33:00+09:00</updated><entry><title>Give a try to Pelican</title><link href="http://farseerfc.github.com/try-pelican-en.html" rel="alternate"></link><updated>2012-02-24T17:33:00+09:00</updated><author><name>Jiachen Yang</name></author><id>http://farseerfc.github.com/try-pelican-en.html</id><summary type="html">&lt;p&gt;It seems in one night
 &lt;a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/"&gt;all&lt;/a&gt;
 &lt;a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/"&gt;geeks&lt;/a&gt;
 have
@@ -8,11 +8,11 @@ have
 &lt;a class="reference external" href="http://pages.github.com/#user__organization_pages"&gt;Github User Page&lt;/a&gt;
 and &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; Blog.
 Like everyone posted in their blogs, Static Blog is indeed more convenient than traditional
-Blog Systems such as WordPress. I have been wanting my own &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; since than.&lt;/p&gt;
+Blog systems such as WordPress. I have been wanting my own &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; since than.&lt;/p&gt;
 &lt;div class="section" id="but-it-seems-that-octopress-isn-t-for-me"&gt;
 &lt;h2&gt;But it seems that &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; isn't for me&lt;/h2&gt;
-&lt;p&gt;At first I was confused  by &lt;a class="reference external" href="http://octopress.org/docs/setup/"&gt;Setup of Octopres&lt;/a&gt; .  What is this &lt;a class="reference external" href="http://beginrescueend.com/"&gt;RVM&lt;/a&gt; thing ？And what is that &lt;a class="reference external" href="https://github.com/sstephenson/rbenv"&gt;rbenv&lt;/a&gt; thing？
-It seems that the high pace of Ruby community has beyond my imagination to a degree that they need a distribution manager to ensure the compebility of different versions of Ruby. Althrough the same compatibility 虽然同样的兼容性问题在 Python 社区也有 &lt;a class="footnote-reference" href="#id3" id="id1"&gt;[1]&lt;/a&gt; ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 &lt;a class="footnote-reference" href="#id4" id="id2"&gt;[2]&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;At first I was confused  by &lt;a class="reference external" href="http://octopress.org/docs/setup/"&gt;Setup Steps of Octopress&lt;/a&gt; .  What is this &lt;a class="reference external" href="http://beginrescueend.com/"&gt;RVM&lt;/a&gt; thing? And what is that &lt;a class="reference external" href="https://github.com/sstephenson/rbenv"&gt;rbenv&lt;/a&gt; thing?
+It seems  the high pace of Ruby community has beyond my imagination to a degree that they need a version manager to ensure the compatibility of different versions of Ruby. Althrough the same compatibility issue also troubles Python community &lt;a class="footnote-reference" href="#id3" id="id1"&gt;[1]&lt;/a&gt; , but at least Python don't need a version manager (yet) to control this mass &lt;a class="footnote-reference" href="#id4" id="id2"&gt;[2]&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 &lt;a class="reference external" href="http://beginrescueend.com/"&gt;RVM&lt;/a&gt; 还是 &lt;a class="reference external" href="https://github.com/sstephenson/rbenv"&gt;rbenv&lt;/a&gt; 似乎都只支持 Unix/Linux/MacOSX 。 身为极客就注定不能用 Windows 么？（或许是的……）。&lt;/p&gt;
 &lt;p&gt;剩下的问题就是 Ruby 和 Python 两大阵营的对立问题了。我不熟悉 &lt;a class="reference external" href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; ， 相对来说比较喜欢 &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; 。 似乎无论哪边都要
 依赖 &lt;a class="reference external" href="http://pygments.org/"&gt;Pygments&lt;/a&gt; 作为代码着色器，那么其实 Rubyist 也至少需要安装 Python 。 我倾向于不依赖任何 Ruby 组件，最好没有 C 扩展
@@ -102,4 +102,4 @@ It seems that the high pace of Ruby community has beyond my imagination to a deg
 &lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pages&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</summary></entry></feed>
+</summary><category term="python"></category><category term="pelican"></category></entry></feed>
