@@ -141,16 +141,19 @@ language, and the design of its homepage is too fashion to be used as blog. Fina
 <span class="gp">$</span> git push
 </pre></div>
 <p>And following is my <tt class="docutils literal">settings.py</tt>:</p>
-<div class="highlight"><pre><span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
+<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
+
 <span class="n">DATE_FORMATS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;en&#39;</span><span class="p">:</span><span class="s">&#39;%a, </span><span class="si">%d</span><span class="s"> %b %Y&#39;</span><span class="p">,</span>
-    <span class="s">&#39;zh&#39;</span><span class="p">:</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">, %a&#39;</span><span class="p">,</span>
-    <span class="s">&#39;jp&#39;</span><span class="p">:</span><span class="s">&#39;%Y/%m/</span><span class="si">%d</span><span class="s"> (%a)&#39;</span><span class="p">,</span>
+    <span class="s">&#39;en&#39;</span><span class="p">:(</span><span class="s">&#39;usa&#39;</span><span class="p">,</span><span class="s">&#39;%a, </span><span class="si">%d</span><span class="s"> %b %Y&#39;</span><span class="p">),</span>
+    <span class="s">&#39;zh&#39;</span><span class="p">:(</span><span class="s">&#39;chs&#39;</span><span class="p">,</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">, %a&#39;</span><span class="p">),</span>
+    <span class="s">&#39;jp&#39;</span><span class="p">:(</span><span class="s">&#39;jpn&#39;</span><span class="p">,</span><span class="s">&#39;%Y/%m/</span><span class="si">%d</span><span class="s"> (%a)&#39;</span><span class="p">),</span>
 <span class="p">}</span>
 <span class="c"># windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx</span>
-<span class="n">LOCALE</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;usa&#39;</span><span class="p">,</span> <span class="s">&#39;chn&#39;</span><span class="p">,</span> <span class="s">&#39;jpn&#39;</span><span class="p">,</span>        <span class="c"># windows</span>
+<span class="n">LOCALE</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;usa&#39;</span><span class="p">,</span> <span class="s">&#39;chs&#39;</span><span class="p">,</span> <span class="s">&#39;jpn&#39;</span><span class="p">,</span>        <span class="c"># windows</span>
           <span class="s">&#39;en_US&#39;</span><span class="p">,</span> <span class="s">&#39;zh_CN&#39;</span><span class="p">,</span> <span class="s">&#39;ja_JP&#39;</span><span class="p">]</span>  <span class="c"># Unix/Linux</span>
-<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;en&#39;</span>
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;zh&#39;</span>
 
 <span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;Farseerfc Blog&#39;</span>
 <span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Jiachen Yang&#39;</span>
@@ -175,7 +178,7 @@ language, and the design of its homepage is too fashion to be used as blog. Fina
 
 <span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span><span class="s">&#39;Others&#39;</span>
 <span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span>
-<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;pages&#39;</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;posts&#39;</span>
 </pre></div>
 </div>
 
