@@ -154,10 +154,9 @@ Translations:
 </pre></div>
 <p>计算候选重载函数集合。</p>
 <p>第一步，对所有 <tt class="docutils literal">f</tt> 模板推断实参。根据函数模板参数推断规则：</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><tt class="docutils literal">T</tt> 类型的参数，可以用于推断 <tt class="docutils literal">T</tt> 。</dd>
-</dl>
+<pre class="literal-block">
+带有 ``T`` 类型的参数，可以用于推断 ``T`` 。
+</pre>
 <p>于是 <tt class="docutils literal">B <span class="pre">-&gt;</span> T</tt> 被推断出来了。</p>
 <p>第二步，模板特化匹配。</p>
 <p>这里 <tt class="docutils literal">B</tt> 不是 <tt class="docutils literal">A</tt> ，所以不能用 <tt class="docutils literal">f&lt;A&gt;</tt> 特化，只能用 <tt class="docutils literal">f&lt;T&gt;</tt> 模板。</p>

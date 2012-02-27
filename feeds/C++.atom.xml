@@ -178,10 +178,9 @@ Parameter with type ``T`` can be used to infer ``T`` 。
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;计算候选重载函数集合。&lt;/p&gt;
 &lt;p&gt;第一步，对所有 &lt;tt class="docutils literal"&gt;f&lt;/tt&gt; 模板推断实参。根据函数模板参数推断规则：&lt;/p&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;::&lt;/dt&gt;
-&lt;dd&gt;&lt;tt class="docutils literal"&gt;T&lt;/tt&gt; 类型的参数，可以用于推断 &lt;tt class="docutils literal"&gt;T&lt;/tt&gt; 。&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;pre class="literal-block"&gt;
+带有 ``T`` 类型的参数，可以用于推断 ``T`` 。
+&lt;/pre&gt;
 &lt;p&gt;于是 &lt;tt class="docutils literal"&gt;B &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; T&lt;/tt&gt; 被推断出来了。&lt;/p&gt;
 &lt;p&gt;第二步，模板特化匹配。&lt;/p&gt;
 &lt;p&gt;这里 &lt;tt class="docutils literal"&gt;B&lt;/tt&gt; 不是 &lt;tt class="docutils literal"&gt;A&lt;/tt&gt; ，所以不能用 &lt;tt class="docutils literal"&gt;f&amp;lt;A&amp;gt;&lt;/tt&gt; 特化，只能用 &lt;tt class="docutils literal"&gt;f&amp;lt;T&amp;gt;&lt;/tt&gt; 模板。&lt;/p&gt;
