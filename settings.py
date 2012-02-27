@@ -5,8 +5,8 @@ TIMEZONE = 'Asia/Tokyo'
 
 DATE_FORMATS = {
     'en':('usa',u'%a, %d %b %Y'),
-    'zh':('chs',u'%x'),
-    'jp':('jpn',u'%x'),
+    'zh':('chs',u'%Y-%m-%d'),
+    'jp':('jpn',u'%Y/%m/%d(%a)'),
 }
 # windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx
 LOCALE = ['usa', 'chs', 'jpn',        # windows
@@ -32,7 +32,7 @@ SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
 TWITTER_USERNAME = 'farseerfc'
 
 THEME='notmyidea'
-CSS_FILE = "wide.css"
+#CSS_FILE = "wide.css"
 
 DEFAULT_CATEGORY ='Others'
 OUTPUT_PATH = '.'

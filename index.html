@@ -3,7 +3,7 @@
 <head>
         <title>Farseerfc Blog</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="./theme/css/wide.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
         <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
         
 
@@ -35,6 +35,8 @@
                 
                 
                 
+                    <li ><a href="./category/C.html">C</a></li>
+                
                     <li ><a href="./category/python.html">python</a></li>
                 
                 </ul></nav>
@@ -47,10 +49,151 @@
         
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="./try-pelican.html">尝试一下 Pelican</a></h1> 
+                    <h1 class="entry-title"><a href="./discuss-cpp-template-downcast.html">关于C++模板的类型转换的讨论</a></h1> 
                     <footer class="post-info">
+        <abbr class="published" title="2012-02-26T05:54:57">
+                2012-02-26
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
+        </address>
+        
+<p>In <a href="./category/C.html">C</a>. </p>
+<p>tags: <a href="./tag/C++.html">C++</a><a href="./tag/template.html">template</a></p>
+
+
+Translations: 
+    
+        <a href="./discuss-cpp-template-downcast-en.html">en</a>
+    
+
+</footer><!-- /.post-info --><p>这两天在饮水思源的C板，关于C++模板的类型转换的一个讨论，后面是我的解答。</p>
+<div class="section" id="id1">
+<h2>讨论地址</h2>
+<p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
+</div>
+<div class="section" id="id2">
+<h2>原问题</h2>
+<p>今天在书上看到模板演绎的时候可以允许cast-down，于是我写了个东西：</p>
+<div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">traits</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="k">struct</span> <span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">*</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="kt">void</span> <span class="n">f</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">*</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BB</span> <span class="p">{};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">DD</span> <span class="o">:</span> <span class="k">public</span> <span class="n">BB</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">ff</span><span class="p">(</span><span class="n">BB</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span> <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
+    <span class="c1">//f(b);</span>
+    <span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>奇怪的是重载决议的时候，``f``的情况下它就不让我特化的``f&lt;A&gt;``进来。</p>
+<p>但是在``ff``的情况下，``ff&lt;BB&lt;long&gt;&gt;``却进来了。</p>
+<p>在VC10和GCC3.4下测试</p>
+</div>
+<div class="section" id="id3">
+<h2>我的解答</h2>
+<p>我们来设身处地地作为编译器，看一遍到底发生了什么。</p>
+<p>约定符号 <tt class="docutils literal">#</tt> : <tt class="docutils literal">A#B</tt> 是把 <tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">A&lt;T&gt;</tt> 的参数 <tt class="docutils literal">T</tt> 之后实例化得到的结果。</p>
+<div class="section" id="ff">
+<h3>首先看ff的情况。</h3>
+<div class="highlight"><pre><span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
+</pre></div>
+<p>处理到这句的时候，编译器看到了 <tt class="docutils literal">DD&lt;long&gt;</tt> 的实例化，于是去实例化 <tt class="docutils literal">DD#long</tt> ，继而实例
+化了 <tt class="docutils literal">BB#long</tt> 。</p>
+<div class="highlight"><pre><span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+</pre></div>
+<p>这句，首先计算重载函数集合。</p>
+<p>第一步，需要从参数 <tt class="docutils literal">DD#long <span class="pre">-&gt;</span> BB&lt;T&gt;</tt> 推断 <tt class="docutils literal">ff&lt;T&gt;</tt> 的 <tt class="docutils literal">T</tt> 。根据函数模板参数推断规则：</p>
+<pre class="literal-block">
+``class_template_name&lt;T&gt;`` 类型的参数，可以用于推断 ``T`` 。
+</pre>
+<p>于是编译器推断 <tt class="docutils literal">T</tt> 为 <tt class="docutils literal">long</tt> 。这里就算不是 <tt class="docutils literal">BB</tt> 而是完全无关的 <tt class="docutils literal">CC</tt> 都可以推断成功，只要 <tt class="docutils literal">CC</tt> 也
+是一个 <tt class="docutils literal">CC&lt;T&gt;</tt> 形式的模板。</p>
+<p>第二步，模板特化匹配。因为只有一个模板，所以匹配了最泛化的 <tt class="docutils literal">ff&lt;T&gt;</tt> 。</p>
+<p>第三步，模板实例化。</p>
+<p>推断了 <tt class="docutils literal">long <span class="pre">-&gt;</span> T</tt> 之后，编译器实例化 <tt class="docutils literal">ff#long</tt> 。</p>
+<p>重载函数集合： <tt class="docutils literal">{ff#long}</tt></p>
+<p>然后重载抉择找到唯一的可匹配的实例 <tt class="docutils literal">ff#long</tt> ，检查实际参数 <tt class="docutils literal">DD#long</tt> 可以隐式转换到
+形式参数 <tt class="docutils literal">BB#long</tt> ，从而生成了这次函数调用。</p>
+</div>
+<div class="section" id="f">
+<h3>再来看f的情况。</h3>
+<div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+<p>计算候选重载函数集合。</p>
+<p>第一步，对所有 <tt class="docutils literal">f</tt> 模板推断实参。根据函数模板参数推断规则：</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><tt class="docutils literal">T</tt> 类型的参数，可以用于推断 <tt class="docutils literal">T</tt> 。</dd>
+</dl>
+<p>于是 <tt class="docutils literal">B <span class="pre">-&gt;</span> T</tt> 被推断出来了。</p>
+<p>第二步，模板特化匹配。</p>
+<p>这里 <tt class="docutils literal">B</tt> 不是 <tt class="docutils literal">A</tt> ，所以不能用 <tt class="docutils literal">f&lt;A&gt;</tt> 特化，只能用 <tt class="docutils literal">f&lt;T&gt;</tt> 模板。</p>
+<p>第三步，模板实例化。</p>
+<p><tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">f&lt;T&gt;</tt> 实例化成 <tt class="docutils literal">f#B</tt> 的过程中，实例化 <tt class="docutils literal">traits#B</tt> 。</p>
+<p>由于没有针对 <tt class="docutils literal">B</tt> 的特化，所以用 <tt class="docutils literal">traits&lt;T&gt;</tt> 模板， <tt class="docutils literal"><span class="pre">traits#B::value=false</span></tt> ，进而 <tt class="docutils literal">enable_if#false</tt> 没有 <tt class="docutils literal">type</tt> ，出错。</p>
+<p>唯一的模板匹配出错，重载函数集合为空，SFINAE原则不能找到合适的匹配，于是报错。</p>
+</div>
+</div>
+<p>There are <a href="./discuss-cpp-template-downcast.html#disqus_thread">comments</a>.</p>
+                </article>
+                
+            </aside><!-- /#featured -->
+            
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                        <ol id="posts-list" class="hfeed">
+            
+        
+        
+        
+        
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href="./try-pelican.html" rel="bookmark" title="Permalink to 尝试一下 Pelican">尝试一下 Pelican</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
         <abbr class="published" title="2012-02-24T17:33:00">
-                2012/2/24
+                2012-02-24
         </abbr>
 
         
@@ -69,7 +212,8 @@ Translations:
         <a href="./try-pelican-jp.html">jp</a>
     
 
-</footer><!-- /.post-info --><p>似乎一夜之间所有的
+</footer><!-- /.post-info -->
+                <p>似乎一夜之间所有的
 <a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">极客们</a>
 <a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">都</a>
 <a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">有了</a>
@@ -82,110 +226,20 @@ Translations:
 <p>一上手就被 <a class="reference external" href="http://octopress.org/docs/setup/">Octopress的搭建步骤</a> 烦到了。 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 是什么？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 又是什么？
 看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
 虽然同样的兼容性问题在 Python 社区也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
-<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux/MacOSX 。 身为极客就注定不能用 Windows 么？（或许是的……）。</p>
-<p>剩下的问题就是 Ruby 和 Python 两大阵营的对立问题了。我不熟悉 <a class="reference external" href="http://daringfireball.net/projects/markdown/">Markdown</a> ， 相对来说比较喜欢 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> 。 似乎无论哪边都要
-依赖 <a class="reference external" href="http://pygments.org/">Pygments</a> 作为代码着色器，那么其实 Rubyist 也至少需要安装 Python 。 我倾向于不依赖任何 Ruby 组件，最好没有 C 扩展
-的纯 Python 实现。</p>
-<p>于是我开始在 Github 上找 Python 的静态博客引擎。 <a class="reference external" href="http://flask.pocoo.org/">Flask</a> 的作者 <a class="reference external" href="https://github.com/mitsuhiko">mitsuhiko</a> 写的 <a class="reference external" href="https://github.com/mitsuhiko/rstblog">rstblog</a> 看起来不错，不过似乎没有多少人在用。 <a class="reference external" href="http://ringce.com/hyde">Hyde</a> 似乎很完善，不过默认的标记语言是 MarkDown ， 又依赖于几个 Ruby 组建，而且官方网站的设计实在太前卫。 最终我看到了 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 。</p>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[1]</a></td><td>比如 Python 2.x 与 3.x 之间看似难以跨越的鸿沟，以及 <a class="reference external" href="http://pypy.org/">PyPy</a> 、 <a class="reference external" href="http://python.org/">CPython</a> 、 <a class="reference external" href="http://www.stackless.com/">Stackless</a> 、 <a class="reference external" href="http://cython.org/">Cython</a> 等各个实现之间的微妙差别。</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[2]</a></td><td>是的，我们有 <a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a> ，我们有 <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip</a> ， 不过这些都是包管理器，都是装好特定的Python实现之后的事情。 Python实现本身还不需要包管理器来管理。 Python 的版本问题基本上也只需要 <a class="reference external" href="http://docs.python.org/release/3.0.1/library/2to3.html">2to3.py</a> 和 <a class="reference external" href="http://www.startcodon.com/wordpress/?cat=8">3to2.py</a> 这样的轻量级转换器就可以了，你不需要为了安装多个软件而在硬盘里留下多个不同版本的 Python 。 如果为了引用的稳定性，你可以用 <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> ，不过这又是另一回事情了。</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="id12">
-<h2>那么就 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 吧</h2>
-<p>对我而言， <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 相比于 <a class="reference external" href="http://octopress.org/">Octopress</a> 有几个好处：</p>
-<blockquote>
-<ol class="arabic simple">
-<li>纯 Python 实现。 这意味着我可以换用任何 Python 解释器而不必担心兼容性问题。比如我就换成了 PyPy_。</li>
-<li>多语言支持。因为 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 的作者似乎是个法国人。不过这个似乎大部分人不需要…… 我是想尽量把一篇博客写成三种语言作为锻炼吧。</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> 。这样我就可以用 <a class="reference external" href="http://webpages.charter.net/edreamleo/front.html">Leo</a> 的 &#64;auto-rst 直接写 ReST了。简单方便快捷有效。</li>
-</ol>
-</blockquote>
-<p>不过似乎 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 的关注度不如 <a class="reference external" href="http://octopress.org/">Octopress</a> 那么高，现在一些部分还有细微的问题：</p>
-<blockquote>
-<ol class="arabic simple">
-<li>pelican-import 从 WordPress 导入的时候对中文、日文的支持似乎很成问题。</li>
-<li>日期格式、时区、字符集、和多语言功能的结合度还不够。  <strong>我在尝试改善它。</strong></li>
-<li>模板还不够丰富。</li>
-<li>插件也不够多……</li>
-</ol>
-</blockquote>
-<p>希望这么优秀的工具能够受到更多关注，以上这些问题都是增加关注度之后很快就能解决的问题。</p>
-</div>
-<div class="section" id="settings-py">
-<h2>我的设置 settings.py</h2>
-<p>安装 <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> 很容易，一句话就够了：</p>
-<div class="highlight"><pre><span class="gp">$</span> pip install pelican
-</pre></div>
-<p>然后把文章写成ReST的格式，放在`pages`文件夹里面。(重新)生成只要：</p>
-<div class="highlight"><pre><span class="gp">$</span> pelican -s settings.py
-</pre></div>
-<p>上传到 Github:</p>
-<div class="highlight"><pre><span class="gp">$</span> git commit -am <span class="s2">&quot;Commit message&quot;</span>
-<span class="gp">$</span> git push
-</pre></div>
-<p>就这么简单。附上我的配置文件：</p>
-<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
-
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
-
-<span class="n">DATE_FORMATS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;en&#39;</span><span class="p">:(</span><span class="s">&#39;usa&#39;</span><span class="p">,</span><span class="s">&#39;%a, </span><span class="si">%d</span><span class="s"> %b %Y&#39;</span><span class="p">),</span>
-    <span class="s">&#39;zh&#39;</span><span class="p">:(</span><span class="s">&#39;chs&#39;</span><span class="p">,</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">, %a&#39;</span><span class="p">),</span>
-    <span class="s">&#39;jp&#39;</span><span class="p">:(</span><span class="s">&#39;jpn&#39;</span><span class="p">,</span><span class="s">&#39;%Y/%m/</span><span class="si">%d</span><span class="s"> (%a)&#39;</span><span class="p">),</span>
-<span class="p">}</span>
-<span class="c"># windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx</span>
-<span class="n">LOCALE</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;usa&#39;</span><span class="p">,</span> <span class="s">&#39;chs&#39;</span><span class="p">,</span> <span class="s">&#39;jpn&#39;</span><span class="p">,</span>        <span class="c"># windows</span>
-          <span class="s">&#39;en_US&#39;</span><span class="p">,</span> <span class="s">&#39;zh_CN&#39;</span><span class="p">,</span> <span class="s">&#39;ja_JP&#39;</span><span class="p">]</span>  <span class="c"># Unix/Linux</span>
-<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;zh&#39;</span>
-
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;Farseerfc Blog&#39;</span>
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Jiachen Yang&#39;</span>
-
-<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&#39;farseerfcgithub&#39;</span>
-<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://farseerfc.github.com&#39;</span>
-<span class="n">TAG_FEED</span>  <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
-
-<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;twitter&#39;</span><span class="p">,</span> <span class="s">&#39;http://twitter.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;github&#39;</span><span class="p">,</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;facebook&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.facebook.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;weibo&#39;</span><span class="p">,</span> <span class="s">&#39;http://weibo.com/farseerfc&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;renren&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.renren.com/farseer&#39;</span><span class="p">),</span>
-          <span class="p">)</span>
-
-
-<span class="n">TWITTER_USERNAME</span> <span class="o">=</span> <span class="s">&#39;farseerfc&#39;</span>
-
-<span class="n">THEME</span><span class="o">=</span><span class="s">&#39;notmyidea&#39;</span>
-<span class="n">CSS_FILE</span> <span class="o">=</span> <span class="s">&quot;wide.css&quot;</span>
-
-<span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span><span class="s">&#39;Others&#39;</span>
-<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span>
-<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;posts&#39;</span>
-</pre></div>
-</div>
-<p>There are <a href="./try-pelican.html#disqus_thread">comments</a>.</p>
-                </article>
-                
-                    
-                
-            </aside><!-- /#featured -->
+<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div>
+                <a class="readmore" href="./try-pelican.html">read more</a>
+                <p>There are <a href="./try-pelican.html#disqus_thread">comments</a>.</p>
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
             
-        
-        
         
 
     
+    </ol><!-- /#posts-list -->
+    </section><!-- /#content -->
+
 
 
         <section id="extras" class="body">
