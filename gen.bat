@@ -1,4 +1,5 @@
 pelican -s settings.py
-git commit -am "Regenerating posts"
+git add .
+git commit -m "Regenerating posts"
 git push
 
