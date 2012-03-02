@@ -33,11 +33,12 @@ SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
 TWITTER_USERNAME = 'farseerfc'
 
 THEME='bootstrap'
+#THEME='notmyidea'
 #CSS_FILE = "wide.css"
 
 DEFAULT_CATEGORY ='Others'
 OUTPUT_PATH = '.'
 PATH = 'posts'
 
-
+#PDF_GENERATOR = True
 
