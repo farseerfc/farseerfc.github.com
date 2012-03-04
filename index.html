@@ -39,6 +39,8 @@
 				
 					<li ><a href="./category/python.html">python</a></li>
 				
+					<li ><a href="./category/renren.html">renren</a></li>
+				
 			</ul>
 			<p class="pull-right"><a href="./archives.html">[archives]</a> <a href="./tags.html">[tags]</a></p>
 		</div>
@@ -167,6 +169,99 @@ translations:
 看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
 虽然同样的兼容性问题在 Python 社区也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
 <p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div> <a class="btn primary xsmall" href="./try-pelican.html">more…</a>
+	</div>
+</div>	
+
+<div class='article'>
+	<h2>“…if we do this work … and the result is that Linux works great …” --Bill Gates</h2>
+	<div class="well small">Permalink: <a class="more" href="./if-we-do-this-work.html">2011-03-14 20:34:00</a>
+by <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
+in <a href="./category/renren.html">renren</a>
+tags: <a href="./tag/microsoft.html">microsoft</a> <a href="./tag/linux.html">linux</a> <a href="./tag/acpi.html">acpi</a> 
+
+translations: 
+    
+    <a href="./if-we-do-this-work-en.html" title="“…if we do this work … and the result is that Linux works great …” --Bill Gates">en</a>
+    
+    <a href="./if-we-do-this-work-jp.html" title="“…if we do this work … and the result is that Linux works great …” --Bill Gates">jp</a>
+    
+</div>
+	<div class="summary"><p>导入自
+<a class="reference external" href="http://blog.renren.com/blog/230263946/716517729">renren</a></p>
+<p>From: Bill Gates</p>
+<p>’-- Sent: Sunday, January 24, 1999 8:41 AM</p>
+<p>Jeff Westorinon; Ben Fathi ;</p>
+<p>TO: Carl Stork (Exchange); Nathan Myhrvofd; Eric Rudder</p>
+<p>Subject: ACPI extensions</p>
+<p>One thing I find myself wondering about is whether we shouldn’t try and
+make the &quot;ACPI&quot; extensions somehow Windows specific.</p>
+<p>It ...</p> <a class="btn primary xsmall" href="./if-we-do-this-work.html">more…</a>
+	</div>
+</div>	
+
+<div class='article'>
+	<h2>写程序让CPU占用率保持正弦函数</h2>
+	<div class="well small">Permalink: <a class="more" href="./sine-cpu.html">2008-06-02 23:27:00</a>
+by <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
+in <a href="./category/renren.html">renren</a>
+tags: <a href="./tag/java.html">java</a> <a href="./tag/microsoft.html">microsoft</a> 
+</div>
+	<div class="summary"><p>导入自
+<a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a></p>
+<p>如题，写程序，让Windows的任务管理器中的性能监视器呈现正弦曲线。</p>
+<div class="figure align-center">
+<img alt="" src="http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg" />
+</div>
+<div class="figure align-center">
+<img alt="" src="http://fm541.img.xiaonei.com/pic001/20080602/23/14/large_9935o67.jpg" />
+</div>
+<p>潜心钻研良久，得代码：（java）</p>
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sincpu</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="n">work</span><span class="o">(</span><span class="n">calcNextSleep</span><span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">cycle</span><span class="o">));</span>
+            <span class="n">sleep</span><span class="o">(</span><span class="n">tick</span> <span class="o">-</span> <span class="n">calcNextSleep</span><span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">cycle</span><span class="o">));</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">calcNextSleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">i</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">Math ...</span></pre></div> <a class="btn primary xsmall" href="./sine-cpu.html">more…</a>
+	</div>
+</div>	
+
+<div class='article'>
+	<h2>关于神创论的一些见解</h2>
+	<div class="well small">Permalink: <a class="more" href="./some-thought-on-creationism.html">2008-05-12 11:16:00</a>
+by <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
+in <a href="./category/renren.html">renren</a>
+tags: <a href="./tag/creationism.html">creationism</a> 
+</div>
+	<div class="summary"><p>导入自
+<a class="reference external" href="http://blog.renren.com/blog/230263946/292274803">renren</a></p>
+<p>看到陈骉同学很有感想的一篇神创论与命运日志，觉得近日很久没有看到这样的评论了。想说几句自己的观点。</p>
+<p>首先我认为，神创论与宿命论没有多少关联，甚至进化论者相较于神创论者更容易接受宿命论的观点。因为神创论主张意志的存在，人所具有的个体意志与神的意志，因此在神创论者的眼中事件的结果是可以通过意志来改变的，亦即如果我从物理楼11楼跳下，那么我就可以改变自己死亡时间的宿命。上帝的意志同样可以左右事件的结果，也就是所谓的宿命不复存在。而进化论者不承认意志独立于物质世界的存在，你我的思考、行为，都受到物理学法则诸如量子力学的约束，这就引出了北大物理系教授的那句“宇宙中的一切都是可以计算的”，亦即宿命论。如我我选择现在从物理楼上跳下，我这一行为并不是处于个人的独立意志，乃是想证明这一点，亦即我跳楼这一举动是有其背后的动机与原因的，就如同计算机的输入必然导致了输出，宿命的必然终结于此。</p>
+<p>其次，关于事件的复杂度所导致的随机化，在大量混沌随机中也存在着如统计学和随机分形学这样的规律，并不是否认宿命的充分理由。</p>
+<p>关于神创论的合理性问题。我认为是否相信神的存在只是一个boolean二值问题，它为true为false本身并不重要，重要的是确定它的取值之后得到的推论与结果。如果否认神的存在，如现代数学这样的完美又何以存在，进化论者的解释是事物最终会向着更好更高级的方向发展，产生现代数学乃至现代科学是发展的必然。而这种论调显然有悖于物理中以热力学第二定律为首的，预言事物会随时间推演愈发混乱的论断。更进一步，甚至整个人类、整个生物系统的存在都是有悖于热力学推论的现象，是某种理论只能以“小概率事件”解释的现象。</p>
+<p>神创论的核心观点之一，是神的唯一存在性 ...</p> <a class="btn primary xsmall" href="./some-thought-on-creationism.html">more…</a>
+	</div>
+</div>	
+
+<div class='article'>
+	<h2>EVA-Komm,susser Tod</h2>
+	<div class="well small">Permalink: <a class="more" href="./EVA-Komm-susser-Tod-en.html">2008-04-10 03:28:00</a>
+by <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
+in <a href="./category/renren.html">renren</a>
+tags: <a href="./tag/music.html">music</a> 
+</div>
+	<div class="summary"><p>Imported from
+<a class="reference external" href="http://blog.renren.com/blog/230263946/282668291">renren</a></p>
+<p>I know, I know I''ve let you down</p>
+<p>I''ve been a fool to myself</p>
+<p>I thought that I could live for no one else</p>
+<p>But now through all the hurt and pain</p>
+<p>It''s time for me to respect</p>
+<p>The ones you love mean more ...</p> <a class="btn primary xsmall" href="./EVA-Komm-susser-Tod-en.html">more…</a>
 	</div>
 </div>	
 

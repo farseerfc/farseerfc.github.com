@@ -275,4 +275,78 @@ language, and the design of its homepage is too fashion to be used as blog. Fina
 &lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;posts&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="python"></category><category term="pelican"></category></entry></feed>
+</summary><category term="python"></category><category term="pelican"></category></entry><entry><title>“…if we do this work … and the result is that Linux works great …” --Bill Gates</title><link href="http://farseerfc.github.com/if-we-do-this-work-en.html" rel="alternate"></link><updated>2011-03-14T20:34:00+09:00</updated><author><name>Jiachen Yang</name></author><id>http://farseerfc.github.com/if-we-do-this-work-en.html</id><summary type="html">&lt;p&gt;Imported from
+&lt;a class="reference external" href="http://blog.renren.com/blog/230263946/716517729"&gt;renren&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From: Bill Gates&lt;/p&gt;
+&lt;p&gt;’-- Sent: Sunday, January 24, 1999 8:41 AM&lt;/p&gt;
+&lt;p&gt;Jeff Westorinon; Ben Fathi ;&lt;/p&gt;
+&lt;p&gt;TO: Carl Stork (Exchange); Nathan Myhrvofd; Eric Rudder&lt;/p&gt;
+&lt;p&gt;Subject: ACPI extensions&lt;/p&gt;
+&lt;p&gt;One thing I find myself wondering about is whether we shouldn’t try and
+make the &amp;quot;ACPI&amp;quot; extensions somehow Windows specific.&lt;/p&gt;
+&lt;p&gt;It seems unfortunate if we do this work and get our partners to do the
+work and the result is that &lt;strong&gt;Linux works great without having to do the work&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Maybe there is no way to avoid this problem but it does bother me.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Maybe we could define the APIs so that they work well with NT and not
+the others even if they are open.&lt;/p&gt;
+&lt;p&gt;Or maybe we could patent something relaled to this.&lt;/p&gt;
+&lt;p&gt;From:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://antitrust.slated.org/www.iowaconsumercase.org/011607/3000/PX03020.pdf"&gt;http://antitrust.slated.org/www.iowaconsumercase.org/011607/3000/PX03020.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If this is the reason that Xen 4.0 is still not fully support ACPI 3.0, then f*ck
+you Bill Gates!&lt;/p&gt;
+</summary><category term="microsoft"></category><category term="linux"></category><category term="acpi"></category></entry><entry><title>EVA-Komm,susser Tod</title><link href="http://farseerfc.github.com/EVA-Komm-susser-Tod-en.html" rel="alternate"></link><updated>2008-04-10T03:28:00+09:00</updated><author><name>Jiachen Yang</name></author><id>http://farseerfc.github.com/EVA-Komm-susser-Tod-en.html</id><summary type="html">&lt;p&gt;Imported from
+&lt;a class="reference external" href="http://blog.renren.com/blog/230263946/282668291"&gt;renren&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I know, I know I''ve let you down&lt;/p&gt;
+&lt;p&gt;I''ve been a fool to myself&lt;/p&gt;
+&lt;p&gt;I thought that I could live for no one else&lt;/p&gt;
+&lt;p&gt;But now through all the hurt and pain&lt;/p&gt;
+&lt;p&gt;It''s time for me to respect&lt;/p&gt;
+&lt;p&gt;The ones you love mean more than anything&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;So with sadness in my heart&lt;/p&gt;
+&lt;p&gt;Feel the best thing I could do&lt;/p&gt;
+&lt;p&gt;It''s end it all&lt;/p&gt;
+&lt;p&gt;And leave forever&lt;/p&gt;
+&lt;p&gt;What''s done is done it feel so bad&lt;/p&gt;
+&lt;p&gt;What once was happy now is sad&lt;/p&gt;
+&lt;p&gt;I''ll never love again&lt;/p&gt;
+&lt;p&gt;My world is ending&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;I wish that I could turn back time&lt;/p&gt;
+&lt;p&gt;Cause now the guilt is all mine&lt;/p&gt;
+&lt;p&gt;Can''t live without the trust from those you love&lt;/p&gt;
+&lt;p&gt;I know we can''t forget the past&lt;/p&gt;
+&lt;p&gt;You can''t forget love and pride&lt;/p&gt;
+&lt;p&gt;Because that it''s killing me inside&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;It all returns to nothing&lt;/p&gt;
+&lt;p&gt;It all comes tumbling down tumbling down tumbling down&lt;/p&gt;
+&lt;p&gt;It all returns to nothing&lt;/p&gt;
+&lt;p&gt;I just keep letting me down letting me down letting me down&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;In my heart of hearts&lt;/p&gt;
+&lt;p&gt;I know I could never love again&lt;/p&gt;
+&lt;p&gt;I''ve lost everything everything&lt;/p&gt;
+&lt;p&gt;Everything that matters to me matters in this world&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;I wish that I could turn back time&lt;/p&gt;
+&lt;p&gt;Cause now the guilt is all mine&lt;/p&gt;
+&lt;p&gt;Can''t live without the trust from those you love&lt;/p&gt;
+&lt;p&gt;I know we can''t forget the past&lt;/p&gt;
+&lt;p&gt;You can''t forget love and pride&lt;/p&gt;
+&lt;p&gt;Because that it''s killing me inside&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;It all returns to nothing&lt;/p&gt;
+&lt;p&gt;It just keeps tumbling down tumbling down tumbling down&lt;/p&gt;
+&lt;p&gt;It all returns to nothing&lt;/p&gt;
+&lt;p&gt;I just keep letting me down letting me down letting me down&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Up up up up up&lt;/p&gt;
+&lt;p&gt;Tumbling down tumbling down tumbling down&lt;/p&gt;
+&lt;p&gt;Up up up up up&lt;/p&gt;
+&lt;p&gt;Letting me down letting me down letting me down&lt;/p&gt;
+&lt;p&gt;Up up up up up&lt;/p&gt;
+&lt;p&gt;Tumbling down tumbling down tumbling down&lt;/p&gt;
+&lt;p&gt;Up up up up up&lt;/p&gt;
+&lt;p&gt;Letting me down letting me down letting me down&lt;/p&gt;
+</summary><category term="music"></category></entry></feed>

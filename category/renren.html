@@ -39,7 +39,7 @@
 				
 					<li ><a href=".././category/python.html">python</a></li>
 				
-					<li ><a href=".././category/renren.html">renren</a></li>
+					<li class="active"><a href=".././category/renren.html">renren</a></li>
 				
 			</ul>
 			<p class="pull-right"><a href=".././archives.html">[archives]</a> <a href=".././tags.html">[tags]</a></p>
@@ -73,64 +73,10 @@
 		</div>
 	  </div>
 	  <div class="content">
-			<div class="page-header"><h1>Farseerfc Blog <small>Jiachen Yang</small></h1></div>
+			<div class="page-header"><h1>Farseerfc Blog <small>renren</small></h1></div>
 			
 
 
-
-<div class='article'>
-	<h2>EVA-Komm,susser Tod</h2>
-	<div class="well small">Permalink: <a class="more" href=".././EVA-Komm-susser-Tod-en.html">2008-04-10 03:28:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/renren.html">renren</a>
-tags: <a href=".././tag/music.html">music</a> 
-</div>
-	<div class="summary"><p>Imported from
-<a class="reference external" href="http://blog.renren.com/blog/230263946/282668291">renren</a></p>
-<p>I know, I know I''ve let you down</p>
-<p>I''ve been a fool to myself</p>
-<p>I thought that I could live for no one else</p>
-<p>But now through all the hurt and pain</p>
-<p>It''s time for me to respect</p>
-<p>The ones you love mean more ...</p> <a class="btn primary xsmall" href=".././EVA-Komm-susser-Tod-en.html">more…</a>
-	</div>
-</div>	
-
-<div class='article'>
-	<h2>关于C++模板的类型转换的讨论</h2>
-	<div class="well small">Permalink: <a class="more" href=".././discuss-cpp-template-downcast.html">2012-02-26 05:54:57</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/C.html">C</a>
-tags: <a href=".././tag/C++.html">C++</a> <a href=".././tag/template.html">template</a> 
-
-translations: 
-    
-    <a href=".././discuss-cpp-template-downcast-en.html" title="Discuss C++ Template Downcast">en</a>
-    
-</div>
-	<div class="summary"><p>这两天在饮水思源的C板，关于C++模板的类型转换的一个讨论，后面是我的解答。</p>
-<div class="section" id="id1">
-<h2>讨论地址</h2>
-<p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
-</div>
-<div class="section" id="id2">
-<h2>原问题</h2>
-<p>今天在书上看到模板演绎的时候可以允许cast-down，于是我写了个东西：</p>
-<div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
-
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="p">};</span>
-<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
-
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">struct ...</span></pre></div></div> <a class="btn primary xsmall" href=".././discuss-cpp-template-downcast.html">more…</a>
-	</div>
-</div>	
 
 <div class='article'>
 	<h2>“…if we do this work … and the result is that Linux works great …” --Bill Gates</h2>
@@ -156,33 +102,6 @@ translations:
 <p>One thing I find myself wondering about is whether we shouldn’t try and
 make the &quot;ACPI&quot; extensions somehow Windows specific.</p>
 <p>It ...</p> <a class="btn primary xsmall" href=".././if-we-do-this-work.html">more…</a>
-	</div>
-</div>	
-
-<div class='article'>
-	<h2>PyRuby</h2>
-	<div class="well small">Permalink: <a class="more" href=".././mix-ruby.html">2012-03-02 23:09:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/python.html">python</a>
-tags: <a href=".././tag/python.html">python</a> <a href=".././tag/ruby.html">ruby</a> 
-
-translations: 
-    
-    <a href=".././mix-ruby-en.html" title="PyRuby">en</a>
-    
-    <a href=".././mix-ruby-jp.html" title="PyRuby">jp</a>
-    
-</div>
-	<div class="summary"><p>今天在GitHub上闲逛的时候看到一个叫做 <a class="reference external" href="https://github.com/danielfm/pyruby">PyRuby</a> 的项目。项目的Readme说得很好：</p>
-<pre class="literal-block">
-PyRuby - Some Ruby for your Python!
-PyRuby is a simple way to leverage the power of Ruby to make your Python code more readable and beautiful.
-
-Usage
-All you have to do is import the ruby module:
-
-import ruby
-From now on you should be able ...</pre> <a class="btn primary xsmall" href=".././mix-ruby.html">more…</a>
 	</div>
 </div>	
 
@@ -235,33 +154,20 @@ tags: <a href=".././tag/creationism.html">creationism</a>
 </div>	
 
 <div class='article'>
-	<h2>尝试一下 Pelican</h2>
-	<div class="well small">Permalink: <a class="more" href=".././try-pelican.html">2012-02-24 17:33:00</a>
+	<h2>EVA-Komm,susser Tod</h2>
+	<div class="well small">Permalink: <a class="more" href=".././EVA-Komm-susser-Tod-en.html">2008-04-10 03:28:00</a>
 by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/python.html">python</a>
-tags: <a href=".././tag/python.html">python</a> <a href=".././tag/pelican.html">pelican</a> 
-
-translations: 
-    
-    <a href=".././try-pelican-en.html" title="Give a try to Pelican">en</a>
-    
-    <a href=".././try-pelican-jp.html" title="Pelicanを試してみた">jp</a>
-    
+in <a href=".././category/renren.html">renren</a>
+tags: <a href=".././tag/music.html">music</a> 
 </div>
-	<div class="summary"><p>似乎一夜之间所有的
-<a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">极客们</a>
-<a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">都</a>
-<a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">有了</a>
-<a class="reference external" href="http://www.yangzhiping.com/tech/octopress.html">自己</a>
-的 <a class="reference external" href="http://pages.github.com/#user__organization_pages">Github主页</a>
-和 <a class="reference external" href="http://octopress.org/">Octopress</a> 博客。就像所有人在他们的博客中指出的，静态博客的确比传统的WordPress方式具有更多优势。 自从看到这些
-我就一直在想着自己搭一个 <a class="reference external" href="http://octopress.org/">Octopress</a> 。</p>
-<div class="section" id="id6">
-<h2>但是似乎 <a class="reference external" href="http://octopress.org/">Octopress</a> 不适合我</h2>
-<p>一上手就被 <a class="reference external" href="http://octopress.org/docs/setup/">Octopress的搭建步骤</a> 烦到了。 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 是什么？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 又是什么？
-看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
-虽然同样的兼容性问题在 Python 社区也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
-<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div> <a class="btn primary xsmall" href=".././try-pelican.html">more…</a>
+	<div class="summary"><p>Imported from
+<a class="reference external" href="http://blog.renren.com/blog/230263946/282668291">renren</a></p>
+<p>I know, I know I''ve let you down</p>
+<p>I''ve been a fool to myself</p>
+<p>I thought that I could live for no one else</p>
+<p>But now through all the hurt and pain</p>
+<p>It''s time for me to respect</p>
+<p>The ones you love mean more ...</p> <a class="btn primary xsmall" href=".././EVA-Komm-susser-Tod-en.html">more…</a>
 	</div>
 </div>	
 
