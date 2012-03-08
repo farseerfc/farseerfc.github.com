@@ -20,7 +20,7 @@
 
 	
 <script type="text/javascript">
-	var disqus_identifier = "sine-cpu.html";
+	var disqus_identifier = "sine-cpu-en.html";
 	(function() {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://farseerfcgithub.disqus.com/embed.js';
@@ -85,27 +85,27 @@
 			
 			
 	<div class='article'>
-		<div class="page-header"><h1>写程序让CPU占用率保持正弦函数</h1></div>
-		<div class="well small">Permalink: <a class="more" href="./sine-cpu.html">2008-06-02 23:27:00</a>
+		<div class="page-header"><h1>Write a program to keep CPU usage as sin funcion</h1></div>
+		<div class="well small">Permalink: <a class="more" href="./sine-cpu-en.html">2008-06-02 23:27:00</a>
 by <a class="url fn" href="./author/Jiachen Yang.html">Jiachen Yang</a>
 in <a href="./category/renren.html">renren</a>
 tags: <a href="./tag/java.html">java</a> <a href="./tag/microsoft.html">microsoft</a> 
 
 translations: 
     
-    <a href="./sine-cpu-en.html" title="Write a program to keep CPU usage as sin funcion">en</a>
+    <a href="./sine-cpu.html" title="写程序让CPU占用率保持正弦函数">zh</a>
     
 </div>
-		<div><p>导入自
-<a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a></p>
-<p>据说是一道微软的面试题。如题，写程序，让Windows的任务管理器中的性能监视器呈现正弦曲线。</p>
+		<div><p>Imported from:
+<a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a>.</p>
+<p>It is said that this is a problem from interview of Microsoft. Write a program, which makes the CPU usage curve in Windows Task Manager shows a Sin function.</p>
 <div class="figure align-center">
 <img alt="" src="http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg" />
 </div>
 <div class="figure align-center">
 <img alt="" src="http://fm541.img.xiaonei.com/pic001/20080602/23/14/large_9935o67.jpg" />
 </div>
-<p>潜心钻研良久，得代码：（java）</p>
+<p>The program below is written in java:</p>
 <div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sincpu</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
@@ -137,7 +137,7 @@ translations:
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
-<p>多核CPU上测试时要注意关掉一个CPU：</p>
+<p>Be careful you need to turn off other cores if you have multi-core CPU.</p>
 <div class="figure align-center">
 <img alt="" src="http://fm411.img.xiaonei.com/pic001/20080602/23/14/large_9946k67.jpg" />
 </div>

@@ -1,15 +1,15 @@
-写程序让CPU占用率保持正弦函数
-==========================================
+Write a program to keep CPU usage as sin funcion
+================================================
 
 :slug: sine-cpu
-:lang: zh
+:lang: en
 :date: 2008-06-02 23:27
 :tags: java, microsoft
 
-导入自
-`renren <http://blog.renren.com/blog/230263946/298871889>`_
+Imported from:
+`renren <http://blog.renren.com/blog/230263946/298871889>`_.
 
-据说是一道微软的面试题。如题，写程序，让Windows的任务管理器中的性能监视器呈现正弦曲线。
+It is said that this is a problem from interview of Microsoft. Write a program, which makes the CPU usage curve in Windows Task Manager shows a Sin function.
 
 .. figure:: http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg
    :align: center
@@ -19,7 +19,7 @@
    :align: center
    :alt: 
 
-潜心钻研良久，得代码：（java）
+The program below is written in java:
 
 .. code-block:: java
 
@@ -54,9 +54,7 @@
         }
     }
 
-
-多核CPU上测试时要注意关掉一个CPU：
-
+Be careful you need to turn off other cores if you have multi-core CPU.
 
 
 .. figure:: http://fm411.img.xiaonei.com/pic001/20080602/23/14/large_9946k67.jpg

@@ -11,12 +11,10 @@ This is a discuss in C board in bbs.sjtu.edu.cn, about type down-cast in C++ tem
 Original Discuss
 ++++++++++++++++
 
-
 http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html
 
 The problem
 +++++++++++
-
 
 Today I read a book about we can do cast-down in template, so I write this to test:
 
