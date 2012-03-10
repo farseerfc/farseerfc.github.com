@@ -1,98 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Farseerfc Blog</title>
-	<meta name="description" content="">
-	<meta name="author" content="Jiachen Yang">
+  <head>
+    <meta charset="utf-8">
+    <title>Farseerfc Blog - python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src=".././theme/html5.js"></script>
-	<![endif]-->
-
-	<!-- Le styles -->
-	<link href=".././theme/bootstrap.min.css" rel="stylesheet">
-	<link href=".././theme/local.css" rel="stylesheet">
-	<link href=".././theme/pygments.css" rel="stylesheet">
+    <!-- Le styles -->
+    <link rel="stylesheet" href=".././theme/css/bootstrap.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
 	
-<script>var _gaq=[['_setAccount','UA-29540705-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
-
+	.tag-1 {
+		font-size: 13pt;
+	}
 	
-</head>
-<body>
+	.tag-2 {
+		font-size: 10pt;
+	}
 	
+	.tag-2 {
+		font-size: 8pt;
+	}
+
+	.tag-4 {
+		font-size: 6pt;
+	}
 	
-<a href="https://github.com/farseerfc"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+    </style>
+    <link href=".././theme/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href=".././theme/css/font-awesome.css" rel="stylesheet">
+	
+    <link href=".././theme/css/pygments.css" rel="stylesheet">
 
-	<div class="topbar">
-	  <div class="topbar-inner">
-		<div class="container-fluid">
-		  <a class="brand" href=".././index.html">Farseerfc Blog</a>
-			<ul class="nav">
-				
-				
-					
-				
-				
-					<li ><a href=".././category/C.html">C</a></li>
-				
-					<li class="active"><a href=".././category/python.html">python</a></li>
-				
-					<li ><a href=".././category/renren.html">renren</a></li>
-				
-			</ul>
-			<p class="pull-right"><a href=".././archives.html">[archives]</a> <a href=".././tags.html">[tags]</a></p>
-		</div>
-	  </div>
-	</div>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-	<div class="container-fluid">	
-	  <div class="sidebar">
-		<div class="well">
-			<h3>Blogroll</h3>
-			<ul>
-				
-			</ul>
-			<div class="social">
-			<h3>Social</h3>
-			<ul>
-				
-				<li><a href="http://twitter.com/farseerfc">twitter</a></li>
-				
-				<li><a href="https://github.com/farseerfc">github</a></li>
-				
-				<li><a href="http://www.facebook.com/farseerfc">facebook</a></li>
-				
-				<li><a href="http://weibo.com/farseerfc">weibo</a></li>
-				
-				<li><a href="http://www.renren.com/farseer">renren</a></li>
-				
-			</ul>
-			</div>
-		</div>
-	  </div>
-	  <div class="content">
-			<div class="page-header"><h1>Farseerfc Blog <small>python</small></h1></div>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href=".././theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href=".././theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href=".././theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href=".././theme/images/apple-touch-icon-114x114.png">
+
+    <link href=".././feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+    
+
+  </head>
+
+  <body>
+
+    
+<a href="https://github.com/farseerfc">
+
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+
+</a>
+
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../.">Farseerfc Blog </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+              
+              
+                  <li class="active">
+                    <a href=".././category/python.html">python</a>
+                  </li>
+              
+                  <li >
+                    <a href=".././category/C.html">C</a>
+                  </li>
+              
+                  <li >
+                    <a href=".././category/renren.html">renren</a>
+                  </li>
+              
+			  
+			  <li class="divider-vertical"></li>
+			  
+			  <li class="dropdown" id="othermenu">
+				<a class="dropdown-toggle" data-toggle="dropdown">
+				  Others
+				  <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+				  <li><a href=".././archives.html">Archives</a></li>
+				  <li><a href=".././tags.html">Tags</a></li>
+				</ul>
+			  </li>
+			  
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+		<div class="span2 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+            
+            
+            <li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+            <li><a href=".././feeds/all.atom.xml" rel="alternate">atom feed</a></li>
+            
+            
+                <li><a href="http://twitter.com/farseerfc"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
+            
+                <li><a href="https://github.com/farseerfc"><i class="icon-github-sign icon-large"></i>github</a></li>
+            
+                <li><a href="http://www.facebook.com/farseerfc"><i class="icon-facebook-sign icon-large"></i>facebook</a></li>
+            
+                <li><a href="http://weibo.com/farseerfc"><i class="icon-weibo-sign icon-large"></i>weibo</a></li>
+            
+                <li><a href="http://www.renren.com/farseer"><i class="icon-renren-sign icon-large"></i>renren</a></li>
+            
+            
 			
+			<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+			
+			<li class="tag-4">
+				<a href=".././tag/C++.html">
+					<i class="icon-tag icon-large"></i>C++
+				</a>
+			</li>
+			
+			<li class="tag-1">
+				<a href=".././tag/microsoft.html">
+					<i class="icon-tag icon-large"></i>microsoft
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/template.html">
+					<i class="icon-tag icon-large"></i>template
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/ruby.html">
+					<i class="icon-tag icon-large"></i>ruby
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/pelican.html">
+					<i class="icon-tag icon-large"></i>pelican
+				</a>
+			</li>
+			
+			<li class="tag-1">
+				<a href=".././tag/python.html">
+					<i class="icon-tag icon-large"></i>python
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/creationism.html">
+					<i class="icon-tag icon-large"></i>creationism
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/linux.html">
+					<i class="icon-tag icon-large"></i>linux
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/music.html">
+					<i class="icon-tag icon-large"></i>music
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/java.html">
+					<i class="icon-tag icon-large"></i>java
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/acpi.html">
+					<i class="icon-tag icon-large"></i>acpi
+				</a>
+			</li>
+			
+            </ul>
+        </div><!--/.well -->
+		
+        <div class="span10" id="content">
+                
+
+	<h1>Articles</h1>
+	
+	<div class='article'>
+		<h2><a href=".././mix-ruby.html">PyRuby</a></h2>
+		<div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2012-03-02T23:09:00">
+	2012-03-02
+</abbr>
+
+<span class="label label-info">By</span>
+<a class="btn btn-primary xsmall" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
+
+<span class="label label-success">Category</span>
+<a class="btn btn-success xsmall" href=".././category/python.html">python</a>. 
+
+
+	
+
+<span class="label label-warning">Tags</span> 
+
+	<a href=".././tag/python.html" class="btn btn-warning xsmall">python</a>
+
+	<a href=".././tag/ruby.html" class="btn btn-warning xsmall">ruby</a>
 
 
 
-<div class='article'>
-	<h2>PyRuby</h2>
-	<div class="well small">Permalink: <a class="more" href=".././mix-ruby.html">2012-03-02 23:09:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/python.html">python</a>
-tags: <a href=".././tag/python.html">python</a> <a href=".././tag/ruby.html">ruby</a> 
+<span class="label label-important">Lang</span>
 
-translations: 
-    
-    <a href=".././mix-ruby-en.html" title="PyRuby">en</a>
-    
-    <a href=".././mix-ruby-jp.html" title="PyRuby">jp</a>
-    
-</div>
-	<div class="summary"><p>今天在GitHub上闲逛的时候看到一个叫做 <a class="reference external" href="https://github.com/danielfm/pyruby">PyRuby</a> 的项目。项目的Readme说得很好：</p>
+	<a href=".././mix-ruby-en.html" class="btn btn-danger xsmall">en</a>
+
+	<a href=".././mix-ruby-jp.html" class="btn btn-danger xsmall">jp</a>
+
+
+</footer><!-- /.post-info --></div>
+		<div class="summary"><p>今天在GitHub上闲逛的时候看到一个叫做 <a class="reference external" href="https://github.com/danielfm/pyruby">PyRuby</a> 的项目。项目的Readme说得很好：</p>
 <pre class="literal-block">
 PyRuby - Some Ruby for your Python!
 PyRuby is a simple way to leverage the power of Ruby to make your Python code more readable and beautiful.
@@ -101,25 +255,46 @@ Usage
 All you have to do is import the ruby module:
 
 import ruby
-From now on you should be able ...</pre> <a class="btn primary xsmall" href=".././mix-ruby.html">more…</a>
-	</div>
-</div>	
+From now on you should be able ...</pre> 
+			<a class="btn primary xsmall" href=".././mix-ruby.html">more ...</a>
+		</div>
+	</div>	
+	<hr />
+	
+	<div class='article'>
+		<h2><a href=".././try-pelican.html">尝试一下 Pelican</a></h2>
+		<div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2012-02-24T17:33:00">
+	2012-02-24
+</abbr>
 
-<div class='article'>
-	<h2>尝试一下 Pelican</h2>
-	<div class="well small">Permalink: <a class="more" href=".././try-pelican.html">2012-02-24 17:33:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/python.html">python</a>
-tags: <a href=".././tag/python.html">python</a> <a href=".././tag/pelican.html">pelican</a> 
+<span class="label label-info">By</span>
+<a class="btn btn-primary xsmall" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
 
-translations: 
-    
-    <a href=".././try-pelican-en.html" title="Give a try to Pelican">en</a>
-    
-    <a href=".././try-pelican-jp.html" title="Pelicanを試してみた">jp</a>
-    
-</div>
-	<div class="summary"><p>似乎一夜之间所有的
+<span class="label label-success">Category</span>
+<a class="btn btn-success xsmall" href=".././category/python.html">python</a>. 
+
+
+	
+
+<span class="label label-warning">Tags</span> 
+
+	<a href=".././tag/python.html" class="btn btn-warning xsmall">python</a>
+
+	<a href=".././tag/pelican.html" class="btn btn-warning xsmall">pelican</a>
+
+
+
+<span class="label label-important">Lang</span>
+
+	<a href=".././try-pelican-en.html" class="btn btn-danger xsmall">en</a>
+
+	<a href=".././try-pelican-jp.html" class="btn btn-danger xsmall">jp</a>
+
+
+</footer><!-- /.post-info --></div>
+		<div class="summary"><p>似乎一夜之间所有的
 <a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">极客们</a>
 <a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">都</a>
 <a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">有了</a>
@@ -132,21 +307,81 @@ translations:
 <p>一上手就被 <a class="reference external" href="http://octopress.org/docs/setup/">Octopress的搭建步骤</a> 烦到了。 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 是什么？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 又是什么？
 看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
 虽然同样的兼容性问题在 Python 社区也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
-<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div> <a class="btn primary xsmall" href=".././try-pelican.html">more…</a>
-	</div>
-</div>	
+<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div> 
+			<a class="btn primary xsmall" href=".././try-pelican.html">more ...</a>
+		</div>
+	</div>	
+	<hr />
+	
+	
+
+	
+	
+
+
+        </div><!--/span-->
 
 
 
 
 
+      </div><!--/row-->
 
-		<footer>
-		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
-		  <p>&copy; Jiachen Yang 2011</p>
-		</footer>
-	  </div>
-   
-	</div>
-</body>
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter</a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-29540705-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    
+    
+<script type="text/javascript">
+    var disqus_shortname = 'farseerfcgithub';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src=".././theme/js/jquery.js"></script>
+    <script src=".././theme/js/bootstrap-transition.js"></script>
+    <script src=".././theme/js/bootstrap-alert.js"></script>
+    <script src=".././theme/js/bootstrap-modal.js"></script>
+    <script src=".././theme/js/bootstrap-dropdown.js"></script>
+    <script src=".././theme/js/bootstrap-scrollspy.js"></script>
+    <script src=".././theme/js/bootstrap-tab.js"></script>
+    <script src=".././theme/js/bootstrap-tooltip.js"></script>
+    <script src=".././theme/js/bootstrap-popover.js"></script>
+    <script src=".././theme/js/bootstrap-button.js"></script>
+    <script src=".././theme/js/bootstrap-collapse.js"></script>
+    <script src=".././theme/js/bootstrap-carousel.js"></script>
+    <script src=".././theme/js/bootstrap-typeahead.js"></script>
+	
+	<!--<script src=".././theme/js/autosidebar.js"></script>-->
+  </body>
 </html>
