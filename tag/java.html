@@ -1,96 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Farseerfc Blog</title>
-	<meta name="description" content="">
-	<meta name="author" content="Jiachen Yang">
+  <head>
+    <meta charset="utf-8">
+    <title>Farseerfc Blog - java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src=".././theme/html5.js"></script>
-	<![endif]-->
-
-	<!-- Le styles -->
-	<link href=".././theme/bootstrap.min.css" rel="stylesheet">
-	<link href=".././theme/local.css" rel="stylesheet">
-	<link href=".././theme/pygments.css" rel="stylesheet">
+    <!-- Le styles -->
+    <link rel="stylesheet" href=".././theme/css/bootstrap.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
 	
-<script>var _gaq=[['_setAccount','UA-29540705-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
-
+	.tag-1 {
+		font-size: 13pt;
+	}
 	
-</head>
-<body>
+	.tag-2 {
+		font-size: 10pt;
+	}
 	
+	.tag-2 {
+		font-size: 8pt;
+	}
+
+	.tag-4 {
+		font-size: 6pt;
+	}
 	
-<a href="https://github.com/farseerfc"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+    </style>
+    <link href=".././theme/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href=".././theme/css/font-awesome.css" rel="stylesheet">
+	
+    <link href=".././theme/css/pygments.css" rel="stylesheet">
 
-	<div class="topbar">
-	  <div class="topbar-inner">
-		<div class="container-fluid">
-		  <a class="brand" href=".././index.html">Farseerfc Blog</a>
-			<ul class="nav">
-				
-				
-					
-				
-				
-					<li ><a href=".././category/C.html">C</a></li>
-				
-					<li ><a href=".././category/python.html">python</a></li>
-				
-					<li ><a href=".././category/renren.html">renren</a></li>
-				
-			</ul>
-			<p class="pull-right"><a href=".././archives.html">[archives]</a> <a href=".././tags.html">[tags]</a></p>
-		</div>
-	  </div>
-	</div>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-	<div class="container-fluid">	
-	  <div class="sidebar">
-		<div class="well">
-			<h3>Blogroll</h3>
-			<ul>
-				
-			</ul>
-			<div class="social">
-			<h3>Social</h3>
-			<ul>
-				
-				<li><a href="http://twitter.com/farseerfc">twitter</a></li>
-				
-				<li><a href="https://github.com/farseerfc">github</a></li>
-				
-				<li><a href="http://www.facebook.com/farseerfc">facebook</a></li>
-				
-				<li><a href="http://weibo.com/farseerfc">weibo</a></li>
-				
-				<li><a href="http://www.renren.com/farseer">renren</a></li>
-				
-			</ul>
-			</div>
-		</div>
-	  </div>
-	  <div class="content">
-			<div class="page-header"><h1>Farseerfc Blog <small>java</small></h1></div>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href=".././theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href=".././theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href=".././theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href=".././theme/images/apple-touch-icon-114x114.png">
+
+    <link href=".././feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+    
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href=".././index.html">Farseerfc Blog </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+			  <li class="divider-vertical"></li>
+              
+              
+                  <li >
+                    <a href=".././category/python.html">
+						<i class="icon-folder-open icon-large"></i>python
+					</a>
+                  </li>
+              
+                  <li >
+                    <a href=".././category/C.html">
+						<i class="icon-folder-open icon-large"></i>C
+					</a>
+                  </li>
+              
+                  <li >
+                    <a href=".././category/renren.html">
+						<i class="icon-folder-open icon-large"></i>renren
+					</a>
+                  </li>
+              
+			  
+			  <li class="divider-vertical"></li>
+			  
+			  <li><a href=".././archives.html"><i class="icon-th-list"></i>Archives</a></li>
+			  </li>
+			  
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+		<div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+            
+            
+            <li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+            <li><a href=".././feeds/all.atom.xml" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+            
+            
+                <li><a href="http://twitter.com/farseerfc"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
+            
+                <li><a href="https://github.com/farseerfc"><i class="icon-github-sign icon-large"></i>github</a></li>
+            
+                <li><a href="http://www.facebook.com/farseerfc"><i class="icon-facebook-sign icon-large"></i>facebook</a></li>
+            
+                <li><a href="http://weibo.com/farseerfc"><i class="icon-weibo-sign icon-large"></i>weibo</a></li>
+            
+                <li><a href="http://www.renren.com/farseer"><i class="icon-renren-sign icon-large"></i>renren</a></li>
+            
+            
 			
+			<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Catagories</h4></li>
+			
+			<li>
+			<a href=".././category/python.html">
+				<i class="icon-folder-open icon-large"></i>python
+			</a>
+			</li>
+            
+			<li>
+			<a href=".././category/C.html">
+				<i class="icon-folder-open icon-large"></i>C
+			</a>
+			</li>
+            
+			<li>
+			<a href=".././category/renren.html">
+				<i class="icon-folder-open icon-large"></i>renren
+			</a>
+			</li>
+            
+			
+			<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+			
+			<li class="tag-4">
+				<a href=".././tag/music.html">
+					<i class="icon-tag icon-large"></i>music
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/java.html">
+					<i class="icon-tag icon-large"></i>java
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/linux.html">
+					<i class="icon-tag icon-large"></i>linux
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/ruby.html">
+					<i class="icon-tag icon-large"></i>ruby
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/template.html">
+					<i class="icon-tag icon-large"></i>template
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/acpi.html">
+					<i class="icon-tag icon-large"></i>acpi
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/pelican.html">
+					<i class="icon-tag icon-large"></i>pelican
+				</a>
+			</li>
+			
+			<li class="tag-1">
+				<a href=".././tag/python.html">
+					<i class="icon-tag icon-large"></i>python
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/C++.html">
+					<i class="icon-tag icon-large"></i>C++
+				</a>
+			</li>
+			
+			<li class="tag-4">
+				<a href=".././tag/creationism.html">
+					<i class="icon-tag icon-large"></i>creationism
+				</a>
+			</li>
+			
+			<li class="tag-1">
+				<a href=".././tag/microsoft.html">
+					<i class="icon-tag icon-large"></i>microsoft
+				</a>
+			</li>
+			
+			
+			
+<li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 'auto',
+  height: 300,
+  theme: {
+	shell: {
+	  background: '#f5f5f5',
+	  color: '#000000'
+	},
+	tweets: {
+	  background: '#ffffff',
+	  color: '#000000',
+	  links: '#1a50a1'
+	}
+  },
+  features: {
+	scrollbar: false,
+	loop: false,
+	live: false,
+	behavior: 'all'
+  }
+}).render().setUser('farseerfc').start();
+</script>
+
+            </ul>
+        </div><!--/.well -->
+		
+        <div class="span9" id="content">
+                
+
+	
+	<div class='article'>
+		<h1><a href=".././sine-cpu-en.html">Write a program to keep CPU usage as sin funcion</a></h1>
+		<div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2008-06-02T23:27:00">
+	<i class="icon-calendar"></i>Mon, 02 Jun 2008
+</abbr>
+
+<span class="label">By</span>
+<a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
+
+<span class="label">Category</span>
+<a href=".././category/renren.html"><i class="icon-folder-open"></i>renren</a>. 
+
+
+	
+
+<span class="label">Tags</span> 
+
+	<a href=".././tag/java.html"><i class="icon-tag"></i>java</a>
+
+	<a href=".././tag/microsoft.html"><i class="icon-tag"></i>microsoft</a>
 
 
 
-<div class='article'>
-	<h2>Write a program to keep CPU usage as sin funcion</h2>
-	<div class="well small">Permalink: <a class="more" href=".././sine-cpu-en.html">2008-06-02 23:27:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/renren.html">renren</a>
-tags: <a href=".././tag/java.html">java</a> <a href=".././tag/microsoft.html">microsoft</a> 
+<span class="label">Lang</span>
 
-translations: 
-    
-    <a href=".././sine-cpu.html" title="写程序让CPU占用率保持正弦函数">zh</a>
-    
-</div>
-	<div class="summary"><p>Imported from:
+	<a href=".././sine-cpu.html"><i class="icon-edit"></i>zh</a>
+
+
+</footer><!-- /.post-info --></div>
+		<div class="summary"><p>Imported from:
 <a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a>.</p>
 <p>It is said that this is a problem from interview of Microsoft. Write a program, which makes the CPU usage curve in Windows Task Manager shows a Sin function.</p>
 <div class="figure align-center">
@@ -101,23 +298,44 @@ translations:
 </div>
 <p>The program below is written in java:</p>
 <div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sincpu</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256 ...</span></pre></div> <a class="btn primary xsmall" href=".././sine-cpu-en.html">more…</a>
-	</div>
-</div>	
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256 ...</span></pre></div> 
+			<a class="btn primary xsmall" href=".././sine-cpu-en.html">more ...</a>
+		</div>
+	</div>	
+	<hr />
+	
+	<div class='article'>
+		<h1><a href=".././sine-cpu.html">写程序让CPU占用率保持正弦函数</a></h1>
+		<div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2008-06-02T23:27:00">
+	<i class="icon-calendar"></i>2008-06-02
+</abbr>
 
-<div class='article'>
-	<h2>写程序让CPU占用率保持正弦函数</h2>
-	<div class="well small">Permalink: <a class="more" href=".././sine-cpu.html">2008-06-02 23:27:00</a>
-by <a class="url fn" href=".././author/Jiachen Yang.html">Jiachen Yang</a>
-in <a href=".././category/renren.html">renren</a>
-tags: <a href=".././tag/java.html">java</a> <a href=".././tag/microsoft.html">microsoft</a> 
+<span class="label">By</span>
+<a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
 
-translations: 
-    
-    <a href=".././sine-cpu-en.html" title="Write a program to keep CPU usage as sin funcion">en</a>
-    
-</div>
-	<div class="summary"><p>导入自
+<span class="label">Category</span>
+<a href=".././category/renren.html"><i class="icon-folder-open"></i>renren</a>. 
+
+
+	
+
+<span class="label">Tags</span> 
+
+	<a href=".././tag/java.html"><i class="icon-tag"></i>java</a>
+
+	<a href=".././tag/microsoft.html"><i class="icon-tag"></i>microsoft</a>
+
+
+
+<span class="label">Lang</span>
+
+	<a href=".././sine-cpu-en.html"><i class="icon-edit"></i>en</a>
+
+
+</footer><!-- /.post-info --></div>
+		<div class="summary"><p>导入自
 <a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a></p>
 <p>据说是一道微软的面试题。如题，写程序，让Windows的任务管理器中的性能监视器呈现正弦曲线。</p>
 <div class="figure align-center">
@@ -137,21 +355,79 @@ translations:
     <span class="o">}</span>
 
     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">calcNextSleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">i</span><span class="o">){</span>
-        <span class="k">return</span> <span class="o">(</span><span class="kt">int ...</span></pre></div> <a class="btn primary xsmall" href=".././sine-cpu.html">more…</a>
-	</div>
-</div>	
+        <span class="k">return</span> <span class="o">(</span><span class="kt">int ...</span></pre></div> 
+			<a class="btn primary xsmall" href=".././sine-cpu.html">more ...</a>
+		</div>
+	</div>	
+	<hr />
+	
 
 
+	
+	
 
 
+        </div><!--/span-->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+				which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, 
+		   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
 
 
-		<footer>
-		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
-		  <p>&copy; Jiachen Yang 2011</p>
-		</footer>
-	  </div>
-   
-	</div>
-</body>
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-29540705-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    
+    
+<script type="text/javascript">
+    var disqus_shortname = 'farseerfcgithub';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src=".././theme/js/jquery.js"></script>
+    <script src=".././theme/js/bootstrap-transition.js"></script>
+    <script src=".././theme/js/bootstrap-alert.js"></script>
+    <script src=".././theme/js/bootstrap-modal.js"></script>
+    <script src=".././theme/js/bootstrap-dropdown.js"></script>
+    <script src=".././theme/js/bootstrap-scrollspy.js"></script>
+    <script src=".././theme/js/bootstrap-tab.js"></script>
+    <script src=".././theme/js/bootstrap-tooltip.js"></script>
+    <script src=".././theme/js/bootstrap-popover.js"></script>
+    <script src=".././theme/js/bootstrap-button.js"></script>
+    <script src=".././theme/js/bootstrap-collapse.js"></script>
+    <script src=".././theme/js/bootstrap-carousel.js"></script>
+    <script src=".././theme/js/bootstrap-typeahead.js"></script>
+	
+	<!--<script src=".././theme/js/autosidebar.js"></script>-->
+  </body>
 </html>

@@ -32,7 +32,7 @@ SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
 
 TWITTER_USERNAME = 'farseerfc'
 
-THEME='bootstrap'
+THEME='bootstrap2'
 #THEME='notmyidea'
 #CSS_FILE = "wide.css"
 
