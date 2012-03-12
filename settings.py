@@ -31,6 +31,11 @@ SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
           
 
 TWITTER_USERNAME = 'farseerfc'
+SITEBAR_CUSTOM = r"""
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" 
+src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1862842353&verifier=b193b9de&dpc=1">
+</iframe>
+"""
 
 THEME='bootstrap2'
 #THEME='notmyidea'
