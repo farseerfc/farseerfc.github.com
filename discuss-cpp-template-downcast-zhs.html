@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>关于C++模板的类型转换的讨论</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+	
+	.tag-1 {
+		font-size: 13pt;
+	}
+	
+	.tag-2 {
+		font-size: 10pt;
+	}
+	
+	.tag-2 {
+		font-size: 8pt;
+	}
+
+	.tag-4 {
+		font-size: 6pt;
+	}
+	
+    </style>
+    <link href="./theme/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="./theme/css/font-awesome.css" rel="stylesheet">
+	
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+    
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">Farseerfc Blog </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+			  <li class="divider-vertical"></li>
+              
+              
+                  <li >
+                    <a href="./category/python.html">
+						<i class="icon-folder-open icon-large"></i>python
+					</a>
+                  </li>
+              
+                  <li class="active">
+                    <a href="./category/C.html">
+						<i class="icon-folder-open icon-large"></i>C
+					</a>
+                  </li>
+              
+                  <li >
+                    <a href="./category/renren.html">
+						<i class="icon-folder-open icon-large"></i>renren
+					</a>
+                  </li>
+              
+			  
+			  <ul class="nav pull-right">
+				<li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+			  </ul>
+			  
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+            
+<section id="content">    
+	<article>
+		<header>
+			<h1>
+				<a href=""
+					rel="bookmark" 
+					title="Permalink to 关于C++模板的类型转换的讨论">
+					关于C++模板的类型转换的讨论 
+				</a>
+				
+<a href="http://twitter.com/share" class="twitter-share-button" 
+   data-count="horizontal" data-via="farseerfc">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+</script>
+ 
+			</h1> 
+		</header>
+		<div class="entry-content">
+		<div class="well">
+			<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2012-02-26T05:54:57">
+	<i class="icon-calendar"></i>ﾖﾜﾈﾕ 26 ｶﾔﾂ 2012
+</abbr>
+
+<span class="label">By</span>
+<a href="./author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
+
+<span class="label">Category</span>
+<a href="./category/C.html"><i class="icon-folder-open"></i>C</a>. 
+
+
+	
+
+<span class="label">Tags</span> 
+
+	<a href="./tag/c.html"><i class="icon-tag"></i>C++</a>
+
+	<a href="./tag/template.html"><i class="icon-tag"></i>template</a>
+
+
+
+<span class="label">Lang</span>
+
+	<a href="./discuss-cpp-template-downcast-en.html"><i class="icon-edit"></i>en</a>
+
+	<a href="./discuss-cpp-template-downcast.html"><i class="icon-edit"></i>zh</a>
+
+
+</footer><!-- /.post-info -->
+		</div>
+		<p>这两天在饮水思源的C板，关于C++模板的类型转换的一个讨论，后面是我的解答。</p>
+<div class="section" id="id1">
+<h2>讨论地址</h2>
+<p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
+</div>
+<div class="section" id="id2">
+<h2>原问题</h2>
+<p>今天在书上看到模板演绎的时候可以允许cast-down，于是我写了个东西：</p>
+<div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">traits</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="k">struct</span> <span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">*</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="kt">void</span> <span class="n">f</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">*</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BB</span> <span class="p">{};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">DD</span> <span class="o">:</span> <span class="k">public</span> <span class="n">BB</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">ff</span><span class="p">(</span><span class="n">BB</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span> <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
+    <span class="c1">//f(b);</span>
+    <span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>奇怪的是重载决议的时候，``f``的情况下它就不让我特化的``f&lt;A&gt;``进来。</p>
+<p>但是在``ff``的情况下，``ff&lt;BB&lt;long&gt;&gt;``却进来了。</p>
+<p>在VC10和GCC3.4下测试</p>
+</div>
+<div class="section" id="id3">
+<h2>我的解答</h2>
+<p>我们来设身处地地作为编译器，看一遍到底发生了什么。</p>
+<p>约定符号 <tt class="docutils literal">#</tt> : <tt class="docutils literal">A#B</tt> 是把 <tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">A&lt;T&gt;</tt> 的参数 <tt class="docutils literal">T</tt> 之后实例化得到的结果。</p>
+<div class="section" id="ff">
+<h3>首先看ff的情况。</h3>
+<div class="highlight"><pre><span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
+</pre></div>
+<p>处理到这句的时候，编译器看到了 <tt class="docutils literal">DD&lt;long&gt;</tt> 的实例化，于是去实例化 <tt class="docutils literal">DD#long</tt> ，继而实例
+化了 <tt class="docutils literal">BB#long</tt> 。</p>
+<div class="highlight"><pre><span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+</pre></div>
+<p>这句，首先计算重载函数集合。</p>
+<p>第一步，需要从参数 <tt class="docutils literal">DD#long <span class="pre">-&gt;</span> BB&lt;T&gt;</tt> 推断 <tt class="docutils literal">ff&lt;T&gt;</tt> 的 <tt class="docutils literal">T</tt> 。根据函数模板参数推断规则：</p>
+<pre class="literal-block">
+``class_template_name&lt;T&gt;`` 类型的参数，可以用于推断 ``T`` 。
+</pre>
+<p>于是编译器推断 <tt class="docutils literal">T</tt> 为 <tt class="docutils literal">long</tt> 。这里就算不是 <tt class="docutils literal">BB</tt> 而是完全无关的 <tt class="docutils literal">CC</tt> 都可以推断成功，只要 <tt class="docutils literal">CC</tt> 也
+是一个 <tt class="docutils literal">CC&lt;T&gt;</tt> 形式的模板。</p>
+<p>第二步，模板特化匹配。因为只有一个模板，所以匹配了最泛化的 <tt class="docutils literal">ff&lt;T&gt;</tt> 。</p>
+<p>第三步，模板实例化。</p>
+<p>推断了 <tt class="docutils literal">long <span class="pre">-&gt;</span> T</tt> 之后，编译器实例化 <tt class="docutils literal">ff#long</tt> 。</p>
+<p>重载函数集合： <tt class="docutils literal">{ff#long}</tt></p>
+<p>然后重载抉择找到唯一的可匹配的实例 <tt class="docutils literal">ff#long</tt> ，检查实际参数 <tt class="docutils literal">DD#long</tt> 可以隐式转换到
+形式参数 <tt class="docutils literal">BB#long</tt> ，从而生成了这次函数调用。</p>
+</div>
+<div class="section" id="f">
+<h3>再来看f的情况。</h3>
+<div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+<p>计算候选重载函数集合。</p>
+<p>第一步，对所有 <tt class="docutils literal">f</tt> 模板推断实参。根据函数模板参数推断规则：</p>
+<pre class="literal-block">
+带有 ``T`` 类型的参数，可以用于推断 ``T`` 。
+</pre>
+<p>于是 <tt class="docutils literal">B <span class="pre">-&gt;</span> T</tt> 被推断出来了。</p>
+<p>第二步，模板特化匹配。</p>
+<p>这里 <tt class="docutils literal">B</tt> 不是 <tt class="docutils literal">A</tt> ，所以不能用 <tt class="docutils literal">f&lt;A&gt;</tt> 特化，只能用 <tt class="docutils literal">f&lt;T&gt;</tt> 模板。</p>
+<p>第三步，模板实例化。</p>
+<p><tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">f&lt;T&gt;</tt> 实例化成 <tt class="docutils literal">f#B</tt> 的过程中，实例化 <tt class="docutils literal">traits#B</tt> 。</p>
+<p>由于没有针对 <tt class="docutils literal">B</tt> 的特化，所以用 <tt class="docutils literal">traits&lt;T&gt;</tt> 模板， <tt class="docutils literal"><span class="pre">traits#B::value=false</span></tt> ，进而 <tt class="docutils literal">enable_if#false</tt> 没有 <tt class="docutils literal">type</tt> ，出错。</p>
+<p>唯一的模板匹配出错，重载函数集合为空，SFINAE原则不能找到合适的匹配，于是报错。</p>
+</div>
+</div>
+
+		</div><!-- /.entry-content -->
+		
+		<div class="comments">
+		<h2>Comments !</h2>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			   var disqus_identifier = "discuss-cpp-template-downcast-zhs.html";
+			   (function() {
+				var dsq = document.createElement('script'); 
+				dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://farseerfcgithub.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || 
+				 document.getElementsByTagName('body')[0]).appendChild(dsq);
+			  })();
+			</script>
+		</div>
+		
+	</article>
+</section>
+
+        </div><!--/span-->
+      
+		<div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+
+
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="./feeds/all.atom.xml" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+
+
+    <li><a href="http://twitter.com/farseerfc"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
+
+    <li><a href="https://github.com/farseerfc"><i class="icon-github-sign icon-large"></i>github</a></li>
+
+    <li><a href="http://www.facebook.com/farseerfc"><i class="icon-facebook-sign icon-large"></i>facebook</a></li>
+
+    <li><a href="http://weibo.com/farseerfc"><i class="icon-weibo-sign icon-large"></i>weibo</a></li>
+
+    <li><a href="http://www.renren.com/farseer"><i class="icon-renren-sign icon-large"></i>renren</a></li>
+
+
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+
+<li>
+<a href="./category/python.html">
+    <i class="icon-folder-open icon-large"></i>python
+</a>
+</li>
+
+<li>
+<a href="./category/C.html">
+    <i class="icon-folder-open icon-large"></i>C
+</a>
+</li>
+
+<li>
+<a href="./category/renren.html">
+    <i class="icon-folder-open icon-large"></i>renren
+</a>
+</li>
+
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+<li class="tag-4">
+    <a href="./tag/acpi.html">
+        <i class="icon-tag icon-large"></i>acpi
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
+    </a>
+</li>
+
+<li class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
+    </a>
+</li>
+
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/ruby.html">
+        <i class="icon-tag icon-large"></i>ruby
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
+    </a>
+</li>
+
+
+
+<li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 'auto',
+  height: 300,
+  theme: {
+	shell: {
+	  background: '#f5f5f5',
+	  color: '#000000'
+	},
+	tweets: {
+	  background: '#ffffff',
+	  color: '#000000',
+	  links: '#1a50a1'
+	}
+  },
+  features: {
+	scrollbar: false,
+	loop: false,
+	live: false,
+	behavior: 'all'
+  }
+}).render().setUser('farseerfc').start();
+</script>
+
+
+<li class="nav-header"><h4><i class="icon-search"></i>Google Search</h4></li>
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1');
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '001578481551708017171:axpo6yvtdyg', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+
+
+    
+<li class="nav-header"><h4><i class="icon-list-alt"></i>Weibo</h4></li>
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" 
+src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1862842353&verifier=b193b9de&dpc=1">
+</iframe>
+
+
+</ul>
+        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+				which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, 
+		   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-29540705-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    
+    
+<script type="text/javascript">
+    var disqus_shortname = 'farseerfcgithub';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery.js"></script>
+    <script src="./theme/js/bootstrap-transition.js"></script>
+    <script src="./theme/js/bootstrap-alert.js"></script>
+    <script src="./theme/js/bootstrap-modal.js"></script>
+    <script src="./theme/js/bootstrap-dropdown.js"></script>
+    <script src="./theme/js/bootstrap-scrollspy.js"></script>
+    <script src="./theme/js/bootstrap-tab.js"></script>
+    <script src="./theme/js/bootstrap-tooltip.js"></script>
+    <script src="./theme/js/bootstrap-popover.js"></script>
+    <script src="./theme/js/bootstrap-button.js"></script>
+    <script src="./theme/js/bootstrap-collapse.js"></script>
+    <script src="./theme/js/bootstrap-carousel.js"></script>
+    <script src="./theme/js/bootstrap-typeahead.js"></script>
+	
+	<!--<script src="./theme/js/autosidebar.js"></script>-->
+  </body>
+</html>
