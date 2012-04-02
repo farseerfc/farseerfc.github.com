@@ -7,7 +7,7 @@
 :tags: microsoft, linux, acpi
 
 
-导入自
+導入自
 `renren <http://blog.renren.com/blog/230263946/716517729>`_
 
 
@@ -38,5 +38,5 @@ From:
 
 `http://antitrust.slated.org/www.iowaconsumercase.org/011607/3000/PX03020.pdf <http://antitrust.slated.org/www.iowaconsumercase.org/011607/3000/PX03020.pdf>`_
 
-如果这就是我至今在Xen4.0上得不到ACPI 3.0的完善支持的原因，那么我诅咒Bill Gates！
+如果這就是我至今在Xen4.0上得不到ACPI 3.0的完善支持的原因，那麼我詛咒Bill Gates！
 

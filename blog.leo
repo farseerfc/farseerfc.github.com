@@ -10,9 +10,10 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="farseerfc.20120225061142.1112" a="E"><vh>@auto settings.py</vh></v>
+<v t="farseerfc.20120225061142.1112"><vh>@auto settings.py</vh></v>
 <v t="farseerfc.20120225090734.1120" a="E"><vh>@path posts</vh>
 <v t="farseerfc.20120225091118.1129" a="E"><vh>@path python</vh>
+<v t="farseerfc.20120402124104.1328" a="E"><vh>@auto-rst pyssy.rst</vh></v>
 <v t="farseerfc.20120302230533.1157"><vh>@auto-rst mix-ruby.rst</vh></v>
 <v t="farseerfc.20120302230533.1162"><vh>@auto-rst mix-ruby.en.rst</vh></v>
 <v t="farseerfc.20120302230533.1166"><vh>@auto-rst mix-ruby.jp.rst</vh></v>
@@ -34,7 +35,7 @@
 <v t="farseerfc.20120304112052.1602"><vh>@auto-rst some-thought-on-creationism.rst</vh></v>
 </v>
 </v>
-<v t="farseerfc.20120304112052.1188" a="E"><vh>@path renren</vh>
+<v t="farseerfc.20120304112052.1188"><vh>@path renren</vh>
 <v t="farseerfc.20120304112052.1189" a="E"><vh>@auto-rst renren.rst</vh></v>
 </v>
 </vnodes>

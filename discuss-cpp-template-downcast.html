@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>关于C++模板的类型转换的讨论</title>
+    <title>關於C++模板的類型轉換的討論</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -115,8 +115,8 @@
 			<h1>
 				<a href=""
 					rel="bookmark" 
-					title="Permalink to 关于C++模板的类型转换的讨论">
-					关于C++模板的类型转换的讨论 
+					title="Permalink to 關於C++模板的類型轉換的討論">
+					關於C++模板的類型轉換的討論 
 				</a>
 				
 <a href="http://twitter.com/share" class="twitter-share-button" 
@@ -158,14 +158,14 @@
 
 </footer><!-- /.post-info -->
 		</div>
-		<p>这两天在饮水思源的C板，关于C++模板的类型转换的一个讨论，后面是我的解答。</p>
+		<p>這兩天在飲水思源的C板，關於C++模板的類型轉換的一個討論，後面是我的解答。</p>
 <div class="section" id="id1">
-<h2>讨论地址</h2>
+<h2>討論地址</h2>
 <p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
 </div>
 <div class="section" id="id2">
-<h2>原问题</h2>
-<p>今天在书上看到模板演绎的时候可以允许cast-down，于是我写了个东西：</p>
+<h2>原問題</h2>
+<p>今天在書上看到模板演繹的時候可以允許cast-down，於是我寫了個東西：</p>
 <div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
 
@@ -207,52 +207,52 @@
     <span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-<p>奇怪的是重载决议的时候，``f``的情况下它就不让我特化的``f&lt;A&gt;``进来。</p>
-<p>但是在``ff``的情况下，``ff&lt;BB&lt;long&gt;&gt;``却进来了。</p>
-<p>在VC10和GCC3.4下测试</p>
+<p>奇怪的是重載決議的時候，``f``的情況下它就不讓我特化的``f&lt;A&gt;``進來。</p>
+<p>但是在``ff``的情況下，``ff&lt;BB&lt;long&gt;&gt;``卻進來了。</p>
+<p>在VC10和GCC3.4下測試</p>
 </div>
 <div class="section" id="id3">
 <h2>我的解答</h2>
-<p>我们来设身处地地作为编译器，看一遍到底发生了什么。</p>
-<p>约定符号 <tt class="docutils literal">#</tt> : <tt class="docutils literal">A#B</tt> 是把 <tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">A&lt;T&gt;</tt> 的参数 <tt class="docutils literal">T</tt> 之后实例化得到的结果。</p>
+<p>我們來設身處地地作爲編譯器，看一遍到底發生了什麼。</p>
+<p>約定符號 <tt class="docutils literal">#</tt> : <tt class="docutils literal">A#B</tt> 是把 <tt class="docutils literal">B</tt> 帶入 <tt class="docutils literal">A&lt;T&gt;</tt> 的參數 <tt class="docutils literal">T</tt> 之後實例化得到的結果。</p>
 <div class="section" id="ff">
-<h3>首先看ff的情况。</h3>
+<h3>首先看ff的情況。</h3>
 <div class="highlight"><pre><span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
 </pre></div>
-<p>处理到这句的时候，编译器看到了 <tt class="docutils literal">DD&lt;long&gt;</tt> 的实例化，于是去实例化 <tt class="docutils literal">DD#long</tt> ，继而实例
+<p>處理到這句的時候，編譯器看到了 <tt class="docutils literal">DD&lt;long&gt;</tt> 的實例化，於是去實例化 <tt class="docutils literal">DD#long</tt> ，繼而實例
 化了 <tt class="docutils literal">BB#long</tt> 。</p>
 <div class="highlight"><pre><span class="n">ff</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
 </pre></div>
-<p>这句，首先计算重载函数集合。</p>
-<p>第一步，需要从参数 <tt class="docutils literal">DD#long <span class="pre">-&gt;</span> BB&lt;T&gt;</tt> 推断 <tt class="docutils literal">ff&lt;T&gt;</tt> 的 <tt class="docutils literal">T</tt> 。根据函数模板参数推断规则：</p>
+<p>這句，首先計算重載函數集合。</p>
+<p>第一步，需要從參數 <tt class="docutils literal">DD#long <span class="pre">-&gt;</span> BB&lt;T&gt;</tt> 推斷 <tt class="docutils literal">ff&lt;T&gt;</tt> 的 <tt class="docutils literal">T</tt> 。根據函數模板參數推斷規則：</p>
 <pre class="literal-block">
-``class_template_name&lt;T&gt;`` 类型的参数，可以用于推断 ``T`` 。
+``class_template_name&lt;T&gt;`` 類型的參數，可以用於推斷 ``T`` 。
 </pre>
-<p>于是编译器推断 <tt class="docutils literal">T</tt> 为 <tt class="docutils literal">long</tt> 。这里就算不是 <tt class="docutils literal">BB</tt> 而是完全无关的 <tt class="docutils literal">CC</tt> 都可以推断成功，只要 <tt class="docutils literal">CC</tt> 也
-是一个 <tt class="docutils literal">CC&lt;T&gt;</tt> 形式的模板。</p>
-<p>第二步，模板特化匹配。因为只有一个模板，所以匹配了最泛化的 <tt class="docutils literal">ff&lt;T&gt;</tt> 。</p>
-<p>第三步，模板实例化。</p>
-<p>推断了 <tt class="docutils literal">long <span class="pre">-&gt;</span> T</tt> 之后，编译器实例化 <tt class="docutils literal">ff#long</tt> 。</p>
-<p>重载函数集合： <tt class="docutils literal">{ff#long}</tt></p>
-<p>然后重载抉择找到唯一的可匹配的实例 <tt class="docutils literal">ff#long</tt> ，检查实际参数 <tt class="docutils literal">DD#long</tt> 可以隐式转换到
-形式参数 <tt class="docutils literal">BB#long</tt> ，从而生成了这次函数调用。</p>
+<p>於是編譯器推斷 <tt class="docutils literal">T</tt> 爲 <tt class="docutils literal">long</tt> 。這裏就算不是 <tt class="docutils literal">BB</tt> 而是完全無關的 <tt class="docutils literal">CC</tt> 都可以推斷成功，只要 <tt class="docutils literal">CC</tt> 也
+是一個 <tt class="docutils literal">CC&lt;T&gt;</tt> 形式的模板。</p>
+<p>第二步，模板特化匹配。因爲只有一個模板，所以匹配了最泛化的 <tt class="docutils literal">ff&lt;T&gt;</tt> 。</p>
+<p>第三步，模板實例化。</p>
+<p>推斷了 <tt class="docutils literal">long <span class="pre">-&gt;</span> T</tt> 之後，編譯器實例化 <tt class="docutils literal">ff#long</tt> 。</p>
+<p>重載函數集合： <tt class="docutils literal">{ff#long}</tt></p>
+<p>然後重載抉擇找到唯一的可匹配的實例 <tt class="docutils literal">ff#long</tt> ，檢查實際參數 <tt class="docutils literal">DD#long</tt> 可以隱式轉換到
+形式參數 <tt class="docutils literal">BB#long</tt> ，從而生成了這次函數調用。</p>
 </div>
 <div class="section" id="f">
-<h3>再来看f的情况。</h3>
+<h3>再來看f的情況。</h3>
 <div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
 </pre></div>
-<p>计算候选重载函数集合。</p>
-<p>第一步，对所有 <tt class="docutils literal">f</tt> 模板推断实参。根据函数模板参数推断规则：</p>
+<p>計算候選重載函數集合。</p>
+<p>第一步，對所有 <tt class="docutils literal">f</tt> 模板推斷實參。根據函數模板參數推斷規則：</p>
 <pre class="literal-block">
-带有 ``T`` 类型的参数，可以用于推断 ``T`` 。
+帶有 ``T`` 類型的參數，可以用於推斷 ``T`` 。
 </pre>
-<p>于是 <tt class="docutils literal">B <span class="pre">-&gt;</span> T</tt> 被推断出来了。</p>
+<p>於是 <tt class="docutils literal">B <span class="pre">-&gt;</span> T</tt> 被推斷出來了。</p>
 <p>第二步，模板特化匹配。</p>
-<p>这里 <tt class="docutils literal">B</tt> 不是 <tt class="docutils literal">A</tt> ，所以不能用 <tt class="docutils literal">f&lt;A&gt;</tt> 特化，只能用 <tt class="docutils literal">f&lt;T&gt;</tt> 模板。</p>
-<p>第三步，模板实例化。</p>
-<p><tt class="docutils literal">B</tt> 带入 <tt class="docutils literal">f&lt;T&gt;</tt> 实例化成 <tt class="docutils literal">f#B</tt> 的过程中，实例化 <tt class="docutils literal">traits#B</tt> 。</p>
-<p>由于没有针对 <tt class="docutils literal">B</tt> 的特化，所以用 <tt class="docutils literal">traits&lt;T&gt;</tt> 模板， <tt class="docutils literal"><span class="pre">traits#B::value=false</span></tt> ，进而 <tt class="docutils literal">enable_if#false</tt> 没有 <tt class="docutils literal">type</tt> ，出错。</p>
-<p>唯一的模板匹配出错，重载函数集合为空，SFINAE原则不能找到合适的匹配，于是报错。</p>
+<p>這裏 <tt class="docutils literal">B</tt> 不是 <tt class="docutils literal">A</tt> ，所以不能用 <tt class="docutils literal">f&lt;A&gt;</tt> 特化，只能用 <tt class="docutils literal">f&lt;T&gt;</tt> 模板。</p>
+<p>第三步，模板實例化。</p>
+<p><tt class="docutils literal">B</tt> 帶入 <tt class="docutils literal">f&lt;T&gt;</tt> 實例化成 <tt class="docutils literal">f#B</tt> 的過程中，實例化 <tt class="docutils literal">traits#B</tt> 。</p>
+<p>由於沒有針對 <tt class="docutils literal">B</tt> 的特化，所以用 <tt class="docutils literal">traits&lt;T&gt;</tt> 模板， <tt class="docutils literal"><span class="pre">traits#B::value=false</span></tt> ，進而 <tt class="docutils literal">enable_if#false</tt> 沒有 <tt class="docutils literal">type</tt> ，出錯。</p>
+<p>唯一的模板匹配出錯，重載函數集合爲空，SFINAE原則不能找到合適的匹配，於是報錯。</p>
 </div>
 </div>
 
@@ -322,32 +322,20 @@
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
 <li class="tag-4">
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
+    </a>
+</li>
+
+<li class="tag-4">
     <a href="./tag/ruby.html">
         <i class="icon-tag icon-large"></i>ruby
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/creationism.html">
-        <i class="icon-tag icon-large"></i>creationism
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
-    </a>
-</li>
-
-<li class="tag-4">
     <a href="./tag/template.html">
         <i class="icon-tag icon-large"></i>template
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/C++.html">
-        <i class="icon-tag icon-large"></i>C++
     </a>
 </li>
 
@@ -358,32 +346,56 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
-    </a>
-</li>
-
-<li class="tag-1">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
-    </a>
-</li>
-
-<li class="tag-4">
     <a href="./tag/pelican.html">
         <i class="icon-tag icon-large"></i>pelican
     </a>
 </li>
 
 <li class="tag-4">
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+
+<li class="tag-4">
     <a href="./tag/acpi.html">
         <i class="icon-tag icon-large"></i>acpi
+    </a>
+</li>
+
+<li class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
     </a>
 </li>
 

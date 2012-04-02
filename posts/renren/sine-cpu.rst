@@ -1,4 +1,4 @@
-写程序让CPU占用率保持正弦函数
+寫程序讓CPU佔用率保持正弦函數
 ==========================================
 
 :slug: sine-cpu
@@ -6,10 +6,10 @@
 :date: 2008-06-02 23:27
 :tags: java, microsoft
 
-导入自
+導入自
 `renren <http://blog.renren.com/blog/230263946/298871889>`_
 
-据说是一道微软的面试题。如题，写程序，让Windows的任务管理器中的性能监视器呈现正弦曲线。
+據說是一道微軟的面試題。如題，寫程序，讓Windows的任務管理器中的性能監視器呈現正弦曲線。
 
 .. figure:: http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg
    :align: center
@@ -19,7 +19,7 @@
    :align: center
    :alt: 
 
-潜心钻研良久，得代码：（java）
+潛心鑽研良久，得代碼：（java）
 
 .. code-block:: java
 
@@ -55,7 +55,7 @@
     }
 
 
-多核CPU上测试时要注意关掉一个CPU：
+多核CPU上測試時要注意關掉一個CPU：
 
 
 

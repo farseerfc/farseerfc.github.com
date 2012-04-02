@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>PyRuby</title>
+    <title>Pyssy 專案簡介</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -115,8 +115,8 @@
 			<h1>
 				<a href=""
 					rel="bookmark" 
-					title="Permalink to PyRuby">
-					PyRuby 
+					title="Permalink to Pyssy 專案簡介">
+					Pyssy 專案簡介 
 				</a>
 				
 <a href="http://twitter.com/share" class="twitter-share-button" 
@@ -130,8 +130,8 @@
 		<div class="well">
 			<footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2012-03-02T23:09:00">
-	<i class="icon-calendar"></i>2012/03/02(金)
+<abbr class="published" title="2012-04-02T12:42:00">
+	<i class="icon-calendar"></i>2012-04-02
 </abbr>
 
 <span class="label">By</span>
@@ -147,96 +147,22 @@
 
 	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
 
-	<a href="./tag/ruby.html"><i class="icon-tag"></i>ruby</a>
+	<a href="./tag/sjtu.html"><i class="icon-tag"></i>sjtu</a>
 
+	<a href="./tag/yssy.html"><i class="icon-tag"></i>yssy</a>
 
-
-<span class="label">Lang</span>
-
-	<a href="./mix-ruby-en.html"><i class="icon-edit"></i>en</a>
-
-	<a href="./mix-ruby.html"><i class="icon-edit"></i>zh</a>
 
 
 </footer><!-- /.post-info -->
 		</div>
-		<p>きょう、Githubに <a class="reference external" href="https://github.com/danielfm/pyruby">PyRuby</a> というプロジェクトを見ました。それの説明にこう書いています:</p>
-<pre class="literal-block">
-PyRuby - Some Ruby for your Python!
-PyRuby is a simple way to leverage the power of Ruby to make your Python code more readable and beautiful.
-
-Usage
-All you have to do is import the ruby module:
-
-import ruby
-From now on you should be able to write Ruby code within a regular Python module. An example:
-
-1.upto(10) { |n| puts n }
-</pre>
-<p>さらに、 <a class="reference external" href="http://pypi.python.org/pypi/pyruby/1.0.0">PyPI</a> にそれのパッケージもあった。</p>
-<p>最初に、これはもう一つのPyPyで実現したRubyだと思った。少なくとも、本当のRubyをPythonから呼び出すの何かの魔法も可能かもしれない。</p>
-<div class="section" id="ruby-py">
-<h2>それのソースコートはこうなっています。 ruby.py</h2>
-<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
-
-<span class="s">                              `.-:/+ossyhhddmmmmNNNNNNNmmmmmdddddhhhyyyyhhhyo:`</span>
-<span class="s">                       .:+sydNNNmmdhhysso++/+++++++////::::::-.```......--/oymms.</span>
-<span class="s">                  `:ohmdys+//::/::--::::////:-.```......`````.://:-`         `/dNs.</span>
-<span class="s">               .+hNds:`-:-:///::------::///++///:--....--::///::-`.///.        `oMm/</span>
-<span class="s">             /hNmo.`   ``    `....```````````      ...------:::-:/+/-.:/:`       /NMs</span>
-<span class="s">            oMd/`      `::::--.---://+`           //`     `````-:::::+/-`::.`     :NM+</span>
-<span class="s">            yN`       -+.`         `/`           o.               ``::.-:. ``      :NN:</span>
-<span class="s">           :Nm        -             ./           :    `.-://///:-.   `-` ``         :NN-</span>
-<span class="s">          /NM/           .-:::-.`   `/            `:sdmdhyMMMMMMNNmy/`               :mNo`</span>
-<span class="s">        :hMd:          /dmddddNNmdy+-.          `smmy/-```hMMMMMMMhydm/ `-.``     `...:mMm+.</span>
-<span class="s">      -hNd/-/o/-..-::`.ydmmmmNMMMMMMNh:/+-      dMN-`-+hmmmmdhhhhdddmMN-`-/o:    .-::::/oydms-</span>
-<span class="s">     oNMo:+/::.         ``...--:/+ohNMNhs-      :hNmmdyo:..``yo-```.--. `-`-+shdddhs+-` `.//yms.</span>
-<span class="s">    .MMo:/`o:.:+sso+:-`             sM+           ./-`       /mNh+-....-/ymNNdo::--/shd+`  -`:mm:</span>
-<span class="s">    /MM-o ./ ohhsooohNmy::sh.      `yM/                       `:oyyyyyyhys+:.` hy    `/Nh`  : -NN.</span>
-<span class="s">    -MM// -: ``   y: odddhh+     -omNh-          `--.` ``          ````    .:ohMMs.    +Ms  /  yMo</span>
-<span class="s">     hMoo .+.    :Mh  ````    `/hNd/.`           ohdddy::...`..`      `-/sdmdyo+NMNh+- :Mh  /  sMs</span>
-<span class="s">     .mmh:..:.  :NMm       `-/dMNM+         ./+++/:`.hM:`.````.` `-/shmNmh+-`  /Mmooso.hM/ .: `mM/</span>
-<span class="s">      .mNs://: .NMNMs-   -:-.`/+-sms.   `  `shyyyhy`sNd`   `.:+sdmmmdMM-.    .oNM+    :m/ `s``yMh</span>
-<span class="s">       -mMo  . sMNdMNNh+-.        .ydyoyy`        ``+o::+shdddhs+:-.:MM.`.-+hNMMh-    `.`-/::dNs`</span>
-<span class="s">        -NM-   mMMMh:MMdNmhs+:-..```-ohs-`...-:/+syhddmMMs:-.`    `/mMMdmmddNMm+`      ..-/hNh-</span>
-<span class="s">         sMy   NMMM`:Mh`-/mMmmmdddddddddhhhdNNdhyo+:--.yMs  `..:+ymMMMMd+--yNh.        `+hNh:</span>
-<span class="s">         -Mm   NMMM/yMh  -NM-`..--:NMo:--.`+My         :MNoydmNMMNmhdMh` -dNs`        `yMd:</span>
-<span class="s">         `MN   mMMMMMMMyshMN+:---.-MN-.....+My...-:/oyhdMMMMNmdy+-` +Mh:sNm/          yMy`</span>
-<span class="s">          MN   yMMMMMMMMMMMMMMMMMNMMMMNNNNNMMMNNNMMMMMNmhMM/-.      `yMMNs.          /My</span>
-<span class="s">         `MN   :MMmMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmmdy+:-``NM-      ./hNNy-           /Nd`</span>
-<span class="s">         -Mh    dMydMmsNMNdNNMMmmmNMMMdddhys+yMo``       /Nm:  `:yNNdo.           .sNd.</span>
-<span class="s">         +Ms    .mMsMN::NN:.:MN: `.+NM.      +Mo          +Mm+ymNdo-            .omm+`</span>
-<span class="s">         yM:     .hNMd+:sMN. oMm.   oMo      +Mh   ```.:+shMNmy+-``.-:-..-//-`:yNmo`</span>
-<span class="s">         mM.       :ohmNNMMdhyMMdo//+Mm//////sMNhyhhdmNNmhs/-``./+/:--+so/-:smNy/`</span>
-<span class="s">        .Mm        ``  .-:/+osyyhhddddddddddhhyysoo+/:-.  `./+//--+oo/--+ymmy/.</span>
-<span class="s">        :Mh   .:   `+:`        `.------------`      ```-////:/++/:../ydNdo:`</span>
-<span class="s">        +Ms   `/`    :+o+:-```              ``..-::///++///:-.`-+ydNdo:`</span>
-<span class="s">        oMs     :/:.``  `..---.``` ````````..-:/:::---.`  `-ohmmh+:`</span>
-<span class="s">        /Mh       .://///:::-----.-----.......`       `-+hmmy+-</span>
-<span class="s">         sMy`                                ``````-+ydmy+-</span>
-<span class="s">          /mNs-`                        `./ohmNMNNNmy+-</span>
-<span class="s">            /yNmho/:.``````````.-:/+syhdNmdyso+/-.`</span>
-<span class="s">              `:+ydmNMNNNNNNNNNmdhys+/:.`</span>
-<span class="s">                     ``.....`</span>
-
-<span class="s">    LOL U MAD?</span>
-<span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-<p>本当だ、Pythonの中にRubyを呼び出すという考えはアホだ。</p>
-</div>
-
+		
 		</div><!-- /.entry-content -->
 		
 		<div class="comments">
 		<h2>Comments !</h2>
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-			   var disqus_identifier = "mix-ruby-jp.html";
+			   var disqus_identifier = "pyssy.html";
 			   (function() {
 				var dsq = document.createElement('script'); 
 				dsq.type = 'text/javascript'; dsq.async = true;

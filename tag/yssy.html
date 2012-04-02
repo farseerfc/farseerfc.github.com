@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Farseerfc Blog - java</title>
+    <title>Farseerfc Blog - yssy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -112,106 +112,35 @@
 
 	
 	<div class='article'>
-		<h1><a href=".././sine-cpu-en.html">Write a program to keep CPU usage as sin funcion</a></h1>
+		<h1><a href=".././pyssy.html">Pyssy 專案簡介</a></h1>
 		<div class="well small"><footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2008-06-02T23:27:00">
-	<i class="icon-calendar"></i>Mon, 02 Jun 2008
+<abbr class="published" title="2012-04-02T12:42:00">
+	<i class="icon-calendar"></i>2012-04-02
 </abbr>
 
 <span class="label">By</span>
 <a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
 
 <span class="label">Category</span>
-<a href=".././category/renren.html"><i class="icon-folder-open"></i>renren</a>. 
+<a href=".././category/python.html"><i class="icon-folder-open"></i>python</a>. 
 
 
 	
 
 <span class="label">Tags</span> 
 
-	<a href=".././tag/java.html"><i class="icon-tag"></i>java</a>
+	<a href=".././tag/python.html"><i class="icon-tag"></i>python</a>
 
-	<a href=".././tag/microsoft.html"><i class="icon-tag"></i>microsoft</a>
+	<a href=".././tag/sjtu.html"><i class="icon-tag"></i>sjtu</a>
 
+	<a href=".././tag/yssy.html"><i class="icon-tag"></i>yssy</a>
 
-
-<span class="label">Lang</span>
-
-	<a href=".././sine-cpu.html"><i class="icon-edit"></i>zh</a>
 
 
 </footer><!-- /.post-info --></div>
-		<div class="summary"><p>Imported from:
-<a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a>.</p>
-<p>It is said that this is a problem from interview of Microsoft. Write a program, which makes the CPU usage curve in Windows Task Manager shows a Sin function.</p>
-<div class="figure align-center">
-<img alt="" src="http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg" />
-</div>
-<div class="figure align-center">
-<img alt="" src="http://fm541.img.xiaonei.com/pic001/20080602/23/14/large_9935o67.jpg" />
-</div>
-<p>The program below is written in java:</p>
-<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sincpu</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256 ...</span></pre></div> 
-			<a class="btn primary xsmall" href=".././sine-cpu-en.html">more ...</a>
-		</div>
-	</div>	
-	<hr />
-	
-	<div class='article'>
-		<h1><a href=".././sine-cpu.html">寫程序讓CPU佔用率保持正弦函數</a></h1>
-		<div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2008-06-02T23:27:00">
-	<i class="icon-calendar"></i>2008-06-02
-</abbr>
-
-<span class="label">By</span>
-<a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
-
-<span class="label">Category</span>
-<a href=".././category/renren.html"><i class="icon-folder-open"></i>renren</a>. 
-
-
-	
-
-<span class="label">Tags</span> 
-
-	<a href=".././tag/java.html"><i class="icon-tag"></i>java</a>
-
-	<a href=".././tag/microsoft.html"><i class="icon-tag"></i>microsoft</a>
-
-
-
-<span class="label">Lang</span>
-
-	<a href=".././sine-cpu-en.html"><i class="icon-edit"></i>en</a>
-
-
-</footer><!-- /.post-info --></div>
-		<div class="summary"><p>導入自
-<a class="reference external" href="http://blog.renren.com/blog/230263946/298871889">renren</a></p>
-<p>據說是一道微軟的面試題。如題，寫程序，讓Windows的任務管理器中的性能監視器呈現正弦曲線。</p>
-<div class="figure align-center">
-<img alt="" src="http://fm531.img.xiaonei.com/pic001/20080602/23/14/large_10019p67.jpg" />
-</div>
-<div class="figure align-center">
-<img alt="" src="http://fm541.img.xiaonei.com/pic001/20080602/23/14/large_9935o67.jpg" />
-</div>
-<p>潛心鑽研良久，得代碼：（java）</p>
-<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sincpu</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1024</span><span class="o">,</span><span class="n">tick</span> <span class="o">=</span> <span class="mi">256</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;;</span><span class="n">i</span><span class="o">++){</span>
-            <span class="n">work</span><span class="o">(</span><span class="n">calcNextSleep</span><span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">cycle</span><span class="o">));</span>
-            <span class="n">sleep</span><span class="o">(</span><span class="n">tick</span> <span class="o">-</span> <span class="n">calcNextSleep</span><span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">cycle</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">calcNextSleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">i</span><span class="o">){</span>
-        <span class="k">return</span> <span class="o">(</span><span class="kt">int ...</span></pre></div> 
-			<a class="btn primary xsmall" href=".././sine-cpu.html">more ...</a>
+		<div class="summary"> 
+			<a class="btn primary xsmall" href=".././pyssy.html">more ...</a>
 		</div>
 	</div>	
 	<hr />

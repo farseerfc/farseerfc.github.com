@@ -1,4 +1,4 @@
-尝试一下 Pelican
+嘗試一下 Pelican
 ====================
 
 :slug: try-pelican
@@ -6,37 +6,37 @@
 :date: 2012-02-24 17:33
 :tags: python, pelican
 
-似乎一夜之间所有的
-`极客们 <http://blog.yxwang.me/2011/11/migrated-to-octopress/>`_
+似乎一夜之間所有的
+`極客們 <http://blog.yxwang.me/2011/11/migrated-to-octopress/>`_
 `都 <http://xoyo.name/2012/02/migrate-to-octopress/>`_
 `有了 <http://blog.xdite.net/posts/2011/10/07/what-is-octopress/>`_
 `自己 <http://www.yangzhiping.com/tech/octopress.html>`_
-的 `Github主页 <http://pages.github.com/#user__organization_pages>`_
-和 Octopress_ 博客。就像所有人在他们的博客中指出的，静态博客的确比传统的WordPress方式具有更多优势。 自从看到这些
-我就一直在想着自己搭一个 Octopress_ 。
+的 `Github主頁 <http://pages.github.com/#user__organization_pages>`_
+和 Octopress_ 博客。就像所有人在他們的博客中指出的，靜態博客的確比傳統的WordPress方式具有更多優勢。 自從看到這些
+我就一直在想着自己搭一個 Octopress_ 。
 
 .. _Octopress: http://octopress.org/
 
 .. _Pelican: http://pelican.notmyidea.org/en/latest/
 
-但是似乎 Octopress_ 不适合我
+但是似乎 Octopress_ 不適合我
 ++++++++++++++++++++++++++++++++++++
 
-一上手就被 `Octopress的搭建步骤 <http://octopress.org/docs/setup/>`_ 烦到了。 RVM_ 是什么？ rbenv_ 又是什么？
-看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
-虽然同样的兼容性问题在 Python 社区也有 [#]_ ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 [#]_ 。
+一上手就被 `Octopress的搭建步驟 <http://octopress.org/docs/setup/>`_ 煩到了。 RVM_ 是什麼？ rbenv_ 又是什麼？
+看來 Ruby 社區的快節奏發展已經超過了我的想象，他們似乎需要一套發行版管理器來調和不同版本之間的 Ruby 的兼容性問題。
+雖然同樣的兼容性問題在 Python 社區也有 [#]_ ，不過總覺得 Python 至少還沒到需要一個發行版管理器的程度 [#]_ 。
 
-真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 RVM_ 还是 rbenv_ 似乎都只支持 Unix/Linux/MacOSX 。 身为极客就注定不能用 Windows 么？（或许是的……）。
+真正的問題是我手上還沒有一個可以讓我隨便玩的 Linux 環境（真的想要……）。 而無論是 RVM_ 還是 rbenv_ 似乎都只支持 Unix/Linux/MacOSX 。 身爲極客就註定不能用 Windows 麼？（或許是的……）。
 
-剩下的问题就是 Ruby 和 Python 两大阵营的对立问题了。我不熟悉 Markdown_ ， 相对来说比较喜欢 ReST_ 。 似乎无论哪边都要
-依赖 Pygments_ 作为代码着色器，那么其实 Rubyist 也至少需要安装 Python 。 我倾向于不依赖任何 Ruby 组件，最好没有 C 扩展
-的纯 Python 实现。
+剩下的問題就是 Ruby 和 Python 兩大陣營的對立問題了。我不熟悉 Markdown_ ， 相對來說比較喜歡 ReST_ 。 似乎無論哪邊都要
+依賴 Pygments_ 作爲代碼着色器，那麼其實 Rubyist 也至少需要安裝 Python 。 我傾向於不依賴任何 Ruby 組件，最好沒有 C 擴展
+的純 Python 實現。
 
-于是我开始在 Github 上找 Python 的静态博客引擎。 Flask_ 的作者 mitsuhiko_ 写的 rstblog_ 看起来不错，不过似乎没有多少人在用。 Hyde_ 似乎很完善，不过默认的标记语言是 MarkDown ， 又依赖于几个 Ruby 组建，而且官方网站的设计实在太前卫。 最终我看到了 Pelican_ 。
+於是我開始在 Github 上找 Python 的靜態博客引擎。 Flask_ 的作者 mitsuhiko_ 寫的 rstblog_ 看起來不錯，不過似乎沒有多少人在用。 Hyde_ 似乎很完善，不過默認的標記語言是 MarkDown ， 又依賴於幾個 Ruby 組建，而且官方網站的設計實在太前衛。 最終我看到了 Pelican_ 。
 
-.. [#] 比如 Python 2.x 与 3.x 之间看似难以跨越的鸿沟，以及 PyPy_ 、 CPython_ 、 Stackless_ 、 Cython_ 等各个实现之间的微妙差别。
+.. [#] 比如 Python 2.x 與 3.x 之間看似難以跨越的鴻溝，以及 PyPy_ 、 CPython_ 、 Stackless_ 、 Cython_ 等各個實現之間的微妙差別。
 
-.. [#] 是的，我们有 easy_install_ ，我们有 pip_ ， 不过这些都是包管理器，都是装好特定的Python实现之后的事情。 Python实现本身还不需要包管理器来管理。 Python 的版本问题基本上也只需要 2to3.py_ 和 3to2.py_ 这样的轻量级转换器就可以了，你不需要为了安装多个软件而在硬盘里留下多个不同版本的 Python 。 如果为了引用的稳定性，你可以用 virtualenv_ ，不过这又是另一回事情了。
+.. [#] 是的，我們有 easy_install_ ，我們有 pip_ ， 不過這些都是包管理器，都是裝好特定的Python實現之後的事情。 Python實現本身還不需要包管理器來管理。 Python 的版本問題基本上也只需要 2to3.py_ 和 3to2.py_ 這樣的輕量級轉換器就可以了，你不需要爲了安裝多個軟件而在硬盤裏留下多個不同版本的 Python 。 如果爲了引用的穩定性，你可以用 virtualenv_ ，不過這又是另一回事情了。
 
 .. _RVM: http://beginrescueend.com/
 
@@ -74,50 +74,50 @@
 
 .. _Hyde: http://ringce.com/hyde
 
-那么就 Pelican_ 吧
+那麼就 Pelican_ 吧
 ++++++++++++++++++++++
 
-对我而言， Pelican_ 相比于 Octopress_ 有几个好处：
+對我而言， Pelican_ 相比於 Octopress_ 有幾個好處：
 
- #. 纯 Python 实现。 这意味着我可以换用任何 Python 解释器而不必担心兼容性问题。比如我就换成了 PyPy_。
- #. 多语言支持。因为 Pelican_ 的作者似乎是个法国人。不过这个似乎大部分人不需要…… 我是想尽量把一篇博客写成三种语言作为锻炼吧。
- #. ReST_ 。这样我就可以用 Leo_ 的 @auto-rst 直接写 ReST了。简单方便快捷有效。
+ #. 純 Python 實現。 這意味着我可以換用任何 Python 解釋器而不必擔心兼容性問題。比如我就換成了 PyPy_。
+ #. 多語言支持。因爲 Pelican_ 的作者似乎是個法國人。不過這個似乎大部分人不需要…… 我是想儘量把一篇博客寫成三種語言作爲鍛鍊吧。
+ #. ReST_ 。這樣我就可以用 Leo_ 的 @auto-rst 直接寫 ReST了。簡單方便快捷有效。
  
-不过似乎 Pelican_ 的关注度不如 Octopress_ 那么高，现在一些部分还有细微的问题：
+不過似乎 Pelican_ 的關注度不如 Octopress_ 那麼高，現在一些部分還有細微的問題：
 
- #. pelican-import 从 WordPress 导入的时候对中文、日文的支持似乎很成问题。
- #. 日期格式、时区、字符集、和多语言功能的结合度还不够。  **我在尝试改善它。**
- #. 模板还不够丰富。
- #. 插件也不够多……
+ #. pelican-import 從 WordPress 導入的時候對中文、日文的支持似乎很成問題。
+ #. 日期格式、時區、字符集、和多語言功能的結合度還不夠。  **我在嘗試改善它。**
+ #. 模板還不夠豐富。
+ #. 插件也不夠多……
 
-希望这么优秀的工具能够受到更多关注，以上这些问题都是增加关注度之后很快就能解决的问题。
+希望這麼優秀的工具能夠受到更多關注，以上這些問題都是增加關注度之後很快就能解決的問題。
  
 .. _Leo: http://webpages.charter.net/edreamleo/front.html
 
-我的设置 settings.py
+我的設置 settings.py
 ++++++++++++++++++++++++
 
-安装 Pelican_ 很容易，一句话就够了：
+安裝 Pelican_ 很容易，一句話就夠了：
 
 .. code-block:: console
 
     $ pip install pelican
 
-然后把文章写成ReST的格式，放在`pages`文件夹里面。(重新)生成只要：
+然後把文章寫成ReST的格式，放在`pages`文件夾裏面。(重新)生成只要：
 
 
 .. code-block:: console
 
     $ pelican -s settings.py
     
-上传到 Github:
+上傳到 Github:
 
 .. code-block:: console
 
     $ git commit -am "Commit message"
     $ git push
 
-就这么简单。附上我的配置文件：
+就這麼簡單。附上我的配置文件：
 
 .. code-block:: python
     

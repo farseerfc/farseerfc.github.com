@@ -6,7 +6,7 @@ PyRuby
 :date: 2012-03-02 23:09
 :tags: python, ruby
 
-今天在GitHub上闲逛的时候看到一个叫做 `PyRuby <https://github.com/danielfm/pyruby>`_ 的项目。项目的Readme说得很好：
+今天在GitHub上閒逛的時候看到一個叫做 `PyRuby <https://github.com/danielfm/pyruby>`_ 的項目。項目的Readme說得很好：
 
 ::
 
@@ -21,14 +21,14 @@ PyRuby
     
     1.upto(10) { |n| puts n }
 
-甚至 `PyPI <http://pypi.python.org/pypi/pyruby/1.0.0>`_ 上还有这个项目的包。
+甚至 `PyPI <http://pypi.python.org/pypi/pyruby/1.0.0>`_ 上還有這個項目的包。
 
-一开始我还以为这又是一个野心勃勃的基于PyPy的Ruby实现，或者某种trick在Python里面直接调用Ruby解释器。
+一開始我還以爲這又是一個野心勃勃的基於PyPy的Ruby實現，或者某種trick在Python裏面直接調用Ruby解釋器。
 
-然后我想看看这个的源代码
+然後我想看看這個的源代碼
 ++++++++++++++++++++++++++++++++++++
 
-只有一个ruby.py文件，内容是：
+只有一個ruby.py文件，內容是：
 
 .. code-block:: python
     
@@ -83,5 +83,5 @@ PyRuby
     sys.exit(1)
     
     
-是的……的确……这种尝试把Python和Ruby放在一起的想法绝对是疯了……
+是的……的確……這種嘗試把Python和Ruby放在一起的想法絕對是瘋了……
 
