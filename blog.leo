@@ -18,7 +18,7 @@
 <v t="farseerfc.20120302230533.1162"><vh>@auto-rst mix-ruby.en.rst</vh></v>
 <v t="farseerfc.20120302230533.1166"><vh>@auto-rst mix-ruby.jp.rst</vh></v>
 <v t="farseerfc.20120225061142.1115"><vh>@auto-rst try_pelican.en.rst</vh></v>
-<v t="farseerfc.20120225091118.1126"><vh>@auto-rst try_pelican.rst</vh></v>
+<v t="farseerfc.20120225091118.1126" a="E"><vh>@auto-rst try_pelican.rst</vh></v>
 <v t="farseerfc.20120225165955.1151"><vh>@auto-rst try_pelican.jp.rst</vh></v>
 </v>
 <v t="farseerfc.20120227161313.1164" a="E"><vh>@path C</vh>

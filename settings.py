@@ -4,12 +4,13 @@ import sys
 TIMEZONE = 'Asia/Tokyo'
 
 DATE_FORMATS = {
-    'en':('usa',u'%a, %d %b %Y'),
-    'zh':('chs',u'%Y-%m-%d'),
-    'jp':('jpn',u'%Y/%m/%d(%a)'),
+    'en' :('usa',u'%a, %d %b %Y'),
+    'zh' :('cht',u'%Y-%m-%d'),
+    'zhs':('chs',u'%Y-%m-%d'),
+    'jp' :('jpn',u'%Y/%m/%d(%a)'),
 }
 # windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx
-LOCALE = ['usa', 'chs', 'jpn',        # windows
+LOCALE = ['usa', 'cht', 'chs', 'jpn',        # windows
           'en_US', 'zh_CN', 'ja_JP']  # Unix/Linux
 DEFAULT_LANG = 'zh'
 
