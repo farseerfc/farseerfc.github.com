@@ -123,6 +123,28 @@
    data-count="horizontal" data-via="farseerfc">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
+
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 72 , _h = 16;
+  var param = {
+    url:location.href,
+    type:'3',
+    count:'1',
+    appkey:'',
+    title:'',
+    pic:'',
+    ralateUid:'1862842353',
+	language:'zh_tw',
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
  
 			</h1> 
 		</header>
@@ -333,27 +355,15 @@
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
-<li class="tag-4">
-    <a href="./tag/acpi.html">
-        <i class="icon-tag icon-large"></i>acpi
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
-    </a>
-</li>
-
 <li class="tag-2">
     <a href="./tag/microsoft.html">
         <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</li>
+
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
     </a>
 </li>
 
@@ -364,14 +374,14 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
     </a>
 </li>
 
-<li class="tag-1">
-    <a href="./tag/python.html">
-        <i class="icon-tag icon-large"></i>python
+<li class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
     </a>
 </li>
 
@@ -388,14 +398,8 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/template.html">
-        <i class="icon-tag icon-large"></i>template
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/C++.html">
-        <i class="icon-tag icon-large"></i>C++
+    <a href="./tag/ruby.html">
+        <i class="icon-tag icon-large"></i>ruby
     </a>
 </li>
 
@@ -406,8 +410,26 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/ruby.html">
-        <i class="icon-tag icon-large"></i>ruby
+    <a href="./tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/acpi.html">
+        <i class="icon-tag icon-large"></i>acpi
     </a>
 </li>
 
