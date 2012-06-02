@@ -26,23 +26,36 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 Towards Improving BTS with Game Mechanisms Tracking
 -----------------------------------------------------------------------
 
-Improve bug report
+感觉这篇的内容基本上就是关于 http://www.joelonsoftware.com/items/2008/09/15.html
+这里写到的东西，然后说同样的理论是否可以用于Issue Tracking之类的事情上。
+不知道为什么这个可以中。
 
 GHTorrent
 -----------------------------------------------------------------------
 
-Data exporter for github
+Data exporter for github. Github的主要数据->代码，已经可以通过git接口
+获得了，wiki是git的形式保存的。所以这个项目的目的就是暴露别的数据，主要
+是issue tracking，code comments，这种。代码采用github api，然后用分布式
+实现以克服api的限制，然后提供torrents形式的history下载。github api获得
+的json数据以bson的形式保存在MongoDB里，解析过的有了Schema之后的数据保存
+在MySQL里并可以导出SQL。
+
+个人的想法，觉得数据如果能够更统一，全部存在Git里或许更好，像Wiki一样。
+同样是要暴露全部历史记录的目的，用Torrent自己实现的历史远不如用Git的
+接口实现的历史记录方便吧，git blame之类的也更方便追踪code comment之类的
+作者信息。当然对git的raw date直接读写，需要对git的内部原理有足够的理解，
+或许只有github的人有这种能力了。
 
 Topic Mining
 -----------------------------------------------------------------------
 
-with DE and AIC
+用得两个参数， DE 和 AIC，完全不能理解。过后研究。
 
 SeCold
 -----------------------------------------------------------------------
 
 A linked data platform for mining software repositories
-
+没听懂这个项目的目的。
 
 一些感想
 -----------------------------------------------------------------------
@@ -78,4 +91,9 @@ Bug Localization''的人用的slide是beamer的。公式很多，overlay很多�
 剩下的自然是PPT。MSRA的刘女士做的虽然是PPT，倒是有很多beamer的感觉，
 比如页眉页脚和overlay的用法。这些如果都是PPT做出来的，会多很多额外的
 人力吧。
+
+值得一提的是有一个题目为``Green Mining: A Methodology of Relating 
+Software Change to Power Consumption''的人的slide全是``劣质''的手绘漫画，
+效果意外地好，很低碳很环保很绿色很可爱。
+
 
