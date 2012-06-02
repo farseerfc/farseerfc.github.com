@@ -57,6 +57,8 @@ SeCold
 A linked data platform for mining software repositories
 没听懂这个项目的目的。
 
+-----------------------------------------------------------------------
+
 一些感想
 -----------------------------------------------------------------------
 
@@ -78,15 +80,15 @@ A linked data platform for mining software repositories
 
 题目为``Incorporating Version Histories in Information Retrieval Based 
 Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
-很多，图片很少，典型的beamer做出的slide。思维导图用得很不错。
+很多，图片很少，典型的beamer做出的slide。思维导图用得很不错。今天一天
+有至少3个slide是用beamer做的。
 
 题目为``Towards Improving Bug Tracking Systems with Game Mechanisms''
 的人用了prezi，图片很多，过度很多。但是比如没有页号没有页眉页脚，正式
 会议的场合不太方便。
 
-至少有两个以上用了Apple Keynotes，Keynotes做出来的东西真的和Powerpoint
-做出来的很难区别，这两个人用了初始的主题所以才看出来。还有至少两个人
-的slide的动画效果是PPT绝对做不出来的，估计是Keynotes。
+至少有六个以上用了Apple Keynotes，Keynotes做出来的东西真的和Powerpoint
+做出来的很难区别，其中两个人用了初始的主题所以才看出来。
 
 剩下的自然是PPT。MSRA的刘女士做的虽然是PPT，倒是有很多beamer的感觉，
 比如页眉页脚和overlay的用法。这些如果都是PPT做出来的，会多很多额外的
@@ -94,6 +96,9 @@ Bug Localization''的人用的slide是beamer的。公式很多，overlay很多�
 
 值得一提的是有一个题目为``Green Mining: A Methodology of Relating 
 Software Change to Power Consumption''的人的slide全是``劣质''的手绘漫画，
-效果意外地好，很低碳很环保很绿色很可爱。
+效果意外地好，很低碳很环保很绿色很可爱。具体效果可以参考下面的动画，虽然
+现场看到的不是一个版本：
+
+http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv
 
 
