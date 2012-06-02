@@ -47,6 +47,9 @@ A linked data platform for mining software repositories
 一些感想
 -----------------------------------------------------------------------
 
+基于自然语义分析的commit分割
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 经常工具（比如git）的使用者并没有按照工具设计者的意图使用工具，这给MSR
 带来很多困难。举个例子，git有非常完美的branch系统，通常期望git的使用者
 能够在一次commit里commit一个功能，比如一个bug的修复，或者一个feature的
@@ -56,3 +59,23 @@ A linked data platform for mining software repositories
 一次的commit按照语义分割成多个。
 
 分割之后，可以更容易地把issue和commit关联，也更容易组织更多的研究。
+
+关于这次发表中大家用的slides系统
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+题目为``Incorporating Version Histories in Information Retrieval Based 
+Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
+很多，图片很少，典型的beamer做出的slide。思维导图用得很不错。
+
+题目为``Towards Improving Bug Tracking Systems with Game Mechanisms''
+的人用了prezi，图片很多，过度很多。但是比如没有页号没有页眉页脚，正式
+会议的场合不太方便。
+
+至少有两个以上用了Apple Keynotes，Keynotes做出来的东西真的和Powerpoint
+做出来的很难区别，这两个人用了初始的主题所以才看出来。还有至少两个人
+的slide的动画效果是PPT绝对做不出来的，估计是Keynotes。
+
+剩下的自然是PPT。MSRA的刘女士做的虽然是PPT，倒是有很多beamer的感觉，
+比如页眉页脚和overlay的用法。这些如果都是PPT做出来的，会多很多额外的
+人力吧。
+

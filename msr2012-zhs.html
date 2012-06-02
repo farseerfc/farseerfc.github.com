@@ -225,6 +225,8 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 </div>
 <div class="section" id="id1">
 <h3>一些感想</h3>
+<div class="section" id="commit">
+<h4>基于自然语义分析的commit分割</h4>
 <p>经常工具（比如git）的使用者并没有按照工具设计者的意图使用工具，这给MSR
 带来很多困难。举个例子，git有非常完美的branch系统，通常期望git的使用者
 能够在一次commit里commit一个功能，比如一个bug的修复，或者一个feature的
@@ -232,6 +234,22 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 <p>或许这不是使用者的错，而是工具仍然不够人性的表现。或许我们可以自动把
 一次的commit按照语义分割成多个。</p>
 <p>分割之后，可以更容易地把issue和commit关联，也更容易组织更多的研究。</p>
+</div>
+<div class="section" id="slides">
+<h4>关于这次发表中大家用的slides系统</h4>
+<p>题目为``Incorporating Version Histories in Information Retrieval Based
+Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
+很多，图片很少，典型的beamer做出的slide。思维导图用得很不错。</p>
+<p>题目为``Towards Improving Bug Tracking Systems with Game Mechanisms''
+的人用了prezi，图片很多，过度很多。但是比如没有页号没有页眉页脚，正式
+会议的场合不太方便。</p>
+<p>至少有两个以上用了Apple Keynotes，Keynotes做出来的东西真的和Powerpoint
+做出来的很难区别，这两个人用了初始的主题所以才看出来。还有至少两个人
+的slide的动画效果是PPT绝对做不出来的，估计是Keynotes。</p>
+<p>剩下的自然是PPT。MSRA的刘女士做的虽然是PPT，倒是有很多beamer的感觉，
+比如页眉页脚和overlay的用法。这些如果都是PPT做出来的，会多很多额外的
+人力吧。</p>
+</div>
 </div>
 </div>
 
@@ -307,50 +325,20 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
 <li class="tag-4">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/yssy.html">
-        <i class="icon-tag icon-large"></i>yssy
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/sjtu.html">
-        <i class="icon-tag icon-large"></i>sjtu
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/template.html">
-        <i class="icon-tag icon-large"></i>template
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/creationism.html">
-        <i class="icon-tag icon-large"></i>creationism
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/ruby.html">
-        <i class="icon-tag icon-large"></i>ruby
-    </a>
-</li>
-
-<li class="tag-4">
     <a href="./tag/music.html">
         <i class="icon-tag icon-large"></i>music
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
     </a>
 </li>
 
@@ -361,14 +349,14 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 </li>
 
 <li class="tag-4">
-    <a href="./tag/C++.html">
-        <i class="icon-tag icon-large"></i>C++
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
     </a>
 </li>
 
-<li class="tag-4">
-    <a href="./tag/repository.html">
-        <i class="icon-tag icon-large"></i>repository
+<li class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
     </a>
 </li>
 
@@ -379,8 +367,8 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 </li>
 
 <li class="tag-4">
-    <a href="./tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
     </a>
 </li>
 
@@ -391,14 +379,14 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
 </li>
 
 <li class="tag-4">
-    <a href="./tag/icse.html">
-        <i class="icon-tag icon-large"></i>icse
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
+    <a href="./tag/ruby.html">
+        <i class="icon-tag icon-large"></i>ruby
     </a>
 </li>
 
@@ -408,9 +396,39 @@ Detector，似乎我要给井上研做的就是这个。演讲结束的时候的
     </a>
 </li>
 
-<li class="tag-2">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
+<li class="tag-4">
+    <a href="./tag/repository.html">
+        <i class="icon-tag icon-large"></i>repository
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/icse.html">
+        <i class="icon-tag icon-large"></i>icse
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
     </a>
 </li>
 
