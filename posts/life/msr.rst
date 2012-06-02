@@ -101,4 +101,15 @@ Software Change to Power Consumption''的人的slide全是``劣質''的手繪漫
 
 http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv
 
+微軟是個腹黑娘！
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+嘛雖然這也不是什麼新聞了。MSR2012的Mining Challenge的贊助商是微軟，管理
+組織者來自微軟研究院，獎品是Xbox和Kinect。然後今年的題目是：
+
+::
+
+        Mining Android Bug
+
+我看到了微軟滿滿的怨氣……
 
