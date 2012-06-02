@@ -20,3 +20,24 @@ MSR(MicroSoft Research) talk @ MSR(Mining Software Repositories)
 和XIAO的两部分。XIAO是MSRA开发的Code Clone Detector，似乎我要给井上研做的就是这个
 。演讲结束的时候的鼓掌导致了话筒的小鼓掌。
 
+
+Towards Improving BTS with Game Mechanisms Tracking
+-------------------------------------------------------------------
+
+Improve bug report
+
+GHTorrent
+-------------------------------------------------
+
+Data exporter for github
+
+Topic Mining
+------------------------------------------------
+
+with DE and AIC
+
+SeCold
+-------------------------------------------------
+
+A linked data platform for mining software repositories
+
