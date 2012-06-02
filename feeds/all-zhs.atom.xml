@@ -10,6 +10,22 @@
 和XIAO的两部分。XIAO是MSRA开发的Code Clone Detector，似乎我要给井上研做的就是这个
 。演讲结束的时候的鼓掌导致了话筒的小鼓掌。&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="towards-improving-bts-with-game-mechanisms-tracking"&gt;
+&lt;h3&gt;Towards Improving BTS with Game Mechanisms Tracking&lt;/h3&gt;
+&lt;p&gt;Improve bug report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ghtorrent"&gt;
+&lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;Data exporter for github&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="topic-mining"&gt;
+&lt;h3&gt;Topic Mining&lt;/h3&gt;
+&lt;p&gt;with DE and AIC&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="secold"&gt;
+&lt;h3&gt;SeCold&lt;/h3&gt;
+&lt;p&gt;A linked data platform for mining software repositories&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </summary><category term="msr"></category><category term="icse"></category><category term="mining"></category><category term="software"></category><category term="repository"></category></entry><entry><title>Pyssy 项目</title><link href="http://farseerfc.github.com/pyssy-zhs.html" rel="alternate"></link><updated>2012-04-02T12:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-04-02:pyssy-zhs.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;简介&lt;/h2&gt;
