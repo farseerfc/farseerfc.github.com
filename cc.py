@@ -1,6 +1,8 @@
 import fnmatch
 import os
 
+CP = 'cp'
+
 zhposts = []
 
 for root, dirs, filenames in os.walk('posts'):
@@ -12,7 +14,7 @@ for root, dirs, filenames in os.walk('posts'):
 
         
 for root, post in zhposts:
-    cpcmd = 'copy %s opencc\\input.txt'%(os.path.join(root, post))
+    cpcmd = '%s %s opencc/input.txt'%(CP,os.path.join(root, post))
     print cpcmd
     os.system(cpcmd)
     os.chdir('opencc')
@@ -21,7 +23,7 @@ for root, post in zhposts:
     os.system(cccmd)
     os.chdir('..')
     name = post[:-4]+'.zhs.rst'
-    cpcmd = 'copy opencc\\output.txt %s'%(os.path.join(root, name))
+    cpcmd = '%s opencc/output.txt %s'%(CP, os.path.join(root, name))
     print cpcmd
     os.system(cpcmd)
     

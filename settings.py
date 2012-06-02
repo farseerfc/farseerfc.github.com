@@ -4,14 +4,18 @@ import sys
 TIMEZONE = 'Asia/Tokyo'
 
 DATE_FORMATS = {
-    'en' :('usa',u'%a, %d %b %Y'),
-    'zh' :('cht',u'%Y-%m-%d'),
-    'zhs':('chs',u'%Y-%m-%d'),
-    'jp' :('jpn',u'%Y/%m/%d(%a)'),
+    'en' :( (u'en_US','utf8'),#'usa',
+	    u'%a, %d %b %Y',),
+    'zh' :( (u'zh_HK','utf8'),#'cht',
+	    u'%Y-%m-%d',),
+    'zhs':( (u'zh_CN','utf8'),#'chs',
+	    u'%Y-%m-%d',),
+    'jp' :( (u'ja_JP','utf8'),#'jpn',
+	    u'%Y/%m/%d(%a)',),
 }
 # windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx
-LOCALE = ['usa', 'cht', 'chs', 'jpn',        # windows
-          'en_US', 'zh_CN', 'ja_JP']  # Unix/Linux
+#LOCALE = [#'usa', 'cht', 'chs', 'jpn',        # windows
+#          u'en_US.utf8', u'zh_CN.utf8', u'ja_JP.utf8']  # Unix/Linux
 DEFAULT_LANG = 'zh'
 
 SITENAME = 'Farseerfc Blog'

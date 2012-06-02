@@ -1,0 +1,22 @@
+MSR 2012 @ ICSE 
+===================
+
+:slug: msr2012
+:lang: zhs
+:date: 2012-06-02 10:42
+:tags: msr, icse, mining, software, repository
+
+Mining Software Repository 2012 @ ICSE
++++++++++++++++++++++++++++++++++++++++
+
+参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点小插曲，显然
+瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌被搞错了。
+
+MSR(MicroSoft Research) talk @ MSR(Mining Software Repositories)
+-----------------------------------------------------------------
+
+首先是来自微软亚洲研究院（MicroSoft Research @ Asia, MSR Asia）的演讲，于是就变成
+了MSR在MSR的演讲。MSR的张冬梅（Dongmei Zhang）女士的演讲分为关于Software Analysis
+和XIAO的两部分。XIAO是MSRA开发的Code Clone Detector，似乎我要给井上研做的就是这个
+。演讲结束的时候的鼓掌导致了话筒的小鼓掌。
+
