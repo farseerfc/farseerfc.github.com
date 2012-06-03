@@ -202,8 +202,8 @@ From now on you should be able to write Ruby code within a regular Python module
 &lt;p&gt;私自身にとって、 &lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; は &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; よりいいところ：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;純粋な Python で実現した。ですから &lt;a class="reference external" href="http://python.org/"&gt;CPython&lt;/a&gt; のほかべつの実現を使うのも心配がない。例えばわたしは PyPy_　を使ています。&lt;/li&gt;
-&lt;li&gt;多言語。Pelican_ の原作者はフランス人らしいです。ほとんどの人はこれの必要がないと思うが……できるだけ、わたしは三つの言語で書く。&lt;/li&gt;
+&lt;li&gt;純粋な Python で実現した。ですから &lt;a class="reference external" href="http://python.org/"&gt;CPython&lt;/a&gt; のほかべつの実現を使うのも心配がない。例えばわたしは &lt;a class="reference external" href="http://pypy.org/"&gt;PyPy&lt;/a&gt;　を使ています。&lt;/li&gt;
+&lt;li&gt;多言語。&lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; の原作者はフランス人らしいです。ほとんどの人はこれの必要がないと思うが……できるだけ、わたしは三つの言語で書く。&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; 。それなら &lt;a class="reference external" href="http://webpages.charter.net/edreamleo/front.html"&gt;Leo&lt;/a&gt; の &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;#64;auto-rst&lt;/span&gt;&lt;/tt&gt; を使って直接 &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; をかけます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
@@ -223,7 +223,10 @@ From now on you should be able to write Ruby code within a regular Python module
 &lt;p&gt;&lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; を入れるのは簡単：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gp"&gt;$&lt;/span&gt; pip install pelican
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;文章を &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; で書いて、``posts``フォルダーに置きます。ページを生成する：&lt;/p&gt;
+&lt;p&gt;文章を &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; で書いて、&lt;a href="#id14"&gt;&lt;span class="problematic" id="id15"&gt;``&lt;/span&gt;&lt;/a&gt;posts``フォルダーに置きます。ページを生成する：&lt;/p&gt;
+&lt;div class="system-message" id="id14"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/farseerfc/Dropbox/projects/farseerfc.github.com/posts/python/try_pelican.jp.rst&lt;/tt&gt;, line 106); &lt;em&gt;&lt;a href="#id15"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gp"&gt;$&lt;/span&gt; pelican -s settings.py
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Github　に送る:&lt;/p&gt;

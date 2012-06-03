@@ -76,7 +76,21 @@ The evolution of software
 -----------------------------------------------------------------------
 
 第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
-或許就是Github賴以成功的基礎。
+或許就是Github賴以成功的基礎。講到代碼中的comment, Tags, uBlog, blog之類
+的social的特性和IDE的融合的趨勢。
+
+Do Faster Releases Imporve Software Quality?
+-----------------------------------------------------------------------
+
+使用Firefox作爲例子。
+
+結論是快速發佈導致bug更多，更容易crash，但是bug更快得到修復，並且用戶
+更快轉向新的發佈。
+
+Security vs Performance Bugs in Firefox
+-----------------------------------------------------------------------
+
+Performance bugs are regression, blocks release.
 
 -----------------------------------------------------------------------
 

@@ -54,7 +54,18 @@ Mylyn, Eclipse三個軟件。試圖從Repo中分析源代碼的identifier和comm
 &lt;div class="section" id="the-evolution-of-software"&gt;
 &lt;h3&gt;The evolution of software&lt;/h3&gt;
 &lt;p&gt;第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
-或許就是Github賴以成功的基礎。&lt;/p&gt;
+或許就是Github賴以成功的基礎。講到代碼中的comment, Tags, uBlog, blog之類
+的social的特性和IDE的融合的趨勢。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
+&lt;p&gt;使用Firefox作爲例子。&lt;/p&gt;
+&lt;p&gt;結論是快速發佈導致bug更多，更容易crash，但是bug更快得到修復，並且用戶
+更快轉向新的發佈。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
+&lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
+&lt;p&gt;Performance bugs are regression, blocks release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;hr class="docutils" /&gt;
 &lt;div class="section" id="id1"&gt;
@@ -239,11 +250,17 @@ From now on you should be able to write Ruby code within a regular Python module
     &lt;span class="n"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dd&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;奇怪的是重載決議的時候，``f``的情況下它就不讓我特化的``f&amp;lt;A&amp;gt;``進來。&lt;/p&gt;
-&lt;p&gt;但是在``ff``的情況下，``ff&amp;lt;BB&amp;lt;long&amp;gt;&amp;gt;``卻進來了。&lt;/p&gt;
+&lt;p&gt;奇怪的是重載決議的時候，&lt;a href="#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;f``的情況下它就不讓我特化的``f&amp;lt;A&amp;gt;``進來。&lt;/p&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/farseerfc/Dropbox/projects/farseerfc.github.com/posts/c/discuss-cpp-template-downcast.rst&lt;/tt&gt;, line 67); &lt;em&gt;&lt;a href="#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;但是在``ff``的情況下，&lt;a href="#id5"&gt;&lt;span class="problematic" id="id6"&gt;``&lt;/span&gt;&lt;/a&gt;ff&amp;lt;BB&amp;lt;long&amp;gt;&amp;gt;``卻進來了。&lt;/p&gt;
+&lt;div class="system-message" id="id5"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/home/farseerfc/Dropbox/projects/farseerfc.github.com/posts/c/discuss-cpp-template-downcast.rst&lt;/tt&gt;, line 69); &lt;em&gt;&lt;a href="#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
 &lt;p&gt;在VC10和GCC3.4下測試&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
+&lt;div class="section" id="id7"&gt;
 &lt;h2&gt;我的解答&lt;/h2&gt;
 &lt;p&gt;我們來設身處地地作爲編譯器，看一遍到底發生了什麼。&lt;/p&gt;
 &lt;p&gt;約定符號 &lt;tt class="docutils literal"&gt;#&lt;/tt&gt; : &lt;tt class="docutils literal"&gt;A#B&lt;/tt&gt; 是把 &lt;tt class="docutils literal"&gt;B&lt;/tt&gt; 帶入 &lt;tt class="docutils literal"&gt;A&amp;lt;T&amp;gt;&lt;/tt&gt; 的參數 &lt;tt class="docutils literal"&gt;T&lt;/tt&gt; 之後實例化得到的結果。&lt;/p&gt;
@@ -323,7 +340,7 @@ From now on you should be able to write Ruby code within a regular Python module
 &lt;p&gt;對我而言， &lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; 相比於 &lt;a class="reference external" href="http://octopress.org/"&gt;Octopress&lt;/a&gt; 有幾個好處：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;純 Python 實現。 這意味着我可以換用任何 Python 解釋器而不必擔心兼容性問題。比如我就換成了 PyPy_。&lt;/li&gt;
+&lt;li&gt;純 Python 實現。 這意味着我可以換用任何 Python 解釋器而不必擔心兼容性問題。比如我就換成了 &lt;a class="reference external" href="http://pypy.org/"&gt;PyPy&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;多語言支持。因爲 &lt;a class="reference external" href="http://pelican.notmyidea.org/en/latest/"&gt;Pelican&lt;/a&gt; 的作者似乎是個法國人。不過這個似乎大部分人不需要…… 我是想儘量把一篇博客寫成三種語言作爲鍛鍊吧。&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;ReST&lt;/a&gt; 。這樣我就可以用 &lt;a class="reference external" href="http://webpages.charter.net/edreamleo/front.html"&gt;Leo&lt;/a&gt; 的 &amp;#64;auto-rst 直接寫 ReST了。簡單方便快捷有效。&lt;/li&gt;
 &lt;/ol&gt;

@@ -54,7 +54,18 @@ Mylyn, Eclipse三个软件。试图从Repo中分析源代码的identifier和comm
 &lt;div class="section" id="the-evolution-of-software"&gt;
 &lt;h3&gt;The evolution of software&lt;/h3&gt;
 &lt;p&gt;第二天的Keynotes，关于将Social Media和Software Development相结合的想法。
-或许就是Github赖以成功的基础。&lt;/p&gt;
+或许就是Github赖以成功的基础。讲到代码中的comment, Tags, uBlog, blog之类
+的social的特性和IDE的融合的趋势。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
+&lt;p&gt;使用Firefox作为例子。&lt;/p&gt;
+&lt;p&gt;结论是快速发布导致bug更多，更容易crash，但是bug更快得到修复，并且用户
+更快转向新的发布。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
+&lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
+&lt;p&gt;Performance bugs are regression, blocks release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;hr class="docutils" /&gt;
 &lt;div class="section" id="id1"&gt;
@@ -253,7 +264,18 @@ Mylyn, Eclipse三個軟件。試圖從Repo中分析源代碼的identifier和comm
 &lt;div class="section" id="the-evolution-of-software"&gt;
 &lt;h3&gt;The evolution of software&lt;/h3&gt;
 &lt;p&gt;第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
-或許就是Github賴以成功的基礎。&lt;/p&gt;
+或許就是Github賴以成功的基礎。講到代碼中的comment, Tags, uBlog, blog之類
+的social的特性和IDE的融合的趨勢。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
+&lt;p&gt;使用Firefox作爲例子。&lt;/p&gt;
+&lt;p&gt;結論是快速發佈導致bug更多，更容易crash，但是bug更快得到修復，並且用戶
+更快轉向新的發佈。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
+&lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
+&lt;p&gt;Performance bugs are regression, blocks release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;hr class="docutils" /&gt;
 &lt;div class="section" id="id1"&gt;
