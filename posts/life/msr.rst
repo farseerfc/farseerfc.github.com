@@ -11,31 +11,38 @@ Mining Software Repository 2012 @ ICSE
 
 參加了今年的MSR，會場在University of Zurich。一大早來到大學，註冊有點
 小插曲，顯然瑞士人搞不清楚中國人的名字，3個楊（Yang）姓的中國人的名牌
-被搞錯了。
+被搞錯了。然後堀田學長的所屬被寫作了“Japan, Japan”，成爲了全日本的代表。
 
 MSR(MicroSoft Research) talk @ MSR(Mining Software Repositories)
 -----------------------------------------------------------------------
 
-首先是來自微軟亞洲研究院（MicroSoft Research @ Asia, MSR Asia）的演講，
+首先是來自微軟亞洲研究院（MicroSoft Research @ Asia, MSR Asia）的Keynots，
 於是就變成了MSR在MSR的演講。MSR的張冬梅（Dongmei Zhang）女士的演講
 分爲關於Software Analysis和XIAO的兩部分。XIAO是MSRA開發的Code Clone 
-Detector，似乎我要給井上研做的就是這個。演講結束的時候的鼓掌導致了話筒
-的小鼓掌。
+Detector，似乎我要給井上研做的就是這個。想更多瞭解Xiao的細節，不過張女士
+演講結束的時候的鼓掌導致了話筒的小故障。
 
 
-Towards Improving BTS with Game Mechanisms Tracking
+Towards Improving BTS with Game Mechanisms 
 -----------------------------------------------------------------------
 
-感覺這篇的內容基本上就是關於 http://www.joelonsoftware.com/items/2008/09/15.html
+感覺這篇的內容基本上就是關於 
+
+http://www.joelonsoftware.com/items/2008/09/15.html
+
 這裏寫到的東西，然後說同樣的理論是否可以用於Issue Tracking之類的事情上。
-不知道爲什麼這個可以中。
+個人感覺這個意義不大，stackoverflow之所以成功是因爲它把開源社區本身就
+具有的名譽體系具現化了，本着大家都喜歡被別人奉爲大牛的心態，就如同
+wikipedia一樣。同樣的理論如果用於公司內部的Issue Tracking系統上，會得到
+完全不同的東西吧。就像MSDN的組織方式雖然和wikipedia是一樣的，但是在MSDN
+裏找信息的感覺和在wikipedia完全不一樣。個人不太看好這個方向。
 
 GHTorrent
 -----------------------------------------------------------------------
 
-Data exporter for github. Github的主要數據->代碼，已經可以通過git接口
+Data exporter for github. Github的主要數據，代碼，已經可以通過git接口
 獲得了，wiki是git的形式保存的。所以這個項目的目的就是暴露別的數據，主要
-是issue tracking，code comments，這種。代碼採用github api，然後用分佈式
+是issue tracking，code comments，這種。代碼訪問github api，然後用分佈式
 實現以克服api的限制，然後提供torrents形式的history下載。github api獲得
 的json數據以bson的形式保存在MongoDB裏，解析過的有了Schema之後的數據保存
 在MySQL裏並可以導出SQL。
@@ -49,13 +56,27 @@ Data exporter for github. Github的主要數據->代碼，已經可以通過git�
 Topic Mining
 -----------------------------------------------------------------------
 
-用得兩個參數， DE 和 AIC，完全不能理解。過後研究。
+用得兩個參數， DE 和 AIC，完全不能理解，過後研究。實驗針對了Firefox, 
+Mylyn, Eclipse三個軟件。試圖從Repo中分析源代碼的identifier和comments，
+找到topic和bug之間的關係，比如怎樣的topic更容易導致bug。得出的結論似乎
+也很曖昧，只是說核心功能被報告的bug更多，但是不知道原因。這只能表示核心
+功能受到更多關注和更多測試吧，並不能說明核心功能就容易產生bug。
+
+不過這個的Slide做得很漂亮，很容易理解。
 
 SeCold
 -----------------------------------------------------------------------
 
 A linked data platform for mining software repositories
+
 沒聽懂這個項目的目的。
+
+
+The evolution of software
+-----------------------------------------------------------------------
+
+第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
+或許就是Github賴以成功的基礎。
 
 -----------------------------------------------------------------------
 
@@ -90,7 +111,7 @@ Bug Localization''的人用的slide是beamer的。公式很多，overlay很多�
 至少有六個以上用了Apple Keynotes，Keynotes做出來的東西真的和Powerpoint
 做出來的很難區別，其中兩個人用了初始的主題所以才看出來。
 
-剩下的自然是PPT。MSRA的劉女士做的雖然是PPT，倒是有很多beamer的感覺，
+剩下的自然是PPT。MSRA的張女士做的雖然是PPT，倒是有很多beamer的感覺，
 比如頁眉頁腳和overlay的用法。這些如果都是PPT做出來的，會多很多額外的
 人力吧。
 
