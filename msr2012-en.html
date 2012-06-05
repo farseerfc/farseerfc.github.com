@@ -161,7 +161,7 @@
 			<footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-02T10:42:00">
-	<i class="icon-calendar"></i>2012-06-02
+	<i class="icon-calendar"></i>Sat, 02 Jun 2012
 </abbr>
 
 <span class="label">By</span>
@@ -189,125 +189,157 @@
 
 <span class="label">Lang</span>
 
+	<a href="./msr2012-zhs.html"><i class="icon-edit"></i>zhs</a>
+
 	<a href="./msr2012.html"><i class="icon-edit"></i>zh</a>
 
 	<a href="./msr2012-jp.html"><i class="icon-edit"></i>jp</a>
-
-	<a href="./msr2012-en.html"><i class="icon-edit"></i>en</a>
 
 
 </footer><!-- /.post-info -->
 		</div>
 		<div class="section" id="mining-software-repository-2012-icse">
 <h2>Mining Software Repository 2012 &#64; ICSE</h2>
-<p>参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点
-小插曲，显然瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌
-被搞错了。然后堀田学长的所属被写作了“Japan, Japan”，成为了全日本的代表。</p>
+<p>I participated MSR of this year. We came to University of Zurich early
+in the morning. The registration got something wrong when it seems that
+Swisser cannot tell the difference among Asians so that name cards of
+3 Chinese with family name of Yang are misplaced. And also the
+organization field of Hotta was <tt class="docutils literal">Japan, Japan</tt>, as if he represented
+the Japan.</p>
 <div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
 <h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
-<p>首先是来自微软亚洲研究院（MicroSoft Research &#64; Asia, MSR Asia）的Keynots，
-于是就变成了MSR在MSR的演讲。MSR的张冬梅（Dongmei Zhang）女士的演讲
-分为关于Software Analysis和XIAO的两部分。XIAO是MSRA开发的Code Clone
-Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的细节，不过张女士
-演讲结束的时候的鼓掌导致了话筒的小故障。</p>
+<p>The first talk was the keynote given by Mrs Zhang from MSR(MicroSoft
+Research &#64; Asia), so it turned out to be MSR gave keynote of MSR.
+The talk was about Software Analysis and their clone detection tool
+called XIAO. XIAO was a clone detector developed by MSRA which can be
+used as a plugin for Microsoft Visual Studio. XIAO has two part, or
+system state: the statical state analysis all the clones which didn't
+consider the runing time, while the dynamic state need real time response.
+The thing I need to develop for Samsung is something like dynamic mode.
+I wanted to know more about the internal details about Xiao but the talk
+was finished there.</p>
 </div>
 <div class="section" id="towards-improving-bts-with-game-mechanisms">
 <h3>Towards Improving BTS with Game Mechanisms</h3>
-<p>感觉这篇的内容基本上就是关于</p>
+<p>The contents of this talk is very much like this blog:</p>
 <p><a class="reference external" href="http://www.joelonsoftware.com/items/2008/09/15.html">http://www.joelonsoftware.com/items/2008/09/15.html</a></p>
-<p>这里写到的东西，然后说同样的理论是否可以用于Issue Tracking之类的事情上。
-个人感觉这个意义不大，stackoverflow之所以成功是因为它把开源社区本身就
-具有的名誉体系具现化了，本着大家都喜欢被别人奉为大牛的心态，就如同
-wikipedia一样。同样的理论如果用于公司内部的Issue Tracking系统上，会得到
-完全不同的东西吧。就像MSDN的组织方式虽然和wikipedia是一样的，但是在MSDN
-里找信息的感觉和在wikipedia完全不一样。个人不太看好这个方向。</p>
+<p>The talk discussed whether the same game mechanism can be applied to
+the things like issue tracking or similiar. From my point of view, it
+is useless to use game machanism in this situation. The reason that
+stackoverflow can success lies on that they just captured the  use of
+fade system in opensource community, as all hackers like to be approved
+as great hacker, as what is happening in wikipedia. Whether the same
+theroy can be applied in issue tracking systems inside a internal
+company is questionable. Although MSDN has basic the same structure
+as wikipedia, the content of MSDN and wikipedia have different
+involvement of users. So I myself didn't approve this research.</p>
 </div>
 <div class="section" id="ghtorrent">
 <h3>GHTorrent</h3>
-<p>这篇的slide在这里可以看到：<a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524">http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524</a></p>
-<p>Data exporter for github. Github的主要数据，代码，已经可以通过git接口
-获得了，wiki是git的形式保存的。所以这个项目的目的就是暴露别的数据，主要
-是issue tracking，code comments，这种。代码访问github api，然后用分布式
-实现以克服api的限制，然后提供torrents形式的history下载。github api获得
-的json数据以bson的形式保存在MongoDB里，解析过的有了Schema之后的数据保存
-在MySQL里并可以导出SQL。</p>
-<p>个人的想法，觉得数据如果能够更统一，全部存在Git里或许更好，像Wiki一样。
-同样是要暴露全部历史记录的目的，用Torrent自己实现的历史远不如用Git的
-接口实现的历史记录方便吧，git blame之类的也更方便追踪code comment之类的
-作者信息。当然对git的raw date直接读写，需要对git的内部原理有足够的理解，
-或许只有github的人有这种能力了。</p>
+<p>They slide of this talk can be found from here:
+<a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524">http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524</a></p>
+<p>Data exporter for github. Main part of data of Github, namely the hosted
+code, are already exposed as git repos, and wiki of repos are stored in
+git repo. So the aim of this project is to expose other data such as
+issues, code comments, etc. The project access github api and fetch the
+needed data as distributed system in order to overcome the limitations
+of the github api. The project will provide download history as torrents.
+The json data from github api is stored as bson in MongoDB and the parsed
+data is stored in MySQL with schema.</p>
+<p>From my point of view, it will be better if the format of data can be
+uniformed and all data are stored in the git repo as wiki pages.
+As the history stored in git repo is more nature, and using <tt class="docutils literal">git blame</tt>
+to trace author of code comments should also be more useful. Of course
+it is harder to read and write the raw data of git as we need more
+understanding of the internal format of git. Maybe only people from
+github can do this.</p>
 </div>
 <div class="section" id="topic-mining">
 <h3>Topic Mining</h3>
-<p>用得两个参数， DE 和 AIC，完全不能理解，过后研究。实验针对了Firefox,
-Mylyn, Eclipse三个软件。试图从Repo中分析源代码的identifier和comments，
-找到topic和bug之间的关系，比如怎样的topic更容易导致bug。得出的结论似乎
-也很暧昧，只是说核心功能被报告的bug更多，但是不知道原因。这只能表示核心
-功能受到更多关注和更多测试吧，并不能说明核心功能就容易产生bug。</p>
-<p>不过这个的Slide做得很漂亮，很容易理解。</p>
-</div>
-<div class="section" id="secold">
-<h3>SeCold</h3>
-<p>A linked data platform for mining software repositories</p>
-<p>没听懂这个项目的目的。</p>
+<p>I can not understand the two parameters, DE, AIC, used in this research,
+study this later. The experiment target of this research are Firefox,
+Mylyn and Eclipse. They are trying to analysis the identifiers and
+comments from source codes in software repos and find the relationship
+between topics and bugs, like what kind of topics are more likely to
+contain buggy codes.</p>
+<p>The result of this research is not so clear. Such as it said that the
+core functions of Firefox have more bug reports, but it said no reason
+about this. Maybe this only means that the core features are well
+tested, rather than that the core features are more buggy.</p>
+<p>But the slides showed by auther are pretty and easy to understand.</p>
 </div>
 <div class="section" id="the-evolution-of-software">
 <h3>The evolution of software</h3>
-<p>第二天的Keynotes，关于将Social Media和Software Development相结合的想法。
-或许就是Github赖以成功的基础。讲到代码中的comment, Tags, uBlog, blog之类
-的social的特性和IDE的融合的趋势。</p>
+<p>The keynote talk of the second day. It is about how should we combine
+the social media with software development. Maybe this is the reason
+why Github successed. In the talk she told about accessing tags,
+uBlogs, blogs etc. directly from Intergrated Development Environments,
+or should we need cloud IDE such as Cloud9.</p>
 </div>
 <div class="section" id="do-faster-releases-imporve-software-quality">
 <h3>Do Faster Releases Imporve Software Quality?</h3>
-<p>使用Firefox作为例子。</p>
-<p>结论是快速发布导致bug更多，更容易crash，但是bug更快得到修复，并且用户
-更快转向新的发布。</p>
+<p>Used firefox as example.</p>
+<p>The conclusion is that faster releases will lead to more bugs and more
+frequent crash, but bugs are get fixed more quickly and user will switch
+to new released more quickly.</p>
 </div>
 <div class="section" id="security-vs-performance-bugs-in-firefox">
 <h3>Security vs Performance Bugs in Firefox</h3>
 <p>Performance bugs are regression, blocks release.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h3>一些感想</h3>
-<div class="section" id="commit">
-<h4>基于自然语义分析的commit分割</h4>
-<p>经常工具（比如git）的使用者并没有按照工具设计者的意图使用工具，这给MSR
-带来很多困难。举个例子，git有非常完美的branch系统，通常期望git的使用者
-能够在一次commit里commit一个功能，比如一个bug的修复，或者一个feature的
-添加，但是事实上经常有很多逻辑上的commit被合并在一个里面了。</p>
-<p>或许这不是使用者的错，而是工具仍然不够人性的表现。或许我们可以自动把
-一次的commit按照语义分割成多个。</p>
-<p>分割之后，可以更容易地把issue和commit关联，也更容易组织更多的研究。</p>
+<div class="section" id="some-of-my-thoughts">
+<h3>Some of my thoughts</h3>
+<div class="section" id="seperation-of-commits-based-on-semantic-analysis">
+<h4>Seperation of commits based on Semantic analysis</h4>
+<p>The user of some tools (such as git) are not following the design
+purposes of these tools which brings some difficulty to MSR. For example
+git has a prefect branch system, so it is desired for users of git to
+commit per topic. Commit per topic means that user send a commit for a
+single implementation of a feature or a bug fix, etc. If it is difficult
+to contain all modifications in a commit, then it should be in a
+seperate branch and merged into master branch. But acturely
+user tends to send very large commits, that contains many logical
+features, and they can not predict to open a new branch until a few
+commits.</p>
+<p>Maybe this is not the fault of the user of tools, this is the tools
+that are not smart enough. We should seperate the commits according
+to the semantica topics inside a commit.</p>
 </div>
-<div class="section" id="slides">
-<h4>关于这次发表中大家用的slides系统</h4>
-<p>题目为``Incorporating Version Histories in Information Retrieval Based
-Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
-很多，图片很少，典型的beamer做出的slide。思维导图用得很不错。今天一天
-有至少3个slide是用beamer做的。</p>
-<p>题目为``Towards Improving Bug Tracking Systems with Game Mechanisms''
-的人用了prezi，图片很多，过度很多。但是比如没有页号没有页眉页脚，正式
-会议的场合不太方便。</p>
-<p>至少有六个以上用了Apple Keynotes，Keynotes做出来的东西真的和Powerpoint
-做出来的很难区别，其中两个人用了初始的主题所以才看出来。</p>
-<p>剩下的自然是PPT。MSRA的张女士做的虽然是PPT，倒是有很多beamer的感觉，
-比如页眉页脚和overlay的用法。这些如果都是PPT做出来的，会多很多额外的
-人力吧。</p>
-<p>值得一提的是有一个题目为``Green Mining: A Methodology of Relating
-Software Change to Power Consumption''的人的slide全是``劣质''的手绘漫画，
-效果意外地好，很低碳很环保很绿色很可爱。具体效果可以参考下面的动画，虽然
-现场看到的不是一个版本：</p>
+<div class="section" id="about-the-slide-systems-used-today">
+<h4>About the slide systems used today</h4>
+<p>The study with title <tt class="docutils literal">Incorporating Version Histories in Information
+Retrieval Based Bug Localization</tt> used the slides made by beamer. It
+contains many equations, used many overlays are iterations, with few
+figures, is a typical beamer slide. It also used mindmap very well.</p>
+<p>There are at least 3 slides that are made by beamer today.</p>
+<p>The study with title <tt class="docutils literal">Towards Improving Bug Tracking Systems with
+Game Mechanisms</tt> presented with prezi. It have many pictures and many
+transitions. But because of it is made by prezi, there are no headers
+and footers so no page numbers and section titles etc. This is not
+so convinient in such a official occations because people need to
+refer to the page number in question session.</p>
+<p>There are at lease 6 presents used Apple Keynote. It is really
+difficult to tell the differece between slides made by powerpoints
+and Keynote. 2 of them used the default theme of keynote.</p>
+<p>The rest are using powerpoint. Mrs Zhang from Microsoft used powerpoint
+but her slides looks like beamer very much such as the usage of footer
+and header and overlays. If these are made by powerpoint that will
+involve many manually operations.</p>
+<p>值得一提的是有一個題目爲``Green Mining: A Methodology of Relating
+Software Change to Power Consumption''的人的slide全是``劣質''的手繪漫畫，
+效果意外地好，很低碳很環保很綠色很可愛。具體效果可以參考下面的動畫，雖然
+現場看到的不是一個版本：</p>
 <p><a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv">http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv</a></p>
 </div>
-<div class="section" id="id2">
-<h4>微软是个腹黑娘！</h4>
-<p>嘛虽然这也不是什么新闻了。MSR2012的Mining Challenge的赞助商是微软，管理
-组织者来自微软研究院，奖品是Xbox和Kinect。然后今年的题目是：</p>
+<div class="section" id="id1">
+<h4>微軟是個腹黑娘！</h4>
+<p>嘛雖然這也不是什麼新聞了。MSR2012的Mining Challenge的贊助商是微軟，管理
+組織者來自微軟研究院，獎品是Xbox和Kinect。然後今年的題目是：</p>
 <pre class="literal-block">
 Mining Android Bug
 </pre>
-<p>我看到了微软满满的怨气……</p>
+<p>我看到了微軟滿滿的怨氣……</p>
 </div>
 </div>
 </div>
@@ -318,7 +350,7 @@ Mining Android Bug
 		<h2>Comments !</h2>
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-			   var disqus_identifier = "msr2012-zhs.html";
+			   var disqus_identifier = "msr2012-en.html";
 			   (function() {
 				var dsq = document.createElement('script'); 
 				dsq.type = 'text/javascript'; dsq.async = true;

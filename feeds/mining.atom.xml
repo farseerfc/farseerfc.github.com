@@ -25,6 +25,7 @@ wikipedia一样。同样的理论如果用于公司内部的Issue Tracking系统
 &lt;/div&gt;
 &lt;div class="section" id="ghtorrent"&gt;
 &lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;这篇的slide在这里可以看到：&lt;a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524"&gt;http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Data exporter for github. Github的主要数据，代码，已经可以通过git接口
 获得了，wiki是git的形式保存的。所以这个项目的目的就是暴露别的数据，主要
 是issue tracking，code comments，这种。代码访问github api，然后用分布式
@@ -137,6 +138,7 @@ wikipedia一樣。同樣的理論如果用於公司內部的Issue Tracking系統
 &lt;/div&gt;
 &lt;div class="section" id="ghtorrent"&gt;
 &lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;這篇的slide在這裏可以看到：&lt;a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524"&gt;http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Data exporter for github. Github的主要數據，代碼，已經可以通過git接口
 獲得了，wiki是git的形式保存的。所以這個項目的目的就是暴露別的數據，主要
 是issue tracking，code comments，這種。代碼訪問github api，然後用分佈式
@@ -248,6 +250,7 @@ Mining Android Bug
 &lt;/div&gt;
 &lt;div class="section" id="ghtorrent"&gt;
 &lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;この研究のスライドはこちらに：&lt;a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524"&gt;http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Data exporter for github. Githubの主なデータはコード、それは既にgitから
 アクセスできます、wikiはgitとして保存しているからそれも含まれている。
 ですからこのプロジェクトの目的は他のデータを表せる、つまりissues, commit
@@ -260,55 +263,211 @@ apiの制限を超える、そしてtorrentの形で歴史をdownloadできま�
 &lt;div class="section" id="the-evolution-of-software"&gt;
 &lt;h3&gt;The evolution of software&lt;/h3&gt;
 &lt;p&gt;二日目のkeynotes, social mediaをソフトウェア開発に巻き込めるについて
-話しました。&lt;/p&gt;
-&lt;p&gt;第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
-或許就是Github賴以成功的基礎。講到代碼中的comment, Tags, uBlog, blog之類
-的social的特性和IDE的融合的趨勢。&lt;/p&gt;
+話しました。もしかしてこれはGithubの成功の理論かもしれない。IDEの中に
+social mediaのアクセスを欲しいと言いました。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
 &lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
-&lt;p&gt;使用Firefox作爲例子。&lt;/p&gt;
-&lt;p&gt;結論是快速發佈導致bug更多，更容易crash，但是bug更快得到修復，並且用戶
-更快轉向新的發佈。&lt;/p&gt;
+&lt;p&gt;Firefoxを例として研究しました。&lt;/p&gt;
+&lt;p&gt;結論としては、早い発行はbugを多く持たされ、crashがもっと頻繁になるが、
+bugの修復も早くなって、そしてユーザー側はもっと早く新しい発行に移動する
+ことをわかりました。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
+&lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
+&lt;p&gt;性能に関するbugはregression テストが要る、そして発行を阻止する。&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;思いつき&lt;/h3&gt;
+&lt;div class="section" id="topiccommit"&gt;
+&lt;h4&gt;topicに基づいてcommitの分析と分割&lt;/h4&gt;
+&lt;p&gt;よく使うツール（例えばgit）のユーザーはツールの設計者の意図を従って
+ツールを使うことはない、設計者が思った用途以外にも使っていることが多い、
+それはMiningに対しては色々困難を持たされています。例えばgitには完璧な
+branch機能がある、通常にgitのユーザーが一つのcommitに一つの機能を実現
+してほしい、例としてはbugの修復とか、機能の追加とか。それは難しいなら
+branchを使って、一連のcommitを一つのbranchになって、一つのbranchに一つ
+の機能を実現してほしい。それなのに、現状では、沢山の編集を一つのcommit
+に含まれていて、後の管理とか情報の収集とかが困難になってしまう。&lt;/p&gt;
+&lt;p&gt;それはユーザーの悪いと思わない、ツールの方がもっと頑張らないとユーザー
+は正しく使えない。もしcommitの時、自動的にcommitの内容を分析して、
+その中にtopicによって分けて、ユーザーに推薦するのをてきたらいいなぁ、
+と思っています。このように一つのcommitを多くに分割したら、commitの履歴
+をもっと見やすくなって、続いて分析とかも便利になるはずです。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="slide"&gt;
+&lt;h4&gt;今回に皆使っているslideのシステム&lt;/h4&gt;
+&lt;p&gt;タイトルは &lt;tt class="docutils literal"&gt;Incorporating Version Histories in Information Retrieval
+Based Bug Localization&lt;/tt&gt; の人が使っているのはbeamerです。数式が多くて、
+overlayも多くて，iterateも多い、図だけ少ない、典型的にbeamerに作れそうな
+スライドです。mindmapの使いもうまい。今日の一日に少なくとも3個のslideは
+beamerで作られています。&lt;/p&gt;
+&lt;p&gt;タイトルは &lt;tt class="docutils literal"&gt;Towards Improving Bug Tracking Systems with Game Mechanisms&lt;/tt&gt;
+の人はpreziを使いました、図が多くて、transitionも多い。但しスライド
+としては必要なページ数とかがなくて、このような国際会議の場合にはもっと
+工夫をした方がいいかもしれな。&lt;/p&gt;
+&lt;p&gt;少なくとも六人以上はAppleのKeynoteをつかていまう。Keynoteによる作った
+スライドはPowerpointのになかなか区別しがたいですが、その中に二人は
+defaultのthemeを使ったからわかります、他の人はPPTに決してありえない
+アニメションを使っていますから、多分keynote。&lt;/p&gt;
+&lt;p&gt;残りは勿論Powerpointです。MSRAの張さんが作ったのはpowerpointなんですけど、
+すごくbeamerの感じがします、例えばheaderとfooterの使い方とか、overlay
+見たいのものでページのitemを一つずつ展開するとか。それらを全部powerpoint
+で作るのは相当手間がかかりそうです。&lt;/p&gt;
+&lt;p&gt;ちなみに言いたいのは一つタイトルは &lt;tt class="docutils literal"&gt;Green Mining: A Methodology of
+Relating Software Change to Power Consumption&lt;/tt&gt; のスライドは全部 &lt;tt class="docutils literal"&gt;下手&lt;/tt&gt;
+な手描きの漫画で表せている、火狐のアイコンさえ手描きする、効果は意外に
+評判がいい。省エネでグリンで環境にいいで可愛らしい。具体的な効果は下の
+リンクから見えます、現場で見たのは別のバージョンなんですけど：&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv"&gt;http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h4&gt;マイクロソフトは腹黒っ子!&lt;/h4&gt;
+&lt;p&gt;まぁ大したニュースではないですけど、MSR2012のMining Challengeのスバンサー
+はマイクロソフトで、商品はXboxとKinectですけど、今年のチャレンジのテーマは：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Mining Android Bug
+&lt;/pre&gt;
+&lt;p&gt;マイクロソフトの殺意を感じしました。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="msr"></category><category term="icse"></category><category term="mining"></category><category term="software"></category><category term="repository"></category></entry><entry><title>MSR 2012 @ ICSE</title><link href="http://farseerfc.github.com/msr2012-en.html" rel="alternate"></link><updated>2012-06-02T10:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-06-02:msr2012-en.html</id><summary type="html">&lt;div class="section" id="mining-software-repository-2012-icse"&gt;
+&lt;h2&gt;Mining Software Repository 2012 &amp;#64; ICSE&lt;/h2&gt;
+&lt;p&gt;I participated MSR of this year. We came to University of Zurich early
+in the morning. The registration got something wrong when it seems that
+Swisser cannot tell the difference among Asians so that name cards of
+3 Chinese with family name of Yang are misplaced. And also the
+organization field of Hotta was &lt;tt class="docutils literal"&gt;Japan, Japan&lt;/tt&gt;, as if he represented
+the Japan.&lt;/p&gt;
+&lt;div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories"&gt;
+&lt;h3&gt;MSR(MicroSoft Research) talk &amp;#64; MSR(Mining Software Repositories)&lt;/h3&gt;
+&lt;p&gt;The first talk was the keynote given by Mrs Zhang from MSR(MicroSoft
+Research &amp;#64; Asia), so it turned out to be MSR gave keynote of MSR.
+The talk was about Software Analysis and their clone detection tool
+called XIAO. XIAO was a clone detector developed by MSRA which can be
+used as a plugin for Microsoft Visual Studio. XIAO has two part, or
+system state: the statical state analysis all the clones which didn't
+consider the runing time, while the dynamic state need real time response.
+The thing I need to develop for Samsung is something like dynamic mode.
+I wanted to know more about the internal details about Xiao but the talk
+was finished there.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="towards-improving-bts-with-game-mechanisms"&gt;
+&lt;h3&gt;Towards Improving BTS with Game Mechanisms&lt;/h3&gt;
+&lt;p&gt;The contents of this talk is very much like this blog:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.joelonsoftware.com/items/2008/09/15.html"&gt;http://www.joelonsoftware.com/items/2008/09/15.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The talk discussed whether the same game mechanism can be applied to
+the things like issue tracking or similiar. From my point of view, it
+is useless to use game machanism in this situation. The reason that
+stackoverflow can success lies on that they just captured the  use of
+fade system in opensource community, as all hackers like to be approved
+as great hacker, as what is happening in wikipedia. Whether the same
+theroy can be applied in issue tracking systems inside a internal
+company is questionable. Although MSDN has basic the same structure
+as wikipedia, the content of MSDN and wikipedia have different
+involvement of users. So I myself didn't approve this research.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ghtorrent"&gt;
+&lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;They slide of this talk can be found from here:
+&lt;a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524"&gt;http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Data exporter for github. Main part of data of Github, namely the hosted
+code, are already exposed as git repos, and wiki of repos are stored in
+git repo. So the aim of this project is to expose other data such as
+issues, code comments, etc. The project access github api and fetch the
+needed data as distributed system in order to overcome the limitations
+of the github api. The project will provide download history as torrents.
+The json data from github api is stored as bson in MongoDB and the parsed
+data is stored in MySQL with schema.&lt;/p&gt;
+&lt;p&gt;From my point of view, it will be better if the format of data can be
+uniformed and all data are stored in the git repo as wiki pages.
+As the history stored in git repo is more nature, and using &lt;tt class="docutils literal"&gt;git blame&lt;/tt&gt;
+to trace author of code comments should also be more useful. Of course
+it is harder to read and write the raw data of git as we need more
+understanding of the internal format of git. Maybe only people from
+github can do this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="topic-mining"&gt;
+&lt;h3&gt;Topic Mining&lt;/h3&gt;
+&lt;p&gt;I can not understand the two parameters, DE, AIC, used in this research,
+study this later. The experiment target of this research are Firefox,
+Mylyn and Eclipse. They are trying to analysis the identifiers and
+comments from source codes in software repos and find the relationship
+between topics and bugs, like what kind of topics are more likely to
+contain buggy codes.&lt;/p&gt;
+&lt;p&gt;The result of this research is not so clear. Such as it said that the
+core functions of Firefox have more bug reports, but it said no reason
+about this. Maybe this only means that the core features are well
+tested, rather than that the core features are more buggy.&lt;/p&gt;
+&lt;p&gt;But the slides showed by auther are pretty and easy to understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-evolution-of-software"&gt;
+&lt;h3&gt;The evolution of software&lt;/h3&gt;
+&lt;p&gt;The keynote talk of the second day. It is about how should we combine
+the social media with software development. Maybe this is the reason
+why Github successed. In the talk she told about accessing tags,
+uBlogs, blogs etc. directly from Intergrated Development Environments,
+or should we need cloud IDE such as Cloud9.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
+&lt;p&gt;Used firefox as example.&lt;/p&gt;
+&lt;p&gt;The conclusion is that faster releases will lead to more bugs and more
+frequent crash, but bugs are get fixed more quickly and user will switch
+to new released more quickly.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
 &lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
 &lt;p&gt;Performance bugs are regression, blocks release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;hr class="docutils" /&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h3&gt;一些感想&lt;/h3&gt;
-&lt;div class="section" id="commit"&gt;
-&lt;h4&gt;基於自然語義分析的commit分割&lt;/h4&gt;
-&lt;p&gt;經常工具（比如git）的使用者並沒有按照工具設計者的意圖使用工具，這給MSR
-帶來很多困難。舉個例子，git有非常完美的branch系統，通常期望git的使用者
-能夠在一次commit裏commit一個功能，比如一個bug的修復，或者一個feature的
-添加，但是事實上經常有很多邏輯上的commit被合併在一個裏面了。&lt;/p&gt;
-&lt;p&gt;或許這不是使用者的錯，而是工具仍然不夠人性的表現。或許我們可以自動把
-一次的commit按照語義分割成多個。&lt;/p&gt;
-&lt;p&gt;分割之後，可以更容易地把issue和commit關聯，也更容易組織更多的研究。&lt;/p&gt;
+&lt;div class="section" id="some-of-my-thoughts"&gt;
+&lt;h3&gt;Some of my thoughts&lt;/h3&gt;
+&lt;div class="section" id="seperation-of-commits-based-on-semantic-analysis"&gt;
+&lt;h4&gt;Seperation of commits based on Semantic analysis&lt;/h4&gt;
+&lt;p&gt;The user of some tools (such as git) are not following the design
+purposes of these tools which brings some difficulty to MSR. For example
+git has a prefect branch system, so it is desired for users of git to
+commit per topic. Commit per topic means that user send a commit for a
+single implementation of a feature or a bug fix, etc. If it is difficult
+to contain all modifications in a commit, then it should be in a
+seperate branch and merged into master branch. But acturely
+user tends to send very large commits, that contains many logical
+features, and they can not predict to open a new branch until a few
+commits.&lt;/p&gt;
+&lt;p&gt;Maybe this is not the fault of the user of tools, this is the tools
+that are not smart enough. We should seperate the commits according
+to the semantica topics inside a commit.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="slides"&gt;
-&lt;h4&gt;關於這次發表中大家用的slides系統&lt;/h4&gt;
-&lt;p&gt;題目爲``Incorporating Version Histories in Information Retrieval Based
-Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
-很多，圖片很少，典型的beamer做出的slide。思維導圖用得很不錯。今天一天
-有至少3個slide是用beamer做的。&lt;/p&gt;
-&lt;p&gt;題目爲``Towards Improving Bug Tracking Systems with Game Mechanisms''
-的人用了prezi，圖片很多，過度很多。但是比如沒有頁號沒有頁眉頁腳，正式
-會議的場合不太方便。&lt;/p&gt;
-&lt;p&gt;至少有六個以上用了Apple Keynotes，Keynotes做出來的東西真的和Powerpoint
-做出來的很難區別，其中兩個人用了初始的主題所以才看出來。&lt;/p&gt;
-&lt;p&gt;剩下的自然是PPT。MSRA的張女士做的雖然是PPT，倒是有很多beamer的感覺，
-比如頁眉頁腳和overlay的用法。這些如果都是PPT做出來的，會多很多額外的
-人力吧。&lt;/p&gt;
+&lt;div class="section" id="about-the-slide-systems-used-today"&gt;
+&lt;h4&gt;About the slide systems used today&lt;/h4&gt;
+&lt;p&gt;The study with title &lt;tt class="docutils literal"&gt;Incorporating Version Histories in Information
+Retrieval Based Bug Localization&lt;/tt&gt; used the slides made by beamer. It
+contains many equations, used many overlays are iterations, with few
+figures, is a typical beamer slide. It also used mindmap very well.&lt;/p&gt;
+&lt;p&gt;There are at least 3 slides that are made by beamer today.&lt;/p&gt;
+&lt;p&gt;The study with title &lt;tt class="docutils literal"&gt;Towards Improving Bug Tracking Systems with
+Game Mechanisms&lt;/tt&gt; presented with prezi. It have many pictures and many
+transitions. But because of it is made by prezi, there are no headers
+and footers so no page numbers and section titles etc. This is not
+so convinient in such a official occations because people need to
+refer to the page number in question session.&lt;/p&gt;
+&lt;p&gt;There are at lease 6 presents used Apple Keynote. It is really
+difficult to tell the differece between slides made by powerpoints
+and Keynote. 2 of them used the default theme of keynote.&lt;/p&gt;
+&lt;p&gt;The rest are using powerpoint. Mrs Zhang from Microsoft used powerpoint
+but her slides looks like beamer very much such as the usage of footer
+and header and overlays. If these are made by powerpoint that will
+involve many manually operations.&lt;/p&gt;
 &lt;p&gt;值得一提的是有一個題目爲``Green Mining: A Methodology of Relating
 Software Change to Power Consumption''的人的slide全是``劣質''的手繪漫畫，
 效果意外地好，很低碳很環保很綠色很可愛。具體效果可以參考下面的動畫，雖然
 現場看到的不是一個版本：&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv"&gt;http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="id1"&gt;
 &lt;h4&gt;微軟是個腹黑娘！&lt;/h4&gt;
 &lt;p&gt;嘛雖然這也不是什麼新聞了。MSR2012的Mining Challenge的贊助商是微軟，管理
 組織者來自微軟研究院，獎品是Xbox和Kinect。然後今年的題目是：&lt;/p&gt;

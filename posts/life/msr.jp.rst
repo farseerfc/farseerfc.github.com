@@ -39,6 +39,8 @@ http://www.joelonsoftware.com/items/2008/09/15.html
 GHTorrent
 -----------------------------------------------------------------------
 
+この研究のスライドはこちらに：http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524
+
 Data exporter for github. Githubの主なデータはコード、それは既にgitから
 アクセスできます、wikiはgitとして保存しているからそれも含まれている。
 ですからこのプロジェクトの目的は他のデータを表せる、つまりissues, commit
@@ -53,78 +55,87 @@ The evolution of software
 -----------------------------------------------------------------------
 
 二日目のkeynotes, social mediaをソフトウェア開発に巻き込めるについて
-話しました。
-
-第二天的Keynotes，關於將Social Media和Software Development相結合的想法。
-或許就是Github賴以成功的基礎。講到代碼中的comment, Tags, uBlog, blog之類
-的social的特性和IDE的融合的趨勢。
+話しました。もしかしてこれはGithubの成功の理論かもしれない。IDEの中に
+social mediaのアクセスを欲しいと言いました。
 
 Do Faster Releases Imporve Software Quality?
 -----------------------------------------------------------------------
 
-使用Firefox作爲例子。
+Firefoxを例として研究しました。
 
-結論是快速發佈導致bug更多，更容易crash，但是bug更快得到修復，並且用戶
-更快轉向新的發佈。
+結論としては、早い発行はbugを多く持たされ、crashがもっと頻繁になるが、
+bugの修復も早くなって、そしてユーザー側はもっと早く新しい発行に移動する
+ことをわかりました。
 
 Security vs Performance Bugs in Firefox
 -----------------------------------------------------------------------
 
-Performance bugs are regression, blocks release.
+性能に関するbugはregression テストが要る、そして発行を阻止する。
 
 -----------------------------------------------------------------------
 
-一些感想
+思いつき
 -----------------------------------------------------------------------
 
-基於自然語義分析的commit分割
+topicに基づいてcommitの分析と分割
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-經常工具（比如git）的使用者並沒有按照工具設計者的意圖使用工具，這給MSR
-帶來很多困難。舉個例子，git有非常完美的branch系統，通常期望git的使用者
-能夠在一次commit裏commit一個功能，比如一個bug的修復，或者一個feature的
-添加，但是事實上經常有很多邏輯上的commit被合併在一個裏面了。
+よく使うツール（例えばgit）のユーザーはツールの設計者の意図を従って
+ツールを使うことはない、設計者が思った用途以外にも使っていることが多い、
+それはMiningに対しては色々困難を持たされています。例えばgitには完璧な
+branch機能がある、通常にgitのユーザーが一つのcommitに一つの機能を実現
+してほしい、例としてはbugの修復とか、機能の追加とか。それは難しいなら
+branchを使って、一連のcommitを一つのbranchになって、一つのbranchに一つ
+の機能を実現してほしい。それなのに、現状では、沢山の編集を一つのcommit
+に含まれていて、後の管理とか情報の収集とかが困難になってしまう。
 
-或許這不是使用者的錯，而是工具仍然不夠人性的表現。或許我們可以自動把
-一次的commit按照語義分割成多個。
+それはユーザーの悪いと思わない、ツールの方がもっと頑張らないとユーザー
+は正しく使えない。もしcommitの時、自動的にcommitの内容を分析して、
+その中にtopicによって分けて、ユーザーに推薦するのをてきたらいいなぁ、
+と思っています。このように一つのcommitを多くに分割したら、commitの履歴
+をもっと見やすくなって、続いて分析とかも便利になるはずです。
 
-分割之後，可以更容易地把issue和commit關聯，也更容易組織更多的研究。
 
-關於這次發表中大家用的slides系統
+今回に皆使っているslideのシステム
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-題目爲``Incorporating Version Histories in Information Retrieval Based 
-Bug Localization''的人用的slide是beamer的。公式很多，overlay很多，列表
-很多，圖片很少，典型的beamer做出的slide。思維導圖用得很不錯。今天一天
-有至少3個slide是用beamer做的。
+タイトルは ``Incorporating Version Histories in Information Retrieval 
+Based Bug Localization`` の人が使っているのはbeamerです。数式が多くて、
+overlayも多くて，iterateも多い、図だけ少ない、典型的にbeamerに作れそうな
+スライドです。mindmapの使いもうまい。今日の一日に少なくとも3個のslideは
+beamerで作られています。
 
-題目爲``Towards Improving Bug Tracking Systems with Game Mechanisms''
-的人用了prezi，圖片很多，過度很多。但是比如沒有頁號沒有頁眉頁腳，正式
-會議的場合不太方便。
+タイトルは ``Towards Improving Bug Tracking Systems with Game Mechanisms`` 
+の人はpreziを使いました、図が多くて、transitionも多い。但しスライド
+としては必要なページ数とかがなくて、このような国際会議の場合にはもっと
+工夫をした方がいいかもしれな。
 
-至少有六個以上用了Apple Keynotes，Keynotes做出來的東西真的和Powerpoint
-做出來的很難區別，其中兩個人用了初始的主題所以才看出來。
+少なくとも六人以上はAppleのKeynoteをつかていまう。Keynoteによる作った
+スライドはPowerpointのになかなか区別しがたいですが、その中に二人は
+defaultのthemeを使ったからわかります、他の人はPPTに決してありえない
+アニメションを使っていますから、多分keynote。
 
-剩下的自然是PPT。MSRA的張女士做的雖然是PPT，倒是有很多beamer的感覺，
-比如頁眉頁腳和overlay的用法。這些如果都是PPT做出來的，會多很多額外的
-人力吧。
+残りは勿論Powerpointです。MSRAの張さんが作ったのはpowerpointなんですけど、
+すごくbeamerの感じがします、例えばheaderとfooterの使い方とか、overlay
+見たいのものでページのitemを一つずつ展開するとか。それらを全部powerpoint
+で作るのは相当手間がかかりそうです。
 
-值得一提的是有一個題目爲``Green Mining: A Methodology of Relating 
-Software Change to Power Consumption''的人的slide全是``劣質''的手繪漫畫，
-效果意外地好，很低碳很環保很綠色很可愛。具體效果可以參考下面的動畫，雖然
-現場看到的不是一個版本：
+ちなみに言いたいのは一つタイトルは ``Green Mining: A Methodology of 
+Relating Software Change to Power Consumption`` のスライドは全部 ``下手`` 
+な手描きの漫画で表せている、火狐のアイコンさえ手描きする、効果は意外に
+評判がいい。省エネでグリンで環境にいいで可愛らしい。具体的な効果は下の
+リンクから見えます、現場で見たのは別のバージョンなんですけど：
 
 http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv
 
-微軟是個腹黑娘！
+マイクロソフトは腹黒っ子!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-嘛雖然這也不是什麼新聞了。MSR2012的Mining Challenge的贊助商是微軟，管理
-組織者來自微軟研究院，獎品是Xbox和Kinect。然後今年的題目是：
+まぁ大したニュースではないですけど、MSR2012のMining Challengeのスバンサー
+はマイクロソフトで、商品はXboxとKinectですけど、今年のチャレンジのテーマは：
 
 ::
 
         Mining Android Bug
 
-我看到了微軟滿滿的怨氣……
-
+マイクロソフトの殺意を感じしました。

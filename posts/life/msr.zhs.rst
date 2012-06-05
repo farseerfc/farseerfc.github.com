@@ -40,6 +40,8 @@ wikipedia一样。同样的理论如果用于公司内部的Issue Tracking系统
 GHTorrent
 -----------------------------------------------------------------------
 
+这篇的slide在这里可以看到：http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524
+
 Data exporter for github. Github的主要数据，代码，已经可以通过git接口
 获得了，wiki是git的形式保存的。所以这个项目的目的就是暴露别的数据，主要
 是issue tracking，code comments，这种。代码访问github api，然后用分布式
