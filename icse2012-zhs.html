@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Pyssy 項目</title>
+    <title>ICSE 2012</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -83,13 +83,13 @@
 					</a>
                   </li>
               
-                  <li >
+                  <li class="active">
                     <a href="./category/life.html">
 						<i class="icon-folder-open icon-large"></i>life
 					</a>
                   </li>
               
-                  <li class="active">
+                  <li >
                     <a href="./category/python.html">
 						<i class="icon-folder-open icon-large"></i>python
 					</a>
@@ -123,8 +123,8 @@
 			<h1>
 				<a href=""
 					rel="bookmark" 
-					title="Permalink to Pyssy 項目">
-					Pyssy 項目 
+					title="Permalink to ICSE 2012">
+					ICSE 2012 
 				</a>
 				
 <a href="http://twitter.com/share" class="twitter-share-button" 
@@ -160,55 +160,189 @@
 		<div class="well">
 			<footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2012-04-02T12:42:00">
-	<i class="icon-calendar"></i>2012-04-02
+<abbr class="published" title="2012-06-06T10:42:00">
+	<i class="icon-calendar"></i>2012-06-06
 </abbr>
 
 <span class="label">By</span>
 <a href="./author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
 
 <span class="label">Category</span>
-<a href="./category/python.html"><i class="icon-folder-open"></i>python</a>. 
+<a href="./category/life.html"><i class="icon-folder-open"></i>life</a>. 
 
 
 	
 
 <span class="label">Tags</span> 
 
-	<a href="./tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="./tag/icse.html"><i class="icon-tag"></i>icse</a>
 
-	<a href="./tag/sjtu.html"><i class="icon-tag"></i>sjtu</a>
-
-	<a href="./tag/yssy.html"><i class="icon-tag"></i>yssy</a>
+	<a href="./tag/software.html"><i class="icon-tag"></i>software</a>
 
 
 
 <span class="label">Lang</span>
 
-	<a href="./pyssy-zhs.html"><i class="icon-edit"></i>zhs</a>
+	<a href="./icse2012.html"><i class="icon-edit"></i>zh</a>
 
 
 </footer><!-- /.post-info -->
 		</div>
-		<div class="section" id="id1">
-<h2>簡介</h2>
-<p>Pyssy 是用於 <a class="reference external" href="https://bbs.sjtu.edu.cn">上海交通大學 飲水思源站</a> 的一系列 Python 腳本和工具。</p>
-<p>Pyssy 被有意設計爲既可以託管寄宿在 SAE <a class="footnote-reference" href="#sae" id="id3">[1]</a> 上，也可以在單機上獨立使用。</p>
-<p>項目地址： <a class="reference external" href="http://pyssy.sinaapp.com/">http://pyssy.sinaapp.com/</a></p>
-<p>Github上的源代碼地址： <a class="reference external" href="https://github.com/yssy-d3/pyssy">https://github.com/yssy-d3/pyssy</a></p>
-<table class="docutils footnote" frame="void" id="sae" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
+		<div class="section" id="keynote-1">
+<h2>Keynote 1</h2>
+<p>没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
+关系。</p>
+</div>
+<div class="section" id="cost-estimation-for-distributed-software-project">
+<h2>Cost Estimation for Distributed Software Project</h2>
+<p>讲到他们试图改善现有的模型去更精确地评估软件开发的开销。</p>
+<p>他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
+的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
+的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。</p>
+<p>他们的观点：</p>
+<blockquote>
+<p>Context-specfic solutions needed!</p>
+<p>Early user paticipation is key!</p>
+</blockquote>
+</div>
+<div class="section" id="characterizing-logging-practices-in-open-source-software">
+<h2>Characterizing Logging Practices in Open-Source Software</h2>
+<p>Common mistakes in logging messages</p>
+<p>他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句，确定log
+中存在的问题。他们首先确定修改是事后修改。</p>
+<p>通常的修改的比例（9027个修改）</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="http://sae.sina.com.cn/">Sina App Engine</a> ，新浪雲平臺，類似 <a class="reference external" href="https://appengine.google.com/">Google App Engine</a> 的東西。</td></tr>
+<tr><td>45%</td>
+<td>text</td>
+</tr>
+<tr><td>27%</td>
+<td>variable</td>
+</tr>
+<tr><td>26%</td>
+<td>verbosity</td>
+</tr>
+<tr><td>2%</td>
+<td>location</td>
+</tr>
 </tbody>
 </table>
+<p>他们发现有verbo等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
+之间的权衡。</p>
+<p>大多数对log的var的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
+解决这个问题而提出的，通过静态检查，提醒程序员是否忘记了某个参数</p>
+<p>对text的修改是因为要改掉过时的代码信息，避免误导用户。</p>
+<p>他们的实验是采用了基于code clone 的技术，找到所有log语句，然后找不一致
+的clone，然后自动提出建议。</p>
 </div>
-<div class="section" id="id4">
-<h2>依賴關係</h2>
-<p>Pyssy 使用 <a class="reference external" href="http://flask.pocoo.org/">Flask</a> 作爲網頁服務器，
-並且使用 Memcached 或者 Redis 作爲抓取 <em>水源Web</em> 的緩存。</p>
-<p>SAE Python 環境下請開啓 Memcached 支持。</p>
-<p>本地環境下請安裝 Redis-py 並運行 redis-server 服務器程序。</p>
+<div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java">
+<h2>Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</h2>
+<p>趋势：到处都是多核，但是并发程序呢？</p>
+<p>他们研究的对象是Scala和Java，因为可以编译后确认JVM字节码的语义。</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Java:</dt>
+<dd><ul class="first last simple">
+<li>Shared Memory</li>
+<li>Explicit thread</li>
+<li>Synchronized</li>
+<li>Wait/Notified</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Scala:</dt>
+<dd><ul class="first last simple">
+<li>High-order fucntions</li>
+<li>Actors, message passing</li>
+<li>lists, filters, iterators</li>
+<li>while</li>
+<li>shared state, OO</li>
+<li>import java.*</li>
+<li>auto type infer</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Training 4 weeks, Industry Project,</p>
+<p>结果：</p>
+<p>scala 的项目平均比java多花38%的时间，主要都是花在Test和debug上的时间。</p>
+<p>程序员的经验和总体时间相关，但是对test和debug没有显著影响。</p>
+<p>scala的为了让编程更有效率的设计，导致debug更困难。比如类型推导，debug
+的时候需要手动推导，来理解正在发生什么。</p>
+<p>scala的程序比java小，中位数2.6%，平均15.2%</p>
+<ul>
+<li><dl class="first docutils">
+<dt>性能比较：</dt>
+<dd><ul class="first last">
+<li><p class="first">单核：scala的线性程序的性能比java好</p>
+</li>
+<li><dl class="first docutils">
+<dt>4核：</dt>
+<dd><ul class="first last">
+<li><p class="first">scala 7s &#64; 4 threads</p>
+</li>
+<li><p class="first">java 4si &#64; 8 threads</p>
+</li>
+<li><dl class="first docutils">
+<dt>median</dt>
+<dd><ul class="first last simple">
+<li>83s scala</li>
+<li>98s java</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">32core: best scala 34s &#64; 64 threads</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>结论</dt>
+<dd><ul class="first last simple">
+<li>java有更好的scalability</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>scala类型推导</dt>
+<dd><ul class="first last simple">
+<li>45%说对携带码有帮助</li>
+<li>85%说导致程序错误</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>调试</dt>
+<dd><ul class="first last simple">
+<li>23%认为scala简单</li>
+<li>77%认为java简单</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>multi-paradigram are better</p>
+</div>
+<div class="section" id="sound-empirical-evidence-in-software-testing">
+<h2>Sound Empirical Evidence in Software Testing</h2>
+<p>Test data generation</p>
+<p>Large Empirical Studies - not always possible</p>
+<p>For open source software - big enough</p>
 </div>
 
 		</div><!-- /.entry-content -->
@@ -217,7 +351,7 @@
 		<h2>Comments !</h2>
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-			   var disqus_identifier = "pyssy.html";
+			   var disqus_identifier = "icse2012-zhs.html";
 			   (function() {
 				var dsq = document.createElement('script'); 
 				dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,5 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com/" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/software.atom.xml" rel="self"></link><id>http://farseerfc.github.com/</id><updated>2012-06-02T10:42:00+09:00</updated><entry><title>MSR 2012 @ ICSE</title><link href="http://farseerfc.github.com/msr2012-zhs.html" rel="alternate"></link><updated>2012-06-02T10:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-06-02:msr2012-zhs.html</id><summary type="html">&lt;div class="section" id="mining-software-repository-2012-icse"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com/" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/software.atom.xml" rel="self"></link><id>http://farseerfc.github.com/</id><updated>2012-06-06T10:42:00+09:00</updated><entry><title>ICSE 2012</title><link href="http://farseerfc.github.com/icse2012-zhs.html" rel="alternate"></link><updated>2012-06-06T10:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-06-06:icse2012-zhs.html</id><summary type="html">&lt;div class="section" id="keynote-1"&gt;
+&lt;h2&gt;Keynote 1&lt;/h2&gt;
+&lt;p&gt;没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
+关系。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cost-estimation-for-distributed-software-project"&gt;
+&lt;h2&gt;Cost Estimation for Distributed Software Project&lt;/h2&gt;
+&lt;p&gt;讲到他们试图改善现有的模型去更精确地评估软件开发的开销。&lt;/p&gt;
+&lt;p&gt;他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
+的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
+的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。&lt;/p&gt;
+&lt;p&gt;他们的观点：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Context-specfic solutions needed!&lt;/p&gt;
+&lt;p&gt;Early user paticipation is key!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="characterizing-logging-practices-in-open-source-software"&gt;
+&lt;h2&gt;Characterizing Logging Practices in Open-Source Software&lt;/h2&gt;
+&lt;p&gt;Common mistakes in logging messages&lt;/p&gt;
+&lt;p&gt;他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句，确定log
+中存在的问题。他们首先确定修改是事后修改。&lt;/p&gt;
+&lt;p&gt;通常的修改的比例（9027个修改）&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="21%" /&gt;
+&lt;col width="79%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;45%&lt;/td&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;27%&lt;/td&gt;
+&lt;td&gt;variable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;26%&lt;/td&gt;
+&lt;td&gt;verbosity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2%&lt;/td&gt;
+&lt;td&gt;location&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;他们发现有verbo等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
+之间的权衡。&lt;/p&gt;
+&lt;p&gt;大多数对log的var的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
+解决这个问题而提出的，通过静态检查，提醒程序员是否忘记了某个参数&lt;/p&gt;
+&lt;p&gt;对text的修改是因为要改掉过时的代码信息，避免误导用户。&lt;/p&gt;
+&lt;p&gt;他们的实验是采用了基于code clone 的技术，找到所有log语句，然后找不一致
+的clone，然后自动提出建议。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java"&gt;
+&lt;h2&gt;Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp;amp; Java&lt;/h2&gt;
+&lt;p&gt;趋势：到处都是多核，但是并发程序呢？&lt;/p&gt;
+&lt;p&gt;他们研究的对象是Scala和Java，因为可以编译后确认JVM字节码的语义。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Java:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Shared Memory&lt;/li&gt;
+&lt;li&gt;Explicit thread&lt;/li&gt;
+&lt;li&gt;Synchronized&lt;/li&gt;
+&lt;li&gt;Wait/Notified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Scala:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;High-order fucntions&lt;/li&gt;
+&lt;li&gt;Actors, message passing&lt;/li&gt;
+&lt;li&gt;lists, filters, iterators&lt;/li&gt;
+&lt;li&gt;while&lt;/li&gt;
+&lt;li&gt;shared state, OO&lt;/li&gt;
+&lt;li&gt;import java.*&lt;/li&gt;
+&lt;li&gt;auto type infer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Training 4 weeks, Industry Project,&lt;/p&gt;
+&lt;p&gt;结果：&lt;/p&gt;
+&lt;p&gt;scala 的项目平均比java多花38%的时间，主要都是花在Test和debug上的时间。&lt;/p&gt;
+&lt;p&gt;程序员的经验和总体时间相关，但是对test和debug没有显著影响。&lt;/p&gt;
+&lt;p&gt;scala的为了让编程更有效率的设计，导致debug更困难。比如类型推导，debug
+的时候需要手动推导，来理解正在发生什么。&lt;/p&gt;
+&lt;p&gt;scala的程序比java小，中位数2.6%，平均15.2%&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;性能比较：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;单核：scala的线性程序的性能比java好&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;4核：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;scala 7s &amp;#64; 4 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;java 4si &amp;#64; 8 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;median&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;83s scala&lt;/li&gt;
+&lt;li&gt;98s java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;32core: best scala 34s &amp;#64; 64 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;结论&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;java有更好的scalability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;scala类型推导&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;45%说对携带码有帮助&lt;/li&gt;
+&lt;li&gt;85%说导致程序错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;调试&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;23%认为scala简单&lt;/li&gt;
+&lt;li&gt;77%认为java简单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;multi-paradigram are better&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sound-empirical-evidence-in-software-testing"&gt;
+&lt;h2&gt;Sound Empirical Evidence in Software Testing&lt;/h2&gt;
+&lt;p&gt;Test data generation&lt;/p&gt;
+&lt;p&gt;Large Empirical Studies - not always possible&lt;/p&gt;
+&lt;p&gt;For open source software - big enough&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="icse"></category><category term="software"></category></entry><entry><title>ICSE 2012</title><link href="http://farseerfc.github.com/icse2012.html" rel="alternate"></link><updated>2012-06-06T10:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-06-06:icse2012.html</id><summary type="html">&lt;div class="section" id="keynote-1"&gt;
+&lt;h2&gt;Keynote 1&lt;/h2&gt;
+&lt;p&gt;沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cost-estimation-for-distributed-software-project"&gt;
+&lt;h2&gt;Cost Estimation for Distributed Software Project&lt;/h2&gt;
+&lt;p&gt;講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。&lt;/p&gt;
+&lt;p&gt;他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。&lt;/p&gt;
+&lt;p&gt;他們的觀點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Context-specfic solutions needed!&lt;/p&gt;
+&lt;p&gt;Early user paticipation is key!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="characterizing-logging-practices-in-open-source-software"&gt;
+&lt;h2&gt;Characterizing Logging Practices in Open-Source Software&lt;/h2&gt;
+&lt;p&gt;Common mistakes in logging messages&lt;/p&gt;
+&lt;p&gt;他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
+中存在的問題。他們首先確定修改是事後修改。&lt;/p&gt;
+&lt;p&gt;通常的修改的比例（9027個修改）&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="21%" /&gt;
+&lt;col width="79%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;45%&lt;/td&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;27%&lt;/td&gt;
+&lt;td&gt;variable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;26%&lt;/td&gt;
+&lt;td&gt;verbosity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2%&lt;/td&gt;
+&lt;td&gt;location&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+之間的權衡。&lt;/p&gt;
+&lt;p&gt;大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數&lt;/p&gt;
+&lt;p&gt;對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。&lt;/p&gt;
+&lt;p&gt;他們的實驗是採用了基於code clone 的技術，找到所有log語句，然後找不一致
+的clone，然後自動提出建議。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java"&gt;
+&lt;h2&gt;Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp;amp; Java&lt;/h2&gt;
+&lt;p&gt;趨勢：到處都是多核，但是併發程序呢？&lt;/p&gt;
+&lt;p&gt;他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Java:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Shared Memory&lt;/li&gt;
+&lt;li&gt;Explicit thread&lt;/li&gt;
+&lt;li&gt;Synchronized&lt;/li&gt;
+&lt;li&gt;Wait/Notified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Scala:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;High-order fucntions&lt;/li&gt;
+&lt;li&gt;Actors, message passing&lt;/li&gt;
+&lt;li&gt;lists, filters, iterators&lt;/li&gt;
+&lt;li&gt;while&lt;/li&gt;
+&lt;li&gt;shared state, OO&lt;/li&gt;
+&lt;li&gt;import java.*&lt;/li&gt;
+&lt;li&gt;auto type infer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Training 4 weeks, Industry Project,&lt;/p&gt;
+&lt;p&gt;結果：&lt;/p&gt;
+&lt;p&gt;scala 的項目平均比java多花38%的時間，主要都是花在Test和debug上的時間。&lt;/p&gt;
+&lt;p&gt;程序員的經驗和總體時間相關，但是對test和debug沒有顯著影響。&lt;/p&gt;
+&lt;p&gt;scala的爲了讓編程更有效率的設計，導致debug更困難。比如類型推導，debug
+的時候需要手動推導，來理解正在發生什麼。&lt;/p&gt;
+&lt;p&gt;scala的程序比java小，中位數2.6%，平均15.2%&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;性能比較：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;單核：scala的線性程序的性能比java好&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;4核：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;scala 7s &amp;#64; 4 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;java 4si &amp;#64; 8 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;median&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;83s scala&lt;/li&gt;
+&lt;li&gt;98s java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;32core: best scala 34s &amp;#64; 64 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;結論&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;java有更好的scalability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;scala類型推導&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;45%說對攜帶碼有幫助&lt;/li&gt;
+&lt;li&gt;85%說導致程序錯誤&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;調試&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;23%認爲scala簡單&lt;/li&gt;
+&lt;li&gt;77%認爲java簡單&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;multi-paradigram are better&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sound-empirical-evidence-in-software-testing"&gt;
+&lt;h2&gt;Sound Empirical Evidence in Software Testing&lt;/h2&gt;
+&lt;p&gt;Test data generation&lt;/p&gt;
+&lt;p&gt;Large Empirical Studies - not always possible&lt;/p&gt;
+&lt;p&gt;For open source software - big enough&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="icse"></category><category term="software"></category></entry><entry><title>MSR 2012 @ ICSE</title><link href="http://farseerfc.github.com/msr2012-zhs.html" rel="alternate"></link><updated>2012-06-02T10:42:00+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2012-06-02:msr2012-zhs.html</id><summary type="html">&lt;div class="section" id="mining-software-repository-2012-icse"&gt;
 &lt;h2&gt;Mining Software Repository 2012 &amp;#64; ICSE&lt;/h2&gt;
 &lt;p&gt;参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点
 小插曲，显然瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌
@@ -337,7 +649,7 @@ Mining Android Bug
 &lt;h2&gt;Mining Software Repository 2012 &amp;#64; ICSE&lt;/h2&gt;
 &lt;p&gt;I participated MSR of this year. We came to University of Zurich early
 in the morning. The registration got something wrong when it seems that
-Swisser cannot tell the difference among Asians so that name cards of
+Swisses cannot tell the difference among Asians so that name cards of
 3 Chinese with family name of Yang are misplaced. And also the
 organization field of Hotta was &lt;tt class="docutils literal"&gt;Japan, Japan&lt;/tt&gt;, as if he represented
 the Japan.&lt;/p&gt;
@@ -348,10 +660,10 @@ Research &amp;#64; Asia), so it turned out to be MSR gave keynote of MSR.
 The talk was about Software Analysis and their clone detection tool
 called XIAO. XIAO was a clone detector developed by MSRA which can be
 used as a plugin for Microsoft Visual Studio. XIAO has two part, or
-system state: the statical state analysis all the clones which didn't
-consider the runing time, while the dynamic state need real time response.
+system state: the statics state analysis all the clones which didn't
+consider the running time, while the dynamic state need real time response.
 The thing I need to develop for Samsung is something like dynamic mode.
-I wanted to know more about the internal details about Xiao but the talk
+I wanted to know more about the internal details about XIAO but the talk
 was finished there.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="towards-improving-bts-with-game-mechanisms"&gt;
@@ -359,14 +671,14 @@ was finished there.&lt;/p&gt;
 &lt;p&gt;The contents of this talk is very much like this blog:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://www.joelonsoftware.com/items/2008/09/15.html"&gt;http://www.joelonsoftware.com/items/2008/09/15.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The talk discussed whether the same game mechanism can be applied to
-the things like issue tracking or similiar. From my point of view, it
-is useless to use game machanism in this situation. The reason that
+the things like issue tracking or similar. From my point of view, it
+is useless to use game mechanism in this situation. The reason that
 stackoverflow can success lies on that they just captured the  use of
 fade system in opensource community, as all hackers like to be approved
-as great hacker, as what is happening in wikipedia. Whether the same
-theroy can be applied in issue tracking systems inside a internal
+as great hacker, as what is happening in Wikipedia. Whether the same
+theory can be applied in issue tracking systems inside a internal
 company is questionable. Although MSDN has basic the same structure
-as wikipedia, the content of MSDN and wikipedia have different
+as Wikipedia, the content of MSDN and Wikipedia have different
 involvement of users. So I myself didn't approve this research.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ghtorrent"&gt;
@@ -401,19 +713,19 @@ contain buggy codes.&lt;/p&gt;
 core functions of Firefox have more bug reports, but it said no reason
 about this. Maybe this only means that the core features are well
 tested, rather than that the core features are more buggy.&lt;/p&gt;
-&lt;p&gt;But the slides showed by auther are pretty and easy to understand.&lt;/p&gt;
+&lt;p&gt;But the slides showed by author are pretty and easy to understand.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-evolution-of-software"&gt;
 &lt;h3&gt;The evolution of software&lt;/h3&gt;
 &lt;p&gt;The keynote talk of the second day. It is about how should we combine
 the social media with software development. Maybe this is the reason
-why Github successed. In the talk she told about accessing tags,
-uBlogs, blogs etc. directly from Intergrated Development Environments,
+why Github succeeded. In the talk she told about accessing tags,
+uBlogs, blogs etc. directly from Integrated Development Environments,
 or should we need cloud IDE such as Cloud9.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="do-faster-releases-imporve-software-quality"&gt;
-&lt;h3&gt;Do Faster Releases Imporve Software Quality?&lt;/h3&gt;
-&lt;p&gt;Used firefox as example.&lt;/p&gt;
+&lt;div class="section" id="do-faster-releases-improve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Improve Software Quality?&lt;/h3&gt;
+&lt;p&gt;Used Firefox as example.&lt;/p&gt;
 &lt;p&gt;The conclusion is that faster releases will lead to more bugs and more
 frequent crash, but bugs are get fixed more quickly and user will switch
 to new released more quickly.&lt;/p&gt;
@@ -425,21 +737,21 @@ to new released more quickly.&lt;/p&gt;
 &lt;hr class="docutils" /&gt;
 &lt;div class="section" id="some-of-my-thoughts"&gt;
 &lt;h3&gt;Some of my thoughts&lt;/h3&gt;
-&lt;div class="section" id="seperation-of-commits-based-on-semantic-analysis"&gt;
-&lt;h4&gt;Seperation of commits based on Semantic analysis&lt;/h4&gt;
+&lt;div class="section" id="separation-of-commits-based-on-semantic-analysis"&gt;
+&lt;h4&gt;Separation of commits based on Semantic analysis&lt;/h4&gt;
 &lt;p&gt;The user of some tools (such as git) are not following the design
 purposes of these tools which brings some difficulty to MSR. For example
 git has a prefect branch system, so it is desired for users of git to
 commit per topic. Commit per topic means that user send a commit for a
 single implementation of a feature or a bug fix, etc. If it is difficult
 to contain all modifications in a commit, then it should be in a
-seperate branch and merged into master branch. But acturely
+separate branch and merged into master branch. But actually
 user tends to send very large commits, that contains many logical
 features, and they can not predict to open a new branch until a few
 commits.&lt;/p&gt;
 &lt;p&gt;Maybe this is not the fault of the user of tools, this is the tools
-that are not smart enough. We should seperate the commits according
-to the semantica topics inside a commit.&lt;/p&gt;
+that are not smart enough. We should separate the commits according
+to the semantic topics inside a commit.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="about-the-slide-systems-used-today"&gt;
 &lt;h4&gt;About the slide systems used today&lt;/h4&gt;
@@ -452,29 +764,32 @@ figures, is a typical beamer slide. It also used mindmap very well.&lt;/p&gt;
 Game Mechanisms&lt;/tt&gt; presented with prezi. It have many pictures and many
 transitions. But because of it is made by prezi, there are no headers
 and footers so no page numbers and section titles etc. This is not
-so convinient in such a official occations because people need to
+so convenient in such a official occasions because people need to
 refer to the page number in question session.&lt;/p&gt;
 &lt;p&gt;There are at lease 6 presents used Apple Keynote. It is really
-difficult to tell the differece between slides made by powerpoints
+difficult to tell the difference between slides made by PowerPoint
 and Keynote. 2 of them used the default theme of keynote.&lt;/p&gt;
-&lt;p&gt;The rest are using powerpoint. Mrs Zhang from Microsoft used powerpoint
+&lt;p&gt;The rest are using PowerPoint. Mrs Zhang from Microsoft used PowerPoint
 but her slides looks like beamer very much such as the usage of footer
-and header and overlays. If these are made by powerpoint that will
+and header and overlays. If these are made by PowerPoint that will
 involve many manually operations.&lt;/p&gt;
-&lt;p&gt;值得一提的是有一個題目爲``Green Mining: A Methodology of Relating
-Software Change to Power Consumption''的人的slide全是``劣質''的手繪漫畫，
-效果意外地好，很低碳很環保很綠色很可愛。具體效果可以參考下面的動畫，雖然
-現場看到的不是一個版本：&lt;/p&gt;
+&lt;p&gt;It is worth to mention that the slides of a study with title &lt;tt class="docutils literal"&gt;Green
+Mining: A Methodology of Relating Software Change to Power Consumption&lt;/tt&gt;
+are all &lt;tt class="docutils literal"&gt;badly&lt;/tt&gt; drawn hand paintings. The effect of these slide are
+well received, they are green and clean and cute. You can refer to the
+following animation for the effect but it is not exactly the same version
+with what we saw :&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv"&gt;http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h4&gt;微軟是個腹黑娘！&lt;/h4&gt;
-&lt;p&gt;嘛雖然這也不是什麼新聞了。MSR2012的Mining Challenge的贊助商是微軟，管理
-組織者來自微軟研究院，獎品是Xbox和Kinect。然後今年的題目是：&lt;/p&gt;
+&lt;div class="section" id="microsoft-is-meaning"&gt;
+&lt;h4&gt;Microsoft is MEANING&lt;/h4&gt;
+&lt;p&gt;It is not a news. But Microsoft is the sponsor of Mining Challenge, and
+the prize of this challenge will be Xbox and Kinect and the topic of
+this year is:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Mining Android Bug
 &lt;/pre&gt;
-&lt;p&gt;我看到了微軟滿滿的怨氣……&lt;/p&gt;
+&lt;p&gt;I see what you are doing there Microsoft ......&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

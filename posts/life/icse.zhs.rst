@@ -1,0 +1,121 @@
+ICSE 2012
+=======================================================================
+
+:slug: icse2012
+:lang: zhs
+:date: 2012-06-06 10:42
+:tags: icse, software
+
+Keynote 1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
+关系。
+
+Cost Estimation for Distributed Software Project
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+讲到他们试图改善现有的模型去更精确地评估软件开发的开销。
+
+他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
+的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
+的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。
+
+他们的观点：
+
+        Context-specfic solutions needed!
+
+        Early user paticipation is key!
+
+Characterizing Logging Practices in Open-Source Software
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Common mistakes in logging messages
+
+他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句，确定log
+中存在的问题。他们首先确定修改是事后修改。
+
+通常的修改的比例（9027个修改）
+
+=== ===========
+45% text
+27% variable
+26% verbosity
+2%  location
+=== ===========
+
+他们发现有verbo等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
+之间的权衡。
+
+大多数对log的var的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
+解决这个问题而提出的，通过静态检查，提醒程序员是否忘记了某个参数
+
+对text的修改是因为要改掉过时的代码信息，避免误导用户。
+
+他们的实验是采用了基于code clone 的技术，找到所有log语句，然后找不一致
+的clone，然后自动提出建议。
+
+Combine Functional and Imperative Pgrm for Multicore Sw: Scala & Java
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+趋势：到处都是多核，但是并发程序呢？
+
+他们研究的对象是Scala和Java，因为可以编译后确认JVM字节码的语义。
+
+- Java:
+      -  Shared Memory
+      -  Explicit thread
+      -  Synchronized
+      -  Wait/Notified
+
+- Scala:
+      -  High-order fucntions
+      -  Actors, message passing
+      -  lists, filters, iterators
+      -  while
+      -  shared state, OO
+      -  import java.*
+      -  auto type infer
+
+Training 4 weeks, Industry Project, 
+
+结果：
+
+scala 的项目平均比java多花38%的时间，主要都是花在Test和debug上的时间。
+
+程序员的经验和总体时间相关，但是对test和debug没有显著影响。
+
+scala的为了让编程更有效率的设计，导致debug更困难。比如类型推导，debug
+的时候需要手动推导，来理解正在发生什么。
+
+scala的程序比java小，中位数2.6%，平均15.2%
+
+- 性能比较： 
+        - 单核：scala的线性程序的性能比java好
+        - 4核： 
+                - scala 7s @ 4 threads 
+                - java 4si @ 8 threads 
+                - median 
+                        - 83s scala 
+                        - 98s java
+        - 32core: best scala 34s @ 64 threads 
+
+- 结论
+        - java有更好的scalability
+
+- scala类型推导
+        - 45%说对携带码有帮助
+        - 85%说导致程序错误
+
+- 调试
+        - 23%认为scala简单
+        - 77%认为java简单
+
+multi-paradigram are better
+
+Sound Empirical Evidence in Software Testing
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Test data generation
+
+Large Empirical Studies - not always possible
+
+For open source software - big enough
+
+

@@ -146,9 +146,9 @@
 
 <span class="label">Lang</span>
 
-	<a href=".././discuss-cpp-template-downcast.html"><i class="icon-edit"></i>zh</a>
-
 	<a href=".././discuss-cpp-template-downcast-zhs.html"><i class="icon-edit"></i>zhs</a>
+
+	<a href=".././discuss-cpp-template-downcast.html"><i class="icon-edit"></i>zh</a>
 
 
 </footer><!-- /.post-info --></div>
@@ -161,65 +161,6 @@
 <h2>The problem</h2>
 <p>Today I read a book about we can do cast-down in template, so ...</p></div> 
 			<a class="btn primary xsmall" href=".././discuss-cpp-template-downcast-en.html">more ...</a>
-		</div>
-	</div>	
-	<hr />
-	
-	<div class='article'>
-		<h1><a href=".././discuss-cpp-template-downcast.html">關於C++模板的類型轉換的討論</a></h1>
-		<div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2012-02-26T05:54:57">
-	<i class="icon-calendar"></i>2012-02-26
-</abbr>
-
-<span class="label">By</span>
-<a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
-
-<span class="label">Category</span>
-<a href=".././category/c.html"><i class="icon-folder-open"></i>c</a>. 
-
-
-	
-
-<span class="label">Tags</span> 
-
-	<a href=".././tag/c.html"><i class="icon-tag"></i>C++</a>
-
-	<a href=".././tag/template.html"><i class="icon-tag"></i>template</a>
-
-
-
-<span class="label">Lang</span>
-
-	<a href=".././discuss-cpp-template-downcast-en.html"><i class="icon-edit"></i>en</a>
-
-	<a href=".././discuss-cpp-template-downcast-zhs.html"><i class="icon-edit"></i>zhs</a>
-
-
-</footer><!-- /.post-info --></div>
-		<div class="summary"><p>這兩天在飲水思源的C板，關於C++模板的類型轉換的一個討論，後面是我的解答。</p>
-<div class="section" id="id1">
-<h2>討論地址</h2>
-<p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
-</div>
-<div class="section" id="id2">
-<h2>原問題</h2>
-<p>今天在書上看到模板演繹的時候可以允許cast-down，於是我寫了個東西：</p>
-<div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
-
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="p">};</span>
-<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
-
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">struct ...</span></pre></div></div> 
-			<a class="btn primary xsmall" href=".././discuss-cpp-template-downcast.html">more ...</a>
 		</div>
 	</div>	
 	<hr />
@@ -279,6 +220,65 @@
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="k">struct ...</span></pre></div></div> 
 			<a class="btn primary xsmall" href=".././discuss-cpp-template-downcast-zhs.html">more ...</a>
+		</div>
+	</div>	
+	<hr />
+	
+	<div class='article'>
+		<h1><a href=".././discuss-cpp-template-downcast.html">關於C++模板的類型轉換的討論</a></h1>
+		<div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2012-02-26T05:54:57">
+	<i class="icon-calendar"></i>2012-02-26
+</abbr>
+
+<span class="label">By</span>
+<a href=".././author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
+
+<span class="label">Category</span>
+<a href=".././category/c.html"><i class="icon-folder-open"></i>c</a>. 
+
+
+	
+
+<span class="label">Tags</span> 
+
+	<a href=".././tag/c.html"><i class="icon-tag"></i>C++</a>
+
+	<a href=".././tag/template.html"><i class="icon-tag"></i>template</a>
+
+
+
+<span class="label">Lang</span>
+
+	<a href=".././discuss-cpp-template-downcast-en.html"><i class="icon-edit"></i>en</a>
+
+	<a href=".././discuss-cpp-template-downcast-zhs.html"><i class="icon-edit"></i>zhs</a>
+
+
+</footer><!-- /.post-info --></div>
+		<div class="summary"><p>這兩天在飲水思源的C板，關於C++模板的類型轉換的一個討論，後面是我的解答。</p>
+<div class="section" id="id1">
+<h2>討論地址</h2>
+<p><a class="reference external" href="http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html">http://bbs.sjtu.edu.cn/bbstcon,board,C,reid,1330078933,file,M.1330078933.A.html</a></p>
+</div>
+<div class="section" id="id2">
+<h2>原問題</h2>
+<p>今天在書上看到模板演繹的時候可以允許cast-down，於是我寫了個東西：</p>
+<div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="kt">bool</span> <span class="n">_Test</span><span class="p">,</span> <span class="k">class</span> <span class="nc">_Type</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="p">};</span>
+<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">struct ...</span></pre></div></div> 
+			<a class="btn primary xsmall" href=".././discuss-cpp-template-downcast.html">more ...</a>
 		</div>
 	</div>	
 	<hr />
@@ -347,6 +347,12 @@
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
+<li class="tag-2">
+    <a href=".././tag/software.html">
+        <i class="icon-tag icon-large"></i>software
+    </a>
+</li>
+
 <li class="tag-4">
     <a href=".././tag/sjtu.html">
         <i class="icon-tag icon-large"></i>sjtu
@@ -354,32 +360,14 @@
 </li>
 
 <li class="tag-4">
-    <a href=".././tag/acpi.html">
-        <i class="icon-tag icon-large"></i>acpi
+    <a href=".././tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
     </a>
 </li>
 
 <li class="tag-4">
-    <a href=".././tag/java.html">
-        <i class="icon-tag icon-large"></i>java
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href=".././tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href=".././tag/mining.html">
-        <i class="icon-tag icon-large"></i>mining
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href=".././tag/C++.html">
-        <i class="icon-tag icon-large"></i>C++
+    <a href=".././tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
     </a>
 </li>
 
@@ -390,6 +378,18 @@
 </li>
 
 <li class="tag-4">
+    <a href=".././tag/repository.html">
+        <i class="icon-tag icon-large"></i>repository
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href=".././tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+
+<li class="tag-2">
     <a href=".././tag/icse.html">
         <i class="icon-tag icon-large"></i>icse
     </a>
@@ -398,12 +398,6 @@
 <li class="tag-4">
     <a href=".././tag/template.html">
         <i class="icon-tag icon-large"></i>template
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href=".././tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
     </a>
 </li>
 
@@ -419,9 +413,21 @@
     </a>
 </li>
 
+<li class="tag-2">
+    <a href=".././tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</li>
+
 <li class="tag-4">
-    <a href=".././tag/software.html">
-        <i class="icon-tag icon-large"></i>software
+    <a href=".././tag/acpi.html">
+        <i class="icon-tag icon-large"></i>acpi
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href=".././tag/mining.html">
+        <i class="icon-tag icon-large"></i>mining
     </a>
 </li>
 
@@ -438,20 +444,14 @@
 </li>
 
 <li class="tag-4">
-    <a href=".././tag/repository.html">
-        <i class="icon-tag icon-large"></i>repository
-    </a>
-</li>
-
-<li class="tag-2">
-    <a href=".././tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
+    <a href=".././tag/java.html">
+        <i class="icon-tag icon-large"></i>java
     </a>
 </li>
 
 <li class="tag-4">
-    <a href=".././tag/yssy.html">
-        <i class="icon-tag icon-large"></i>yssy
+    <a href=".././tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
     </a>
 </li>
 

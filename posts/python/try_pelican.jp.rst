@@ -103,7 +103,7 @@ Pelican_ を入れるのは簡単：
 
     $ pip install pelican
 
-文章を ReST_ で書いて、``posts``フォルダーに置きます。ページを生成する：
+文章を ReST_ で書いて、 ``posts`` フォルダーに置きます。ページを生成する：
 
 .. code-block:: console
 

@@ -2,51 +2,53 @@ About
 =======================================
 
 :slug: about
-:lang: jp
+:lang: en
 :date: 2012-05-30 19:21:34
 :tags: about
 
 `繁體中文 <../pages/about.html>`_ / `简体中文 <../pages/about-zhs.html>`_ / 
 `日本語 <../pages/about-jp.html>`_ / `English <../pages/about-en.html>`_
 
-このBlogの言語
+About This Blog
 -----------------------------------------------------------------------
-私はできるなら、中国語(Chinesei, zh)，日本語(Japanese, jp)、
-英語(English, en)の３つの言語でこのblogを書きます。中国語には繁体(zh)
-と簡体(zhs)の区別がありますので、この場合ではまず繁体で書いて、更に
-OpenCC_ を使って繁体を簡体に自動的に変更します。
+I will use 3 languages, namely Chinese(zh), Japanese(jp) and English(en)
+to write this blog whenever it make sense. Chinese has both traditional(zh)
+simplified(zhs) version, and I will always write as the traditional 
+version first and then traslate it into simplified version by using 
+OpenCC_ automatically.
 
 .. _OpenCC : http://opencc.org/
 
-
-現状
+Currently
 ------------------------------------------
 
-私の名前は 楊　嘉晨 
+My Name is YANG Jiachen(楊嘉晨) 
 
-平成元年6月に生まれ
+born in June 1989
 
-今は 
-
-        大阪大学大学院 情報科学研究科 コンピューターサイエンス専攻 
+I am currently pursuing master degree in 
         
-        修士1年生 (http://sdl.ist.osaka-u.ac.jp/)
+        Graduate School of Information Science and Technology,
 
-卒業した大学は 
+        Osaka University (http://sdl.ist.osaka-u.ac.jp/)
 
-        上海交通大学 ソフトウェア学院 ソフトウェア工学部 
+I graduated from 
+        
+        School of Software, Shanghai Jiao Tong University. 
         
         F0703701 (http://se.sjtu.edu.cn/)
 
-連絡方法
+Contact
 ------------------------------------------
 
-携帯（softbank）: 080-3853-2770
+You can contact me by：
 
-携帯メールアドレス: jc-yang@softbank.ne.jp
+Mobile phone（softbank）: 080-3853-2770
+
+Email of mobile phone: jc-yang@softbank.ne.jp
 
 
-ネット上の私
+Or you can find me on Internet：
 
 Skype: farseerfc
 
