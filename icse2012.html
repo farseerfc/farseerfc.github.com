@@ -188,13 +188,16 @@
 
 </footer><!-- /.post-info -->
 		</div>
-		<div class="section" id="keynote-1">
-<h2>Keynote 1</h2>
+		<hr class="docutils" />
+<div class="section" id="june-6">
+<h2>June 6</h2>
+<div class="section" id="keynote-1">
+<h3>Keynote 1</h3>
 <p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
 關係。</p>
 </div>
 <div class="section" id="cost-estimation-for-distributed-software-project">
-<h2>Cost Estimation for Distributed Software Project</h2>
+<h3>Cost Estimation for Distributed Software Project</h3>
 <p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
 <p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
 的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
@@ -206,7 +209,7 @@
 </blockquote>
 </div>
 <div class="section" id="characterizing-logging-practices-in-open-source-software">
-<h2>Characterizing Logging Practices in Open-Source Software</h2>
+<h3>Characterizing Logging Practices in Open-Source Software</h3>
 <p>Common mistakes in logging messages</p>
 <p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
 中存在的問題。他們首先確定修改是事後修改。</p>
@@ -240,7 +243,7 @@
 的clone，然後自動提出建議。</p>
 </div>
 <div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java">
-<h2>Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</h2>
+<h3>Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</h3>
 <p>趨勢：到處都是多核，但是併發程序呢？</p>
 <p>他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。</p>
 <ul>
@@ -339,10 +342,190 @@
 <p>multi-paradigram are better</p>
 </div>
 <div class="section" id="sound-empirical-evidence-in-software-testing">
-<h2>Sound Empirical Evidence in Software Testing</h2>
+<h3>Sound Empirical Evidence in Software Testing</h3>
 <p>Test data generation</p>
 <p>Large Empirical Studies - not always possible</p>
 <p>For open source software - big enough</p>
+</div>
+<div class="section" id="identifing-linux-bug-fixing-patch">
+<h3>Identifing Linux Bug Fixing Patch</h3>
+<ul>
+<li><dl class="first docutils">
+<dt>current practice:</dt>
+<dd><ul class="first last simple">
+<li>manual</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Current research:</dt>
+<dd><ul class="first last simple">
+<li>keywords in commits</li>
+<li>link bug reports in bugzilla</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Try to solve classification problem</p>
+<ul>
+<li><dl class="first docutils">
+<dt>issue</dt>
+<dd><ul class="first last simple">
+<li>pre-identified</li>
+<li>post-identified</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>data</dt>
+<dd><ul class="first last simple">
+<li>from commit log</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>feature extraction</dt>
+<dd><ul class="first last simple">
+<li>text pre-process stemmed non-stop words</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">model learning</p>
+</li>
+</ul>
+<p>research questions</p>
+</div>
+<div class="section" id="active-refinement-of-clone-anomaly-reports">
+<h3>Active Refinement of Clone Anomaly Reports</h3>
+<p>motivating</p>
+<ul class="simple">
+<li>code clones, clone groups</li>
+<li>clone used to detect bugs</li>
+<li>anomaly : inconsistent clone group
+many anomaly clone are note bug, high false positive</li>
+</ul>
+<dl class="docutils">
+<dt>approach</dt>
+<dd><ul class="first last simple">
+<li>reorder by sorted bug reports</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="june7">
+<h2>June7</h2>
+<div class="section" id="keynotes-2-sustainability-with-software-an-industrial-perspective">
+<h3>Keynotes 2: Sustainability with Software - An Industrial Perspective</h3>
+<p>Sustainability</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Classic View: Idenpendent view with overlap</dt>
+<dd><ul class="first last simple">
+<li>Social</li>
+<li>Environment</li>
+<li>Economic</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Nested viw</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Environment</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Social</dt>
+<dd><ul class="first last simple">
+<li>Economic</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt>Triple bottom line</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>economic</dt>
+<dd><p class="first last">-global business, networks , global econ</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>env</dt>
+<dd><ul class="first last simple">
+<li>natural res, climate change, population grow</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>social</dt>
+<dd><ul class="first last simple">
+<li>awareness, connectivity, accountability</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Green IT</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>reduce IT energy</dt>
+<dd><ul class="first last simple">
+<li>more than 50% cooling - doing nothing</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mini e-waste: not properly recycled</dt>
+<dd><ul class="first last simple">
+<li>80% in EU</li>
+<li>75% in US</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">foster dematerialization</p>
+</li>
+</ul>
+</dd>
+</dl>
+<p>In-Memory Technology: Expected Sustainable Benefits</p>
+<dl class="docutils">
+<dt>What can we do?</dt>
+<dd><ul class="first last simple">
+<li>consider all software lifecycle phases in your design</li>
+<li>avoid energy expensive behavior in your codes</li>
+<li>design lean architectures</li>
+</ul>
+</dd>
+<dt>Green by IT</dt>
+<dd><ul class="first last simple">
+<li>2% green IT</li>
+<li>98% green IT</li>
+</ul>
+</dd>
+</dl>
+</div>
 </div>
 
 		</div><!-- /.entry-content -->
@@ -416,27 +599,27 @@
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
+<li class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
+    </a>
+</li>
+
+<li class="tag-2">
+    <a href="./tag/icse.html">
+        <i class="icon-tag icon-large"></i>icse
+    </a>
+</li>
+
 <li class="tag-2">
     <a href="./tag/software.html">
         <i class="icon-tag icon-large"></i>software
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/sjtu.html">
-        <i class="icon-tag icon-large"></i>sjtu
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/yssy.html">
-        <i class="icon-tag icon-large"></i>yssy
-    </a>
-</li>
-
-<li class="tag-4">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
     </a>
 </li>
 
@@ -447,8 +630,8 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/repository.html">
-        <i class="icon-tag icon-large"></i>repository
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
     </a>
 </li>
 
@@ -458,33 +641,21 @@
     </a>
 </li>
 
-<li class="tag-2">
-    <a href="./tag/icse.html">
-        <i class="icon-tag icon-large"></i>icse
+<li class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/template.html">
-        <i class="icon-tag icon-large"></i>template
+    <a href="./tag/repository.html">
+        <i class="icon-tag icon-large"></i>repository
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
-    </a>
-</li>
-
-<li class="tag-1">
-    <a href="./tag/python.html">
-        <i class="icon-tag icon-large"></i>python
-    </a>
-</li>
-
-<li class="tag-2">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
     </a>
 </li>
 
@@ -501,8 +672,14 @@
 </li>
 
 <li class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
+    </a>
+</li>
+
+<li class="tag-4">
+    <a href="./tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
     </a>
 </li>
 
@@ -512,15 +689,21 @@
     </a>
 </li>
 
-<li class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
     </a>
 </li>
 
 <li class="tag-4">
-    <a href="./tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
+    </a>
+</li>
+
+<li class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
     </a>
 </li>
 

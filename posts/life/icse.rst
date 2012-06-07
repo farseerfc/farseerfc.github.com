@@ -6,6 +6,11 @@ ICSE 2012
 :date: 2012-06-06 10:42
 :tags: icse, software
 
+-----------------------------------------------------------------------
+
+June 6
+-----------------------------------------------------------------------
+
 Keynote 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
@@ -118,4 +123,84 @@ Large Empirical Studies - not always possible
 
 For open source software - big enough
 
+Identifing Linux Bug Fixing Patch
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+- current practice:
+        - manual
+- Current research:
+        - keywords in commits
+        - link bug reports in bugzilla
+
+Try to solve classification problem
+
+- issue 
+        - pre-identified 
+        - post-identified
+
+- data
+        - from commit log
+- feature extraction
+        - text pre-process stemmed non-stop words
+- model learning
+
+research questions
+
+
+Active Refinement of Clone Anomaly Reports
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+motivating
+
+- code clones, clone groups
+- clone used to detect bugs
+- anomaly : inconsistent clone group
+  many anomaly clone are note bug, high false positive
+
+approach
+  - reorder by sorted bug reports  
+
+-----------------------------------------------------------------------
+
+June7
+-----------------------------------------------------------------------
+
+Keynotes 2: Sustainability with Software - An Industrial Perspective
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sustainability
+
+- Classic View: Idenpendent view with overlap
+        - Social
+        - Environment
+        - Economic
+- Nested viw
+        - Environment
+                - Social
+                        - Economic
+
+Triple bottom line
+  - economic
+        -global business, networks , global econ
+  - env
+        - natural res, climate change, population grow
+  - social
+        - awareness, connectivity, accountability
+
+Green IT
+        - reduce IT energy
+                - more than 50% cooling - doing nothing
+        - mini e-waste: not properly recycled
+                - 80% in EU
+                - 75% in US
+        - foster dematerialization
+
+
+In-Memory Technology: Expected Sustainable Benefits
+
+What can we do?
+      -  consider all software lifecycle phases in your design
+      -  avoid energy expensive behavior in your codes
+      -  design lean architectures
+
+Green by IT
+        - 2% green IT
+        - 98% green IT
