@@ -488,8 +488,10 @@ many anomaly clone are note bug, high false positive</li>
 </li>
 </ul>
 </dd>
-<dt>Green IT</dt>
-<dd><ul class="first last">
+</dl>
+<div class="section" id="green-it">
+<h4>Green IT</h4>
+<ul>
 <li><dl class="first docutils">
 <dt>reduce IT energy</dt>
 <dd><ul class="first last simple">
@@ -510,24 +512,272 @@ many anomaly clone are note bug, high false positive</li>
 <li><p class="first">foster dematerialization</p>
 </li>
 </ul>
-</dd>
-</dl>
 <p>In-Memory Technology: Expected Sustainable Benefits</p>
-<dl class="docutils">
-<dt>What can we do?</dt>
-<dd><ul class="first last simple">
+</div>
+<div class="section" id="what-can-we-do">
+<h4>What can we do?</h4>
+<blockquote>
+<ul class="simple">
 <li>consider all software lifecycle phases in your design</li>
 <li>avoid energy expensive behavior in your codes</li>
 <li>design lean architectures</li>
 </ul>
-</dd>
-<dt>Green by IT</dt>
-<dd><ul class="first last simple">
+</blockquote>
+</div>
+<div class="section" id="green-by-it">
+<h4>Green by IT</h4>
+<blockquote>
+<ul class="simple">
 <li>2% green IT</li>
 <li>98% green IT</li>
 </ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="on-how-often-code-is-cloned-across-repositories">
+<h3>On How Often code is cloned across repositories</h3>
+<p>Line based hashing code clone detection</p>
+<p>never do anything harder than sorting</p>
+<p>hashing a window of 5 lines of normalized (tokenized) code, dropping
+3/4 of the hashing</p>
+<p>把ccfinder一个月的工作缩短到了3, 4天。没有比较presion和recall。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>14%</td>
+<td>type1</td>
+</tr>
+<tr><td>16%</td>
+<td>type2</td>
+</tr>
+<tr><td>17%</td>
+<td>type3 (not really type2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="graph-based-analysis-and-prediction-for-sw-evolution">
+<h3>Graph-based analysis and prediction for sw evolution</h3>
+<div class="section" id="graph-are-everywhere">
+<h4>graph are everywhere</h4>
+<ul class="simple">
+<li>internet topology</li>
+<li>social net</li>
+<li>chemistry</li>
+<li>biology</li>
+</ul>
+<p>in sw
+- func call graph
+- module dependency graph</p>
+<p>developer interaction graph
+- commit logs
+- bug reports</p>
+<p>experiment 11 oss, 27~171 release, &gt; 9 years</p>
+</div>
+<div class="section" id="predictors">
+<h4>predictors</h4>
+<ul>
+<li><dl class="first docutils">
+<dt>NodeRank</dt>
+<dd><ul class="first last">
+<li><p class="first">similar to pagerank of google</p>
+</li>
+<li><p class="first">measure relative importance of each node</p>
+</li>
+<li><dl class="first docutils">
+<dt>func call graph with noderank</dt>
+<dd><ul class="first last simple">
+<li>compare rank with severity scale on bugzilla</li>
+</ul>
 </dd>
 </dl>
+</li>
+<li><dl class="first docutils">
+<dt>correlation between noderank and BugSeverity</dt>
+<dd><ul class="first last simple">
+<li>func level 0.48 ~ 0.86 varies among projects.</li>
+<li>model level &gt; func level</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ModularityRatio</dt>
+<dd><ul class="first last">
+<li><p class="first">cohesion/coupling ratio:  IntraDep(M)/InterDep(M)</p>
+</li>
+<li><p class="first">forecast mantencance effort</p>
+</li>
+<li><dl class="first docutils">
+<dt>use for</dt>
+<dd><ul class="first last simple">
+<li>identify modules that need redesign or refactoring</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>EditDistance</dt>
+<dd><ul class="first last">
+<li><p class="first">bug-based developer collaboration graphs</p>
+</li>
+<li><p class="first">ED(G1,G2)=|V1|+|V2|-2|V1交V2|+|E1|+|E2|-2|E1交E2|</p>
+</li>
+<li><dl class="first docutils">
+<dt>use for</dt>
+<dd><ul class="first last simple">
+<li>release planning</li>
+<li>resource allocation</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>graph metrics</p>
+<ul>
+<li><dl class="first docutils">
+<dt>graph diameter</dt>
+<dd><ul class="first last simple">
+<li>average node degree indicates reuse</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">clustering coefficient</p>
+</li>
+<li><p class="first">assortativity</p>
+</li>
+<li><p class="first">num of cycles</p>
+</li>
+</ul>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>&quot;Actionable intelligence&quot; from graph evolution</p>
+<ul class="simple">
+<li>studie 11 large long-live projs</li>
+<li>predictors</li>
+<li>identify pivotal moments in evolution</li>
+</ul>
+</div>
+</div>
+<div class="section" id="what-make-long-term-contributors-willingness-and-opportunity-in-oss">
+<h3>What make long term contributors: willingness and opportunity in OSS</h3>
+<p>OSS don't work without contributors form community</p>
+<p>mozilla (2000-2008)</p>
+<p>10^2.2 LTC &lt;- 2 order -&gt; 10^4.2 new contributors &lt;- 3.5 order -&gt; 10^7.7 users</p>
+<p>gnome (1999-2007)</p>
+<p>10^2.5 LTC &lt;- 1.5 order -&gt; 10^4.0 new contributors &lt;- 3.5 order -&gt; 10^6.5 users</p>
+<div class="section" id="approach">
+<h4>approach</h4>
+<ul class="simple">
+<li>read issues of 20 LTC and 20 non-LTC</li>
+<li>suvery 56 (36 non-LTC and 20 LTC)</li>
+<li>extract practices published on project web sites</li>
+</ul>
+</div>
+<div class="section" id="summeray">
+<h4>summeray</h4>
+<ul>
+<li><p class="first">Ability/Willingness distinguishes LTCs</p>
+</li>
+<li><dl class="first docutils">
+<dt>Environment</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>macro-climate</dt>
+<dd><ul class="first last simple">
+<li>popularity</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>micro-climate</dt>
+<dd><ul class="first last simple">
+<li>attention</li>
+<li>bumber of peers</li>
+<li>performance of peers</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>regression model</p>
+<p>newcomers to LTC conversion drops</p>
+<dl class="docutils">
+<dt>actions in first month predicts LTCs</dt>
+<dd><ul class="first last simple">
+<li>24% recall</li>
+<li>37% precision</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="develop-of-auxiliary-functions-should-you-be-agile">
+<h3>develop of auxiliary functions: should you be agile?</h3>
+<p>a empirial assessment of pair programming and test-first programming</p>
+<p>can agile help auxiliary functions?</p>
+<div class="section" id="experiment">
+<h4>experiment</h4>
+<ul class="simple">
+<li>pair vs solo</li>
+<li>test-first vs test-last</li>
+<li>students vs professors</li>
+</ul>
+</div>
+<div class="section" id="research-questions">
+<h4>research questions</h4>
+<ul class="simple">
+<li>r1: can pair help obtain more correct impl</li>
+<li>r2: can test-first</li>
+<li>r3: dst test1 encourage the impl or more test cases?</li>
+<li>r4: does test1 course more coverage</li>
+</ul>
+</div>
+<div class="section" id="result">
+<h4>result</h4>
+<ul>
+<li><dl class="first docutils">
+<dt>test-first</dt>
+<dd><ul class="first last simple">
+<li>higher coverage</li>
+<li>non change with correctness</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pair</dt>
+<dd><ul class="first last simple">
+<li>improve on correctness</li>
+<li>longer total programming time</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -603,44 +853,8 @@ many anomaly clone are note bug, high false positive</li>
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
 <span class="tag-4">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
-    </a>
-</span>
-
-<span class="tag-2">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/repository.html">
-        <i class="icon-tag icon-large"></i>repository
-    </a>
-</span>
-
-<span class="tag-2">
-    <a href="./tag/software.html">
-        <i class="icon-tag icon-large"></i>software
-    </a>
-</span>
-
-<span class="tag-1">
-    <a href="./tag/python.html">
-        <i class="icon-tag icon-large"></i>python
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
     </a>
 </span>
 
@@ -651,20 +865,8 @@ many anomaly clone are note bug, high false positive</li>
 </span>
 
 <span class="tag-4">
-    <a href="./tag/creationism.html">
-        <i class="icon-tag icon-large"></i>creationism
-    </a>
-</span>
-
-<span class="tag-2">
-    <a href="./tag/icse.html">
-        <i class="icon-tag icon-large"></i>icse
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/sjtu.html">
-        <i class="icon-tag icon-large"></i>sjtu
+    <a href="./tag/repository.html">
+        <i class="icon-tag icon-large"></i>repository
     </a>
 </span>
 
@@ -674,9 +876,15 @@ many anomaly clone are note bug, high false positive</li>
     </a>
 </span>
 
+<span class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</span>
+
 <span class="tag-4">
-    <a href="./tag/mining.html">
-        <i class="icon-tag icon-large"></i>mining
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
     </a>
 </span>
 
@@ -692,6 +900,48 @@ many anomaly clone are note bug, high false positive</li>
     </a>
 </span>
 
+<span class="tag-2">
+    <a href="./tag/software.html">
+        <i class="icon-tag icon-large"></i>software
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
+    </a>
+</span>
+
+<span class="tag-2">
+    <a href="./tag/icse.html">
+        <i class="icon-tag icon-large"></i>icse
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/mining.html">
+        <i class="icon-tag icon-large"></i>mining
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
+    </a>
+</span>
+
 <span class="tag-4">
     <a href="./tag/yssy.html">
         <i class="icon-tag icon-large"></i>yssy
@@ -699,14 +949,14 @@ many anomaly clone are note bug, high false positive</li>
 </span>
 
 <span class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
     </a>
 </span>
 
-<span class="tag-4">
-    <a href="./tag/template.html">
-        <i class="icon-tag icon-large"></i>template
+<span class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
     </a>
 </span>
 
