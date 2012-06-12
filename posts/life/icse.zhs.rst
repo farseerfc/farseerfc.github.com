@@ -28,28 +28,34 @@ Cost Estimation for Distributed Software Project
 
         Context-specfic solutions needed!
 
+        我们需要更上下文相关的解决方案！
+
         Early user paticipation is key!
+
+        早期用户的参与是关键
 
 Characterizing Logging Practices in Open-Source Software
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Common mistakes in logging messages
+
+在日志记录中容易犯的错误
 
 他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句，确定log
 中存在的问题。他们首先确定修改是事后修改。
 
 通常的修改的比例（9027个修改）
 
-=== ===========
-45% text
-27% variable
-26% verbosity
-2%  location
-=== ===========
+=== ============================
+45% 静态文本
+27% 打印出的变量
+26% 调试等级verbosity
+2%  日志输出的位置
+=== ============================
 
-他们发现有verbo等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
+他们发现有调试等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
 之间的权衡。
 
-大多数对log的var的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
+大多数对log的变量的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
 解决这个问题而提出的，通过静态检查，提醒程序员是否忘记了某个参数
 
 对text的修改是因为要改掉过时的代码信息，避免误导用户。
@@ -65,21 +71,21 @@ Combine Functional and Imperative Pgrm for Multicore Sw: Scala & Java
 他们研究的对象是Scala和Java，因为可以编译后确认JVM字节码的语义。
 
 - Java:
-      -  Shared Memory
-      -  Explicit thread
-      -  Synchronized
-      -  Wait/Notified
+      -  共享内存
+      -  显示创建的线程
+      -  手动同步
+      -  Wait/Notify机制
 
 - Scala:
-      -  High-order fucntions
-      -  Actors, message passing
+      -  高阶函数
+      -  Actors, 消息传递
       -  lists, filters, iterators
       -  while
-      -  shared state, OO
-      -  import java.*
-      -  auto type infer
+      -  共享状态, OO
+      -  import java.* 能从java导入任何库
+      -  auto type inferance 自动类型推导
 
-Training 4 weeks, Industry Project, 
+实验的参与者都经过4周的训练，实验项目是工业等级的开发项目 
 
 结果：
 
@@ -117,7 +123,7 @@ multi-paradigram are better
 
 Sound Empirical Evidence in Software Testing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Test data generation
+Test data generation 测试数据自动生成
 
 Large Empirical Studies - not always possible
 
@@ -355,3 +361,17 @@ result
 - pair
         - improve on correctness
         - longer total programming time 
+
+Static Detection of Resource Contention Problems in Server-side script
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Addressed the race condition of accessing database or filesystem of PHP
+
+Amplifying Tests to Validate Exception Handling Code
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+异常处理的代码不但难写，而且难以验证。各种组合情况难以估计，尤其是手机
+系统上。
+
+A tactic-centric approach automating traceability of quality concerns
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+tactic traceability information models
+

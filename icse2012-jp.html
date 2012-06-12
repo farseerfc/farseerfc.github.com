@@ -164,7 +164,7 @@
 			<footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-06T10:42:00">
-	<i class="icon-calendar"></i>2012-06-06
+	<i class="icon-calendar"></i>2012/06/06(水)
 </abbr>
 
 <span class="label">By</span>
@@ -186,9 +186,9 @@
 
 <span class="label">Lang</span>
 
-	<a href="./icse2012-en.html"><i class="icon-edit"></i>en</a>
+	<a href="./icse2012-zhs.html"><i class="icon-edit"></i>zhs</a>
 
-	<a href="./icse2012-jp.html"><i class="icon-edit"></i>jp</a>
+	<a href="./icse2012-en.html"><i class="icon-edit"></i>en</a>
 
 	<a href="./icse2012.html"><i class="icon-edit"></i>zh</a>
 
@@ -200,70 +200,67 @@
 <h2>June 6</h2>
 <div class="section" id="keynote-1">
 <h3>Keynote 1</h3>
-<p>没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
-关系。</p>
+<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。</p>
 </div>
 <div class="section" id="cost-estimation-for-distributed-software-project">
 <h3>Cost Estimation for Distributed Software Project</h3>
-<p>讲到他们试图改善现有的模型去更精确地评估软件开发的开销。</p>
-<p>他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
-的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
-的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。</p>
-<p>他们的观点：</p>
+<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
+<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
+<p>他們的觀點：</p>
 <blockquote>
 <p>Context-specfic solutions needed!</p>
-<p>我们需要更上下文相关的解决方案！</p>
 <p>Early user paticipation is key!</p>
-<p>早期用户的参与是关键</p>
 </blockquote>
 </div>
 <div class="section" id="characterizing-logging-practices-in-open-source-software">
 <h3>Characterizing Logging Practices in Open-Source Software</h3>
 <p>Common mistakes in logging messages</p>
-<p>在日志记录中容易犯的错误</p>
-<p>他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句，确定log
-中存在的问题。他们首先确定修改是事后修改。</p>
-<p>通常的修改的比例（9027个修改）</p>
+<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
+中存在的問題。他們首先確定修改是事後修改。</p>
+<p>通常的修改的比例（9027個修改）</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
 <tr><td>45%</td>
-<td>静态文本</td>
+<td>text</td>
 </tr>
 <tr><td>27%</td>
-<td>打印出的变量</td>
+<td>variable</td>
 </tr>
 <tr><td>26%</td>
-<td>调试等级verbosity</td>
+<td>verbosity</td>
 </tr>
 <tr><td>2%</td>
-<td>日志输出的位置</td>
+<td>location</td>
 </tr>
 </tbody>
 </table>
-<p>他们发现有调试等级的变化，是因为安全漏洞之类的原因，或者在开销和数据
-之间的权衡。</p>
-<p>大多数对log的变量的修改都是为了增加一个参数。他们之前的LogEnhancer是为了
-解决这个问题而提出的，通过静态检查，提醒程序员是否忘记了某个参数</p>
-<p>对text的修改是因为要改掉过时的代码信息，避免误导用户。</p>
-<p>他们的实验是采用了基于code clone 的技术，找到所有log语句，然后找不一致
-的clone，然后自动提出建议。</p>
+<p>他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+之間的權衡。</p>
+<p>大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數</p>
+<p>對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。</p>
+<p>他們的實驗是採用了基於code clone 的技術，找到所有log語句，然後找不一致
+的clone，然後自動提出建議。</p>
 </div>
 <div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java">
 <h3>Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</h3>
-<p>趋势：到处都是多核，但是并发程序呢？</p>
-<p>他们研究的对象是Scala和Java，因为可以编译后确认JVM字节码的语义。</p>
+<p>趨勢：到處都是多核，但是併發程序呢？</p>
+<p>他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。</p>
 <ul>
 <li><dl class="first docutils">
 <dt>Java:</dt>
 <dd><ul class="first last simple">
-<li>共享内存</li>
-<li>显示创建的线程</li>
-<li>手动同步</li>
-<li>Wait/Notify机制</li>
+<li>Shared Memory</li>
+<li>Explicit thread</li>
+<li>Synchronized</li>
+<li>Wait/Notified</li>
 </ul>
 </dd>
 </dl>
@@ -271,30 +268,30 @@
 <li><dl class="first docutils">
 <dt>Scala:</dt>
 <dd><ul class="first last simple">
-<li>高阶函数</li>
-<li>Actors, 消息传递</li>
+<li>High-order fucntions</li>
+<li>Actors, message passing</li>
 <li>lists, filters, iterators</li>
 <li>while</li>
-<li>共享状态, OO</li>
-<li>import java.* 能从java导入任何库</li>
-<li>auto type inferance 自动类型推导</li>
+<li>shared state, OO</li>
+<li>import java.*</li>
+<li>auto type infer</li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-<p>实验的参与者都经过4周的训练，实验项目是工业等级的开发项目</p>
-<p>结果：</p>
-<p>scala 的项目平均比java多花38%的时间，主要都是花在Test和debug上的时间。</p>
-<p>程序员的经验和总体时间相关，但是对test和debug没有显著影响。</p>
-<p>scala的为了让编程更有效率的设计，导致debug更困难。比如类型推导，debug
-的时候需要手动推导，来理解正在发生什么。</p>
-<p>scala的程序比java小，中位数2.6%，平均15.2%</p>
+<p>Training 4 weeks, Industry Project,</p>
+<p>結果：</p>
+<p>scala 的項目平均比java多花38%的時間，主要都是花在Test和debug上的時間。</p>
+<p>程序員的經驗和總體時間相關，但是對test和debug沒有顯著影響。</p>
+<p>scala的爲了讓編程更有效率的設計，導致debug更困難。比如類型推導，debug
+的時候需要手動推導，來理解正在發生什麼。</p>
+<p>scala的程序比java小，中位數2.6%，平均15.2%</p>
 <ul>
 <li><dl class="first docutils">
-<dt>性能比较：</dt>
+<dt>性能比較：</dt>
 <dd><ul class="first last">
-<li><p class="first">单核：scala的线性程序的性能比java好</p>
+<li><p class="first">單核：scala的線性程序的性能比java好</p>
 </li>
 <li><dl class="first docutils">
 <dt>4核：</dt>
@@ -323,7 +320,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>结论</dt>
+<dt>結論</dt>
 <dd><ul class="first last simple">
 <li>java有更好的scalability</li>
 </ul>
@@ -331,19 +328,19 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>scala类型推导</dt>
+<dt>scala類型推導</dt>
 <dd><ul class="first last simple">
-<li>45%说对携带码有帮助</li>
-<li>85%说导致程序错误</li>
+<li>45%說對攜帶碼有幫助</li>
+<li>85%說導致程序錯誤</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>调试</dt>
+<dt>調試</dt>
 <dd><ul class="first last simple">
-<li>23%认为scala简单</li>
-<li>77%认为java简单</li>
+<li>23%認爲scala簡單</li>
+<li>77%認爲java簡單</li>
 </ul>
 </dd>
 </dl>
@@ -353,7 +350,7 @@
 </div>
 <div class="section" id="sound-empirical-evidence-in-software-testing">
 <h3>Sound Empirical Evidence in Software Testing</h3>
-<p>Test data generation 测试数据自动生成</p>
+<p>Test data generation</p>
 <p>Large Empirical Studies - not always possible</p>
 <p>For open source software - big enough</p>
 </div>
@@ -547,7 +544,7 @@ many anomaly clone are note bug, high false positive</li>
 <p>never do anything harder than sorting</p>
 <p>hashing a window of 5 lines of normalized (tokenized) code, dropping
 3/4 of the hashing</p>
-<p>把ccfinder一个月的工作缩短到了3, 4天。没有比较presion和recall。</p>
+<p>把ccfinder一個月的工作縮短到了3, 4天。沒有比較presion和recall。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="11%" />
@@ -786,19 +783,6 @@ many anomaly clone are note bug, high false positive</li>
 </ul>
 </div>
 </div>
-<div class="section" id="static-detection-of-resource-contention-problems-in-server-side-script">
-<h3>Static Detection of Resource Contention Problems in Server-side script</h3>
-<p>Addressed the race condition of accessing database or filesystem of PHP</p>
-</div>
-<div class="section" id="amplifying-tests-to-validate-exception-handling-code">
-<h3>Amplifying Tests to Validate Exception Handling Code</h3>
-<p>异常处理的代码不但难写，而且难以验证。各种组合情况难以估计，尤其是手机
-系统上。</p>
-</div>
-<div class="section" id="a-tactic-centric-approach-automating-traceability-of-quality-concerns">
-<h3>A tactic-centric approach automating traceability of quality concerns</h3>
-<p>tactic traceability information models</p>
-</div>
 </div>
 
 		</div><!-- /.entry-content -->
@@ -807,7 +791,7 @@ many anomaly clone are note bug, high false positive</li>
 		<h2>Comments !</h2>
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-			   var disqus_identifier = "icse2012-zhs.html";
+			   var disqus_identifier = "icse2012-jp.html";
 			   (function() {
 				var dsq = document.createElement('script'); 
 				dsq.type = 'text/javascript'; dsq.async = true;

@@ -2,7 +2,7 @@ ICSE 2012
 =======================================================================
 
 :slug: icse2012
-:lang: zh
+:lang: jp
 :date: 2012-06-06 10:42
 :tags: icse, software
 
@@ -28,34 +28,28 @@ Cost Estimation for Distributed Software Project
 
         Context-specfic solutions needed!
 
-        我們需要更上下文相關的解決方案！
-
         Early user paticipation is key!
-
-        早期用戶的參與是關鍵
 
 Characterizing Logging Practices in Open-Source Software
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Common mistakes in logging messages
-
-在日誌記錄中容易犯的錯誤
 
 他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
 中存在的問題。他們首先確定修改是事後修改。
 
 通常的修改的比例（9027個修改）
 
-=== ============================
-45% 靜態文本
-27% 打印出的變量
-26% 調試等級verbosity
-2%  日誌輸出的位置
-=== ============================
+=== ===========
+45% text
+27% variable
+26% verbosity
+2%  location
+=== ===========
 
-他們發現有調試等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
 之間的權衡。
 
-大多數對log的變量的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
 解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數
 
 對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。
@@ -71,21 +65,21 @@ Combine Functional and Imperative Pgrm for Multicore Sw: Scala & Java
 他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。
 
 - Java:
-      -  共享內存
-      -  顯示創建的線程
-      -  手動同步
-      -  Wait/Notify機制
+      -  Shared Memory
+      -  Explicit thread
+      -  Synchronized
+      -  Wait/Notified
 
 - Scala:
-      -  高階函數
-      -  Actors, 消息傳遞
+      -  High-order fucntions
+      -  Actors, message passing
       -  lists, filters, iterators
       -  while
-      -  共享狀態, OO
-      -  import java.* 能從java導入任何庫
-      -  auto type inferance 自動類型推導
+      -  shared state, OO
+      -  import java.*
+      -  auto type infer
 
-實驗的參與者都經過4周的訓練，實驗項目是工業等級的開發項目 
+Training 4 weeks, Industry Project, 
 
 結果：
 
@@ -123,7 +117,7 @@ multi-paradigram are better
 
 Sound Empirical Evidence in Software Testing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Test data generation 測試數據自動生成
+Test data generation
 
 Large Empirical Studies - not always possible
 
@@ -361,17 +355,3 @@ result
 - pair
         - improve on correctness
         - longer total programming time 
-
-Static Detection of Resource Contention Problems in Server-side script
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Addressed the race condition of accessing database or filesystem of PHP
-
-Amplifying Tests to Validate Exception Handling Code
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-異常處理的代碼不但難寫，而且難以驗證。各種組合情況難以估計，尤其是手機
-系統上。
-
-A tactic-centric approach automating traceability of quality concerns
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-tactic traceability information models
-

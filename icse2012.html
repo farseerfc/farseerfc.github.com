@@ -188,6 +188,10 @@
 
 	<a href="./icse2012-zhs.html"><i class="icon-edit"></i>zhs</a>
 
+	<a href="./icse2012-en.html"><i class="icon-edit"></i>en</a>
+
+	<a href="./icse2012-jp.html"><i class="icon-edit"></i>jp</a>
+
 
 </footer><!-- /.post-info -->
 		</div>
@@ -208,38 +212,41 @@
 <p>他們的觀點：</p>
 <blockquote>
 <p>Context-specfic solutions needed!</p>
+<p>我們需要更上下文相關的解決方案！</p>
 <p>Early user paticipation is key!</p>
+<p>早期用戶的參與是關鍵</p>
 </blockquote>
 </div>
 <div class="section" id="characterizing-logging-practices-in-open-source-software">
 <h3>Characterizing Logging Practices in Open-Source Software</h3>
 <p>Common mistakes in logging messages</p>
+<p>在日誌記錄中容易犯的錯誤</p>
 <p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
 中存在的問題。他們首先確定修改是事後修改。</p>
 <p>通常的修改的比例（9027個修改）</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <tbody valign="top">
 <tr><td>45%</td>
-<td>text</td>
+<td>靜態文本</td>
 </tr>
 <tr><td>27%</td>
-<td>variable</td>
+<td>打印出的變量</td>
 </tr>
 <tr><td>26%</td>
-<td>verbosity</td>
+<td>調試等級verbosity</td>
 </tr>
 <tr><td>2%</td>
-<td>location</td>
+<td>日誌輸出的位置</td>
 </tr>
 </tbody>
 </table>
-<p>他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+<p>他們發現有調試等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
 之間的權衡。</p>
-<p>大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+<p>大多數對log的變量的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
 解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數</p>
 <p>對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。</p>
 <p>他們的實驗是採用了基於code clone 的技術，找到所有log語句，然後找不一致
@@ -253,10 +260,10 @@
 <li><dl class="first docutils">
 <dt>Java:</dt>
 <dd><ul class="first last simple">
-<li>Shared Memory</li>
-<li>Explicit thread</li>
-<li>Synchronized</li>
-<li>Wait/Notified</li>
+<li>共享內存</li>
+<li>顯示創建的線程</li>
+<li>手動同步</li>
+<li>Wait/Notify機制</li>
 </ul>
 </dd>
 </dl>
@@ -264,19 +271,19 @@
 <li><dl class="first docutils">
 <dt>Scala:</dt>
 <dd><ul class="first last simple">
-<li>High-order fucntions</li>
-<li>Actors, message passing</li>
+<li>高階函數</li>
+<li>Actors, 消息傳遞</li>
 <li>lists, filters, iterators</li>
 <li>while</li>
-<li>shared state, OO</li>
-<li>import java.*</li>
-<li>auto type infer</li>
+<li>共享狀態, OO</li>
+<li>import java.* 能從java導入任何庫</li>
+<li>auto type inferance 自動類型推導</li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-<p>Training 4 weeks, Industry Project,</p>
+<p>實驗的參與者都經過4周的訓練，實驗項目是工業等級的開發項目</p>
 <p>結果：</p>
 <p>scala 的項目平均比java多花38%的時間，主要都是花在Test和debug上的時間。</p>
 <p>程序員的經驗和總體時間相關，但是對test和debug沒有顯著影響。</p>
@@ -346,7 +353,7 @@
 </div>
 <div class="section" id="sound-empirical-evidence-in-software-testing">
 <h3>Sound Empirical Evidence in Software Testing</h3>
-<p>Test data generation</p>
+<p>Test data generation 測試數據自動生成</p>
 <p>Large Empirical Studies - not always possible</p>
 <p>For open source software - big enough</p>
 </div>
@@ -779,6 +786,19 @@ many anomaly clone are note bug, high false positive</li>
 </ul>
 </div>
 </div>
+<div class="section" id="static-detection-of-resource-contention-problems-in-server-side-script">
+<h3>Static Detection of Resource Contention Problems in Server-side script</h3>
+<p>Addressed the race condition of accessing database or filesystem of PHP</p>
+</div>
+<div class="section" id="amplifying-tests-to-validate-exception-handling-code">
+<h3>Amplifying Tests to Validate Exception Handling Code</h3>
+<p>異常處理的代碼不但難寫，而且難以驗證。各種組合情況難以估計，尤其是手機
+系統上。</p>
+</div>
+<div class="section" id="a-tactic-centric-approach-automating-traceability-of-quality-concerns">
+<h3>A tactic-centric approach automating traceability of quality concerns</h3>
+<p>tactic traceability information models</p>
+</div>
 </div>
 
 		</div><!-- /.entry-content -->
@@ -853,56 +873,20 @@ many anomaly clone are note bug, high false positive</li>
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
 <span class="tag-4">
-    <a href="./tag/creationism.html">
-        <i class="icon-tag icon-large"></i>creationism
-    </a>
-</span>
-
-<span class="tag-4">
     <a href="./tag/C++.html">
         <i class="icon-tag icon-large"></i>C++
     </a>
 </span>
 
 <span class="tag-4">
+    <a href="./tag/mining.html">
+        <i class="icon-tag icon-large"></i>mining
+    </a>
+</span>
+
+<span class="tag-4">
     <a href="./tag/repository.html">
         <i class="icon-tag icon-large"></i>repository
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
-    </a>
-</span>
-
-<span class="tag-2">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/ruby.html">
-        <i class="icon-tag icon-large"></i>ruby
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/acpi.html">
-        <i class="icon-tag icon-large"></i>acpi
-    </a>
-</span>
-
-<span class="tag-2">
-    <a href="./tag/software.html">
-        <i class="icon-tag icon-large"></i>software
     </a>
 </span>
 
@@ -919,26 +903,44 @@ many anomaly clone are note bug, high false positive</li>
 </span>
 
 <span class="tag-4">
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/acpi.html">
+        <i class="icon-tag icon-large"></i>acpi
+    </a>
+</span>
+
+<span class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/ruby.html">
+        <i class="icon-tag icon-large"></i>ruby
+    </a>
+</span>
+
+<span class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</span>
+
+<span class="tag-4">
     <a href="./tag/template.html">
         <i class="icon-tag icon-large"></i>template
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/mining.html">
-        <i class="icon-tag icon-large"></i>mining
-    </a>
-</span>
-
-<span class="tag-4">
-    <a href="./tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
     </a>
 </span>
 
@@ -949,14 +951,32 @@ many anomaly clone are note bug, high false positive</li>
 </span>
 
 <span class="tag-4">
-    <a href="./tag/sjtu.html">
-        <i class="icon-tag icon-large"></i>sjtu
+    <a href="./tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
     </a>
 </span>
 
-<span class="tag-1">
-    <a href="./tag/python.html">
-        <i class="icon-tag icon-large"></i>python
+<span class="tag-4">
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</span>
+
+<span class="tag-2">
+    <a href="./tag/software.html">
+        <i class="icon-tag icon-large"></i>software
+    </a>
+</span>
+
+<span class="tag-4">
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
     </a>
 </span>
 
