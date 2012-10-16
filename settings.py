@@ -25,7 +25,7 @@ DISQUS_SITENAME = 'farseerfcgithub'
 GITHUB_URL = 'https://github.com/farseerfc'
 SITEURL = 'http://farseerfc.github.com'
 GOOGLE_ANALYTICS = 'UA-29540705-1'
-TAG_FEED  = 'feeds/%s.atom.xml'
+TAG_FEED_ATOM  = 'feeds/%s.atom.xml'
 
 SOCIAL = (('twitter', 'http://twitter.com/farseerfc'),
           ('github', 'https://github.com/farseerfc'),
