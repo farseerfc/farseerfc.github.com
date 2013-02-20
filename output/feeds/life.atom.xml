@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/life.atom.xml" rel="self"></link><id>/</id><updated>2013-02-14T10:42:00Z</updated><entry><title>嫁給我吧</title><link href="/marry-me-zh.html" rel="alternate"></link><updated>2013-02-14T10:42:00Z</updated><author><name></name></author><id>tag:,2013-02-14:marry-me-zh.html</id><summary type="html">&lt;script type="text/javascript" src="static/three.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="static/FirstPersonControls.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="static/helvetiker_regular.typeface.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="static/214game.js"&gt;&lt;/script&gt;
+&lt;div id="game_area" style="width: 600px; height: 450px; margin-left: 20px;"&gt;
+&lt;/div&gt;
+&lt;p style="margin-left: 500px; margin-top: 10px; "&gt;* 需要 WebGL 支持&lt;/p&gt;</summary><category term="will"></category><category term="you"></category><category term="marry"></category><category term="me"></category></entry><entry><title>ICSE 2012</title><link href="/icse2012.html" rel="alternate"></link><updated>2012-06-06T10:42:00Z</updated><author><name></name></author><id>tag:,2012-06-06:icse2012.html</id><summary type="html">&lt;hr class="docutils" /&gt;
+&lt;div class="section" id="june-6"&gt;
+&lt;h2&gt;June 6&lt;/h2&gt;
+&lt;div class="section" id="keynote-1"&gt;
+&lt;h3&gt;Keynote 1&lt;/h3&gt;
+&lt;p&gt;沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cost-estimation-for-distributed-software-project"&gt;
+&lt;h3&gt;Cost Estimation for Distributed Software Project&lt;/h3&gt;
+&lt;p&gt;講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。&lt;/p&gt;
+&lt;p&gt;他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。&lt;/p&gt;
+&lt;p&gt;他們的觀點：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Context-specfic solutions needed!&lt;/p&gt;
+&lt;p&gt;Early user paticipation is key!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="characterizing-logging-practices-in-open-source-software"&gt;
+&lt;h3&gt;Characterizing Logging Practices in Open-Source Software&lt;/h3&gt;
+&lt;p&gt;Common mistakes in logging messages&lt;/p&gt;
+&lt;p&gt;他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
+中存在的問題。他們首先確定修改是事後修改。&lt;/p&gt;
+&lt;p&gt;通常的修改的比例（9027個修改）&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="21%" /&gt;
+&lt;col width="79%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;45%&lt;/td&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;27%&lt;/td&gt;
+&lt;td&gt;variable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;26%&lt;/td&gt;
+&lt;td&gt;verbosity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2%&lt;/td&gt;
+&lt;td&gt;location&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+之間的權衡。&lt;/p&gt;
+&lt;p&gt;大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數&lt;/p&gt;
+&lt;p&gt;對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。&lt;/p&gt;
+&lt;p&gt;他們的實驗是採用了基於code clone 的技術，找到所有log語句，然後找不一致
+的clone，然後自動提出建議。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java"&gt;
+&lt;h3&gt;Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp;amp; Java&lt;/h3&gt;
+&lt;p&gt;趨勢：到處都是多核，但是併發程序呢？&lt;/p&gt;
+&lt;p&gt;他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Java:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Shared Memory&lt;/li&gt;
+&lt;li&gt;Explicit thread&lt;/li&gt;
+&lt;li&gt;Synchronized&lt;/li&gt;
+&lt;li&gt;Wait/Notified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Scala:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;High-order fucntions&lt;/li&gt;
+&lt;li&gt;Actors, message passing&lt;/li&gt;
+&lt;li&gt;lists, filters, iterators&lt;/li&gt;
+&lt;li&gt;while&lt;/li&gt;
+&lt;li&gt;shared state, OO&lt;/li&gt;
+&lt;li&gt;import java.*&lt;/li&gt;
+&lt;li&gt;auto type infer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Training 4 weeks, Industry Project,&lt;/p&gt;
+&lt;p&gt;結果：&lt;/p&gt;
+&lt;p&gt;scala 的項目平均比java多花38%的時間，主要都是花在Test和debug上的時間。&lt;/p&gt;
+&lt;p&gt;程序員的經驗和總體時間相關，但是對test和debug沒有顯著影響。&lt;/p&gt;
+&lt;p&gt;scala的爲了讓編程更有效率的設計，導致debug更困難。比如類型推導，debug
+的時候需要手動推導，來理解正在發生什麼。&lt;/p&gt;
+&lt;p&gt;scala的程序比java小，中位數2.6%，平均15.2%&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;性能比較：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;單核：scala的線性程序的性能比java好&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;4核：&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;scala 7s &amp;#64; 4 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;java 4si &amp;#64; 8 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;median&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;83s scala&lt;/li&gt;
+&lt;li&gt;98s java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;32core: best scala 34s &amp;#64; 64 threads&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;結論&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;java有更好的scalability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;scala類型推導&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;45%說對攜帶碼有幫助&lt;/li&gt;
+&lt;li&gt;85%說導致程序錯誤&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;調試&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;23%認爲scala簡單&lt;/li&gt;
+&lt;li&gt;77%認爲java簡單&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;multi-paradigram are better&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sound-empirical-evidence-in-software-testing"&gt;
+&lt;h3&gt;Sound Empirical Evidence in Software Testing&lt;/h3&gt;
+&lt;p&gt;Test data generation&lt;/p&gt;
+&lt;p&gt;Large Empirical Studies - not always possible&lt;/p&gt;
+&lt;p&gt;For open source software - big enough&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="identifing-linux-bug-fixing-patch"&gt;
+&lt;h3&gt;Identifing Linux Bug Fixing Patch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;current practice:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;manual&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Current research:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;keywords in commits&lt;/li&gt;
+&lt;li&gt;link bug reports in bugzilla&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Try to solve classification problem&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;issue&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;pre-identified&lt;/li&gt;
+&lt;li&gt;post-identified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;data&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;from commit log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;feature extraction&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;text pre-process stemmed non-stop words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;model learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;research questions&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="active-refinement-of-clone-anomaly-reports"&gt;
+&lt;h3&gt;Active Refinement of Clone Anomaly Reports&lt;/h3&gt;
+&lt;p&gt;motivating&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;code clones, clone groups&lt;/li&gt;
+&lt;li&gt;clone used to detect bugs&lt;/li&gt;
+&lt;li&gt;anomaly : inconsistent clone group
+many anomaly clone are note bug, high false positive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;approach&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;reorder by sorted bug reports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="section" id="june7"&gt;
+&lt;h2&gt;June7&lt;/h2&gt;
+&lt;div class="section" id="keynotes-2-sustainability-with-software-an-industrial-perspective"&gt;
+&lt;h3&gt;Keynotes 2: Sustainability with Software - An Industrial Perspective&lt;/h3&gt;
+&lt;p&gt;Sustainability&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Classic View: Idenpendent view with overlap&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Social&lt;/li&gt;
+&lt;li&gt;Environment&lt;/li&gt;
+&lt;li&gt;Economic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Nested viw&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Environment&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Social&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Economic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Triple bottom line&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;economic&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first last"&gt;-global business, networks , global econ&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;env&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;natural res, climate change, population grow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;social&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;awareness, connectivity, accountability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="section" id="green-it"&gt;
+&lt;h4&gt;Green IT&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;reduce IT energy&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;more than 50% cooling - doing nothing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;mini e-waste: not properly recycled&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;80% in EU&lt;/li&gt;
+&lt;li&gt;75% in US&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;foster dematerialization&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In-Memory Technology: Expected Sustainable Benefits&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-can-we-do"&gt;
+&lt;h4&gt;What can we do?&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;consider all software lifecycle phases in your design&lt;/li&gt;
+&lt;li&gt;avoid energy expensive behavior in your codes&lt;/li&gt;
+&lt;li&gt;design lean architectures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="green-by-it"&gt;
+&lt;h4&gt;Green by IT&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;2% green IT&lt;/li&gt;
+&lt;li&gt;98% green IT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="on-how-often-code-is-cloned-across-repositories"&gt;
+&lt;h3&gt;On How Often code is cloned across repositories&lt;/h3&gt;
+&lt;p&gt;Line based hashing code clone detection&lt;/p&gt;
+&lt;p&gt;never do anything harder than sorting&lt;/p&gt;
+&lt;p&gt;hashing a window of 5 lines of normalized (tokenized) code, dropping
+3/4 of the hashing&lt;/p&gt;
+&lt;p&gt;把ccfinder一個月的工作縮短到了3, 4天。沒有比較presion和recall。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="11%" /&gt;
+&lt;col width="89%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;14%&lt;/td&gt;
+&lt;td&gt;type1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;16%&lt;/td&gt;
+&lt;td&gt;type2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;17%&lt;/td&gt;
+&lt;td&gt;type3 (not really type2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="graph-based-analysis-and-prediction-for-sw-evolution"&gt;
+&lt;h3&gt;Graph-based analysis and prediction for sw evolution&lt;/h3&gt;
+&lt;div class="section" id="graph-are-everywhere"&gt;
+&lt;h4&gt;graph are everywhere&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;internet topology&lt;/li&gt;
+&lt;li&gt;social net&lt;/li&gt;
+&lt;li&gt;chemistry&lt;/li&gt;
+&lt;li&gt;biology&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;in sw
+- func call graph
+- module dependency graph&lt;/p&gt;
+&lt;p&gt;developer interaction graph
+- commit logs
+- bug reports&lt;/p&gt;
+&lt;p&gt;experiment 11 oss, 27~171 release, &amp;gt; 9 years&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="predictors"&gt;
+&lt;h4&gt;predictors&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;NodeRank&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;similar to pagerank of google&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;measure relative importance of each node&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;func call graph with noderank&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;compare rank with severity scale on bugzilla&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;correlation between noderank and BugSeverity&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;func level 0.48 ~ 0.86 varies among projects.&lt;/li&gt;
+&lt;li&gt;model level &amp;gt; func level&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;ModularityRatio&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;cohesion/coupling ratio:  IntraDep(M)/InterDep(M)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;forecast mantencance effort&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;use for&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;identify modules that need redesign or refactoring&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;EditDistance&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;p class="first"&gt;bug-based developer collaboration graphs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;ED(G1,G2)=|V1|+|V2|-2|V1交V2|+|E1|+|E2|-2|E1交E2|&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;use for&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;release planning&lt;/li&gt;
+&lt;li&gt;resource allocation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;graph metrics&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;graph diameter&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;average node degree indicates reuse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;clustering coefficient&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;assortativity&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;num of cycles&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h4&gt;Conclusion&lt;/h4&gt;
+&lt;p&gt;&amp;quot;Actionable intelligence&amp;quot; from graph evolution&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;studie 11 large long-live projs&lt;/li&gt;
+&lt;li&gt;predictors&lt;/li&gt;
+&lt;li&gt;identify pivotal moments in evolution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-make-long-term-contributors-willingness-and-opportunity-in-oss"&gt;
+&lt;h3&gt;What make long term contributors: willingness and opportunity in OSS&lt;/h3&gt;
+&lt;p&gt;OSS don't work without contributors form community&lt;/p&gt;
+&lt;p&gt;mozilla (2000-2008)&lt;/p&gt;
+&lt;p&gt;10^2.2 LTC &amp;lt;- 2 order -&amp;gt; 10^4.2 new contributors &amp;lt;- 3.5 order -&amp;gt; 10^7.7 users&lt;/p&gt;
+&lt;p&gt;gnome (1999-2007)&lt;/p&gt;
+&lt;p&gt;10^2.5 LTC &amp;lt;- 1.5 order -&amp;gt; 10^4.0 new contributors &amp;lt;- 3.5 order -&amp;gt; 10^6.5 users&lt;/p&gt;
+&lt;div class="section" id="approach"&gt;
+&lt;h4&gt;approach&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;read issues of 20 LTC and 20 non-LTC&lt;/li&gt;
+&lt;li&gt;suvery 56 (36 non-LTC and 20 LTC)&lt;/li&gt;
+&lt;li&gt;extract practices published on project web sites&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="summeray"&gt;
+&lt;h4&gt;summeray&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Ability/Willingness distinguishes LTCs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Environment&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;macro-climate&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;popularity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;micro-climate&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;attention&lt;/li&gt;
+&lt;li&gt;bumber of peers&lt;/li&gt;
+&lt;li&gt;performance of peers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;regression model&lt;/p&gt;
+&lt;p&gt;newcomers to LTC conversion drops&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;actions in first month predicts LTCs&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;24% recall&lt;/li&gt;
+&lt;li&gt;37% precision&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="develop-of-auxiliary-functions-should-you-be-agile"&gt;
+&lt;h3&gt;develop of auxiliary functions: should you be agile?&lt;/h3&gt;
+&lt;p&gt;a empirial assessment of pair programming and test-first programming&lt;/p&gt;
+&lt;p&gt;can agile help auxiliary functions?&lt;/p&gt;
+&lt;div class="section" id="experiment"&gt;
+&lt;h4&gt;experiment&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;pair vs solo&lt;/li&gt;
+&lt;li&gt;test-first vs test-last&lt;/li&gt;
+&lt;li&gt;students vs professors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="research-questions"&gt;
+&lt;h4&gt;research questions&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;r1: can pair help obtain more correct impl&lt;/li&gt;
+&lt;li&gt;r2: can test-first&lt;/li&gt;
+&lt;li&gt;r3: dst test1 encourage the impl or more test cases?&lt;/li&gt;
+&lt;li&gt;r4: does test1 course more coverage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="result"&gt;
+&lt;h4&gt;result&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;test-first&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;higher coverage&lt;/li&gt;
+&lt;li&gt;non change with correctness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;pair&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;improve on correctness&lt;/li&gt;
+&lt;li&gt;longer total programming time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="icse"></category><category term="software"></category></entry><entry><title>MSR 2012 @ ICSE</title><link href="/msr2012.html" rel="alternate"></link><updated>2012-06-02T10:42:00Z</updated><author><name></name></author><id>tag:,2012-06-02:msr2012.html</id><summary type="html">&lt;div class="section" id="mining-software-repository-2012-icse"&gt;
+&lt;h2&gt;Mining Software Repository 2012 &amp;#64; ICSE&lt;/h2&gt;
+&lt;p&gt;I participated MSR of this year. We came to University of Zurich early
+in the morning. The registration got something wrong when it seems that
+Swisses cannot tell the difference among Asians so that name cards of
+3 Chinese with family name of Yang are misplaced. And also the
+organization field of Hotta was &lt;tt class="docutils literal"&gt;Japan, Japan&lt;/tt&gt;, as if he represented
+the Japan.&lt;/p&gt;
+&lt;div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories"&gt;
+&lt;h3&gt;MSR(MicroSoft Research) talk &amp;#64; MSR(Mining Software Repositories)&lt;/h3&gt;
+&lt;p&gt;The first talk was the keynote given by Mrs Zhang from MSR(MicroSoft
+Research &amp;#64; Asia), so it turned out to be MSR gave keynote of MSR.
+The talk was about Software Analysis and their clone detection tool
+called XIAO. XIAO was a clone detector developed by MSRA which can be
+used as a plugin for Microsoft Visual Studio. XIAO has two part, or
+system state: the statics state analysis all the clones which didn't
+consider the running time, while the dynamic state need real time response.
+The thing I need to develop for Samsung is something like dynamic mode.
+I wanted to know more about the internal details about XIAO but the talk
+was finished there.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="towards-improving-bts-with-game-mechanisms"&gt;
+&lt;h3&gt;Towards Improving BTS with Game Mechanisms&lt;/h3&gt;
+&lt;p&gt;The contents of this talk is very much like this blog:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.joelonsoftware.com/items/2008/09/15.html"&gt;http://www.joelonsoftware.com/items/2008/09/15.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The talk discussed whether the same game mechanism can be applied to
+the things like issue tracking or similar. From my point of view, it
+is useless to use game mechanism in this situation. The reason that
+stackoverflow can success lies on that they just captured the  use of
+fade system in opensource community, as all hackers like to be approved
+as great hacker, as what is happening in Wikipedia. Whether the same
+theory can be applied in issue tracking systems inside a internal
+company is questionable. Although MSDN has basic the same structure
+as Wikipedia, the content of MSDN and Wikipedia have different
+involvement of users. So I myself didn't approve this research.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ghtorrent"&gt;
+&lt;h3&gt;GHTorrent&lt;/h3&gt;
+&lt;p&gt;They slide of this talk can be found from here:
+&lt;a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524"&gt;http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Data exporter for github. Main part of data of Github, namely the hosted
+code, are already exposed as git repos, and wiki of repos are stored in
+git repo. So the aim of this project is to expose other data such as
+issues, code comments, etc. The project access github api and fetch the
+needed data as distributed system in order to overcome the limitations
+of the github api. The project will provide download history as torrents.
+The json data from github api is stored as bson in MongoDB and the parsed
+data is stored in MySQL with schema.&lt;/p&gt;
+&lt;p&gt;From my point of view, it will be better if the format of data can be
+uniformed and all data are stored in the git repo as wiki pages.
+As the history stored in git repo is more nature, and using &lt;tt class="docutils literal"&gt;git blame&lt;/tt&gt;
+to trace author of code comments should also be more useful. Of course
+it is harder to read and write the raw data of git as we need more
+understanding of the internal format of git. Maybe only people from
+github can do this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="topic-mining"&gt;
+&lt;h3&gt;Topic Mining&lt;/h3&gt;
+&lt;p&gt;I can not understand the two parameters, DE, AIC, used in this research,
+study this later. The experiment target of this research are Firefox,
+Mylyn and Eclipse. They are trying to analysis the identifiers and
+comments from source codes in software repos and find the relationship
+between topics and bugs, like what kind of topics are more likely to
+contain buggy codes.&lt;/p&gt;
+&lt;p&gt;The result of this research is not so clear. Such as it said that the
+core functions of Firefox have more bug reports, but it said no reason
+about this. Maybe this only means that the core features are well
+tested, rather than that the core features are more buggy.&lt;/p&gt;
+&lt;p&gt;But the slides showed by author are pretty and easy to understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-evolution-of-software"&gt;
+&lt;h3&gt;The evolution of software&lt;/h3&gt;
+&lt;p&gt;The keynote talk of the second day. It is about how should we combine
+the social media with software development. Maybe this is the reason
+why Github succeeded. In the talk she told about accessing tags,
+uBlogs, blogs etc. directly from Integrated Development Environments,
+or should we need cloud IDE such as Cloud9.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="do-faster-releases-improve-software-quality"&gt;
+&lt;h3&gt;Do Faster Releases Improve Software Quality?&lt;/h3&gt;
+&lt;p&gt;Used Firefox as example.&lt;/p&gt;
+&lt;p&gt;The conclusion is that faster releases will lead to more bugs and more
+frequent crash, but bugs are get fixed more quickly and user will switch
+to new released more quickly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="security-vs-performance-bugs-in-firefox"&gt;
+&lt;h3&gt;Security vs Performance Bugs in Firefox&lt;/h3&gt;
+&lt;p&gt;Performance bugs are regression, blocks release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="section" id="some-of-my-thoughts"&gt;
+&lt;h3&gt;Some of my thoughts&lt;/h3&gt;
+&lt;div class="section" id="separation-of-commits-based-on-semantic-analysis"&gt;
+&lt;h4&gt;Separation of commits based on Semantic analysis&lt;/h4&gt;
+&lt;p&gt;The user of some tools (such as git) are not following the design
+purposes of these tools which brings some difficulty to MSR. For example
+git has a prefect branch system, so it is desired for users of git to
+commit per topic. Commit per topic means that user send a commit for a
+single implementation of a feature or a bug fix, etc. If it is difficult
+to contain all modifications in a commit, then it should be in a
+separate branch and merged into master branch. But actually
+user tends to send very large commits, that contains many logical
+features, and they can not predict to open a new branch until a few
+commits.&lt;/p&gt;
+&lt;p&gt;Maybe this is not the fault of the user of tools, this is the tools
+that are not smart enough. We should separate the commits according
+to the semantic topics inside a commit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="about-the-slide-systems-used-today"&gt;
+&lt;h4&gt;About the slide systems used today&lt;/h4&gt;
+&lt;p&gt;The study with title &lt;tt class="docutils literal"&gt;Incorporating Version Histories in Information
+Retrieval Based Bug Localization&lt;/tt&gt; used the slides made by beamer. It
+contains many equations, used many overlays are iterations, with few
+figures, is a typical beamer slide. It also used mindmap very well.&lt;/p&gt;
+&lt;p&gt;There are at least 3 slides that are made by beamer today.&lt;/p&gt;
+&lt;p&gt;The study with title &lt;tt class="docutils literal"&gt;Towards Improving Bug Tracking Systems with
+Game Mechanisms&lt;/tt&gt; presented with prezi. It have many pictures and many
+transitions. But because of it is made by prezi, there are no headers
+and footers so no page numbers and section titles etc. This is not
+so convenient in such a official occasions because people need to
+refer to the page number in question session.&lt;/p&gt;
+&lt;p&gt;There are at lease 6 presents used Apple Keynote. It is really
+difficult to tell the difference between slides made by PowerPoint
+and Keynote. 2 of them used the default theme of keynote.&lt;/p&gt;
+&lt;p&gt;The rest are using PowerPoint. Mrs Zhang from Microsoft used PowerPoint
+but her slides looks like beamer very much such as the usage of footer
+and header and overlays. If these are made by PowerPoint that will
+involve many manually operations.&lt;/p&gt;
+&lt;p&gt;It is worth to mention that the slides of a study with title &lt;tt class="docutils literal"&gt;Green
+Mining: A Methodology of Relating Software Change to Power Consumption&lt;/tt&gt;
+are all &lt;tt class="docutils literal"&gt;badly&lt;/tt&gt; drawn hand paintings. The effect of these slide are
+well received, they are green and clean and cute. You can refer to the
+following animation for the effect but it is not exactly the same version
+with what we saw :&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv"&gt;http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="microsoft-is-meaning"&gt;
+&lt;h4&gt;Microsoft is MEANING&lt;/h4&gt;
+&lt;p&gt;It is not a news. But Microsoft is the sponsor of Mining Challenge, and
+the prize of this challenge will be Xbox and Kinect and the topic of
+this year is:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Mining Android Bug
+&lt;/pre&gt;
+&lt;p&gt;I see what you are doing there Microsoft ......&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="msr"></category><category term="icse"></category><category term="mining"></category><category term="software"></category><category term="repository"></category></entry></feed>

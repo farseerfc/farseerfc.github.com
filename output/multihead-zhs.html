@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>GNU/Linux上多显示器支持之现状</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+                <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
+                <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">A Pelican Blog </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="./category/c.html">C</a></li>
+                                    <li ><a href="./category/life.html">life</a></li>
+                                    <li class="active"><a href="./category/linux.html">linux</a></li>
+                                    <li ><a href="./category/python.html">python</a></li>
+                                    <li ><a href="./category/renren.html">renren</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./multihead-zhs.html" rel="bookmark"
+           title="Permalink to GNU/Linux上多显示器支持之现状">GNU/Linux上多显示器支持之现状</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2013-02-13T14:20:21">
+                Wed 13 February 2013
+        </abbr>
+
+        <p>In <a href="./category/linux.html">linux</a>. </p>
+<p>tags: <a href="./tag/multihead.html">multihead</a><a href="./tag/x11.html">X11</a><a href="./tag/wayland.html">wayland</a><a href="./tag/linux.html">linux</a></p>Translations: 
+            <a href="./multihead.html">en</a>
+            <a href="./multihead-zh.html">zh</a>
+    
+</footer><!-- /.post-info -->      <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id7">起　背景</a></li>
+<li><a class="reference internal" href="#x11" id="id8">承　X11 的多显示器支持</a><ul>
+<li><a class="reference internal" href="#x11-multiseat" id="id9">零　传统 X11 协议的 Multiseat 支持</a></li>
+<li><a class="reference internal" href="#x11-screen" id="id10">壹　传统 X11 协议的多 Screen 支持</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wayland" id="id11">转　Wayland是未来么？</a></li>
+<li><a class="reference internal" href="#id6" id="id12">合　别的系统上的多显示器支持</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id7">起　背景</a></h2>
+<p>研究室新进了27吋的显示器，安置了1台在我的办公桌上。于是又从报废的机器堆里
+翻出了1台小显示器和一块Radeon显卡，组成4显示器的配置。没想到添加硬件本身
+很容易，让它们在我的Archlinux上正常工作却花了不少时间。来来回回折腾各种配置
+文件甚至改写源代码(xorg, awesome, compton, ...），经过了1个多月之后，现在的
+配置总算比较满意，能够让我正常工作了。折腾的过程中尝试了不少解决方案，觉得
+这方面的文档实在少得可怜，同时最近又看到一些关于Wayland 和 RandR 的新进展，
+于是稍微整理一番。</p>
+<p>GNU/Linux 在桌面领域的发展相比较于服务器端而言一直缓慢，市场份额远不及
+Windows 和 OSX ，其原因必将是多方面的，多显示器支持(<a class="reference external" href="http://en.wikipedia.org/wiki/Multi-monitor">Multihead</a>)也即是其硬伤之一。</p>
+<p>当然这个过错不在 Linux 这边， Unix 世界采用 X 作为显示服务器成为事实标准已经
+历史悠久， X 协议出现以来已经有了近 30 年，现在的“最新”版本 X11 发布以来也
+已经超过了 25 年 <a class="footnote-reference" href="#id3" id="id2">[1]</a> ，比 Linux 的年龄要老不少。这期间显示设备也发生了多代
+变革，如此古老的架构要跟上现代显示设备和应用的需求也着实不易。</p>
+<p>而且造成问题的不仅仅是 X11 这边，更大的问题在各个硬件厂商对于开发驱动程序的
+热情不足，甚至惹怒 <a class="reference external" href="http://cn.engadget.com/2012/06/18/linus-torvalds-nvidia-linux/">Linus 当众对Nvidia竖起中指</a> 。</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>参考 <a class="reference external" href="http://zh.wikipedia.org/wiki/X_Window系统">X窗口系统</a> 。
+「最初是1984年麻省理工学院的研究…… X11，是在1987年9月所发布。」</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="x11">
+<h2><a class="toc-backref" href="#id8">承　X11 的多显示器支持</a></h2>
+<div class="section" id="x11-multiseat">
+<h3><a class="toc-backref" href="#id9">零　传统 X11 协议的 Multiseat 支持</a></h3>
+<p>我不知道 <a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration">Multiseat</a>
+这个术语翻译成中文的话应该怎么写，直译作「多座位」的话感觉不明所以，翻译成
+「多终端」的话容易让人联想到早期 <a class="reference external" href="http://zh.wikipedia.org/wiki/电传">电传打字机</a> 组成的终端设备，于是留作 Multiseat
+不译。Multiseat 的概念很简单，就是多个用户通过多组输入输出设备（通常是鼠标、
+键盘、显示器）登录到同一台服务器上，各自独立执行自己的程序。</p>
+<p>Multiseat 应该不属于 Multihead 的一种，只是为了完整性这里也说一下传统 X11
+协议的 Multiseat 支持。一个典型的 Multiseat 配置如下图所示：</p>
+<div class="figure">
+<img alt="Multiset Setup on X11" src="https://www.lucidchart.com/publicSegments/view/511d9eab-66c8-4a8c-997c-536f0a004234/image.png" style="width: 90%;" />
+<p class="caption">图1 X11 协议中对 Multiseat 的支持 (<a class="reference external" href="https://www.lucidchart.com/publicSegments/view/511d9dc3-33c4-49a2-a8d2-46490a004d18/image.pdf">PDF下载</a>)</p>
+</div>
+<p>图中我们可以看到，整个系统有多组输入输出设备，然后每一组设备上面运行一套
+X server ，相互之间互相独立。每个 X server 被分配一个独立的 Display ，有个
+Display 号码，通常从 0 开始计算。服务器名加上 Display 号构成一个显示地址，
+有点像 TCP 的 URL 中 <tt class="docutils literal">domain:port</tt> 这样的格式， X 的显示地址是
+<tt class="docutils literal">server:display</tt> 这样的格式。然后一般会有一个 <a class="reference external" href="http://zh.wikipedia.org/wiki/X窗口管理器">窗口管理器</a> 作为一个 client 连在 X server
+上，管理这个屏幕上的所有窗口。 Multiseat 的配置中所有 X server 相互独立，所以
+每个登录用户可以用自己的窗口管理器，相互没有干扰。另外也有一些 X server 可以
+提供虚拟的显示设备，比如图中的 Xephyr 就是把一个窗口的区域虚拟成一套独立的
+显示设备，从而用于调试等工作，再比如 Xvnc 就是一个基于 VNC 的 X server 。</p>
+<div class="well topic">
+<p class="topic-title first">关于 X 里面 server/client 的称呼</p>
+<p>X 和很多别的程序对 server 和 client 的称呼不一样。对于一般的服务器/客户端
+程序而言，通常把运行在远程机器上的程序称为服务器，比如数据库服务器或者
+计算服务器。而对于 X 而言，连着鼠标和显示器的，你眼前的这台机器才是 X 的
+服务器，在远程运行程序的是客户端。</p>
+</div>
+</div>
+<div class="section" id="x11-screen">
+<h3><a class="toc-backref" href="#id10">壹　传统 X11 协议的多 Screen 支持</a></h3>
+</div>
+</div>
+<div class="section" id="wayland">
+<h2><a class="toc-backref" href="#id11">转　Wayland是未来么？</a></h2>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id12">合　别的系统上的多显示器支持</a></h2>
+</div>
+
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -48,7 +48,7 @@ GOOGLE_CUSTOM_SEARCH_NAVBAR = "001578481551708017171:hxkva69brmg"
 
 THEME='bootstrap2'
 #THEME='notmyidea'
-#CSS_FILE = "wide.css"
+CSS_FILE = "wide.css"
 
 DEFAULT_CATEGORY ='Others'
 OUTPUT_PATH = '.'

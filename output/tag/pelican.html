@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>A Pelican Blog - pelican</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">A Pelican Blog </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="../category/c.html">C</a></li>
+                                    <li ><a href="../category/life.html">life</a></li>
+                                    <li ><a href="../category/linux.html">linux</a></li>
+                                    <li ><a href="../category/python.html">python</a></li>
+                                    <li ><a href="../category/renren.html">renren</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../try-pelican.html">Give a try to Pelican</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-02-24T17:33:00">
+                Fri 24 February 2012
+        </abbr>
+
+        <p>In <a href="../category/python.html">python</a>. </p>
+<p>tags: <a href="../tag/python.html">python</a><a href="../tag/pelican.html">pelican</a></p>Translations: 
+            <a href="../try-pelican-jp.html">jp</a>
+            <a href="../try-pelican-zh.html">zh</a>
+            <a href="../try-pelican-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info --><p>It seems in one night
+<a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">all</a>
+<a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">geeks</a>
+have
+<a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">their</a>
+<a class="reference external" href="http://www.yangzhiping.com/tech/octopress.html">own</a>
+<a class="reference external" href="http://pages.github.com/#user__organization_pages">Github User Page</a>
+and <a class="reference external" href="http://octopress.org/">Octopress</a> Blog.
+Like everyone posted in their blogs, Static Blog is indeed more convenient than traditional
+Blog systems such as WordPress. I have been wanting my own <a class="reference external" href="http://octopress.org/">Octopress</a> since then.</p>
+<div class="section" id="but-it-seems-that-octopress-isn-t-for-me">
+<h2>But it seems that <a class="reference external" href="http://octopress.org/">Octopress</a> isn't for me</h2>
+<p>At first I was confused  by <a class="reference external" href="http://octopress.org/docs/setup/">Setup Steps of Octopress</a> .  What is this <a class="reference external" href="http://beginrescueend.com/">RVM</a> thing?
+And what is that <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> thing? It seems  the high pace of Ruby community has beyond my imagination to a degree that
+they need a version manager to ensure the compatibility of different versions of Ruby. Althrough the same compatibility
+issue also troubles Python community <a class="footnote-reference" href="#id3" id="id1">[1]</a> , but at least Python don't need a version manager (yet) to control this mass <a class="footnote-reference" href="#id4" id="id2">[2]</a> .</p>
+<p>Real problem for me is that I haven't yet a Linux box that I can play around freely. (I really want one ... ) Both <a class="reference external" href="http://beginrescueend.com/">RVM</a> and
+<a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> needs to run on Unix/Linux/MacOSX. One can not be a geek if he use Windows ? (Maybe it's true...)</p>
+<p>Remaining problem is the battle between Ruby and Python campaign.  I haven't tried <a class="reference external" href="http://daringfireball.net/projects/markdown/">Markdown</a> , and I rather like <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> .
+It seems that both sides depend on <a class="reference external" href="http://pygments.org/">Pygments</a> as code block highlighter so  Rubyists need Python environment anyway.
+I simply don't want to depend on any Ruby component. It is better when it is in pure Python, no C extensions so that I can
+debug into it and make minor modifications.</p>
+<p>So I started searching for Static Blog Engine in Python on Github. The author of the great framework <a class="reference external" href="http://flask.pocoo.org/">Flask</a> , <a class="reference external" href="https://github.com/mitsuhiko">mitsuhiko</a> ,
+wrote a <a class="reference external" href="https://github.com/mitsuhiko/rstblog">rstblog</a> , but it's not well developed. <a class="reference external" href="http://ringce.com/hyde">Hyde</a> seems to be complete enough, but it use <a class="reference external" href="http://daringfireball.net/projects/markdown/">MarkDown</a> as its default markup
+language, and the design of its homepage is too fashion to be used as blog. Finally I found <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> .</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Such as the difference between Python 2.x and 3.x , and also difference in C-API of implementations of <a class="reference external" href="http://pypy.org/">PyPy</a> , <a class="reference external" href="http://python.org/">CPython</a> , <a class="reference external" href="http://www.stackless.com/">Stackless</a> , <a class="reference external" href="http://cython.org/">Cython</a> .</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Yes, we have <a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a> and <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip</a> , but all these are package manager, running in a perticular Python implementation. Python implementation itself don't need a manager. Version issue of Python largely have been solved by lightweight converters such as <a class="reference external" href="http://docs.python.org/release/3.0.1/library/2to3.html">2to3.py</a> and <a class="reference external" href="http://www.startcodon.com/wordpress/?cat=8">3to2.py</a> , you don't need to store multiple implementations of Python in your disk for different packages. Yes you can use  <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> if you need to preserve stablility but this is another story.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="let-it-be-pelican">
+<h2>Let it be <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a></h2>
+<p>For my own use, <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> offers me some advantages over <a class="reference external" href="http://octopress.org/">Octopress</a>:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Implemented in <strong>pure Python</strong>. This means that I can use different implementation of Python other than CPython easily. I use <a class="reference external" href="http://pypy.org/">PyPy</a> myself.</li>
+<li>Translation of multi-languages. The original author of <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> is a France. This is unnecessory for most people, but I will post my blog mainly in three languages: English, Japanese and Chinese.</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> . So that I can use the &#64;auto-rst feature of <a class="reference external" href="http://webpages.charter.net/edreamleo/front.html">Leo</a> . And also I don't need to switch between my blog and documentation of my projects.</li>
+</ol>
+</blockquote>
+<p>But it seems that <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> was less contributed than <a class="reference external" href="http://octopress.org/">Octopress</a> . Some minor issues remains in latest version:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Support of pelican-import from WordPress for Chinese and Japanese articles are buggy.</li>
+<li>Datetime format, timezone, and locale support for multi-language blogs are not so natural. <strong>I will work on this in these days</strong></li>
+<li>There are not so many templates compared to <a class="reference external" href="http://octopress.org/">Octopress</a> .</li>
+<li>And less plugins .</li>
+</ol>
+</blockquote>
+<p>I hope more people from Python community can contribute to this excellent project, then all these issues will be fixed soon.</p>
+</div>
+<div class="section" id="my-settings">
+<h2>My settings</h2>
+<p>To install <a class="reference external" href="http://pelican.notmyidea.org/en/latest/">Pelican</a> is simple:</p>
+<div class="highlight"><pre><span class="gp">$</span> pip install pelican
+</pre></div>
+<p>Write posts in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReST</a> , with <tt class="docutils literal">rst</tt> extensions, and put them in <tt class="docutils literal">pages</tt> folder. (Re)Build all pages is simply:</p>
+<div class="highlight"><pre><span class="gp">$</span> pelican -s settings.py
+</pre></div>
+<p>Push to Github:</p>
+<div class="highlight"><pre><span class="gp">$</span> git commit -am <span class="s2">&quot;Commit message&quot;</span>
+<span class="gp">$</span> git push
+</pre></div>
+<p>And following is my <tt class="docutils literal">settings.py</tt>:</p>
+<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
+
+<span class="n">DATE_FORMATS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;en&#39;</span><span class="p">:(</span><span class="s">&#39;usa&#39;</span><span class="p">,</span><span class="s">&#39;%a, </span><span class="si">%d</span><span class="s"> %b %Y&#39;</span><span class="p">),</span>
+    <span class="s">&#39;zh&#39;</span><span class="p">:(</span><span class="s">&#39;chs&#39;</span><span class="p">,</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">, %a&#39;</span><span class="p">),</span>
+    <span class="s">&#39;jp&#39;</span><span class="p">:(</span><span class="s">&#39;jpn&#39;</span><span class="p">,</span><span class="s">&#39;%Y/%m/</span><span class="si">%d</span><span class="s"> (%a)&#39;</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="c"># windows locale: http://msdn.microsoft.com/en-us/library/cdax410z%28VS.71%29.aspx</span>
+<span class="n">LOCALE</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;usa&#39;</span><span class="p">,</span> <span class="s">&#39;chs&#39;</span><span class="p">,</span> <span class="s">&#39;jpn&#39;</span><span class="p">,</span>        <span class="c"># windows</span>
+          <span class="s">&#39;en_US&#39;</span><span class="p">,</span> <span class="s">&#39;zh_CN&#39;</span><span class="p">,</span> <span class="s">&#39;ja_JP&#39;</span><span class="p">]</span>  <span class="c"># Unix/Linux</span>
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;zh&#39;</span>
+
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;Farseerfc Blog&#39;</span>
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Jiachen Yang&#39;</span>
+
+<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&#39;farseerfcgithub&#39;</span>
+<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://farseerfc.github.com&#39;</span>
+<span class="n">TAG_FEED</span>  <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
+
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;twitter&#39;</span><span class="p">,</span> <span class="s">&#39;http://twitter.com/farseerfc&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;github&#39;</span><span class="p">,</span> <span class="s">&#39;https://github.com/farseerfc&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;facebook&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.facebook.com/farseerfc&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;weibo&#39;</span><span class="p">,</span> <span class="s">&#39;http://weibo.com/farseerfc&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;renren&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.renren.com/farseer&#39;</span><span class="p">),</span>
+          <span class="p">)</span>
+
+
+<span class="n">TWITTER_USERNAME</span> <span class="o">=</span> <span class="s">&#39;farseerfc&#39;</span>
+
+<span class="n">THEME</span><span class="o">=</span><span class="s">&#39;notmyidea&#39;</span>
+<span class="n">CSS_FILE</span> <span class="o">=</span> <span class="s">&quot;wide.css&quot;</span>
+
+<span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span><span class="s">&#39;Others&#39;</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;posts&#39;</span>
+</pre></div>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../try-pelican-jp.html" rel="bookmark"
+                           title="Permalink to Pelicanを試してみた">Pelicanを試してみた</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-24T17:33:00">
+                Fri 24 February 2012
+        </abbr>
+
+        <p>In <a href="../category/python.html">python</a>. </p>
+<p>tags: <a href="../tag/python.html">python</a><a href="../tag/pelican.html">pelican</a></p>Translations: 
+            <a href="../try-pelican.html">en</a>
+            <a href="../try-pelican-zh.html">zh</a>
+            <a href="../try-pelican-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <p>一日の間に全ての
+<a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">ギーク</a>
+<a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">たち</a>
+<a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">が</a>
+<a class="reference external" href="http://www.yangzhiping.com/tech/octopress.html">自分の</a>
+<a class="reference external" href="http://pages.github.com/#user__organization_pages">Githubユーザーページ</a>
+と <a class="reference external" href="http://octopress.org/">Octopress</a> ブログを導入したような気がします。皆がブログに書いた通りに、静的ブログは確かに WordPress
+などの従来の動的ブログ・エンジンより便利だと思います。これらブログを見ると、私も自分の <a class="reference external" href="http://octopress.org/">Octopress</a> ブログを立ちましょう
+とずっと思っています。</p>
+<div class="section" id="id6">
+<h2>ですが <a class="reference external" href="http://octopress.org/">Octopress</a> は私に向いてないかも</h2>
+<p>初めのところに <a class="reference external" href="http://octopress.org/docs/setup/">Octopressの配置手順</a> に迷わされた。
+<a class="reference external" href="http://beginrescueend.com/">RVM</a> とはなに？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> とは何のこと？見るところ Ruby コミュニティーの発展するハイペースは既に私の想像に超えましたみたい。
+彼らは Ruby の各バージョン間に互換性を持つために、バージョン管理が必要らしいです。同様の互換性問題が Python コミュニティーにもある
+ですが <a class="footnote-reference" href="#id10" id="id8">[1]</a> 、 Python は今のところこのようなバージョン管理の必要がないと思います <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
+<p>実際に迷惑したのは、私は今自由に持って遊べる Linux 環境が持っていないということ（ほしいなぁ……）。 ですが ...</p></div>
+                <a class="readmore" href="../try-pelican-jp.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../try-pelican-zh.html" rel="bookmark"
+                           title="Permalink to 嘗試一下 Pelican">嘗試一下 Pelican</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-24T17:33:00">
+                Fri 24 February 2012
+        </abbr>
+
+        <p>In <a href="../category/python.html">python</a>. </p>
+<p>tags: <a href="../tag/python.html">python</a><a href="../tag/pelican.html">pelican</a></p>Translations: 
+            <a href="../try-pelican.html">en</a>
+            <a href="../try-pelican-jp.html">jp</a>
+            <a href="../try-pelican-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <p>似乎一夜之間所有的
+<a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">極客們</a>
+<a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">都</a>
+<a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">有了</a>
+<a class="reference external" href="http://www.yangzhiping.com/tech/octopress.html">自己</a>
+的 <a class="reference external" href="http://pages.github.com/#user__organization_pages">Github主頁</a>
+和 <a class="reference external" href="http://octopress.org/">Octopress</a> 博客。就像所有人在他們的博客中指出的，靜態博客的確比傳統的WordPress方式具有更多優勢。 自從看到這些
+我就一直在想着自己搭一個 <a class="reference external" href="http://octopress.org/">Octopress</a> 。</p>
+<div class="section" id="id6">
+<h2>但是似乎 <a class="reference external" href="http://octopress.org/">Octopress</a> 不適合我</h2>
+<p>一上手就被 <a class="reference external" href="http://octopress.org/docs/setup/">Octopress的搭建步驟</a> 煩到了。 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 是什麼？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 又是什麼？
+看來 Ruby 社區的快節奏發展已經超過了我的想象，他們似乎需要一套發行版管理器來調和不同版本之間的 Ruby 的兼容性問題。
+雖然同樣的兼容性問題在 Python 社區也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不過總覺得 Python 至少還沒到需要一個發行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
+<p>真正的問題是我手上還沒有一個可以讓我隨便玩的 Linux 環境（真的想要……）。 而無論是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 還是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div>
+                <a class="readmore" href="../try-pelican-zh.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../try-pelican-zhs.html" rel="bookmark"
+                           title="Permalink to 尝试一下 Pelican">尝试一下 Pelican</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-02-24T17:33:00">
+                Fri 24 February 2012
+        </abbr>
+
+        <p>In <a href="../category/python.html">python</a>. </p>
+<p>tags: <a href="../tag/python.html">python</a><a href="../tag/pelican.html">pelican</a></p>Translations: 
+            <a href="../try-pelican.html">en</a>
+            <a href="../try-pelican-jp.html">jp</a>
+            <a href="../try-pelican-zh.html">zh</a>
+    
+</footer><!-- /.post-info -->                <p>似乎一夜之间所有的
+<a class="reference external" href="http://blog.yxwang.me/2011/11/migrated-to-octopress/">极客们</a>
+<a class="reference external" href="http://xoyo.name/2012/02/migrate-to-octopress/">都</a>
+<a class="reference external" href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">有了</a>
+<a class="reference external" href="http://www.yangzhiping.com/tech/octopress.html">自己</a>
+的 <a class="reference external" href="http://pages.github.com/#user__organization_pages">Github主页</a>
+和 <a class="reference external" href="http://octopress.org/">Octopress</a> 博客。就像所有人在他们的博客中指出的，静态博客的确比传统的WordPress方式具有更多优势。 自从看到这些
+我就一直在想着自己搭一个 <a class="reference external" href="http://octopress.org/">Octopress</a> 。</p>
+<div class="section" id="id6">
+<h2>但是似乎 <a class="reference external" href="http://octopress.org/">Octopress</a> 不适合我</h2>
+<p>一上手就被 <a class="reference external" href="http://octopress.org/docs/setup/">Octopress的搭建步骤</a> 烦到了。 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 是什么？ <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 又是什么？
+看来 Ruby 社区的快节奏发展已经超过了我的想象，他们似乎需要一套发行版管理器来调和不同版本之间的 Ruby 的兼容性问题。
+虽然同样的兼容性问题在 Python 社区也有 <a class="footnote-reference" href="#id10" id="id8">[1]</a> ，不过总觉得 Python 至少还没到需要一个发行版管理器的程度 <a class="footnote-reference" href="#id11" id="id9">[2]</a> 。</p>
+<p>真正的问题是我手上还没有一个可以让我随便玩的 Linux 环境（真的想要……）。 而无论是 <a class="reference external" href="http://beginrescueend.com/">RVM</a> 还是 <a class="reference external" href="https://github.com/sstephenson/rbenv">rbenv</a> 似乎都只支持 Unix/Linux ...</p></div>
+                <a class="readmore" href="../try-pelican-zhs.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                                                    </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

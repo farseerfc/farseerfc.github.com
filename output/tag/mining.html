@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>A Pelican Blog - mining</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">A Pelican Blog </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="../category/c.html">C</a></li>
+                                    <li ><a href="../category/life.html">life</a></li>
+                                    <li ><a href="../category/linux.html">linux</a></li>
+                                    <li ><a href="../category/python.html">python</a></li>
+                                    <li ><a href="../category/renren.html">renren</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../msr2012.html">MSR 2012 &#64; ICSE</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zh.html">zh</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info --><div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>I participated MSR of this year. We came to University of Zurich early
+in the morning. The registration got something wrong when it seems that
+Swisses cannot tell the difference among Asians so that name cards of
+3 Chinese with family name of Yang are misplaced. And also the
+organization field of Hotta was <tt class="docutils literal">Japan, Japan</tt>, as if he represented
+the Japan.</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>The first talk was the keynote given by Mrs Zhang from MSR(MicroSoft
+Research &#64; Asia), so it turned out to be MSR gave keynote of MSR.
+The talk was about Software Analysis and their clone detection tool
+called XIAO. XIAO was a clone detector developed by MSRA which can be
+used as a plugin for Microsoft Visual Studio. XIAO has two part, or
+system state: the statics state analysis all the clones which didn't
+consider the running time, while the dynamic state need real time response.
+The thing I need to develop for Samsung is something like dynamic mode.
+I wanted to know more about the internal details about XIAO but the talk
+was finished there.</p>
+</div>
+<div class="section" id="towards-improving-bts-with-game-mechanisms">
+<h3>Towards Improving BTS with Game Mechanisms</h3>
+<p>The contents of this talk is very much like this blog:</p>
+<p><a class="reference external" href="http://www.joelonsoftware.com/items/2008/09/15.html">http://www.joelonsoftware.com/items/2008/09/15.html</a></p>
+<p>The talk discussed whether the same game mechanism can be applied to
+the things like issue tracking or similar. From my point of view, it
+is useless to use game mechanism in this situation. The reason that
+stackoverflow can success lies on that they just captured the  use of
+fade system in opensource community, as all hackers like to be approved
+as great hacker, as what is happening in Wikipedia. Whether the same
+theory can be applied in issue tracking systems inside a internal
+company is questionable. Although MSDN has basic the same structure
+as Wikipedia, the content of MSDN and Wikipedia have different
+involvement of users. So I myself didn't approve this research.</p>
+</div>
+<div class="section" id="ghtorrent">
+<h3>GHTorrent</h3>
+<p>They slide of this talk can be found from here:
+<a class="reference external" href="http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524">http://www.slideshare.net/gousiosg/ghtorrent-githubs-data-from-a-firehose-13184524</a></p>
+<p>Data exporter for github. Main part of data of Github, namely the hosted
+code, are already exposed as git repos, and wiki of repos are stored in
+git repo. So the aim of this project is to expose other data such as
+issues, code comments, etc. The project access github api and fetch the
+needed data as distributed system in order to overcome the limitations
+of the github api. The project will provide download history as torrents.
+The json data from github api is stored as bson in MongoDB and the parsed
+data is stored in MySQL with schema.</p>
+<p>From my point of view, it will be better if the format of data can be
+uniformed and all data are stored in the git repo as wiki pages.
+As the history stored in git repo is more nature, and using <tt class="docutils literal">git blame</tt>
+to trace author of code comments should also be more useful. Of course
+it is harder to read and write the raw data of git as we need more
+understanding of the internal format of git. Maybe only people from
+github can do this.</p>
+</div>
+<div class="section" id="topic-mining">
+<h3>Topic Mining</h3>
+<p>I can not understand the two parameters, DE, AIC, used in this research,
+study this later. The experiment target of this research are Firefox,
+Mylyn and Eclipse. They are trying to analysis the identifiers and
+comments from source codes in software repos and find the relationship
+between topics and bugs, like what kind of topics are more likely to
+contain buggy codes.</p>
+<p>The result of this research is not so clear. Such as it said that the
+core functions of Firefox have more bug reports, but it said no reason
+about this. Maybe this only means that the core features are well
+tested, rather than that the core features are more buggy.</p>
+<p>But the slides showed by author are pretty and easy to understand.</p>
+</div>
+<div class="section" id="the-evolution-of-software">
+<h3>The evolution of software</h3>
+<p>The keynote talk of the second day. It is about how should we combine
+the social media with software development. Maybe this is the reason
+why Github succeeded. In the talk she told about accessing tags,
+uBlogs, blogs etc. directly from Integrated Development Environments,
+or should we need cloud IDE such as Cloud9.</p>
+</div>
+<div class="section" id="do-faster-releases-improve-software-quality">
+<h3>Do Faster Releases Improve Software Quality?</h3>
+<p>Used Firefox as example.</p>
+<p>The conclusion is that faster releases will lead to more bugs and more
+frequent crash, but bugs are get fixed more quickly and user will switch
+to new released more quickly.</p>
+</div>
+<div class="section" id="security-vs-performance-bugs-in-firefox">
+<h3>Security vs Performance Bugs in Firefox</h3>
+<p>Performance bugs are regression, blocks release.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="some-of-my-thoughts">
+<h3>Some of my thoughts</h3>
+<div class="section" id="separation-of-commits-based-on-semantic-analysis">
+<h4>Separation of commits based on Semantic analysis</h4>
+<p>The user of some tools (such as git) are not following the design
+purposes of these tools which brings some difficulty to MSR. For example
+git has a prefect branch system, so it is desired for users of git to
+commit per topic. Commit per topic means that user send a commit for a
+single implementation of a feature or a bug fix, etc. If it is difficult
+to contain all modifications in a commit, then it should be in a
+separate branch and merged into master branch. But actually
+user tends to send very large commits, that contains many logical
+features, and they can not predict to open a new branch until a few
+commits.</p>
+<p>Maybe this is not the fault of the user of tools, this is the tools
+that are not smart enough. We should separate the commits according
+to the semantic topics inside a commit.</p>
+</div>
+<div class="section" id="about-the-slide-systems-used-today">
+<h4>About the slide systems used today</h4>
+<p>The study with title <tt class="docutils literal">Incorporating Version Histories in Information
+Retrieval Based Bug Localization</tt> used the slides made by beamer. It
+contains many equations, used many overlays are iterations, with few
+figures, is a typical beamer slide. It also used mindmap very well.</p>
+<p>There are at least 3 slides that are made by beamer today.</p>
+<p>The study with title <tt class="docutils literal">Towards Improving Bug Tracking Systems with
+Game Mechanisms</tt> presented with prezi. It have many pictures and many
+transitions. But because of it is made by prezi, there are no headers
+and footers so no page numbers and section titles etc. This is not
+so convenient in such a official occasions because people need to
+refer to the page number in question session.</p>
+<p>There are at lease 6 presents used Apple Keynote. It is really
+difficult to tell the difference between slides made by PowerPoint
+and Keynote. 2 of them used the default theme of keynote.</p>
+<p>The rest are using PowerPoint. Mrs Zhang from Microsoft used PowerPoint
+but her slides looks like beamer very much such as the usage of footer
+and header and overlays. If these are made by PowerPoint that will
+involve many manually operations.</p>
+<p>It is worth to mention that the slides of a study with title <tt class="docutils literal">Green
+Mining: A Methodology of Relating Software Change to Power Consumption</tt>
+are all <tt class="docutils literal">badly</tt> drawn hand paintings. The effect of these slide are
+well received, they are green and clean and cute. You can refer to the
+following animation for the effect but it is not exactly the same version
+with what we saw :</p>
+<p><a class="reference external" href="http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv">http://softwareprocess.es/a/greenmining-presentatation-at-queens-20120522.ogv</a></p>
+</div>
+<div class="section" id="microsoft-is-meaning">
+<h4>Microsoft is MEANING</h4>
+<p>It is not a news. But Microsoft is the sponsor of Mining Challenge, and
+the prize of this challenge will be Xbox and Kinect and the topic of
+this year is:</p>
+<pre class="literal-block">
+Mining Android Bug
+</pre>
+<p>I see what you are doing there Microsoft ......</p>
+</div>
+</div>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-jp.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-zh.html">zh</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>今年のMSRを参加しました、会場はチューリッヒ大学にあります。朝早く大学に
+着いて、登録するときちょっと事情をありました。スイス人は明らかに中国人
+の名前をわからないから、３つの中国からの楊（Yang）の名札を間違えた。そ
+して堀田先輩の名札に&quot;Japan, Japan&quot;になって、日本代表になった。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>まず一番目のKeynoteはマイクロソフトアジア研究院(MicroSoft Research &#64; Asia
+,MSR Asia)のZhang氏が発表する、こうしてMSRがMSRに発表するになった。</p>
+<p>Zhangの発表はSoftware AnalysisとXIAOの２つの紹介です。XIAOはマイクロソフト
+が開発したCode Clone Detector、ある会社が私達に任せるのもこのようなシステム
+です。もっと詳しく知りたいが、実装に関わるものは言ってなかった。</p>
+</div>
+<div class="section" id="towards-improving-bts-with-game-mechanisms">
+<h3>Towards Improving BTS ...</h3></div></div>
+                <a class="readmore" href="../msr2012-jp.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-zh.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>參加了今年的MSR，會場在University of Zurich。一大早來到大學，註冊有點
+小插曲，顯然瑞士人搞不清楚中國人的名字，3個楊（Yang）姓的中國人的名牌
+被搞錯了。然後堀田學長的所屬被寫作了“Japan, Japan”，成爲了全日本的代表。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>首先是來自微軟亞洲研究院（MicroSoft Research &#64; Asia, MSR Asia）的Keynots，
+於是就變成了MSR在MSR的演講。MSR的張冬梅（Dongmei Zhang）女士的演講
+分爲關於Software Analysis和XIAO的兩部分。XIAO是MSRA開發的Code Clone
+Detector，似乎我要給井上研做的就是這個。想更多瞭解Xiao的細節，不過張女士
+演講結束的時候的鼓掌導致了話筒的小故障 ...</p></div></div>
+                <a class="readmore" href="../msr2012-zh.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-zhs.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zh.html">zh</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点
+小插曲，显然瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌
+被搞错了。然后堀田学长的所属被写作了“Japan, Japan”，成为了全日本的代表。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>首先是来自微软亚洲研究院（MicroSoft Research &#64; Asia, MSR Asia）的Keynots，
+于是就变成了MSR在MSR的演讲。MSR的张冬梅（Dongmei Zhang）女士的演讲
+分为关于Software Analysis和XIAO的两部分。XIAO是MSRA开发的Code Clone
+Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的细节，不过张女士
+演讲结束的时候的鼓掌导致了话筒的小故障 ...</p></div></div>
+                <a class="readmore" href="../msr2012-zhs.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                                                    </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

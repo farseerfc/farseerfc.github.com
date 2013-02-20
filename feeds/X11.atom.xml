@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com/" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/X11.atom.xml" rel="self"></link><id>http://farseerfc.github.com/</id><updated>2013-02-13T14:20:21+09:00</updated><entry><title>State of Multihead Support on Linux</title><link href="http://farseerfc.github.com/multihead-en.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead-en.html</id><summary type="html">&lt;p&gt;Recently our lab have purchased some 27 inch monitors, so I got one on my
+desktop.&lt;/p&gt;
+&lt;p&gt;研究室新進了27吋大顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏翻出了1臺小顯示器和一塊Radeon顯卡，
+組成4顯示器的配置。沒想到添加硬件本身很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰
+各種配置文件甚至改寫源代碼(xorg, awesome, compton, ...）經過了1個多月之後，現在的配置總算比較滿意，
+能夠讓我正常工作了。&lt;/p&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>GNU/Linux上多顯示器支持之現狀</title><link href="http://farseerfc.github.com/multihead.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id1" id="id7"&gt;起　背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11" id="id8"&gt;承　X11 的多顯示器支持&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11-multiseat" id="id9"&gt;零　傳統 X11 協議的 Multiseat 支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11-screen" id="id10"&gt;壹　傳統 X11 協議的多 Screen 支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#wayland" id="id11"&gt;轉　Wayland是未來麼？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　別的系統上的多顯示器支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;起　背景&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;研究室新進了27吋的顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏
+翻出了1臺小顯示器和一塊Radeon顯卡，組成4顯示器的配置。沒想到添加硬件本身
+很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰各種配置
+文件甚至改寫源代碼(xorg, awesome, compton, ...），經過了1個多月之後，現在的
+配置總算比較滿意，能夠讓我正常工作了。折騰的過程中嘗試了不少解決方案，覺得
+這方面的文檔實在少得可憐，同時最近又看到一些關於Wayland 和 RandR 的新進展，
+於是稍微整理一番。&lt;/p&gt;
+&lt;p&gt;GNU/Linux 在桌面領域的發展相比較於服務器端而言一直緩慢，市場份額遠不及
+Windows 和 OSX ，其原因必將是多方面的，多顯示器支持(&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multi-monitor"&gt;Multihead&lt;/a&gt;)也即是其硬傷之一。&lt;/p&gt;
+&lt;p&gt;當然這個過錯不在 Linux 這邊， Unix 世界採用 X 作爲顯示服務器成爲事實標準已經
+歷史悠久， X 協議出現以來已經有了近 30 年，現在的“最新”版本 X11 發佈以來也
+已經超過了 25 年 &lt;a class="footnote-reference" href="#id3" id="id2"&gt;[1]&lt;/a&gt; ，比 Linux 的年齡要老不少。這期間顯示設備也發生了多代
+變革，如此古老的架構要跟上現代顯示設備和應用的需求也着實不易。&lt;/p&gt;
+&lt;p&gt;而且造成問題的不僅僅是 X11 這邊，更大的問題在各個硬件廠商對於開發驅動程序的
+熱情不足，甚至惹怒 &lt;a class="reference external" href="http://cn.engadget.com/2012/06/18/linus-torvalds-nvidia-linux/"&gt;Linus 當衆對Nvidia豎起中指&lt;/a&gt; 。&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;參考 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/X_Window系統"&gt;X窗口系統&lt;/a&gt; 。
+「最初是1984年麻省理工學院的研究…… X11，是在1987年9月所發佈。」&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;承　X11 的多顯示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="x11-multiseat"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id9"&gt;零　傳統 X11 協議的 Multiseat 支持&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;我不知道 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration"&gt;Multiseat&lt;/a&gt;
+這個術語翻譯成中文的話應該怎麼寫，直譯作「多座位」的話感覺不明所以，翻譯成
+「多終端」的話容易讓人聯想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/電傳"&gt;電傳打字機&lt;/a&gt; 組成的終端設備，於是留作 Multiseat
+不譯。Multiseat 的概念很簡單，就是多個用戶通過多組輸入輸出設備（通常是鼠標、
+鍵盤、顯示器）登錄到同一臺服務器上，各自獨立執行自己的程序。&lt;/p&gt;
+&lt;p&gt;Multiseat 應該不屬於 Multihead 的一種，只是爲了完整性這裏也說一下傳統 X11
+協議的 Multiseat 支持。一個典型的 Multiseat 配置如下圖所示：&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Multiset Setup on X11" src="https://www.lucidchart.com/publicSegments/view/511d9eab-66c8-4a8c-997c-536f0a004234/image.png" style="width: 90%;" /&gt;
+&lt;p class="caption"&gt;圖1 X11 協議中對 Multiseat 的支持 (&lt;a class="reference external" href="https://www.lucidchart.com/publicSegments/view/511d9dc3-33c4-49a2-a8d2-46490a004d18/image.pdf"&gt;PDF下載&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;圖中我們可以看到，整個系統有多組輸入輸出設備，然後每一組設備上面運行一套
+X server ，相互之間互相獨立。每個 X server 被分配一個獨立的 Display ，有個
+Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成一個顯示地址，
+有點像 TCP 的 URL 中 &lt;tt class="docutils literal"&gt;domain:port&lt;/tt&gt; 這樣的格式， X 的顯示地址是
+&lt;tt class="docutils literal"&gt;server:display&lt;/tt&gt; 這樣的格式。然後一般會有一個 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/X窗口管理器"&gt;窗口管理器&lt;/a&gt; 作爲一個 client 連在 X server
+上，管理這個屏幕上的所有窗口。 Multiseat 的配置中所有 X server 相互獨立，所以
+每個登錄用戶可以用自己的窗口管理器，相互沒有干擾。另外也有一些 X server 可以
+提供虛擬的顯示設備，比如圖中的 Xephyr 就是把一個窗口的區域虛擬成一套獨立的
+顯示設備，從而用於調試等工作，再比如 Xvnc 就是一個基於 VNC 的 X server 。&lt;/p&gt;
+&lt;div class="well topic"&gt;
+&lt;p class="topic-title first"&gt;關於 X 裏面 server/client 的稱呼&lt;/p&gt;
+&lt;p&gt;X 和很多別的程序對 server 和 client 的稱呼不一樣。對於一般的服務器/客戶端
+程序而言，通常把運行在遠程機器上的程序稱爲服務器，比如數據庫服務器或者
+計算服務器。而對於 X 而言，連着鼠標和顯示器的，你眼前的這臺機器纔是 X 的
+服務器，在遠程運行程序的是客戶端。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11-screen"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id10"&gt;壹　傳統 X11 協議的多 Screen 支持&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wayland"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;轉　Wayland是未來麼？&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　別的系統上的多顯示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>GNU/Linux上多显示器支持之现状</title><link href="http://farseerfc.github.com/multihead-zhs.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead-zhs.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id1" id="id7"&gt;起　背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11" id="id8"&gt;承　X11 的多显示器支持&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11-multiseat" id="id9"&gt;零　传统 X11 协议的 Multiseat 支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#x11-screen" id="id10"&gt;壹　传统 X11 协议的多 Screen 支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#wayland" id="id11"&gt;转　Wayland是未来么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　别的系统上的多显示器支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;起　背景&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;研究室新进了27吋的显示器，安置了1台在我的办公桌上。于是又从报废的机器堆里
+翻出了1台小显示器和一块Radeon显卡，组成4显示器的配置。没想到添加硬件本身
+很容易，让它们在我的Archlinux上正常工作却花了不少时间。来来回回折腾各种配置
+文件甚至改写源代码(xorg, awesome, compton, ...），经过了1个多月之后，现在的
+配置总算比较满意，能够让我正常工作了。折腾的过程中尝试了不少解决方案，觉得
+这方面的文档实在少得可怜，同时最近又看到一些关于Wayland 和 RandR 的新进展，
+于是稍微整理一番。&lt;/p&gt;
+&lt;p&gt;GNU/Linux 在桌面领域的发展相比较于服务器端而言一直缓慢，市场份额远不及
+Windows 和 OSX ，其原因必将是多方面的，多显示器支持(&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multi-monitor"&gt;Multihead&lt;/a&gt;)也即是其硬伤之一。&lt;/p&gt;
+&lt;p&gt;当然这个过错不在 Linux 这边， Unix 世界采用 X 作为显示服务器成为事实标准已经
+历史悠久， X 协议出现以来已经有了近 30 年，现在的“最新”版本 X11 发布以来也
+已经超过了 25 年 &lt;a class="footnote-reference" href="#id3" id="id2"&gt;[1]&lt;/a&gt; ，比 Linux 的年龄要老不少。这期间显示设备也发生了多代
+变革，如此古老的架构要跟上现代显示设备和应用的需求也着实不易。&lt;/p&gt;
+&lt;p&gt;而且造成问题的不仅仅是 X11 这边，更大的问题在各个硬件厂商对于开发驱动程序的
+热情不足，甚至惹怒 &lt;a class="reference external" href="http://cn.engadget.com/2012/06/18/linus-torvalds-nvidia-linux/"&gt;Linus 当众对Nvidia竖起中指&lt;/a&gt; 。&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;参考 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/X_Window系统"&gt;X窗口系统&lt;/a&gt; 。
+「最初是1984年麻省理工学院的研究…… X11，是在1987年9月所发布。」&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;承　X11 的多显示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="x11-multiseat"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id9"&gt;零　传统 X11 协议的 Multiseat 支持&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;我不知道 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration"&gt;Multiseat&lt;/a&gt;
+这个术语翻译成中文的话应该怎么写，直译作「多座位」的话感觉不明所以，翻译成
+「多终端」的话容易让人联想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/电传"&gt;电传打字机&lt;/a&gt; 组成的终端设备，于是留作 Multiseat
+不译。Multiseat 的概念很简单，就是多个用户通过多组输入输出设备（通常是鼠标、
+键盘、显示器）登录到同一台服务器上，各自独立执行自己的程序。&lt;/p&gt;
+&lt;p&gt;Multiseat 应该不属于 Multihead 的一种，只是为了完整性这里也说一下传统 X11
+协议的 Multiseat 支持。一个典型的 Multiseat 配置如下图所示：&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Multiset Setup on X11" src="https://www.lucidchart.com/publicSegments/view/511d9eab-66c8-4a8c-997c-536f0a004234/image.png" style="width: 90%;" /&gt;
+&lt;p class="caption"&gt;图1 X11 协议中对 Multiseat 的支持 (&lt;a class="reference external" href="https://www.lucidchart.com/publicSegments/view/511d9dc3-33c4-49a2-a8d2-46490a004d18/image.pdf"&gt;PDF下载&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;图中我们可以看到，整个系统有多组输入输出设备，然后每一组设备上面运行一套
+X server ，相互之间互相独立。每个 X server 被分配一个独立的 Display ，有个
+Display 号码，通常从 0 开始计算。服务器名加上 Display 号构成一个显示地址，
+有点像 TCP 的 URL 中 &lt;tt class="docutils literal"&gt;domain:port&lt;/tt&gt; 这样的格式， X 的显示地址是
+&lt;tt class="docutils literal"&gt;server:display&lt;/tt&gt; 这样的格式。然后一般会有一个 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/X窗口管理器"&gt;窗口管理器&lt;/a&gt; 作为一个 client 连在 X server
+上，管理这个屏幕上的所有窗口。 Multiseat 的配置中所有 X server 相互独立，所以
+每个登录用户可以用自己的窗口管理器，相互没有干扰。另外也有一些 X server 可以
+提供虚拟的显示设备，比如图中的 Xephyr 就是把一个窗口的区域虚拟成一套独立的
+显示设备，从而用于调试等工作，再比如 Xvnc 就是一个基于 VNC 的 X server 。&lt;/p&gt;
+&lt;div class="well topic"&gt;
+&lt;p class="topic-title first"&gt;关于 X 里面 server/client 的称呼&lt;/p&gt;
+&lt;p&gt;X 和很多别的程序对 server 和 client 的称呼不一样。对于一般的服务器/客户端
+程序而言，通常把运行在远程机器上的程序称为服务器，比如数据库服务器或者
+计算服务器。而对于 X 而言，连着鼠标和显示器的，你眼前的这台机器才是 X 的
+服务器，在远程运行程序的是客户端。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11-screen"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id10"&gt;壹　传统 X11 协议的多 Screen 支持&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wayland"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;转　Wayland是未来么？&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　别的系统上的多显示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry></feed>

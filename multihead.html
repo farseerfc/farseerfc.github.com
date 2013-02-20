@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GNU/Linux上多顯示器支持之現狀</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link href="./theme/css/html4css1.css" rel="stylesheet">
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.css" type="text/css" />
+    <link href="./theme/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="./theme/css/font-awesome.css" rel="stylesheet">
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+	<link href="./theme/css/local.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">Farseerfc Blog </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                          <li><a href="./pages/about.html">About</a></li>
+              			  <li class="divider-vertical"></li>
+                                              <li >
+                    <a href="./category/C.html">
+						<i class="icon-folder-open icon-large"></i>C
+					</a>
+                  </li>
+                                <li >
+                    <a href="./category/life.html">
+						<i class="icon-folder-open icon-large"></i>life
+					</a>
+                  </li>
+                                <li class="active">
+                    <a href="./category/linux.html">
+						<i class="icon-folder-open icon-large"></i>linux
+					</a>
+                  </li>
+                                <li >
+                    <a href="./category/python.html">
+						<i class="icon-folder-open icon-large"></i>python
+					</a>
+                  </li>
+                                <li >
+                    <a href="./category/renren.html">
+						<i class="icon-folder-open icon-large"></i>renren
+					</a>
+                  </li>
+              			  
+			  <ul class="nav pull-right">
+				<li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+			  </ul>
+			  
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span9" id="content">
+            <section id="content">    
+	<article>
+		<header>
+			<h1>
+				<a href=""
+					rel="bookmark" 
+					title="Permalink to GNU/Linux上多顯示器支持之現狀">
+					GNU/Linux上多顯示器支持之現狀 
+				</a>
+				<a href="http://twitter.com/share" class="twitter-share-button" 
+   data-count="horizontal" data-via="farseerfc">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+</script>
+
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 72 , _h = 16;
+  var param = {
+    url:location.href,
+    type:'3',
+    count:'1',
+    appkey:'',
+    title:'',
+    pic:'',
+    ralateUid:'1862842353',
+	language:'zh_tw',
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
+ 
+			</h1> 
+		</header>
+		<div class="entry-content">
+		<div class="well">
+			<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-02-13T14:20:21">
+	<i class="icon-calendar"></i>2013-02-13
+</abbr>
+<span class="label">By</span>
+<a href="./author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
+<span class="label">Category</span>
+<a href="./category/linux.html"><i class="icon-folder-open"></i>linux</a>. 
+
+	
+<span class="label">Tags</span> 
+	<a href="./tag/multihead.html"><i class="icon-tag"></i>multihead</a>
+	<a href="./tag/x11.html"><i class="icon-tag"></i>X11</a>
+	<a href="./tag/wayland.html"><i class="icon-tag"></i>wayland</a>
+	<a href="./tag/linux.html"><i class="icon-tag"></i>linux</a>
+<span class="label">Lang</span>
+	<a href="./multihead-en.html"><i class="icon-edit"></i>en</a>
+	<a href="./multihead-zhs.html"><i class="icon-edit"></i>zhs</a>
+</footer><!-- /.post-info -->		</div>
+		<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id7">起　背景</a></li>
+<li><a class="reference internal" href="#x11" id="id8">承　X11 的多顯示器支持</a><ul>
+<li><a class="reference internal" href="#x11-multiseat" id="id9">零　傳統 X11 協議的 Multiseat 支持</a></li>
+<li><a class="reference internal" href="#x11-screen" id="id10">壹　傳統 X11 協議的多 Screen 支持</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wayland" id="id11">轉　Wayland是未來麼？</a></li>
+<li><a class="reference internal" href="#id6" id="id12">合　別的系統上的多顯示器支持</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id7">起　背景</a></h2>
+<p>研究室新進了27吋的顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏
+翻出了1臺小顯示器和一塊Radeon顯卡，組成4顯示器的配置。沒想到添加硬件本身
+很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰各種配置
+文件甚至改寫源代碼(xorg, awesome, compton, ...），經過了1個多月之後，現在的
+配置總算比較滿意，能夠讓我正常工作了。折騰的過程中嘗試了不少解決方案，覺得
+這方面的文檔實在少得可憐，同時最近又看到一些關於Wayland 和 RandR 的新進展，
+於是稍微整理一番。</p>
+<p>GNU/Linux 在桌面領域的發展相比較於服務器端而言一直緩慢，市場份額遠不及
+Windows 和 OSX ，其原因必將是多方面的，多顯示器支持(<a class="reference external" href="http://en.wikipedia.org/wiki/Multi-monitor">Multihead</a>)也即是其硬傷之一。</p>
+<p>當然這個過錯不在 Linux 這邊， Unix 世界採用 X 作爲顯示服務器成爲事實標準已經
+歷史悠久， X 協議出現以來已經有了近 30 年，現在的“最新”版本 X11 發佈以來也
+已經超過了 25 年 <a class="footnote-reference" href="#id3" id="id2">[1]</a> ，比 Linux 的年齡要老不少。這期間顯示設備也發生了多代
+變革，如此古老的架構要跟上現代顯示設備和應用的需求也着實不易。</p>
+<p>而且造成問題的不僅僅是 X11 這邊，更大的問題在各個硬件廠商對於開發驅動程序的
+熱情不足，甚至惹怒 <a class="reference external" href="http://cn.engadget.com/2012/06/18/linus-torvalds-nvidia-linux/">Linus 當衆對Nvidia豎起中指</a> 。</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>參考 <a class="reference external" href="http://zh.wikipedia.org/wiki/X_Window系統">X窗口系統</a> 。
+「最初是1984年麻省理工學院的研究…… X11，是在1987年9月所發佈。」</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="x11">
+<h2><a class="toc-backref" href="#id8">承　X11 的多顯示器支持</a></h2>
+<div class="section" id="x11-multiseat">
+<h3><a class="toc-backref" href="#id9">零　傳統 X11 協議的 Multiseat 支持</a></h3>
+<p>我不知道 <a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration">Multiseat</a>
+這個術語翻譯成中文的話應該怎麼寫，直譯作「多座位」的話感覺不明所以，翻譯成
+「多終端」的話容易讓人聯想到早期 <a class="reference external" href="http://zh.wikipedia.org/wiki/電傳">電傳打字機</a> 組成的終端設備，於是留作 Multiseat
+不譯。Multiseat 的概念很簡單，就是多個用戶通過多組輸入輸出設備（通常是鼠標、
+鍵盤、顯示器）登錄到同一臺服務器上，各自獨立執行自己的程序。</p>
+<p>Multiseat 應該不屬於 Multihead 的一種，只是爲了完整性這裏也說一下傳統 X11
+協議的 Multiseat 支持。一個典型的 Multiseat 配置如下圖所示：</p>
+<div class="figure">
+<img alt="Multiset Setup on X11" src="https://www.lucidchart.com/publicSegments/view/511d9eab-66c8-4a8c-997c-536f0a004234/image.png" style="width: 90%;" />
+<p class="caption">圖1 X11 協議中對 Multiseat 的支持 (<a class="reference external" href="https://www.lucidchart.com/publicSegments/view/511d9dc3-33c4-49a2-a8d2-46490a004d18/image.pdf">PDF下載</a>)</p>
+</div>
+<p>圖中我們可以看到，整個系統有多組輸入輸出設備，然後每一組設備上面運行一套
+X server ，相互之間互相獨立。每個 X server 被分配一個獨立的 Display ，有個
+Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成一個顯示地址，
+有點像 TCP 的 URL 中 <tt class="docutils literal">domain:port</tt> 這樣的格式， X 的顯示地址是
+<tt class="docutils literal">server:display</tt> 這樣的格式。然後一般會有一個 <a class="reference external" href="http://zh.wikipedia.org/wiki/X窗口管理器">窗口管理器</a> 作爲一個 client 連在 X server
+上，管理這個屏幕上的所有窗口。 Multiseat 的配置中所有 X server 相互獨立，所以
+每個登錄用戶可以用自己的窗口管理器，相互沒有干擾。另外也有一些 X server 可以
+提供虛擬的顯示設備，比如圖中的 Xephyr 就是把一個窗口的區域虛擬成一套獨立的
+顯示設備，從而用於調試等工作，再比如 Xvnc 就是一個基於 VNC 的 X server 。</p>
+<div class="well topic">
+<p class="topic-title first">關於 X 裏面 server/client 的稱呼</p>
+<p>X 和很多別的程序對 server 和 client 的稱呼不一樣。對於一般的服務器/客戶端
+程序而言，通常把運行在遠程機器上的程序稱爲服務器，比如數據庫服務器或者
+計算服務器。而對於 X 而言，連着鼠標和顯示器的，你眼前的這臺機器纔是 X 的
+服務器，在遠程運行程序的是客戶端。</p>
+</div>
+</div>
+<div class="section" id="x11-screen">
+<h3><a class="toc-backref" href="#id10">壹　傳統 X11 協議的多 Screen 支持</a></h3>
+</div>
+</div>
+<div class="section" id="wayland">
+<h2><a class="toc-backref" href="#id11">轉　Wayland是未來麼？</a></h2>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id12">合　別的系統上的多顯示器支持</a></h2>
+</div>
+
+		</div><!-- /.entry-content -->
+				<div class="comments">
+		<h2>Comments !</h2>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			   var disqus_identifier = "multihead.html";
+			   (function() {
+				var dsq = document.createElement('script'); 
+				dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://farseerfcgithub.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || 
+				 document.getElementsByTagName('body')[0]).appendChild(dsq);
+			  })();
+			</script>
+		</div>
+			</article>
+</section>
+        </div><!--/span-->
+      
+		<div class="span3" id="sidebar">
+            <div class="well">
+                <div class="sidebar-nav">
+                    <ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="./" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="http://twitter.com/farseerfc"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
+    <li><a href="https://github.com/farseerfc"><i class="icon-github-sign icon-large"></i>github</a></li>
+    <li><a href="http://www.facebook.com/farseerfc"><i class="icon-facebook-sign icon-large"></i>facebook</a></li>
+    <li><a href="http://weibo.com/farseerfc"><i class="icon-weibo-sign icon-large"></i>weibo</a></li>
+    <li><a href="http://www.renren.com/farseer"><i class="icon-renren-sign icon-large"></i>renren</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="./category/C.html">
+    <i class="icon-folder-open icon-large"></i>C
+</a>
+</li>
+<li>
+<a href="./category/life.html">
+    <i class="icon-folder-open icon-large"></i>life
+</a>
+</li>
+<li>
+<a href="./category/linux.html">
+    <i class="icon-folder-open icon-large"></i>linux
+</a>
+</li>
+<li>
+<a href="./category/python.html">
+    <i class="icon-folder-open icon-large"></i>python
+</a>
+</li>
+<li>
+<a href="./category/renren.html">
+    <i class="icon-folder-open icon-large"></i>renren
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-4">
+    <a href="./tag/marry.html">
+        <i class="icon-tag icon-large"></i>marry
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/music.html">
+        <i class="icon-tag icon-large"></i>music
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/java.html">
+        <i class="icon-tag icon-large"></i>java
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/sjtu.html">
+        <i class="icon-tag icon-large"></i>sjtu
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/you.html">
+        <i class="icon-tag icon-large"></i>you
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/microsoft.html">
+        <i class="icon-tag icon-large"></i>microsoft
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/msr.html">
+        <i class="icon-tag icon-large"></i>msr
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/mining.html">
+        <i class="icon-tag icon-large"></i>mining
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/creationism.html">
+        <i class="icon-tag icon-large"></i>creationism
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/C++.html">
+        <i class="icon-tag icon-large"></i>C++
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/wayland.html">
+        <i class="icon-tag icon-large"></i>wayland
+    </a>
+</li>
+<li class="tag-1">
+    <a href="./tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/ruby.html">
+        <i class="icon-tag icon-large"></i>ruby
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/X11.html">
+        <i class="icon-tag icon-large"></i>X11
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/acpi.html">
+        <i class="icon-tag icon-large"></i>acpi
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/repository.html">
+        <i class="icon-tag icon-large"></i>repository
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/software.html">
+        <i class="icon-tag icon-large"></i>software
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/linux.html">
+        <i class="icon-tag icon-large"></i>linux
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/me.html">
+        <i class="icon-tag icon-large"></i>me
+    </a>
+</li>
+<li class="tag-2">
+    <a href="./tag/icse.html">
+        <i class="icon-tag icon-large"></i>icse
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/template.html">
+        <i class="icon-tag icon-large"></i>template
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/yssy.html">
+        <i class="icon-tag icon-large"></i>yssy
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/will.html">
+        <i class="icon-tag icon-large"></i>will
+    </a>
+</li>
+<li class="tag-4">
+    <a href="./tag/multihead.html">
+        <i class="icon-tag icon-large"></i>multihead
+    </a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 'auto',
+  height: 300,
+  theme: {
+	shell: {
+	  background: '#f5f5f5',
+	  color: '#000000'
+	},
+	tweets: {
+	  background: '#ffffff',
+	  color: '#000000',
+	  links: '#1a50a1'
+	}
+  },
+  features: {
+	scrollbar: false,
+	loop: false,
+	live: false,
+	behavior: 'all'
+  }
+}).render().setUser('farseerfc').start();
+</script>
+<li class="nav-header"><h4><i class="icon-search"></i>Google Search</h4></li>
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1');
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '001578481551708017171:axpo6yvtdyg', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+    
+<li class="nav-header"><h4><i class="icon-list-alt"></i>Weibo</h4></li>
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" 
+src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1862842353&verifier=b193b9de&dpc=1">
+</iframe>
+
+</ul>                </div>
+            </div>
+        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+				which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, 
+		   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-29540705-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+        <script type="text/javascript">
+    var disqus_shortname = 'farseerfcgithub';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery.js"></script>
+    <script src="./theme/js/bootstrap-transition.js"></script>
+    <script src="./theme/js/bootstrap-alert.js"></script>
+    <script src="./theme/js/bootstrap-modal.js"></script>
+    <script src="./theme/js/bootstrap-dropdown.js"></script>
+    <script src="./theme/js/bootstrap-scrollspy.js"></script>
+    <script src="./theme/js/bootstrap-tab.js"></script>
+    <script src="./theme/js/bootstrap-tooltip.js"></script>
+    <script src="./theme/js/bootstrap-popover.js"></script>
+    <script src="./theme/js/bootstrap-button.js"></script>
+    <script src="./theme/js/bootstrap-collapse.js"></script>
+    <script src="./theme/js/bootstrap-carousel.js"></script>
+    <script src="./theme/js/bootstrap-typeahead.js"></script>
+	
+	<!--<script src="./theme/js/autosidebar.js"></script>-->
+  </body>
+</html>

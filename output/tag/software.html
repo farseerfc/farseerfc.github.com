@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>A Pelican Blog - software</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">A Pelican Blog </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="../category/c.html">C</a></li>
+                                    <li ><a href="../category/life.html">life</a></li>
+                                    <li ><a href="../category/linux.html">linux</a></li>
+                                    <li ><a href="../category/python.html">python</a></li>
+                                    <li ><a href="../category/renren.html">renren</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../icse2012.html">ICSE 2012</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-06-06T10:42:00">
+                Wed 06 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/icse.html">icse</a><a href="../tag/software.html">software</a></p>Translations: 
+            <a href="../icse2012-jp.html">jp</a>
+            <a href="../icse2012-zh.html">zh</a>
+            <a href="../icse2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info --><hr class="docutils" />
+<div class="section" id="june-6">
+<h2>June 6</h2>
+<div class="section" id="keynote-1">
+<h3>Keynote 1</h3>
+<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。</p>
+</div>
+<div class="section" id="cost-estimation-for-distributed-software-project">
+<h3>Cost Estimation for Distributed Software Project</h3>
+<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
+<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
+<p>他們的觀點：</p>
+<blockquote>
+<p>Context-specfic solutions needed!</p>
+<p>Early user paticipation is key!</p>
+</blockquote>
+</div>
+<div class="section" id="characterizing-logging-practices-in-open-source-software">
+<h3>Characterizing Logging Practices in Open-Source Software</h3>
+<p>Common mistakes in logging messages</p>
+<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
+中存在的問題。他們首先確定修改是事後修改。</p>
+<p>通常的修改的比例（9027個修改）</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>45%</td>
+<td>text</td>
+</tr>
+<tr><td>27%</td>
+<td>variable</td>
+</tr>
+<tr><td>26%</td>
+<td>verbosity</td>
+</tr>
+<tr><td>2%</td>
+<td>location</td>
+</tr>
+</tbody>
+</table>
+<p>他們發現有verbo等級的變化，是因爲安全漏洞之類的原因，或者在開銷和數據
+之間的權衡。</p>
+<p>大多數對log的var的修改都是爲了增加一個參數。他們之前的LogEnhancer是爲了
+解決這個問題而提出的，通過靜態檢查，提醒程序員是否忘記了某個參數</p>
+<p>對text的修改是因爲要改掉過時的代碼信息，避免誤導用戶。</p>
+<p>他們的實驗是採用了基於code clone 的技術，找到所有log語句，然後找不一致
+的clone，然後自動提出建議。</p>
+</div>
+<div class="section" id="combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java">
+<h3>Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</h3>
+<p>趨勢：到處都是多核，但是併發程序呢？</p>
+<p>他們研究的對象是Scala和Java，因爲可以編譯後確認JVM字節碼的語義。</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Java:</dt>
+<dd><ul class="first last simple">
+<li>Shared Memory</li>
+<li>Explicit thread</li>
+<li>Synchronized</li>
+<li>Wait/Notified</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Scala:</dt>
+<dd><ul class="first last simple">
+<li>High-order fucntions</li>
+<li>Actors, message passing</li>
+<li>lists, filters, iterators</li>
+<li>while</li>
+<li>shared state, OO</li>
+<li>import java.*</li>
+<li>auto type infer</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Training 4 weeks, Industry Project,</p>
+<p>結果：</p>
+<p>scala 的項目平均比java多花38%的時間，主要都是花在Test和debug上的時間。</p>
+<p>程序員的經驗和總體時間相關，但是對test和debug沒有顯著影響。</p>
+<p>scala的爲了讓編程更有效率的設計，導致debug更困難。比如類型推導，debug
+的時候需要手動推導，來理解正在發生什麼。</p>
+<p>scala的程序比java小，中位數2.6%，平均15.2%</p>
+<ul>
+<li><dl class="first docutils">
+<dt>性能比較：</dt>
+<dd><ul class="first last">
+<li><p class="first">單核：scala的線性程序的性能比java好</p>
+</li>
+<li><dl class="first docutils">
+<dt>4核：</dt>
+<dd><ul class="first last">
+<li><p class="first">scala 7s &#64; 4 threads</p>
+</li>
+<li><p class="first">java 4si &#64; 8 threads</p>
+</li>
+<li><dl class="first docutils">
+<dt>median</dt>
+<dd><ul class="first last simple">
+<li>83s scala</li>
+<li>98s java</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">32core: best scala 34s &#64; 64 threads</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>結論</dt>
+<dd><ul class="first last simple">
+<li>java有更好的scalability</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>scala類型推導</dt>
+<dd><ul class="first last simple">
+<li>45%說對攜帶碼有幫助</li>
+<li>85%說導致程序錯誤</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>調試</dt>
+<dd><ul class="first last simple">
+<li>23%認爲scala簡單</li>
+<li>77%認爲java簡單</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>multi-paradigram are better</p>
+</div>
+<div class="section" id="sound-empirical-evidence-in-software-testing">
+<h3>Sound Empirical Evidence in Software Testing</h3>
+<p>Test data generation</p>
+<p>Large Empirical Studies - not always possible</p>
+<p>For open source software - big enough</p>
+</div>
+<div class="section" id="identifing-linux-bug-fixing-patch">
+<h3>Identifing Linux Bug Fixing Patch</h3>
+<ul>
+<li><dl class="first docutils">
+<dt>current practice:</dt>
+<dd><ul class="first last simple">
+<li>manual</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Current research:</dt>
+<dd><ul class="first last simple">
+<li>keywords in commits</li>
+<li>link bug reports in bugzilla</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Try to solve classification problem</p>
+<ul>
+<li><dl class="first docutils">
+<dt>issue</dt>
+<dd><ul class="first last simple">
+<li>pre-identified</li>
+<li>post-identified</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>data</dt>
+<dd><ul class="first last simple">
+<li>from commit log</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>feature extraction</dt>
+<dd><ul class="first last simple">
+<li>text pre-process stemmed non-stop words</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">model learning</p>
+</li>
+</ul>
+<p>research questions</p>
+</div>
+<div class="section" id="active-refinement-of-clone-anomaly-reports">
+<h3>Active Refinement of Clone Anomaly Reports</h3>
+<p>motivating</p>
+<ul class="simple">
+<li>code clones, clone groups</li>
+<li>clone used to detect bugs</li>
+<li>anomaly : inconsistent clone group
+many anomaly clone are note bug, high false positive</li>
+</ul>
+<dl class="docutils">
+<dt>approach</dt>
+<dd><ul class="first last simple">
+<li>reorder by sorted bug reports</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="june7">
+<h2>June7</h2>
+<div class="section" id="keynotes-2-sustainability-with-software-an-industrial-perspective">
+<h3>Keynotes 2: Sustainability with Software - An Industrial Perspective</h3>
+<p>Sustainability</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Classic View: Idenpendent view with overlap</dt>
+<dd><ul class="first last simple">
+<li>Social</li>
+<li>Environment</li>
+<li>Economic</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Nested viw</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Environment</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Social</dt>
+<dd><ul class="first last simple">
+<li>Economic</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt>Triple bottom line</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>economic</dt>
+<dd><p class="first last">-global business, networks , global econ</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>env</dt>
+<dd><ul class="first last simple">
+<li>natural res, climate change, population grow</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>social</dt>
+<dd><ul class="first last simple">
+<li>awareness, connectivity, accountability</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="green-it">
+<h4>Green IT</h4>
+<ul>
+<li><dl class="first docutils">
+<dt>reduce IT energy</dt>
+<dd><ul class="first last simple">
+<li>more than 50% cooling - doing nothing</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mini e-waste: not properly recycled</dt>
+<dd><ul class="first last simple">
+<li>80% in EU</li>
+<li>75% in US</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">foster dematerialization</p>
+</li>
+</ul>
+<p>In-Memory Technology: Expected Sustainable Benefits</p>
+</div>
+<div class="section" id="what-can-we-do">
+<h4>What can we do?</h4>
+<blockquote>
+<ul class="simple">
+<li>consider all software lifecycle phases in your design</li>
+<li>avoid energy expensive behavior in your codes</li>
+<li>design lean architectures</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="green-by-it">
+<h4>Green by IT</h4>
+<blockquote>
+<ul class="simple">
+<li>2% green IT</li>
+<li>98% green IT</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="on-how-often-code-is-cloned-across-repositories">
+<h3>On How Often code is cloned across repositories</h3>
+<p>Line based hashing code clone detection</p>
+<p>never do anything harder than sorting</p>
+<p>hashing a window of 5 lines of normalized (tokenized) code, dropping
+3/4 of the hashing</p>
+<p>把ccfinder一個月的工作縮短到了3, 4天。沒有比較presion和recall。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>14%</td>
+<td>type1</td>
+</tr>
+<tr><td>16%</td>
+<td>type2</td>
+</tr>
+<tr><td>17%</td>
+<td>type3 (not really type2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="graph-based-analysis-and-prediction-for-sw-evolution">
+<h3>Graph-based analysis and prediction for sw evolution</h3>
+<div class="section" id="graph-are-everywhere">
+<h4>graph are everywhere</h4>
+<ul class="simple">
+<li>internet topology</li>
+<li>social net</li>
+<li>chemistry</li>
+<li>biology</li>
+</ul>
+<p>in sw
+- func call graph
+- module dependency graph</p>
+<p>developer interaction graph
+- commit logs
+- bug reports</p>
+<p>experiment 11 oss, 27~171 release, &gt; 9 years</p>
+</div>
+<div class="section" id="predictors">
+<h4>predictors</h4>
+<ul>
+<li><dl class="first docutils">
+<dt>NodeRank</dt>
+<dd><ul class="first last">
+<li><p class="first">similar to pagerank of google</p>
+</li>
+<li><p class="first">measure relative importance of each node</p>
+</li>
+<li><dl class="first docutils">
+<dt>func call graph with noderank</dt>
+<dd><ul class="first last simple">
+<li>compare rank with severity scale on bugzilla</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>correlation between noderank and BugSeverity</dt>
+<dd><ul class="first last simple">
+<li>func level 0.48 ~ 0.86 varies among projects.</li>
+<li>model level &gt; func level</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ModularityRatio</dt>
+<dd><ul class="first last">
+<li><p class="first">cohesion/coupling ratio:  IntraDep(M)/InterDep(M)</p>
+</li>
+<li><p class="first">forecast mantencance effort</p>
+</li>
+<li><dl class="first docutils">
+<dt>use for</dt>
+<dd><ul class="first last simple">
+<li>identify modules that need redesign or refactoring</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>EditDistance</dt>
+<dd><ul class="first last">
+<li><p class="first">bug-based developer collaboration graphs</p>
+</li>
+<li><p class="first">ED(G1,G2)=|V1|+|V2|-2|V1交V2|+|E1|+|E2|-2|E1交E2|</p>
+</li>
+<li><dl class="first docutils">
+<dt>use for</dt>
+<dd><ul class="first last simple">
+<li>release planning</li>
+<li>resource allocation</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>graph metrics</p>
+<ul>
+<li><dl class="first docutils">
+<dt>graph diameter</dt>
+<dd><ul class="first last simple">
+<li>average node degree indicates reuse</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">clustering coefficient</p>
+</li>
+<li><p class="first">assortativity</p>
+</li>
+<li><p class="first">num of cycles</p>
+</li>
+</ul>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>&quot;Actionable intelligence&quot; from graph evolution</p>
+<ul class="simple">
+<li>studie 11 large long-live projs</li>
+<li>predictors</li>
+<li>identify pivotal moments in evolution</li>
+</ul>
+</div>
+</div>
+<div class="section" id="what-make-long-term-contributors-willingness-and-opportunity-in-oss">
+<h3>What make long term contributors: willingness and opportunity in OSS</h3>
+<p>OSS don't work without contributors form community</p>
+<p>mozilla (2000-2008)</p>
+<p>10^2.2 LTC &lt;- 2 order -&gt; 10^4.2 new contributors &lt;- 3.5 order -&gt; 10^7.7 users</p>
+<p>gnome (1999-2007)</p>
+<p>10^2.5 LTC &lt;- 1.5 order -&gt; 10^4.0 new contributors &lt;- 3.5 order -&gt; 10^6.5 users</p>
+<div class="section" id="approach">
+<h4>approach</h4>
+<ul class="simple">
+<li>read issues of 20 LTC and 20 non-LTC</li>
+<li>suvery 56 (36 non-LTC and 20 LTC)</li>
+<li>extract practices published on project web sites</li>
+</ul>
+</div>
+<div class="section" id="summeray">
+<h4>summeray</h4>
+<ul>
+<li><p class="first">Ability/Willingness distinguishes LTCs</p>
+</li>
+<li><dl class="first docutils">
+<dt>Environment</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>macro-climate</dt>
+<dd><ul class="first last simple">
+<li>popularity</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>micro-climate</dt>
+<dd><ul class="first last simple">
+<li>attention</li>
+<li>bumber of peers</li>
+<li>performance of peers</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>regression model</p>
+<p>newcomers to LTC conversion drops</p>
+<dl class="docutils">
+<dt>actions in first month predicts LTCs</dt>
+<dd><ul class="first last simple">
+<li>24% recall</li>
+<li>37% precision</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="develop-of-auxiliary-functions-should-you-be-agile">
+<h3>develop of auxiliary functions: should you be agile?</h3>
+<p>a empirial assessment of pair programming and test-first programming</p>
+<p>can agile help auxiliary functions?</p>
+<div class="section" id="experiment">
+<h4>experiment</h4>
+<ul class="simple">
+<li>pair vs solo</li>
+<li>test-first vs test-last</li>
+<li>students vs professors</li>
+</ul>
+</div>
+<div class="section" id="research-questions">
+<h4>research questions</h4>
+<ul class="simple">
+<li>r1: can pair help obtain more correct impl</li>
+<li>r2: can test-first</li>
+<li>r3: dst test1 encourage the impl or more test cases?</li>
+<li>r4: does test1 course more coverage</li>
+</ul>
+</div>
+<div class="section" id="result">
+<h4>result</h4>
+<ul>
+<li><dl class="first docutils">
+<dt>test-first</dt>
+<dd><ul class="first last simple">
+<li>higher coverage</li>
+<li>non change with correctness</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pair</dt>
+<dd><ul class="first last simple">
+<li>improve on correctness</li>
+<li>longer total programming time</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../icse2012-jp.html" rel="bookmark"
+                           title="Permalink to ICSE 2012">ICSE 2012</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-06T10:42:00">
+                Wed 06 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/icse.html">icse</a><a href="../tag/software.html">software</a></p>Translations: 
+            <a href="../icse2012.html">en</a>
+            <a href="../icse2012-zh.html">zh</a>
+            <a href="../icse2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <hr class="docutils" />
+<div class="section" id="june-6">
+<h2>June 6</h2>
+<div class="section" id="keynote-1">
+<h3>Keynote 1</h3>
+<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。</p>
+</div>
+<div class="section" id="cost-estimation-for-distributed-software-project">
+<h3>Cost Estimation for Distributed Software Project</h3>
+<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
+<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
+<p>他們的觀點：</p>
+<blockquote>
+<p>Context-specfic solutions needed!</p>
+<p>Early user paticipation is key!</p>
+</blockquote>
+</div>
+<div class="section" id="characterizing-logging-practices-in-open-source-software">
+<h3>Characterizing Logging Practices in Open-Source Software</h3>
+<p>Common mistakes in logging messages</p>
+<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
+中存在的問題。他們首先確定修改是事後修改 ...</p></div></div>
+                <a class="readmore" href="../icse2012-jp.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../icse2012-zh.html" rel="bookmark"
+                           title="Permalink to ICSE 2012">ICSE 2012</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-06T10:42:00">
+                Wed 06 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/icse.html">icse</a><a href="../tag/software.html">software</a></p>Translations: 
+            <a href="../icse2012.html">en</a>
+            <a href="../icse2012-jp.html">jp</a>
+            <a href="../icse2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <hr class="docutils" />
+<div class="section" id="june-6">
+<h2>June 6</h2>
+<div class="section" id="keynote-1">
+<h3>Keynote 1</h3>
+<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
+關係。</p>
+</div>
+<div class="section" id="cost-estimation-for-distributed-software-project">
+<h3>Cost Estimation for Distributed Software Project</h3>
+<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
+<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
+的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
+的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
+<p>他們的觀點：</p>
+<blockquote>
+<p>Context-specfic solutions needed!</p>
+<p>我們需要更上下文相關的解決方案！</p>
+<p>Early user paticipation is key!</p>
+<p>早期用戶的參與是關鍵</p>
+</blockquote>
+</div>
+<div class="section" id="characterizing-logging-practices-in-open-source-software">
+<h3>Characterizing Logging Practices in Open-Source Software</h3>
+<p>Common mistakes in logging messages</p>
+<p>在日誌記錄中容易犯的錯誤</p>
+<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句 ...</p></div></div>
+                <a class="readmore" href="../icse2012-zh.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../icse2012-zhs.html" rel="bookmark"
+                           title="Permalink to ICSE 2012">ICSE 2012</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-06T10:42:00">
+                Wed 06 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/icse.html">icse</a><a href="../tag/software.html">software</a></p>Translations: 
+            <a href="../icse2012.html">en</a>
+            <a href="../icse2012-jp.html">jp</a>
+            <a href="../icse2012-zh.html">zh</a>
+    
+</footer><!-- /.post-info -->                <hr class="docutils" />
+<div class="section" id="june-6">
+<h2>June 6</h2>
+<div class="section" id="keynote-1">
+<h3>Keynote 1</h3>
+<p>没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
+关系。</p>
+</div>
+<div class="section" id="cost-estimation-for-distributed-software-project">
+<h3>Cost Estimation for Distributed Software Project</h3>
+<p>讲到他们试图改善现有的模型去更精确地评估软件开发的开销。</p>
+<p>他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
+的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
+的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。</p>
+<p>他们的观点：</p>
+<blockquote>
+<p>Context-specfic solutions needed!</p>
+<p>我们需要更上下文相关的解决方案！</p>
+<p>Early user paticipation is key!</p>
+<p>早期用户的参与是关键</p>
+</blockquote>
+</div>
+<div class="section" id="characterizing-logging-practices-in-open-source-software">
+<h3>Characterizing Logging Practices in Open-Source Software</h3>
+<p>Common mistakes in logging messages</p>
+<p>在日志记录中容易犯的错误</p>
+<p>他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句 ...</p></div></div>
+                <a class="readmore" href="../icse2012-zhs.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zh.html">zh</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>I participated MSR of this year. We came to University of Zurich early
+in the morning. The registration got something wrong when it seems that
+Swisses cannot tell the difference among Asians so that name cards of
+3 Chinese with family name of Yang are ...</p></div>
+                <a class="readmore" href="../msr2012.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-jp.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-zh.html">zh</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>今年のMSRを参加しました、会場はチューリッヒ大学にあります。朝早く大学に
+着いて、登録するときちょっと事情をありました。スイス人は明らかに中国人
+の名前をわからないから、３つの中国からの楊（Yang）の名札を間違えた。そ
+して堀田先輩の名札に&quot;Japan, Japan&quot;になって、日本代表になった。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>まず一番目のKeynoteはマイクロソフトアジア研究院(MicroSoft Research &#64; Asia
+,MSR Asia)のZhang氏が発表する、こうしてMSRがMSRに発表するになった。</p>
+<p>Zhangの発表はSoftware AnalysisとXIAOの２つの紹介です。XIAOはマイクロソフト
+が開発したCode Clone Detector、ある会社が私達に任せるのもこのようなシステム
+です。もっと詳しく知りたいが、実装に関わるものは言ってなかった。</p>
+</div>
+<div class="section" id="towards-improving-bts-with-game-mechanisms">
+<h3>Towards Improving BTS ...</h3></div></div>
+                <a class="readmore" href="../msr2012-jp.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-zh.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zhs.html">zhs</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>參加了今年的MSR，會場在University of Zurich。一大早來到大學，註冊有點
+小插曲，顯然瑞士人搞不清楚中國人的名字，3個楊（Yang）姓的中國人的名牌
+被搞錯了。然後堀田學長的所屬被寫作了“Japan, Japan”，成爲了全日本的代表。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>首先是來自微軟亞洲研究院（MicroSoft Research &#64; Asia, MSR Asia）的Keynots，
+於是就變成了MSR在MSR的演講。MSR的張冬梅（Dongmei Zhang）女士的演講
+分爲關於Software Analysis和XIAO的兩部分。XIAO是MSRA開發的Code Clone
+Detector，似乎我要給井上研做的就是這個。想更多瞭解Xiao的細節，不過張女士
+演講結束的時候的鼓掌導致了話筒的小故障 ...</p></div></div>
+                <a class="readmore" href="../msr2012-zh.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../msr2012-zhs.html" rel="bookmark"
+                           title="Permalink to MSR 2012 @ ICSE">MSR 2012 &#64; ICSE</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-02T10:42:00">
+                Sat 02 June 2012
+        </abbr>
+
+        <p>In <a href="../category/life.html">life</a>. </p>
+<p>tags: <a href="../tag/msr.html">msr</a><a href="../tag/icse.html">icse</a><a href="../tag/mining.html">mining</a><a href="../tag/software.html">software</a><a href="../tag/repository.html">repository</a></p>Translations: 
+            <a href="../msr2012.html">en</a>
+            <a href="../msr2012-jp.html">jp</a>
+            <a href="../msr2012-zh.html">zh</a>
+    
+</footer><!-- /.post-info -->                <div class="section" id="mining-software-repository-2012-icse">
+<h2>Mining Software Repository 2012 &#64; ICSE</h2>
+<p>参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点
+小插曲，显然瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌
+被搞错了。然后堀田学长的所属被写作了“Japan, Japan”，成为了全日本的代表。</p>
+<div class="section" id="msr-microsoft-research-talk-msr-mining-software-repositories">
+<h3>MSR(MicroSoft Research) talk &#64; MSR(Mining Software Repositories)</h3>
+<p>首先是来自微软亚洲研究院（MicroSoft Research &#64; Asia, MSR Asia）的Keynots，
+于是就变成了MSR在MSR的演讲。MSR的张冬梅（Dongmei Zhang）女士的演讲
+分为关于Software Analysis和XIAO的两部分。XIAO是MSRA开发的Code Clone
+Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的细节，不过张女士
+演讲结束的时候的鼓掌导致了话筒的小故障 ...</p></div></div>
+                <a class="readmore" href="../msr2012-zhs.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                                                    </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

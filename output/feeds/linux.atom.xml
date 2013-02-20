@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2013-02-13T14:20:21Z</updated><entry><title>State of Multihead Support on Linux</title><link href="/multihead.html" rel="alternate"></link><updated>2013-02-13T14:20:21Z</updated><author><name></name></author><id>tag:,2013-02-13:multihead.html</id><summary type="html">&lt;p&gt;Recently our lab have purchased some 27 inch monitors, so I got one on my
+desktop.&lt;/p&gt;
+&lt;p&gt;研究室新進了27吋大顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏翻出了1臺小顯示器和一塊Radeon顯卡，
+組成4顯示器的配置。沒想到添加硬件本身很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰
+各種配置文件甚至改寫源代碼(xorg, awesome, compton, ...）經過了1個多月之後，現在的配置總算比較滿意，
+能夠讓我正常工作了。&lt;/p&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry></feed>
