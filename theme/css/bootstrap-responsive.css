@@ -400,7 +400,7 @@
 }
 @media (min-width: 980px) {
   body {
-    font-size:17px;
+    font-size:20px;
     padding-top: 60px;
     padding-bottom: 40px;
   }
@@ -410,7 +410,7 @@
 }
 @media (min-width: 1200px) {
   body {
-    font-size:18px;
+    font-size:24px;
     padding-top: 60px;
     padding-bottom: 40px;
   }
