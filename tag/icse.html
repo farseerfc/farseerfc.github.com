@@ -6,27 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="../theme/css/html4css1.css" rel="stylesheet">
+  <link rel="stylesheet" href="../theme/css/bootstrap.css" type="text/css" />
+  <link href="../theme/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="../theme/css/font-awesome.css" rel="stylesheet">
+  <link href="../theme/css/pygments.css" rel="stylesheet">
+  <link href="../theme/css/local.css" rel="stylesheet">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-	<link href="../theme/css/html4css1.css" rel="stylesheet">
-    <!-- Le styles -->
-    <link rel="stylesheet" href="../theme/css/bootstrap.css" type="text/css" />
-    <link href="../theme/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="../theme/css/font-awesome.css" rel="stylesheet">
-    <link href="../theme/css/pygments.css" rel="stylesheet">
-	<link href="../theme/css/local.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="../theme/images/favicon.ico">
-    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
-
-    <link href="../" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
-    
+  <link href="../" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+  
   </head>
 
   <body>
@@ -34,13 +27,13 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <!--<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </a>-->
           <a class="brand" href="../index.html">Farseerfc Blog </a>
-          <div class="nav-collapse">
+          <div class="fcnav-collapse">
             <ul class="nav">
                                                           <li><a href="../pages/about.html">About</a></li>
               			  <li class="divider-vertical"></li>
@@ -80,9 +73,9 @@
       <div class="row-fluid">
         <div class="span9" id="content">
                     
-		<div class='article'>
-		<h1><a href="../icse2012-zhs.html">ICSE 2012</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../icse2012-zhs.html">ICSE 2012</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-06T10:42:00">
 	<i class="icon-calendar"></i>2012年06月06日(周三)
@@ -98,43 +91,30 @@
 	<a href="../tag/software.html"><i class="icon-tag"></i>software</a>
 <span class="label">Lang</span>
 	<a href="../icse2012.html"><i class="icon-edit"></i>zh</a>
-	<a href="../icse2012-jp.html"><i class="icon-edit"></i>jp</a>
-	<a href="../icse2012-en.html"><i class="icon-edit"></i>en</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><hr class="docutils" />
-<div class="section" id="june-6">
-<h2>June 6</h2>
-<div class="section" id="keynote-1">
-<h3>Keynote 1</h3>
-<p>没怎么听懂，只记得讲到了finance is not money但是没听懂这个和软件有什么
-关系。</p>
-</div>
-<div class="section" id="cost-estimation-for-distributed-software-project">
-<h3>Cost Estimation for Distributed Software Project</h3>
-<p>讲到他们试图改善现有的模型去更精确地评估软件开发的开销。</p>
-<p>他们会给PM建议之前的项目的历史数据，然后对于新项目，他们建议历史上已有
-的项目的数据，从而帮助PM得到更精确的评估。他们试图尽量减少项目评估对PM
-的经验的需求，从而帮助即使经验很少的PM也能准确评估项目的开销。</p>
-<p>他们的观点：</p>
-<blockquote>
-<p>Context-specfic solutions needed!</p>
-<p>我们需要更上下文相关的解决方案！</p>
-<p>Early user paticipation is key!</p>
-<p>早期用户的参与是关键</p>
-</blockquote>
-</div>
-<div class="section" id="characterizing-logging-practices-in-open-source-software">
-<h3>Characterizing Logging Practices in Open-Source Software</h3>
-<p>Common mistakes in logging messages</p>
-<p>在日志记录中容易犯的错误</p>
-<p>他们学习了历史上的log记录，然后试图找到重复修改的输出log的语句 ...</p></div></div> 
+		<div class="summary small"><div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#june-6" id="id1">June 6</a><ul>
+<li><a class="reference internal" href="#keynote-1" id="id2">Keynote 1</a></li>
+<li><a class="reference internal" href="#cost-estimation-for-distributed-software-project" id="id3">Cost Estimation for Distributed Software Project</a></li>
+<li><a class="reference internal" href="#characterizing-logging-practices-in-open-source-software" id="id4">Characterizing Logging Practices in Open-Source Software</a></li>
+<li><a class="reference internal" href="#combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java" id="id5">Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</a></li>
+<li><a class="reference internal" href="#sound-empirical-evidence-in-software-testing" id="id6">Sound Empirical Evidence in Software Testing</a></li>
+<li><a class="reference internal" href="#identifing-linux-bug-fixing-patch" id="id7">Identifing Linux Bug Fixing Patch</a></li>
+<li><a class="reference internal" href="#active-refinement-of-clone-anomaly-reports" id="id8">Active Refinement of Clone Anomaly Reports</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#june7" id="id9">June7</a><ul>
+<li><a class="reference internal" href="#keynotes-2-sustainability-with-software-an-industrial-perspective" id="id10">Keynotes 2: Sustainability with Software ...</a></li></ul></li></ul></div> 
 			<a class="btn primary xsmall" href="../icse2012-zhs.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
-		<div class='article'>
-		<h1><a href="../icse2012.html">ICSE 2012</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../icse2012.html">ICSE 2012</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-06T10:42:00">
 	<i class="icon-calendar"></i>2012年06月06日(週三)
@@ -150,143 +130,30 @@
 	<a href="../tag/software.html"><i class="icon-tag"></i>software</a>
 <span class="label">Lang</span>
 	<a href="../icse2012-zhs.html"><i class="icon-edit"></i>zhs</a>
-	<a href="../icse2012-jp.html"><i class="icon-edit"></i>jp</a>
-	<a href="../icse2012-en.html"><i class="icon-edit"></i>en</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><hr class="docutils" />
-<div class="section" id="june-6">
-<h2>June 6</h2>
-<div class="section" id="keynote-1">
-<h3>Keynote 1</h3>
-<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
-關係。</p>
-</div>
-<div class="section" id="cost-estimation-for-distributed-software-project">
-<h3>Cost Estimation for Distributed Software Project</h3>
-<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
-<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
-的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
-的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
-<p>他們的觀點：</p>
-<blockquote>
-<p>Context-specfic solutions needed!</p>
-<p>我們需要更上下文相關的解決方案！</p>
-<p>Early user paticipation is key!</p>
-<p>早期用戶的參與是關鍵</p>
-</blockquote>
-</div>
-<div class="section" id="characterizing-logging-practices-in-open-source-software">
-<h3>Characterizing Logging Practices in Open-Source Software</h3>
-<p>Common mistakes in logging messages</p>
-<p>在日誌記錄中容易犯的錯誤</p>
-<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句 ...</p></div></div> 
+		<div class="summary small"><div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#june-6" id="id1">June 6</a><ul>
+<li><a class="reference internal" href="#keynote-1" id="id2">Keynote 1</a></li>
+<li><a class="reference internal" href="#cost-estimation-for-distributed-software-project" id="id3">Cost Estimation for Distributed Software Project</a></li>
+<li><a class="reference internal" href="#characterizing-logging-practices-in-open-source-software" id="id4">Characterizing Logging Practices in Open-Source Software</a></li>
+<li><a class="reference internal" href="#combine-functional-and-imperative-pgrm-for-multicore-sw-scala-java" id="id5">Combine Functional and Imperative Pgrm for Multicore Sw: Scala &amp; Java</a></li>
+<li><a class="reference internal" href="#sound-empirical-evidence-in-software-testing" id="id6">Sound Empirical Evidence in Software Testing</a></li>
+<li><a class="reference internal" href="#identifing-linux-bug-fixing-patch" id="id7">Identifing Linux Bug Fixing Patch</a></li>
+<li><a class="reference internal" href="#active-refinement-of-clone-anomaly-reports" id="id8">Active Refinement of Clone Anomaly Reports</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#june7" id="id9">June7</a><ul>
+<li><a class="reference internal" href="#keynotes-2-sustainability-with-software-an-industrial-perspective" id="id10">Keynotes 2: Sustainability with Software ...</a></li></ul></li></ul></div> 
 			<a class="btn primary xsmall" href="../icse2012.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
-		<div class='article'>
-		<h1><a href="../icse2012-jp.html">ICSE 2012</a></h1>
-		<div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2012-06-06T10:42:00">
-	<i class="icon-calendar"></i>2012年06月06日(水)
-</abbr>
-<span class="label">By</span>
-<a href="../author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
-<span class="label">Category</span>
-<a href="../category/life.html"><i class="icon-folder-open"></i>life</a>. 
-
-	
-<span class="label">Tags</span> 
-	<a href="../tag/icse.html"><i class="icon-tag"></i>icse</a>
-	<a href="../tag/software.html"><i class="icon-tag"></i>software</a>
-<span class="label">Lang</span>
-	<a href="../icse2012-zhs.html"><i class="icon-edit"></i>zhs</a>
-	<a href="../icse2012.html"><i class="icon-edit"></i>zh</a>
-	<a href="../icse2012-en.html"><i class="icon-edit"></i>en</a>
-</footer><!-- /.post-info --></div>
-		<div class="summary"><hr class="docutils" />
-<div class="section" id="june-6">
-<h2>June 6</h2>
-<div class="section" id="keynote-1">
-<h3>Keynote 1</h3>
-<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
-關係。</p>
-</div>
-<div class="section" id="cost-estimation-for-distributed-software-project">
-<h3>Cost Estimation for Distributed Software Project</h3>
-<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
-<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
-的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
-的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
-<p>他們的觀點：</p>
-<blockquote>
-<p>Context-specfic solutions needed!</p>
-<p>Early user paticipation is key!</p>
-</blockquote>
-</div>
-<div class="section" id="characterizing-logging-practices-in-open-source-software">
-<h3>Characterizing Logging Practices in Open-Source Software</h3>
-<p>Common mistakes in logging messages</p>
-<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
-中存在的問題。他們首先確定修改是事後修改 ...</p></div></div> 
-			<a class="btn primary xsmall" href="../icse2012-jp.html">more ...</a>
-		</div>
-	</div>	
-	<hr />
-		<div class='article'>
-		<h1><a href="../icse2012-en.html">ICSE 2012</a></h1>
-		<div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2012-06-06T10:42:00">
-	<i class="icon-calendar"></i>Wed, 06 Jun 2012
-</abbr>
-<span class="label">By</span>
-<a href="../author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
-<span class="label">Category</span>
-<a href="../category/life.html"><i class="icon-folder-open"></i>life</a>. 
-
-	
-<span class="label">Tags</span> 
-	<a href="../tag/icse.html"><i class="icon-tag"></i>icse</a>
-	<a href="../tag/software.html"><i class="icon-tag"></i>software</a>
-<span class="label">Lang</span>
-	<a href="../icse2012-zhs.html"><i class="icon-edit"></i>zhs</a>
-	<a href="../icse2012.html"><i class="icon-edit"></i>zh</a>
-	<a href="../icse2012-jp.html"><i class="icon-edit"></i>jp</a>
-</footer><!-- /.post-info --></div>
-		<div class="summary"><hr class="docutils" />
-<div class="section" id="june-6">
-<h2>June 6</h2>
-<div class="section" id="keynote-1">
-<h3>Keynote 1</h3>
-<p>沒怎麼聽懂，只記得講到了finance is not money但是沒聽懂這個和軟件有什麼
-關係。</p>
-</div>
-<div class="section" id="cost-estimation-for-distributed-software-project">
-<h3>Cost Estimation for Distributed Software Project</h3>
-<p>講到他們試圖改善現有的模型去更精確地評估軟件開發的開銷。</p>
-<p>他們會給PM建議之前的項目的歷史數據，然後對於新項目，他們建議歷史上已有
-的項目的數據，從而幫助PM得到更精確的評估。他們試圖儘量減少項目評估對PM
-的經驗的需求，從而幫助即使經驗很少的PM也能準確評估項目的開銷。</p>
-<p>他們的觀點：</p>
-<blockquote>
-<p>Context-specfic solutions needed!</p>
-<p>Early user paticipation is key!</p>
-</blockquote>
-</div>
-<div class="section" id="characterizing-logging-practices-in-open-source-software">
-<h3>Characterizing Logging Practices in Open-Source Software</h3>
-<p>Common mistakes in logging messages</p>
-<p>他們學習了歷史上的log記錄，然後試圖找到重複修改的輸出log的語句，確定log
-中存在的問題。他們首先確定修改是事後修改 ...</p></div></div> 
-			<a class="btn primary xsmall" href="../icse2012-en.html">more ...</a>
-		</div>
-	</div>	
-	<hr />
-		<div class='article'>
-		<h1><a href="../msr2012.html">MSR 2012 &#64; ICSE</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../msr2012.html">MSR 2012 &#64; ICSE</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-02T10:42:00">
 	<i class="icon-calendar"></i>2012年06月02日(週六)
@@ -308,7 +175,7 @@
 	<a href="../msr2012-jp.html"><i class="icon-edit"></i>jp</a>
 	<a href="../msr2012-zhs.html"><i class="icon-edit"></i>zhs</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><div class="section" id="mining-software-repository-2012-icse">
+		<div class="summary small"><div class="section" id="mining-software-repository-2012-icse">
 <h2>Mining Software Repository 2012 &#64; ICSE</h2>
 <p>參加了今年的MSR，會場在University of Zurich。一大早來到大學，註冊有點
 小插曲，顯然瑞士人搞不清楚中國人的名字，3個楊（Yang）姓的中國人的名牌
@@ -322,11 +189,12 @@ Detector，似乎我要給井上研做的就是這個。想更多瞭解Xiao的�
 演講結束的時候的鼓掌導致了話筒的小故障 ...</p></div></div> 
 			<a class="btn primary xsmall" href="../msr2012.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
-		<div class='article'>
-		<h1><a href="../msr2012-en.html">MSR 2012 &#64; ICSE</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../msr2012-en.html">MSR 2012 &#64; ICSE</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-02T10:42:00">
 	<i class="icon-calendar"></i>Sat, 02 Jun 2012
@@ -348,7 +216,7 @@ Detector，似乎我要給井上研做的就是這個。想更多瞭解Xiao的�
 	<a href="../msr2012-jp.html"><i class="icon-edit"></i>jp</a>
 	<a href="../msr2012-zhs.html"><i class="icon-edit"></i>zhs</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><div class="section" id="mining-software-repository-2012-icse">
+		<div class="summary small"><div class="section" id="mining-software-repository-2012-icse">
 <h2>Mining Software Repository 2012 &#64; ICSE</h2>
 <p>I participated MSR of this year. We came to University of Zurich early
 in the morning. The registration got something wrong when it seems that
@@ -356,11 +224,12 @@ Swisses cannot tell the difference among Asians so that name cards of
 3 Chinese with family name of Yang are ...</p></div> 
 			<a class="btn primary xsmall" href="../msr2012-en.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
-		<div class='article'>
-		<h1><a href="../msr2012-jp.html">MSR 2012 &#64; ICSE</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../msr2012-jp.html">MSR 2012 &#64; ICSE</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-02T10:42:00">
 	<i class="icon-calendar"></i>2012年06月02日(土)
@@ -382,7 +251,7 @@ Swisses cannot tell the difference among Asians so that name cards of
 	<a href="../msr2012-en.html"><i class="icon-edit"></i>en</a>
 	<a href="../msr2012-zhs.html"><i class="icon-edit"></i>zhs</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><div class="section" id="mining-software-repository-2012-icse">
+		<div class="summary small"><div class="section" id="mining-software-repository-2012-icse">
 <h2>Mining Software Repository 2012 &#64; ICSE</h2>
 <p>今年のMSRを参加しました、会場はチューリッヒ大学にあります。朝早く大学に
 着いて、登録するときちょっと事情をありました。スイス人は明らかに中国人
@@ -400,11 +269,12 @@ Swisses cannot tell the difference among Asians so that name cards of
 <h3>Towards Improving BTS ...</h3></div></div> 
 			<a class="btn primary xsmall" href="../msr2012-jp.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
-		<div class='article'>
-		<h1><a href="../msr2012-zhs.html">MSR 2012 &#64; ICSE</a></h1>
-		<div class="well small"><footer class="post-info">
+		<div class='article well'><small>
+		<h1 class="small"><a href="../msr2012-zhs.html">MSR 2012 &#64; ICSE</a></h1>
+		<div class="small"><footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2012-06-02T10:42:00">
 	<i class="icon-calendar"></i>2012年06月02日(周六)
@@ -426,7 +296,7 @@ Swisses cannot tell the difference among Asians so that name cards of
 	<a href="../msr2012-en.html"><i class="icon-edit"></i>en</a>
 	<a href="../msr2012-jp.html"><i class="icon-edit"></i>jp</a>
 </footer><!-- /.post-info --></div>
-		<div class="summary"><div class="section" id="mining-software-repository-2012-icse">
+		<div class="summary small"><div class="section" id="mining-software-repository-2012-icse">
 <h2>Mining Software Repository 2012 &#64; ICSE</h2>
 <p>参加了今年的MSR，会场在University of Zurich。一大早来到大学，注册有点
 小插曲，显然瑞士人搞不清楚中国人的名字，3个杨（Yang）姓的中国人的名牌
@@ -440,6 +310,7 @@ Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的�
 演讲结束的时候的鼓掌导致了话筒的小故障 ...</p></div></div> 
 			<a class="btn primary xsmall" href="../msr2012-zhs.html">more ...</a>
 		</div>
+	</small>
 	</div>	
 	<hr />
 	
@@ -484,14 +355,9 @@ Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的�
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<span class="tag-4">
-	<a href="../tag/repository.html">
-		<i class="icon-tag icon-large"></i>repository
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/me.html">
-		<i class="icon-tag icon-large"></i>me
+<span class="tag-1">
+	<a href="../tag/python.html">
+		<i class="icon-tag icon-large"></i>python
 	</a>
 </span>
 <span class="tag-4">
@@ -499,39 +365,9 @@ Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的�
 		<i class="icon-tag icon-large"></i>music
 	</a>
 </span>
-<span class="tag-1">
-	<a href="../tag/python.html">
-		<i class="icon-tag icon-large"></i>python
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/marry.html">
-		<i class="icon-tag icon-large"></i>marry
-	</a>
-</span>
 <span class="tag-4">
 	<a href="../tag/acpi.html">
 		<i class="icon-tag icon-large"></i>acpi
-	</a>
-</span>
-<span class="tag-2">
-	<a href="../tag/icse.html">
-		<i class="icon-tag icon-large"></i>icse
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/mining.html">
-		<i class="icon-tag icon-large"></i>mining
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/java.html">
-		<i class="icon-tag icon-large"></i>java
-	</a>
-</span>
-<span class="tag-2">
-	<a href="../tag/software.html">
-		<i class="icon-tag icon-large"></i>software
 	</a>
 </span>
 <span class="tag-4">
@@ -540,43 +376,18 @@ Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的�
 	</a>
 </span>
 <span class="tag-4">
-	<a href="../tag/linux.html">
-		<i class="icon-tag icon-large"></i>linux
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/ruby.html">
-		<i class="icon-tag icon-large"></i>ruby
-	</a>
-</span>
-<span class="tag-2">
-	<a href="../tag/microsoft.html">
-		<i class="icon-tag icon-large"></i>microsoft
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/creationism.html">
-		<i class="icon-tag icon-large"></i>creationism
-	</a>
-</span>
-<span class="tag-4">
-	<a href="../tag/sjtu.html">
-		<i class="icon-tag icon-large"></i>sjtu
-	</a>
-</span>
-<span class="tag-4">
 	<a href="../tag/C++.html">
 		<i class="icon-tag icon-large"></i>C++
 	</a>
 </span>
 <span class="tag-4">
-	<a href="../tag/you.html">
-		<i class="icon-tag icon-large"></i>you
+	<a href="../tag/me.html">
+		<i class="icon-tag icon-large"></i>me
 	</a>
 </span>
 <span class="tag-4">
-	<a href="../tag/msr.html">
-		<i class="icon-tag icon-large"></i>msr
+	<a href="../tag/repository.html">
+		<i class="icon-tag icon-large"></i>repository
 	</a>
 </span>
 <span class="tag-4">
@@ -589,9 +400,69 @@ Detector，似乎我要给井上研做的就是这个。想更多了解Xiao的�
 		<i class="icon-tag icon-large"></i>yssy
 	</a>
 </span>
+<span class="tag-2">
+	<a href="../tag/microsoft.html">
+		<i class="icon-tag icon-large"></i>microsoft
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/you.html">
+		<i class="icon-tag icon-large"></i>you
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/msr.html">
+		<i class="icon-tag icon-large"></i>msr
+	</a>
+</span>
+<span class="tag-2">
+	<a href="../tag/icse.html">
+		<i class="icon-tag icon-large"></i>icse
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/java.html">
+		<i class="icon-tag icon-large"></i>java
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/sjtu.html">
+		<i class="icon-tag icon-large"></i>sjtu
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/creationism.html">
+		<i class="icon-tag icon-large"></i>creationism
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/mining.html">
+		<i class="icon-tag icon-large"></i>mining
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/marry.html">
+		<i class="icon-tag icon-large"></i>marry
+	</a>
+</span>
 <span class="tag-4">
 	<a href="../tag/will.html">
 		<i class="icon-tag icon-large"></i>will
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/linux.html">
+		<i class="icon-tag icon-large"></i>linux
+	</a>
+</span>
+<span class="tag-2">
+	<a href="../tag/software.html">
+		<i class="icon-tag icon-large"></i>software
+	</a>
+</span>
+<span class="tag-4">
+	<a href="../tag/ruby.html">
+		<i class="icon-tag icon-large"></i>ruby
 	</a>
 </span>
 <!--
@@ -651,15 +522,11 @@ new TWTR.Widget({
 
       <hr>
 
-      <footer>
+      <footer><small>
         <address id="about">
-                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
-				which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+          <p>Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>, which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>. The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
         </address><!-- /#about -->
-
-        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, 
-		   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
-      </footer>
+      </small></footer>
 
     </div><!--/.fluid-container-->
 

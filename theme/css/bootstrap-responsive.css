@@ -21,6 +21,7 @@
   display: none;
   visibility: hidden;
 }
+
 @media (max-width: 480px) {
   body {
       font-size:12px;
@@ -401,7 +402,7 @@
 @media (min-width: 980px) {
   body {
     font-size:20px;
-    padding-top: 60px;
+    padding-top: 80px;
     padding-bottom: 40px;
   }
   .nav-collapse.collapse {
@@ -411,7 +412,7 @@
 @media (min-width: 1200px) {
   body {
     font-size:24px;
-    padding-top: 60px;
+    padding-top: 100px;
     padding-bottom: 40px;
   }
   .row {
