@@ -1,30 +1,25 @@
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
 .sidebar-nav {
   padding: 9px 0;
-  font-size: 12pt;
+  font-size: 1em;
 }
 
 .tag-1 {
-	font-size: 16pt;
+	font-size: 1.5em;
 }
 
 .tag-2 {
-	font-size: 11pt;
+	font-size: 1.3em;
 }
 
 .tag-3 {
-	font-size: 9pt;
+	font-size: 1em;
 }
 
 .tag-4 {
-	font-size: 8pt;
+	font-size: 0.8em;
 }
 
 .nav-header > h4{
-    font-size: 14pt;
+    font-size: 1em;
 }
 

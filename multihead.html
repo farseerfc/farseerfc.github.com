@@ -93,7 +93,8 @@
 					title="Permalink to GNU/Linux上多顯示器支持之現狀">
 					GNU/Linux上多顯示器支持之現狀 
 				</a>
-				<a href="http://twitter.com/share" class="twitter-share-button" 
+				<!--
+<a href="http://twitter.com/share" class="twitter-share-button" 
    data-count="horizontal" data-via="farseerfc">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
@@ -119,6 +120,7 @@
   document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
 })()
 </script>
+-->
  
 			</h1> 
 		</header>
@@ -126,8 +128,8 @@
 		<div class="well">
 			<footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2013-02-13T14:20:21">
-	<i class="icon-calendar"></i>2013-02-13
+<abbr class="published" title="2013-02-23T14:20:21">
+	<i class="icon-calendar"></i>2013-02-23
 </abbr>
 <span class="label">By</span>
 <a href="./author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
@@ -154,7 +156,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#wayland" id="id11">轉　Wayland是未來麼？</a></li>
-<li><a class="reference internal" href="#id6" id="id12">合　別的系統上的多顯示器支持</a></li>
+<li><a class="reference internal" href="#id6" id="id12">合　別的系統對多顯示器的支持</a></li>
 </ul>
 </div>
 <div class="section" id="id1">
@@ -187,8 +189,8 @@ Windows 和 OSX ，其原因必將是多方面的，多顯示器支持(<a class=
 <div class="section" id="x11-multiseat">
 <h3><a class="toc-backref" href="#id9">零　傳統 X11 協議的 Multiseat 支持</a></h3>
 <p>我不知道 <a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration">Multiseat</a>
-這個術語翻譯成中文的話應該怎麼寫，直譯作「多座位」的話感覺不明所以，翻譯成
-「多終端」的話容易讓人聯想到早期 <a class="reference external" href="http://zh.wikipedia.org/wiki/電傳">電傳打字機</a> 組成的終端設備，於是留作 Multiseat
+這個術語翻譯成中文的話應該怎麼寫，如果直譯作「多座位」會感覺不明所以，如果
+翻譯成「多終端」會讓人聯想到早期 <a class="reference external" href="http://zh.wikipedia.org/wiki/電傳">電傳打字機</a> 組成的終端設備，於是留作 Multiseat
 不譯。Multiseat 的概念很簡單，就是多個用戶通過多組輸入輸出設備（通常是鼠標、
 鍵盤、顯示器）登錄到同一臺服務器上，各自獨立執行自己的程序。</p>
 <p>Multiseat 應該不屬於 Multihead 的一種，只是爲了完整性這裏也說一下傳統 X11
@@ -207,8 +209,8 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 提供虛擬的顯示設備，比如圖中的 Xephyr 就是把一個窗口的區域虛擬成一套獨立的
 顯示設備，從而用於調試等工作，再比如 Xvnc 就是一個基於 VNC 的 X server 。</p>
 <div class="well topic">
-<p class="topic-title first">關於 X 裏面 server/client 的稱呼</p>
-<p>X 和很多別的程序對 server 和 client 的稱呼不一樣。對於一般的服務器/客戶端
+<p class="topic-title first">關於 X 協議中對 server/client 的稱呼</p>
+<p>X 和很多別的程序對 server 和 client 的稱呼不一致。對於一般的服務器/客戶端
 程序而言，通常把運行在遠程機器上的程序稱爲服務器，比如數據庫服務器或者
 計算服務器。而對於 X 而言，連着鼠標和顯示器的，你眼前的這臺機器纔是 X 的
 服務器，在遠程運行程序的是客戶端。</p>
@@ -222,7 +224,7 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 <h2><a class="toc-backref" href="#id11">轉　Wayland是未來麼？</a></h2>
 </div>
 <div class="section" id="id6">
-<h2><a class="toc-backref" href="#id12">合　別的系統上的多顯示器支持</a></h2>
+<h2><a class="toc-backref" href="#id12">合　別的系統對多顯示器的支持</a></h2>
 </div>
 
 		</div><!-- /.entry-content -->
@@ -284,132 +286,132 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<li class="tag-4">
-    <a href="./tag/marry.html">
-        <i class="icon-tag icon-large"></i>marry
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/music.html">
-        <i class="icon-tag icon-large"></i>music
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/java.html">
-        <i class="icon-tag icon-large"></i>java
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/sjtu.html">
-        <i class="icon-tag icon-large"></i>sjtu
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/you.html">
-        <i class="icon-tag icon-large"></i>you
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
-    </a>
-</li>
-<li class="tag-2">
-    <a href="./tag/microsoft.html">
-        <i class="icon-tag icon-large"></i>microsoft
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/msr.html">
-        <i class="icon-tag icon-large"></i>msr
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/mining.html">
-        <i class="icon-tag icon-large"></i>mining
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/creationism.html">
-        <i class="icon-tag icon-large"></i>creationism
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/C++.html">
-        <i class="icon-tag icon-large"></i>C++
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/wayland.html">
-        <i class="icon-tag icon-large"></i>wayland
-    </a>
-</li>
-<li class="tag-1">
-    <a href="./tag/python.html">
-        <i class="icon-tag icon-large"></i>python
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/ruby.html">
-        <i class="icon-tag icon-large"></i>ruby
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/X11.html">
-        <i class="icon-tag icon-large"></i>X11
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/acpi.html">
-        <i class="icon-tag icon-large"></i>acpi
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/repository.html">
-        <i class="icon-tag icon-large"></i>repository
-    </a>
-</li>
-<li class="tag-2">
-    <a href="./tag/software.html">
-        <i class="icon-tag icon-large"></i>software
-    </a>
-</li>
-<li class="tag-2">
-    <a href="./tag/linux.html">
-        <i class="icon-tag icon-large"></i>linux
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/me.html">
-        <i class="icon-tag icon-large"></i>me
-    </a>
-</li>
-<li class="tag-2">
-    <a href="./tag/icse.html">
-        <i class="icon-tag icon-large"></i>icse
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/template.html">
-        <i class="icon-tag icon-large"></i>template
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/yssy.html">
-        <i class="icon-tag icon-large"></i>yssy
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/will.html">
-        <i class="icon-tag icon-large"></i>will
-    </a>
-</li>
-<li class="tag-4">
-    <a href="./tag/multihead.html">
-        <i class="icon-tag icon-large"></i>multihead
-    </a>
-</li>
-
+<span class="tag-2">
+	<a href="./tag/software.html">
+		<i class="icon-tag icon-large"></i>software
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/marry.html">
+		<i class="icon-tag icon-large"></i>marry
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/me.html">
+		<i class="icon-tag icon-large"></i>me
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/X11.html">
+		<i class="icon-tag icon-large"></i>X11
+	</a>
+</span>
+<span class="tag-2">
+	<a href="./tag/linux.html">
+		<i class="icon-tag icon-large"></i>linux
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/music.html">
+		<i class="icon-tag icon-large"></i>music
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/creationism.html">
+		<i class="icon-tag icon-large"></i>creationism
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/repository.html">
+		<i class="icon-tag icon-large"></i>repository
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/mining.html">
+		<i class="icon-tag icon-large"></i>mining
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/java.html">
+		<i class="icon-tag icon-large"></i>java
+	</a>
+</span>
+<span class="tag-1">
+	<a href="./tag/python.html">
+		<i class="icon-tag icon-large"></i>python
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/C++.html">
+		<i class="icon-tag icon-large"></i>C++
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/wayland.html">
+		<i class="icon-tag icon-large"></i>wayland
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/msr.html">
+		<i class="icon-tag icon-large"></i>msr
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/sjtu.html">
+		<i class="icon-tag icon-large"></i>sjtu
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/acpi.html">
+		<i class="icon-tag icon-large"></i>acpi
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/multihead.html">
+		<i class="icon-tag icon-large"></i>multihead
+	</a>
+</span>
+<span class="tag-2">
+	<a href="./tag/icse.html">
+		<i class="icon-tag icon-large"></i>icse
+	</a>
+</span>
+<span class="tag-2">
+	<a href="./tag/microsoft.html">
+		<i class="icon-tag icon-large"></i>microsoft
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/yssy.html">
+		<i class="icon-tag icon-large"></i>yssy
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/ruby.html">
+		<i class="icon-tag icon-large"></i>ruby
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/pelican.html">
+		<i class="icon-tag icon-large"></i>pelican
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/you.html">
+		<i class="icon-tag icon-large"></i>you
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/will.html">
+		<i class="icon-tag icon-large"></i>will
+	</a>
+</span>
+<span class="tag-4">
+	<a href="./tag/template.html">
+		<i class="icon-tag icon-large"></i>template
+	</a>
+</span>
+<!--
 <li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
@@ -439,6 +441,7 @@ new TWTR.Widget({
   }
 }).render().setUser('farseerfc').start();
 </script>
+-->
 <li class="nav-header"><h4><i class="icon-search"></i>Google Search</h4></li>
 <div id="cse" style="width: 100%;">Loading</div>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>

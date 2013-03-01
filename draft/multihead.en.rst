@@ -3,7 +3,7 @@ State of Multihead Support on Linux
 
 :slug: multihead
 :lang: en
-:date: 2013-02-13 14:20:21
+:date: 2013-02-23 14:20:21
 :tags: multihead, X11, wayland, linux
 
 Recently our lab have purchased some 27 inch monitors, so I got one on my

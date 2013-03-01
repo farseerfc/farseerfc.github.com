@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com/" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/X11.atom.xml" rel="self"></link><id>http://farseerfc.github.com/</id><updated>2013-02-13T14:20:21+09:00</updated><entry><title>State of Multihead Support on Linux</title><link href="http://farseerfc.github.com/multihead-en.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead-en.html</id><summary type="html">&lt;p&gt;Recently our lab have purchased some 27 inch monitors, so I got one on my
-desktop.&lt;/p&gt;
-&lt;p&gt;研究室新進了27吋大顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏翻出了1臺小顯示器和一塊Radeon顯卡，
-組成4顯示器的配置。沒想到添加硬件本身很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰
-各種配置文件甚至改寫源代碼(xorg, awesome, compton, ...）經過了1個多月之後，現在的配置總算比較滿意，
-能夠讓我正常工作了。&lt;/p&gt;
-</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>GNU/Linux上多顯示器支持之現狀</title><link href="http://farseerfc.github.com/multihead.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Farseerfc Blog</title><link href="http://farseerfc.github.com/" rel="alternate"></link><link href="http://farseerfc.github.com/feeds/X11.atom.xml" rel="self"></link><id>http://farseerfc.github.com/</id><updated>2013-02-23T14:20:21+09:00</updated><entry><title>GNU/Linux上多顯示器支持之現狀</title><link href="http://farseerfc.github.com/multihead.html" rel="alternate"></link><updated>2013-02-23T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-23:multihead.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id1" id="id7"&gt;起　背景&lt;/a&gt;&lt;/li&gt;
@@ -15,7 +9,7 @@ desktop.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#wayland" id="id11"&gt;轉　Wayland是未來麼？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　別的系統上的多顯示器支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　別的系統對多顯示器的支持&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
@@ -48,8 +42,8 @@ Windows 和 OSX ，其原因必將是多方面的，多顯示器支持(&lt;a cla
 &lt;div class="section" id="x11-multiseat"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id9"&gt;零　傳統 X11 協議的 Multiseat 支持&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;我不知道 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration"&gt;Multiseat&lt;/a&gt;
-這個術語翻譯成中文的話應該怎麼寫，直譯作「多座位」的話感覺不明所以，翻譯成
-「多終端」的話容易讓人聯想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/電傳"&gt;電傳打字機&lt;/a&gt; 組成的終端設備，於是留作 Multiseat
+這個術語翻譯成中文的話應該怎麼寫，如果直譯作「多座位」會感覺不明所以，如果
+翻譯成「多終端」會讓人聯想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/電傳"&gt;電傳打字機&lt;/a&gt; 組成的終端設備，於是留作 Multiseat
 不譯。Multiseat 的概念很簡單，就是多個用戶通過多組輸入輸出設備（通常是鼠標、
 鍵盤、顯示器）登錄到同一臺服務器上，各自獨立執行自己的程序。&lt;/p&gt;
 &lt;p&gt;Multiseat 應該不屬於 Multihead 的一種，只是爲了完整性這裏也說一下傳統 X11
@@ -68,8 +62,8 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 提供虛擬的顯示設備，比如圖中的 Xephyr 就是把一個窗口的區域虛擬成一套獨立的
 顯示設備，從而用於調試等工作，再比如 Xvnc 就是一個基於 VNC 的 X server 。&lt;/p&gt;
 &lt;div class="well topic"&gt;
-&lt;p class="topic-title first"&gt;關於 X 裏面 server/client 的稱呼&lt;/p&gt;
-&lt;p&gt;X 和很多別的程序對 server 和 client 的稱呼不一樣。對於一般的服務器/客戶端
+&lt;p class="topic-title first"&gt;關於 X 協議中對 server/client 的稱呼&lt;/p&gt;
+&lt;p&gt;X 和很多別的程序對 server 和 client 的稱呼不一致。對於一般的服務器/客戶端
 程序而言，通常把運行在遠程機器上的程序稱爲服務器，比如數據庫服務器或者
 計算服務器。而對於 X 而言，連着鼠標和顯示器的，你眼前的這臺機器纔是 X 的
 服務器，在遠程運行程序的是客戶端。&lt;/p&gt;
@@ -83,9 +77,15 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 &lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;轉　Wayland是未來麼？&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　別的系統上的多顯示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　別的系統對多顯示器的支持&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
-</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>GNU/Linux上多显示器支持之现状</title><link href="http://farseerfc.github.com/multihead-zhs.html" rel="alternate"></link><updated>2013-02-13T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-13:multihead-zhs.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>State of Multihead Support on Linux</title><link href="http://farseerfc.github.com/multihead-en.html" rel="alternate"></link><updated>2013-02-23T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-23:multihead-en.html</id><summary type="html">&lt;p&gt;Recently our lab have purchased some 27 inch monitors, so I got one on my
+desktop.&lt;/p&gt;
+&lt;p&gt;研究室新進了27吋大顯示器，安置了1臺在我的辦公桌上。於是又從報廢的機器堆裏翻出了1臺小顯示器和一塊Radeon顯卡，
+組成4顯示器的配置。沒想到添加硬件本身很容易，讓它們在我的Archlinux上正常工作卻花了不少時間。來來回回折騰
+各種配置文件甚至改寫源代碼(xorg, awesome, compton, ...）經過了1個多月之後，現在的配置總算比較滿意，
+能夠讓我正常工作了。&lt;/p&gt;
+</summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry><entry><title>GNU/Linux上多显示器支持之现状</title><link href="http://farseerfc.github.com/multihead-zhs.html" rel="alternate"></link><updated>2013-02-23T14:20:21+09:00</updated><author><name>Jiachen Yang</name></author><id>tag:farseerfc.github.com,2013-02-23:multihead-zhs.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id1" id="id7"&gt;起　背景&lt;/a&gt;&lt;/li&gt;
@@ -95,7 +95,7 @@ Display 號碼，通常從 0 開始計算。服務器名加上 Display 號構成
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#wayland" id="id11"&gt;转　Wayland是未来么？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　别的系统上的多显示器支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;合　别的系统对多显示器的支持&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
@@ -128,8 +128,8 @@ Windows 和 OSX ，其原因必将是多方面的，多显示器支持(&lt;a cla
 &lt;div class="section" id="x11-multiseat"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id9"&gt;零　传统 X11 协议的 Multiseat 支持&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;我不知道 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Multiseat_configuration"&gt;Multiseat&lt;/a&gt;
-这个术语翻译成中文的话应该怎么写，直译作「多座位」的话感觉不明所以，翻译成
-「多终端」的话容易让人联想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/电传"&gt;电传打字机&lt;/a&gt; 组成的终端设备，于是留作 Multiseat
+这个术语翻译成中文的话应该怎么写，如果直译作「多座位」会感觉不明所以，如果
+翻译成「多终端」会让人联想到早期 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/电传"&gt;电传打字机&lt;/a&gt; 组成的终端设备，于是留作 Multiseat
 不译。Multiseat 的概念很简单，就是多个用户通过多组输入输出设备（通常是鼠标、
 键盘、显示器）登录到同一台服务器上，各自独立执行自己的程序。&lt;/p&gt;
 &lt;p&gt;Multiseat 应该不属于 Multihead 的一种，只是为了完整性这里也说一下传统 X11
@@ -148,8 +148,8 @@ Display 号码，通常从 0 开始计算。服务器名加上 Display 号构成
 提供虚拟的显示设备，比如图中的 Xephyr 就是把一个窗口的区域虚拟成一套独立的
 显示设备，从而用于调试等工作，再比如 Xvnc 就是一个基于 VNC 的 X server 。&lt;/p&gt;
 &lt;div class="well topic"&gt;
-&lt;p class="topic-title first"&gt;关于 X 里面 server/client 的称呼&lt;/p&gt;
-&lt;p&gt;X 和很多别的程序对 server 和 client 的称呼不一样。对于一般的服务器/客户端
+&lt;p class="topic-title first"&gt;关于 X 协议中对 server/client 的称呼&lt;/p&gt;
+&lt;p&gt;X 和很多别的程序对 server 和 client 的称呼不一致。对于一般的服务器/客户端
 程序而言，通常把运行在远程机器上的程序称为服务器，比如数据库服务器或者
 计算服务器。而对于 X 而言，连着鼠标和显示器的，你眼前的这台机器才是 X 的
 服务器，在远程运行程序的是客户端。&lt;/p&gt;
@@ -163,6 +163,6 @@ Display 号码，通常从 0 开始计算。服务器名加上 Display 号构成
 &lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;转　Wayland是未来么？&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　别的系统上的多显示器支持&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;合　别的系统对多显示器的支持&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 </summary><category term="multihead"></category><category term="X11"></category><category term="wayland"></category><category term="linux"></category></entry></feed>
