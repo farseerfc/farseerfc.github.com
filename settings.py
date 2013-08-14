@@ -13,6 +13,8 @@ DATE_FORMATS = {
 #          u'en_US.utf8', u'zh_CN.utf8', u'ja_JP.utf8']  # Unix/Linux
 DEFAULT_LANG = 'zh'
 
+LOCALE = "C"
+
 SITENAME = 'Farseerfc Blog'
 AUTHOR = 'Jiachen Yang'
 
@@ -38,7 +40,7 @@ SIDEBAR_CUSTOM = r"""
 GOOGLE_CUSTOM_SEARCH_SIDEBAR = "001578481551708017171:axpo6yvtdyg"
 GOOGLE_CUSTOM_SEARCH_NAVBAR = "001578481551708017171:hxkva69brmg"
 
-THEME = 'bootstrap2'
+THEME = './bootstrap2'
 #THEME='notmyidea'
 #CSS_FILE = "wide.css"
 

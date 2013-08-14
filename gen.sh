@@ -1,3 +1,3 @@
-pypy cc.py
+python2 cc.py
 rm -rfv opencc/input.txt opencc/output.txt
-pelican -s settings.py
+pelican -v -s settings.py

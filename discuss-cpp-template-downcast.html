@@ -7,18 +7,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
   <!-- Le styles -->
-  <link href="./theme/css/html4css1.css" rel="stylesheet">
-  <link rel="stylesheet" href="./theme/css/bootstrap.css" type="text/css" />
-  <link href="./theme/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="./theme/css/font-awesome.css" rel="stylesheet">
-  <link href="./theme/css/pygments.css" rel="stylesheet">
-  <link href="./theme/css/local.css" rel="stylesheet">
+  <link href="http://farseerfc.github.com/theme/css/html4css1.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://farseerfc.github.com/theme/css/bootstrap.css" type="text/css" />
+  <link href="http://farseerfc.github.com/theme/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="http://farseerfc.github.com/theme/css/font-awesome.css" rel="stylesheet">
+  <link href="http://farseerfc.github.com/theme/css/pygments.css" rel="stylesheet">
+  <link href="http://farseerfc.github.com/theme/css/local.css" rel="stylesheet">
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <link href="./" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
+  <link href="http://farseerfc.github.com/" type="application/atom+xml" rel="alternate" title="Farseerfc Blog ATOM Feed" />
   
   </head>
 
@@ -32,34 +32,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>-->
-          <a class="brand" href="./index.html">Farseerfc Blog </a>
+          <a class="brand" href="http://farseerfc.github.com/index.html">Farseerfc Blog </a>
           <div class="fcnav-collapse">
             <ul class="nav">
-                                                          <li><a href="./pages/about.html">About</a></li>
+                                                          <li><a href="http://farseerfc.github.com/pages/about.html">About</a></li>
               			  <li class="divider-vertical"></li>
                                               <li class="active">
-                    <a href="./category/c.html">
+                    <a href="http://farseerfc.github.com/category/c.html">
 						<i class="icon-folder-open icon-large"></i>c
 					</a>
                   </li>
                                 <li >
-                    <a href="./category/life.html">
+                    <a href="http://farseerfc.github.com/category/life.html">
 						<i class="icon-folder-open icon-large"></i>life
 					</a>
                   </li>
                                 <li >
-                    <a href="./category/python.html">
+                    <a href="http://farseerfc.github.com/category/python.html">
 						<i class="icon-folder-open icon-large"></i>python
 					</a>
                   </li>
                                 <li >
-                    <a href="./category/renren.html">
+                    <a href="http://farseerfc.github.com/category/renren.html">
 						<i class="icon-folder-open icon-large"></i>renren
 					</a>
                   </li>
               			  
 			  <ul class="nav pull-right">
-				<li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+				<li><a href="http://farseerfc.github.com/archives.html"><i class="icon-th-list"></i>Archives</a></li>
 			  </ul>
 			  
             </ul>
@@ -98,17 +98,17 @@
 	<i class="icon-calendar"></i>2012年02月26日(週日)
 </abbr>
 <span class="label">By</span>
-<a href="./author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
+<a href="http://farseerfc.github.com/author/jiachen-yang.html"><i class="icon-user"></i>Jiachen Yang</a>
 <span class="label">Category</span>
-<a href="./category/c.html"><i class="icon-folder-open"></i>c</a>. 
+<a href="http://farseerfc.github.com/category/c.html"><i class="icon-folder-open"></i>c</a>. 
 
 	
 <span class="label">Tags</span> 
-	<a href="./tag/c.html"><i class="icon-tag"></i>C++</a>
-	<a href="./tag/template.html"><i class="icon-tag"></i>template</a>
+	<a href="http://farseerfc.github.com/tag/c.html"><i class="icon-tag"></i>C++</a>
+	<a href="http://farseerfc.github.com/tag/template.html"><i class="icon-tag"></i>template</a>
 <span class="label">Lang</span>
-	<a href="./discuss-cpp-template-downcast-en.html"><i class="icon-edit"></i>en</a>
-	<a href="./discuss-cpp-template-downcast-zhs.html"><i class="icon-edit"></i>zhs</a>
+	<a href="http://farseerfc.github.com/discuss-cpp-template-downcast-zhs.html"><i class="icon-edit"></i>zhs</a>
+	<a href="http://farseerfc.github.com/discuss-cpp-template-downcast-en.html"><i class="icon-edit"></i>en</a>
 </footer><!-- /.post-info -->		</div>
 		<p>這兩天在飲水思源的C板，關於C++模板的類型轉換的一個討論，後面是我的解答。</p>
 <div class="section" id="id1">
@@ -122,7 +122,7 @@
 <span class="k">struct</span> <span class="n">enable_if</span> <span class="p">{</span> <span class="p">};</span>
 
 <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">_Type</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="kc">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">struct</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="nb">true</span><span class="p">,</span> <span class="n">_Type</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">typedef</span> <span class="n">_Type</span> <span class="n">type</span><span class="p">;</span>
 <span class="p">};</span>
 
@@ -130,10 +130,10 @@
 <span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span> <span class="p">{</span> <span class="p">};</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="n">traits</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">struct</span> <span class="n">traits</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="p">};</span>
 
 <span class="k">template</span> <span class="o">&lt;&gt;</span>
-<span class="k">struct</span> <span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">struct</span> <span class="n">traits</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">const</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">};</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">*</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
@@ -151,7 +151,7 @@
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">ff</span><span class="p">(</span><span class="n">BB</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{};</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
     <span class="n">A</span> <span class="n">a</span><span class="p">;</span> <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
     <span class="n">DD</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">dd</span><span class="p">;</span>
@@ -232,7 +232,7 @@
                 <div class="sidebar-nav">
                     <ul class="nav nav-list">
 <li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
-<li><a href="./" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+<li><a href="http://farseerfc.github.com/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
     <li><a href="http://twitter.com/farseerfc"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
     <li><a href="https://github.com/farseerfc"><i class="icon-github-sign icon-large"></i>github</a></li>
     <li><a href="http://www.facebook.com/farseerfc"><i class="icon-facebook-sign icon-large"></i>facebook</a></li>
@@ -241,135 +241,135 @@
 
 <li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
 <li>
-<a href="./category/c.html">
+<a href="http://farseerfc.github.com/category/c.html">
     <i class="icon-folder-open icon-large"></i>c
 </a>
 </li>
 <li>
-<a href="./category/life.html">
+<a href="http://farseerfc.github.com/category/life.html">
     <i class="icon-folder-open icon-large"></i>life
 </a>
 </li>
 <li>
-<a href="./category/python.html">
+<a href="http://farseerfc.github.com/category/python.html">
     <i class="icon-folder-open icon-large"></i>python
 </a>
 </li>
 <li>
-<a href="./category/renren.html">
+<a href="http://farseerfc.github.com/category/renren.html">
     <i class="icon-folder-open icon-large"></i>renren
 </a>
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<span class="tag-4">
-	<a href="./tag/creationism.html">
-		<i class="icon-tag icon-large"></i>creationism
+<span class="tag-2">
+	<a href="http://farseerfc.github.com/tag/icse.html">
+		<i class="icon-tag icon-large"></i>icse
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/pelican.html">
-		<i class="icon-tag icon-large"></i>pelican
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/C++.html">
-		<i class="icon-tag icon-large"></i>C++
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/repository.html">
-		<i class="icon-tag icon-large"></i>repository
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/acpi.html">
-		<i class="icon-tag icon-large"></i>acpi
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/music.html">
-		<i class="icon-tag icon-large"></i>music
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/mining.html">
-		<i class="icon-tag icon-large"></i>mining
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/yssy.html">
-		<i class="icon-tag icon-large"></i>yssy
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/ruby.html">
-		<i class="icon-tag icon-large"></i>ruby
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/java.html">
+	<a href="http://farseerfc.github.com/tag/java.html">
 		<i class="icon-tag icon-large"></i>java
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/marry.html">
-		<i class="icon-tag icon-large"></i>marry
+	<a href="http://farseerfc.github.com/tag/pelican.html">
+		<i class="icon-tag icon-large"></i>pelican
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/sjtu.html">
-		<i class="icon-tag icon-large"></i>sjtu
-	</a>
-</span>
-<span class="tag-2">
-	<a href="./tag/icse.html">
-		<i class="icon-tag icon-large"></i>icse
-	</a>
-</span>
-<span class="tag-2">
-	<a href="./tag/software.html">
-		<i class="icon-tag icon-large"></i>software
+	<a href="http://farseerfc.github.com/tag/ruby.html">
+		<i class="icon-tag icon-large"></i>ruby
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/linux.html">
-		<i class="icon-tag icon-large"></i>linux
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/me.html">
-		<i class="icon-tag icon-large"></i>me
-	</a>
-</span>
-<span class="tag-1">
-	<a href="./tag/python.html">
-		<i class="icon-tag icon-large"></i>python
-	</a>
-</span>
-<span class="tag-4">
-	<a href="./tag/you.html">
+	<a href="http://farseerfc.github.com/tag/you.html">
 		<i class="icon-tag icon-large"></i>you
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/will.html">
+	<a href="http://farseerfc.github.com/tag/will.html">
 		<i class="icon-tag icon-large"></i>will
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/msr.html">
+	<a href="http://farseerfc.github.com/tag/acpi.html">
+		<i class="icon-tag icon-large"></i>acpi
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/mining.html">
+		<i class="icon-tag icon-large"></i>mining
+	</a>
+</span>
+<span class="tag-1">
+	<a href="http://farseerfc.github.com/tag/python.html">
+		<i class="icon-tag icon-large"></i>python
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/repository.html">
+		<i class="icon-tag icon-large"></i>repository
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/C++.html">
+		<i class="icon-tag icon-large"></i>C++
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/marry.html">
+		<i class="icon-tag icon-large"></i>marry
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/sjtu.html">
+		<i class="icon-tag icon-large"></i>sjtu
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/template.html">
+		<i class="icon-tag icon-large"></i>template
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/creationism.html">
+		<i class="icon-tag icon-large"></i>creationism
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/msr.html">
 		<i class="icon-tag icon-large"></i>msr
 	</a>
 </span>
 <span class="tag-2">
-	<a href="./tag/microsoft.html">
-		<i class="icon-tag icon-large"></i>microsoft
+	<a href="http://farseerfc.github.com/tag/software.html">
+		<i class="icon-tag icon-large"></i>software
 	</a>
 </span>
 <span class="tag-4">
-	<a href="./tag/template.html">
-		<i class="icon-tag icon-large"></i>template
+	<a href="http://farseerfc.github.com/tag/linux.html">
+		<i class="icon-tag icon-large"></i>linux
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/yssy.html">
+		<i class="icon-tag icon-large"></i>yssy
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/me.html">
+		<i class="icon-tag icon-large"></i>me
+	</a>
+</span>
+<span class="tag-4">
+	<a href="http://farseerfc.github.com/tag/music.html">
+		<i class="icon-tag icon-large"></i>music
+	</a>
+</span>
+<span class="tag-2">
+	<a href="http://farseerfc.github.com/tag/microsoft.html">
+		<i class="icon-tag icon-large"></i>microsoft
 	</a>
 </span>
 <!--
@@ -462,20 +462,20 @@ pageTracker._trackPageview();
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./theme/js/jquery.js"></script>
-    <script src="./theme/js/bootstrap-transition.js"></script>
-    <script src="./theme/js/bootstrap-alert.js"></script>
-    <script src="./theme/js/bootstrap-modal.js"></script>
-    <script src="./theme/js/bootstrap-dropdown.js"></script>
-    <script src="./theme/js/bootstrap-scrollspy.js"></script>
-    <script src="./theme/js/bootstrap-tab.js"></script>
-    <script src="./theme/js/bootstrap-tooltip.js"></script>
-    <script src="./theme/js/bootstrap-popover.js"></script>
-    <script src="./theme/js/bootstrap-button.js"></script>
-    <script src="./theme/js/bootstrap-collapse.js"></script>
-    <script src="./theme/js/bootstrap-carousel.js"></script>
-    <script src="./theme/js/bootstrap-typeahead.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/jquery.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-transition.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-alert.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-modal.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-dropdown.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-scrollspy.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-tab.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-tooltip.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-popover.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-button.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-collapse.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-carousel.js"></script>
+    <script src="http://farseerfc.github.com/theme/js/bootstrap-typeahead.js"></script>
 	
-	<!--<script src="./theme/js/autosidebar.js"></script>-->
+	<!--<script src="http://farseerfc.github.com/theme/js/autosidebar.js"></script>-->
   </body>
 </html>
