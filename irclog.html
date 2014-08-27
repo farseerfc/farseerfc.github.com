@@ -78,45 +78,39 @@
 }
 </style></head><body><a href="./irclog_files/irclog.html">First</a> <a href="./irclog_files/irclog.html">Last</a> <a href="http://localhost:8080/channel/yssyd3">Full</a> <a href="http://localhost:8080/">Home</a><br>
 <div class="highlight"><pre><span class="cp">Aug 27 12:29:04 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">[Olaf-test] JOIN yssyd3</span>
+<span class="cp">Aug 27 12:29:27 </span><span class="nt">&lt;farseerfc&gt; </span>似乎成了？
+<span class="cp">Aug 27 12:29:43 </span><span class="nt">&lt;LQYMGT&gt; </span>貌似是的。。
+<span class="cp">Aug 27 12:30:29 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">但是沒有server啊，localhost:</span>6666不能訪問
+<span class="cp">Aug 27 12:31:50 </span><span class="nt">&lt;farseerfc&gt; </span>哦原來在8080
+<span class="cp">Aug 27 12:31:56 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">zzzzzzzz JOIN yssyd3</span>
+<span class="cp">Aug 27 12:32:22 </span><span class="nt">&lt;farseerfc&gt; </span>good
+<span class="cp">Aug 27 12:35:08 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">fixme JOIN yssyd3</span>
+<span class="cp">Aug 27 12:35:36 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> 没错，是DO
+<span class="cp">Aug 27 12:35:41 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> 怎么了？
+<span class="cp">Aug 27 12:39:22 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 你跑的是daemon还是test？
+<span class="cp">Aug 27 12:40:29 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">fixme:</span> daemon和server都跑起來啦，現在在嘗試加pygments支持
+<span class="cp">Aug 27 12:41:54 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 直接在channel里改html不久可以了嘛
+<span class="cp">Aug 27 12:41:59 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> ping
+<span class="cp">Aug 27 12:43:33 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">[Olaf-test] JOIN yssyd3</span>
+<span class="cp">Aug 27 12:43:35 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> go get是标准的Unix哲学，没有问题就一声不吭
+<span class="cp">Aug 27 12:44:59 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">fixme:</span> 話說tmpl.Execute的第一個是Writer麼？怎麼讓他產生一個字符串輸出？
+<span class="cp">Aug 27 12:47:07 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> https://groups.google.com/forum/#!topic/golang-nuts/dSFHCV-e6Nw
+<span class="cp">Aug 27 12:48:01 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 用bytes.Buffer
+<span class="cp">Aug 27 12:48:04 </span><span class="nt">&lt;LQYMGT&gt; </span><span class="na">fixme:</span> 哦……
+<span class="cp">Aug 27 12:49:04 </span><span class="nt">&lt;farseerfc&gt; </span>原來需要取地址……我直接var buf bytes.Buffer之後傳給他報錯……
+<span class="cp">Aug 27 13:09:42 </span><span class="nt">&lt;farseerfc&gt; </span>http://farseerfc.github.io/irclog.html
+<span class="cp">Aug 27 13:09:54 </span><span class="nt">&lt;farseerfc&gt; </span>有點醜……
+<span class="cp">Aug 27 13:10:29 </span><span class="nt">&lt;LQYMGT&gt; </span>醜 什么意思？
+<span class="cp">Aug 27 13:10:54 </span><span class="nt">&lt;farseerfc&gt; </span>丑的繁體字
+<span class="cp">Aug 27 13:11:19 </span><span class="nt">&lt;fixme&gt; </span><span class="na">LQYMGT:</span> 没文化，真可怕
+<span class="cp">Aug 27 13:11:39 </span><span class="nt">&lt;farseerfc&gt; </span>丑這個字原本只是天干裏丑時的丑，和醜陋的醜只是讀音相同，簡化字的時候合併了……
+<span class="cp">Aug 27 13:12:46 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">LQYMGT JOIN yssyd3</span>
+<span class="cp">Aug 27 13:12:57 </span><span class="nt">&lt;LQYMGT&gt; </span>居然掉线了……
+<span class="cp">Aug 27 13:13:19 </span><span class="nt">&lt;LQYMGT&gt; </span><span class="na">fixme:</span> 我语文比较差你不要欺负我。。。
+<span class="cp">Aug 27 13:13:54 </span><span class="nt">&lt;LQYMGT&gt; </span><span class="na">farseerfc:</span> 你那个看起来比fixme的累欸……
+<span class="cp">Aug 27 13:13:56 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 间距好大
+<span class="cp">Aug 27 13:14:25 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 要不我做成json的接口吧
+<span class="cp">Aug 27 13:19:13 </span><span class="nt">&lt;farseerfc&gt; </span>間距大是因爲每一行單獨調用pygments了
+<span class="cp">Aug 27 13:19:23 </span><span class="nt">&lt;farseerfc&gt; </span>正在改成多行一起調用
 </pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:29:27 </span><span class="nt">&lt;farseerfc&gt; </span>似乎成了？
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:29:43 </span><span class="nt">&lt;LQYMGT&gt; </span>貌似是的。。
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:30:29 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">但是沒有server啊，localhost:</span>6666不能訪問
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:31:50 </span><span class="nt">&lt;farseerfc&gt; </span>哦原來在8080
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:31:56 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">zzzzzzzz JOIN yssyd3</span>
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:32:22 </span><span class="nt">&lt;farseerfc&gt; </span>good
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:35:08 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">fixme JOIN yssyd3</span>
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:35:36 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> 没错，是DO
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:35:41 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> 怎么了？
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:39:22 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 你跑的是daemon还是test？
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:40:29 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">fixme:</span> daemon和server都跑起來啦，現在在嘗試加pygments支持
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:41:54 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 直接在channel里改html不久可以了嘛
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:41:59 </span><span class="nt">&lt;fixme&gt; </span><span class="na">exaatto:</span> ping
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:43:33 </span><span class="k">--</span><span class="s">-JOIN: </span><span class="c">[Olaf-test] JOIN yssyd3</span>
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:43:35 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> go get是标准的Unix哲学，没有问题就一声不吭
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:44:59 </span><span class="nt">&lt;farseerfc&gt; </span><span class="na">fixme:</span> 話說tmpl.Execute的第一個是Writer麼？怎麼讓他產生一個字符串輸出？
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:47:07 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> https://groups.google.com/forum/#!topic/golang-nuts/dSFHCV-e6Nw
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:48:01 </span><span class="nt">&lt;fixme&gt; </span><span class="na">farseerfc:</span> 用bytes.Buffer
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:48:04 </span><span class="nt">&lt;LQYMGT&gt; </span><span class="na">fixme:</span> 哦……
-</pre></div>
-<br><div class="highlight"><pre><span class="cp">Aug 27 12:49:04 </span><span class="nt">&lt;farseerfc&gt; </span>原來需要取地址……我直接var buf bytes.Buffer之後傳給他報錯……
-</pre></div>
-<br><div id="naptha_container0932014_0707"></div></body></html>
+<div id="naptha_container0932014_0707"></div></body></html>
